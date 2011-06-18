@@ -4983,6 +4983,44 @@
             <TextSymbolizer name="name" fontset_name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical_alignment="top" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
+            <Filter>([amenity]='bicycle_parking')</Filter>
+            &minscale_zoom17;
+            &maxscale_zoom16;
+            <PointSymbolizer file="&symbols-path;bicycle_parking.png" type="png" width="11" height="11"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([cycleway]='asl')</Filter>
+            &maxscale_zoom16;
+            <PointSymbolizer file="&symbols-path;asl.png" type="png" width="11" height="6"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([highway]='crossing' and [bicycle]='yes')</Filter>
+            &maxscale_zoom18;
+            <PointSymbolizer file="&symbols-path;crossing_bicycle2.png" type="png" width="11" height="9"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([highway]='crossing' and [bicycle]='yes')</Filter>
+            &minscale_zoom17;
+            &maxscale_zoom16;
+            <PointSymbolizer file="&symbols-path;crossing_bicycle.png" type="png" width="11" height="6"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([highway]='crossing' and [bicycle]='yes')</Filter>
+            &maxscale_zoom18;
+            <PointSymbolizer file="&symbols-path;crossing_bicycle2.png" type="png" width="11" height="9"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([highway]='crossing')</Filter>
+            &minscale_zoom17;
+            &maxscale_zoom16;
+            <PointSymbolizer file="&symbols-path;crossing.png" type="png" width="11" height="4"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([highway]='crossing')</Filter>
+            &maxscale_zoom18;
+            <PointSymbolizer file="&symbols-path;crossing2.png" type="png" width="11" height="6"></PointSymbolizer>
+    </Rule>
+    <Rule>
             <Filter>([railway]='level_crossing')</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
@@ -6724,6 +6762,18 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+
+<Layer name="bicycle-lanes" srs="&srs900913;">
+    <StyleName>cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+           (select way, cycleway, "cycleway:left", "cycleway:right",
+          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- ploty, zdi -->
 <Layer name="polygon barriers" srs="&srs900913;">
 <StyleName>barriers</StyleName>
@@ -6886,12 +6936,25 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+
+<Layer name="surface" srs="&srs900913;">
+    <StyleName>surface</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select way, surface from planet_osm_line where surface!='') as surface
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
+
+
+
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
 <Layer name="cycleways" srs="&srs900913;">
     <StyleName>cycleway</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, lcn_ref, lwn_ref, rcn_ref, rwn_ref, ncn_ref, nwn_ref, lcn, lwn, rcn, rwn, ncn, nwn, osm_id, route, way, highway, ref
+        (select bicycle, lcn_ref, lwn_ref, rcn_ref, rwn_ref, ncn_ref, nwn_ref, lcn, lwn, rcn, rwn, ncn, nwn, osm_id, route, way, highway, ref, state
         from planet_osm_line
         where ((lcn_ref is not null) or (lwn_ref is not null) or (rcn_ref is not null) or (rwn_ref is not null) or (ncn_ref is not null) or (nwn_ref is not null) or (lcn is not null) or (lwn is not null) or (rcn is not null) or (rwn is not null) or (ncn is not null) or (nwn is not null))) as cycleway
         </Parameter>
@@ -7403,6 +7466,24 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bicycle_directions" srs="&srs900913;">
+   <StyleName>bicycle_directions</StyleName>
+   <Datasource>
+      <Parameter name="table">
+         (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
+       case when cycleway in ('opposite', 'opposite_lane') then 'opposite'::text end as cycleway
+         from planet_osm_line
+       where (oneway is not null) and (cycleway is not null)
+         and (highway is not null or railway is not null or waterway is not null)
+      ) as bicycle_directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!--
+       case when "oneway:bicycle" in ('no','false') then 'opposite'::text end as "cycleway",
+-->
 
 <!-- administrativni hranice
 admin 0 - nemecke obvody
@@ -7492,7 +7573,7 @@ admin 8 - uzemi samostatnych obci
     <StyleName>symbols</StyleName>
     <StyleName>points</StyleName>
     <Datasource>
-      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL or cycleway is NOT NULL) as amenity</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
