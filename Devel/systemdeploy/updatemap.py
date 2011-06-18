@@ -17,9 +17,10 @@ import datetime, re, httplib
 
 def updateFromFile(filename):
     try:
-        os.chdir('/home/xtesar7/sw/osm2pgsql')
+        os.chdir('../../osm2pgsql')
     except OSError, msg:
         raise UpdateError('osm2pgsql is not present')
+    str("asdf")
     ret = os.system('./osm2pgsql -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/default.style -C 2000')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
@@ -31,7 +32,7 @@ def updateFromFile(filename):
     refreshDate('en.html', str(date))
     # restart renderd:
     try:
-        os.chdir('/home/xtesar7/sw/mod_tile')
+        os.chdir('../../mod_tile')
         os.system('kill $(pidof renderd)')
         os.system('./renderd')
     except OSError, msg:
@@ -60,7 +61,7 @@ class UpdateError(Exception):
 if __name__ == "__main__":
     homepath = os.getenv('MTBMAP_DIRECTORY')
     if (homepath == None):
-        homepath = '/home/xtesar7/Devel/mtbmap-czechrep'
+        homepath = os.getcwd() + '/../..'
 
     date = datetime.date.today()
     try:

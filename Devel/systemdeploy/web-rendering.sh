@@ -2,6 +2,10 @@
 
 # script installs programs that are necessary for maps to be available
 # on the internet
+if [ -z "$inner_variable" ]
+then
+  export MTBMAP_DIRECTORY=../..
+fi
 
 sudo apt-get install apache2
 sudo apt-get install apache2-threaded-dev
