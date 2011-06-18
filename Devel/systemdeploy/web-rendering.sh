@@ -16,7 +16,7 @@ cd mod_tile
 # if you expect rendering large tiles, consider increasing MAX_SIZE
 # parameter in render_config.h file
 make
-sudo make install
+# sudo make install
 
 # now edit your own /etc/renderd.conf and /etc/apache2/conf.d/mod_tile.conf
 # files and make your HTML page, examples are on DVD

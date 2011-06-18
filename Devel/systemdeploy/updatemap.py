@@ -17,7 +17,7 @@ import datetime, re, httplib
 
 def updateFromFile(filename):
     try:
-        os.chdir('../../osm2pgsql')
+        os.chdir(homepath + '/sw/osm2pgsql')
     except OSError, msg:
         raise UpdateError('osm2pgsql is not present')
     str("asdf")
@@ -89,12 +89,16 @@ if __name__ == "__main__":
             raise UpdateError(homepath + '/Data directory is not present')
 
     
-        if (os.system('wget -t 3 ' + url1)==0):
-            updateFromFile(filename1)
-        elif (os.system('wget -t 3 ' + url2)==0):
-            updateFromFile(filename2)
+        download = os.getenv('MTBMAP_DOWNLOAD')
+        if download == 'false':
+           updateFromFile(filename1)
         else:
-            raise UpdateError('An error occured while downloading from given URLs ')
+           if (os.system('wget -t 3 ' + url1)==0):
+               updateFromFile(filename1)
+           elif (os.system('wget -t 3 ' + url2)==0):
+               updateFromFile(filename2)
+           else:
+               raise UpdateError('An error occured while downloading from given URLs ')
 
     except UpdateError, ue:
         print ue.msg
