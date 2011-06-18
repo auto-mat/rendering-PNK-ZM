@@ -62,45 +62,25 @@
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom17;
-    <LineSymbolizer>
-       <CssParameter name="stroke">#000000</CssParameter>
-      <CssParameter name="stroke-opacity">0.4</CssParameter>
-       <CssParameter name="stroke-width">12</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 3</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="12" height="13" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <LineSymbolizer>
-       <CssParameter name="stroke">#000000</CssParameter>
-      <CssParameter name="stroke-opacity">0.4</CssParameter>
-       <CssParameter name="stroke-width">8</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 3</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="9" height="10" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <LineSymbolizer>
-       <CssParameter name="stroke">#000000</CssParameter>
-      <CssParameter name="stroke-opacity">0.4</CssParameter>
-       <CssParameter name="stroke-width">4</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 3</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="6" height="7" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom12;
     &minscale_zoom13;
-    <LineSymbolizer>
-       <CssParameter name="stroke">#000000</CssParameter>
-      <CssParameter name="stroke-opacity">0.4</CssParameter>
-       <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 3</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="3" height="4" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
 </Style>
 
