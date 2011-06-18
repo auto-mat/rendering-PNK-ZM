@@ -1,7 +1,7 @@
 <!-- Styles for cycling paths-->
 <Style name="bicycle_directions">
     <Rule>
-            <Filter>([oneway]='yes' and [cycleway]='opposite')</Filter>
+            <Filter>([oneway]='yes' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255, 0, 0)</CssParameter>
@@ -30,7 +30,7 @@
             -->
     </Rule>
     <Rule>
-            <Filter>([oneway]='-1' and [cycleway]='opposite')</Filter>
+            <Filter>([oneway]='-1' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(0,255,0)</CssParameter>
@@ -62,19 +62,19 @@
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="12" height="13" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer width="3" height="13" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <LinePatternSymbolizer width="9" height="10" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer width="3" height="10" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <LinePatternSymbolizer width="6" height="7" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer width="3" height="7" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
