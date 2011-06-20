@@ -26,8 +26,6 @@
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 5, 1, 168</CssParameter>
             </LineSymbolizer>
-            <!--
-            -->
     </Rule>
     <Rule>
             <Filter>([oneway]='-1' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
@@ -89,10 +87,8 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#666666</CssParameter>
-       <CssParameter name="stroke-width">20</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
@@ -109,10 +105,8 @@
     &maxscale_zoom15;
     &minscale_zoom16;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#666666</CssParameter>
-       <CssParameter name="stroke-width">16</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
@@ -131,10 +125,8 @@
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#666666</CssParameter>
-       <CssParameter name="stroke-width">13</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
@@ -153,10 +145,8 @@
     &maxscale_zoom12;
     &minscale_zoom13;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#666666</CssParameter>
-       <CssParameter name="stroke-width">8</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
@@ -175,10 +165,8 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#8888ff</CssParameter>
-       <CssParameter name="stroke-width">20</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
@@ -195,10 +183,8 @@
     &maxscale_zoom15;
     &minscale_zoom16;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#8888ff</CssParameter>
-       <CssParameter name="stroke-width">16</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
@@ -217,10 +203,8 @@
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#8888ff</CssParameter>
-       <CssParameter name="stroke-width">13</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
@@ -239,10 +223,8 @@
     &maxscale_zoom12;
     &minscale_zoom13;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#8888ff</CssParameter>
-       <CssParameter name="stroke-width">8</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
@@ -262,10 +244,8 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#ff3f3f</CssParameter>
-       <CssParameter name="stroke-width">20</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
@@ -282,10 +262,8 @@
     &maxscale_zoom15;
     &minscale_zoom16;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#ff3f3f</CssParameter>
-       <CssParameter name="stroke-width">16</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="16" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
@@ -304,10 +282,8 @@
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#ff3f3f</CssParameter>
-       <CssParameter name="stroke-width">13</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="13" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
@@ -326,10 +302,8 @@
     &maxscale_zoom12;
     &minscale_zoom13;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LineSymbolizer>
-       <CssParameter name="stroke">#ff3f3f</CssParameter>
-       <CssParameter name="stroke-width">8</CssParameter>
-    </LineSymbolizer>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="8" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
@@ -347,6 +321,7 @@
 
 <Style name="cycleway">
   <Rule>
+    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
@@ -358,6 +333,32 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
+    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom9;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">1.3</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom9;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">1.1</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
+  <Rule>
+    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
@@ -369,6 +370,32 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
+    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom10;
+    &minscale_zoom11;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">2.5</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom10;
+    &minscale_zoom11;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">2</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
+  <Rule>
+    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
@@ -379,6 +406,31 @@
       <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
   </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom12;
+    &minscale_zoom12;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">7</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom12;
+    &minscale_zoom12;
+    <LineSymbolizer>
+      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke-opacity">0.3</CssParameter>
+      <CssParameter name="stroke-width">6</CssParameter>
+      <CssParameter name="stroke-linejoin">round</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
   <Rule>
     <Filter>([ncn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom13;
@@ -413,6 +465,7 @@
     </LineSymbolizer>
   </Rule>
 
+  <!-- proposed -->
   <Rule>
     <Filter>([ncn]!='' and [state]='proposed')</Filter>
     &maxscale_zoom13;

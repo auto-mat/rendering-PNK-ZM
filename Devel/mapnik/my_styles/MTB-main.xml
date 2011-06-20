@@ -393,7 +393,7 @@
 </Style>
 <Style name="footbikecycle-tunnels">
     <Rule>
-            <Filter>(([highway]='bridleway') or ([highway]='path'))</Filter>
+            <Filter>([highway]='bridleway')</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
@@ -2723,7 +2723,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-            <Filter>((([highway]='bridleway') or ([highway]='path')) and not (([tunnel]='yes')))</Filter>
+            <Filter>([highway]='bridleway' and not ([tunnel]='yes'))</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
@@ -2824,12 +2824,13 @@
             <Filter>((([highway]='path') and [bicycle]='designated') and not ([tunnel]='yes'))</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,0,255)</CssParameter>
+                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
                 <CssParameter name="stroke-opacity">0.4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
+                <CssParameter name="stroke">rgb(0,0,255)</CssParameter>
                 <CssParameter name="stroke-width">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3633,7 +3634,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-            <Filter>(([highway]='bridleway') or ([highway]='path'))</Filter>
+            <Filter>([highway]='bridleway')</Filter>
             &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke-width">5.5</CssParameter>
@@ -3719,12 +3720,13 @@
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,0,255)</CssParameter>
+                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
+                <CssParameter name="stroke">rgb(0,0,255)</CssParameter>
                 <CssParameter name="stroke-width">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -7602,6 +7604,7 @@
       <Parameter name="table">
          (select way,
        case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
+       case when "oneway:bicycle" in ('no','false') then 'no'::text end as "oneway:bicycle",
        case when cycleway in ('opposite', 'opposite_lane') then 'opposite'::text end as cycleway
          from planet_osm_line
        where (oneway is not null) and (cycleway is not null)
@@ -7612,7 +7615,6 @@
     </Datasource>
 </Layer>
 <!--
-       case when "oneway:bicycle" in ('no','false') then 'opposite'::text end as "cycleway",
 -->
 
 <!-- administrativni hranice
