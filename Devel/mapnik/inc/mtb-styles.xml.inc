@@ -87,18 +87,18 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclebuslane_share:right_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='share_busway' or ([cycleway]='share_busway' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclebuslane_share:left_offset.png"/>
   </Rule>
 
   <Rule>
@@ -165,18 +165,18 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane_shared:right_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane_shared:left_offset.png"/>
   </Rule>
 
   <Rule>
@@ -244,18 +244,18 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:right_offset.png"/>
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:right_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane:right_offset.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='lane' or ([cycleway]='lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="20" height="20" type="png" file="../symbols/cyclelane:left_offset.png"/>
+    <LinePatternSymbolizer width="20" height="21" type="png" file="../symbols/cyclelane:left_offset.png"/>
   </Rule>
 
   <Rule>
@@ -325,7 +325,7 @@
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
-      <CssParameter name="stroke">#ff11ff</CssParameter>
+      <CssParameter name="stroke">&color_ncn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">1.5</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -337,7 +337,7 @@
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
-      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke">&color_rcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">1.3</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -349,7 +349,7 @@
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
-      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke">&color_lcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">1.1</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -362,7 +362,7 @@
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
-      <CssParameter name="stroke">#ff11ff</CssParameter>
+      <CssParameter name="stroke">&color_ncn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">3</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -374,7 +374,7 @@
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
-      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke">&color_rcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">2.5</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -386,7 +386,7 @@
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
-      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke">&color_lcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -399,7 +399,7 @@
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
-      <CssParameter name="stroke">#ff11ff</CssParameter>
+      <CssParameter name="stroke">&color_ncn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">8</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -411,7 +411,7 @@
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
-      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke">&color_rcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">7</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -423,7 +423,7 @@
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
-      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke">&color_lcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">6</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -435,7 +435,7 @@
     <Filter>([ncn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-      <CssParameter name="stroke">#ff11ff</CssParameter>
+      <CssParameter name="stroke">&color_ncn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">12</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -446,7 +446,7 @@
     <Filter>([rcn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-      <CssParameter name="stroke">#00ffff</CssParameter>
+      <CssParameter name="stroke">&color_rcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">10</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -457,7 +457,7 @@
     <Filter>([lcn]!='' and not [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-      <CssParameter name="stroke">#0044ff</CssParameter>
+      <CssParameter name="stroke">&color_lcn;</CssParameter>
       <CssParameter name="stroke-opacity">0.3</CssParameter>
       <CssParameter name="stroke-width">8</CssParameter>
       <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -470,7 +470,7 @@
     <Filter>([ncn]!='' and [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-        <CssParameter name="stroke">#ff11ff</CssParameter>
+        <CssParameter name="stroke">&color_ncn;</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
         <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -482,7 +482,7 @@
     <Filter>([rcn]!='' and [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-        <CssParameter name="stroke">#00ffff</CssParameter>
+        <CssParameter name="stroke">&color_rcn;</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
         <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -494,7 +494,7 @@
     <Filter>([lcn]!='' and [state]='proposed')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
-        <CssParameter name="stroke">#0044ff</CssParameter>
+        <CssParameter name="stroke">&color_lcn;</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
         <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>

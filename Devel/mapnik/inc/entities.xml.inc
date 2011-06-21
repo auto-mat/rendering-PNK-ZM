@@ -48,6 +48,7 @@
 <!ENTITY font_size_big "22">
 <!ENTITY font_size_huge "26">
 
+<!ENTITY % color-entities SYSTEM "color-entities.xml.inc">
 <!ENTITY height-styles SYSTEM "height-styles.xml.inc">
 <!ENTITY admin-styles SYSTEM "admin-styles.xml.inc">
 <!ENTITY symbols-path "../symbols/">
