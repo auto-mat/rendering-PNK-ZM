@@ -6,7 +6,7 @@
 # vector data import. It's necessary to run with superuser privilegies.
 
 # change this for the root directory of your future OSM system
-USER="mtbmap"
+DBUSER="mtbmap"
 if [ -z "$inner_variable" ]
 then
   export MTBMAP_DIRECTORY=../..
@@ -31,15 +31,13 @@ sudo apt-get install postgis
 # ./configure
 # make
 # sudo make install
-# sudo passwd postgres
-#su postgres 
-#createuser $USER
-#exit
-createdb -E UTF8 -O $USER $DATABASE
+sudo passwd postgres
+sudo -u postgres createuser $USER
+createdb -E UTF8 -O $DBUSER $DATABASE
 createlang plpgsql gisczech
 psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
-echo "ALTER TABLE geometry_columns OWNER TO $USER; \
-      ALTER TABLE spatial_ref_sys OWNER TO $USER;" \
+echo "ALTER TABLE geometry_columns OWNER TO $DBUSER; \
+      ALTER TABLE spatial_ref_sys OWNER TO $DBUSER;" \
       | psql -d $DATABASE
 psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/_int.sql
 
