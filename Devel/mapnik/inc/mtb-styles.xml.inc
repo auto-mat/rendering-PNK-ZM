@@ -4,54 +4,54 @@
             <Filter>([oneway]='yes' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255, 0, 0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 10, 162</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 10, 62</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255, 0, 0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 3, 9, 162</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 3, 9, 62</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255, 0, 0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 4, 2, 168</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 4, 2, 68</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255, 0, 0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 5, 1, 168</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 5, 1, 68</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule>
             <Filter>([oneway]='-1' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,255,0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 10, 162</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 10, 62</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,255,0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 9, 163</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 9, 63</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,255,0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 8, 2, 164</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 8, 2, 64</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(0,255,0)</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 8, 1, 165</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 8, 1, 65</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -73,12 +73,6 @@
     &maxscale_zoom14;
     &minscale_zoom14;
     <LinePatternSymbolizer width="3" height="7" type="png" file="../symbols/cobblestone.png"/>
-  </Rule>
-  <Rule>
-    <Filter>([surface]='cobblestone')</Filter>
-    &maxscale_zoom12;
-    &minscale_zoom13;
-    <LinePatternSymbolizer width="3" height="4" type="png" file="../symbols/cobblestone.png"/>
   </Rule>
 </Style>
 
@@ -484,7 +478,7 @@
     <LineSymbolizer>
         <CssParameter name="stroke">&color_rcn;</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-dasharray">1, 20</CssParameter>
@@ -496,7 +490,7 @@
     <LineSymbolizer>
         <CssParameter name="stroke">&color_lcn;</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-dasharray">1, 20</CssParameter>
@@ -505,9 +499,72 @@
 </Style>
 <Style name="cycleway-text">
   <Rule>
+    <Filter>([ncn]!='' and [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([ncn]!='' and [state]='proposed')</Filter>
     &maxscale_zoom13;
-    &minscale_zoom18;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="275" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+
+  <Rule>
+    <Filter>([rcn]!='' and [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and [state]='proposed')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+
+  <Rule>
+    <Filter>([lcn]!='' and [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and [state]='proposed')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom8;
+    &minscale_zoom12;
+    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
 </Style>
 

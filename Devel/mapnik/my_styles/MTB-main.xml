@@ -324,25 +324,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 152</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 10, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 9, 153</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 9, 53</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 2, 154</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 18, 2, 54</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 1, 155</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 18, 1, 55</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule>
@@ -351,25 +351,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 152</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 10, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 13, 9, 152</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 13, 9, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 14, 2, 158</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 14, 2, 58</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 15, 1, 158</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 15, 1, 58</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -2815,16 +2815,6 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro pěší a cyklisty -->
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom10;
-            &minscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule>
        <!-- stezka pro cyklisty -->
             <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom10;
@@ -2835,22 +2825,32 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro pěší a cyklisty -->
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+       <!-- stezka pro cyklisty -->
+            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro cyklisty -->
-            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
+       <!-- stezka pro pěší a cyklisty -->
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule>
+       <!-- stezka pro pěší a cyklisty -->
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2858,7 +2858,7 @@
     </Rule>
     <Rule>
             <Filter>((([highway]='path') and not (([bicycle]='designated') or ([foot]='designated'))) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
                 <CssParameter name="stroke-opacity">0.4</CssParameter>
@@ -3713,9 +3713,9 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro pěší -->
+       <!-- stezka pro pěší (most) -->
             <Filter>(([highway]='footway' or ([highway]='path' and [foot]='designated')) and not ([bicycle]='yes' or [bicycle]='designated'))</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
@@ -3734,7 +3734,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro pěší a cyklisty -->
+       <!-- stezka pro pěší a cyklisty (most) -->
             <Filter>(([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')))</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
@@ -3807,7 +3807,7 @@
     </Rule>
     <Rule>
             <Filter>(([highway]='path') and not (([bicycle]='designated') or ([foot]='designated')))</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
@@ -3928,8 +3928,8 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='bicycle_rental')</Filter>
-            &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
+            &maxscale_zoom13;
+            <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" type="png" width="20" height="20" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([amenity]='bus_stop') or ([highway]='bus_stop'))</Filter>
@@ -3959,7 +3959,7 @@
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom12;
             <PointSymbolizer file="&symbols-path;camping.n.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4114,8 +4114,8 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='drinking_water')</Filter>
-            &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
+            &maxscale_zoom12;
+            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" type="png" width="20" height="20" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='prison')</Filter>
@@ -5207,9 +5207,8 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='bicycle_parking')</Filter>
-            &minscale_zoom17;
-            &maxscale_zoom16;
-            <PointSymbolizer file="&symbols-path;bicycle_parking.png" type="png" width="11" height="11"></PointSymbolizer>
+            &maxscale_zoom13;
+            <PointSymbolizer file="&symbols-path;bicycle_parking.png" type="png" width="11" height="11" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>([cycleway]='asl')</Filter>
@@ -5271,8 +5270,14 @@
     </Rule>
     <Rule>
             <Filter>([natural]='spring')</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom12;
+            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" type="png" width="20" height="20" allow_owerlap="true"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([natural]='spring')</Filter>
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;spring.png" type="png" width="5" height="7"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;spring.png" type="png" width="5" height="7" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>([natural]='tree')</Filter>
@@ -5317,8 +5322,8 @@
     </Rule>
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
-            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12"></PointSymbolizer>
+            &maxscale_zoom12;
+            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12" allow_owerlap="true"></PointSymbolizer>
     </Rule>
 </Style>
 <Style name="symbols-poly">
@@ -5362,8 +5367,14 @@
     </Rule>
     <Rule>
             <Filter>([natural]='spring')</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom12;
+            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" type="png" width="20" height="20" allow_owerlap="true"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([natural]='spring')</Filter>
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;spring.png" type="png" width="5" height="7"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;spring.png" type="png" width="5" height="7" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>([natural]='tree')</Filter>
@@ -5408,8 +5419,8 @@
     </Rule>
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
-            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12"></PointSymbolizer>
+            &maxscale_zoom12;
+            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12" allow_owerlap="true"></PointSymbolizer>
     </Rule>
 </Style>
 <Style name="text">
@@ -5422,27 +5433,27 @@
     <Rule>
             <Filter>(((([amenity]='pub') or ([amenity]='restaurant')) or ([amenity]='cafe')) or ([amenity]='fast_food'))</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='bar')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>((([amenity]='cinema') or ([amenity]='library')) or ([amenity]='theatre'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_culture;" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_parking;" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_police;" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='fire_station')</Filter>
@@ -5512,47 +5523,47 @@
     <Rule>
             <Filter>(([tourism]='hotel') or ([tourism]='hostel'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_accomodation;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='embassy')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_embasy;" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='guest_house')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,102,255)" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="&color_accomodation;" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([amenity]='fuel') or ([amenity]='bus_station'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_non_bicycle_amenity;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            &maxscale_zoom14;
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_camp_site;" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='caravan_site')</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_caravan_site;" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='museum')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_culture;" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='prison')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_prison;" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='attraction')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(102,0,51)" halo_radius="2" wrap_width="10"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_attraction;" halo_radius="2" wrap_width="10"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='university')</Filter>
@@ -5587,7 +5598,7 @@
     <Rule>
             <Filter>([amenity]='pharmacy')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(218,0,146)" dy="13" vertical_alignment="bottom" halo_radius="1" wrap_width="12"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="&color_pharmacy;" dy="13" vertical_alignment="bottom" halo_radius="1" wrap_width="12"></TextSymbolizer>
     </Rule>
 <!--    <Rule>
             <Filter>([highway]='motorway_junction')</Filter>
@@ -5622,7 +5633,7 @@
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(172,57,172)" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
 </Style>
 <Style name="text-poly">
@@ -5635,32 +5646,32 @@
     <Rule>
             <Filter>(((([amenity]='pub') or ([amenity]='restaurant')) or ([amenity]='cafe')) or ([amenity]='fast_food'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='bar')</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>((([amenity]='cinema') or ([amenity]='library')) or ([amenity]='theatre'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_culture;" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_parking;" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_amenity;" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='fire_station')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="20" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_fire_station;" dy="20" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='place_of_worship')</Filter>
@@ -5694,13 +5705,13 @@
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            &maxscale_zoom14;
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_camp_site;" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='caravan_site')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_caravan_site;" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='motorway_junction')</Filter>
@@ -5734,7 +5745,7 @@
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(172,57,172)" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
 </Style>
 <Style name="tracks-bridges-bicycle">
@@ -7901,9 +7912,9 @@
     <StyleName>nobicycle</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id,way
+        (select osm_id,way,highway,bicycle
         from planet_osm_line
-        where (bicycle = 'no')) as nobicycle
+        where (bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -8299,7 +8310,7 @@ admin 8 - uzemi samostatnych obci
     <StyleName>cycleway-text</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, ref, name, lcn, ncn, rcn
+        (select way, ref, name, lcn, ncn, rcn, state
         from planet_osm_line
         where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway
         </Parameter>
