@@ -2,7 +2,7 @@
 <!ENTITY color_rcn "rgb(255,0,255)">
 <!ENTITY color_lcn "rgb(255,0,255)">
 <!ENTITY color_ncn_text '#ff8888'>
-<!ENTITY color_rcn_text '#ff88ff'>
+<!ENTITY color_rcn_text '#88d4ff'>
 <!ENTITY color_lcn_text '#8888ff'>
 <!ENTITY color_cycleway_background_text '#000000'>
 <!ENTITY color_cycleway_background_text_proposed '#666666'>
@@ -31,6 +31,12 @@
 <!ENTITY color_primary_tunnel '#977932'>
 <!ENTITY color_trunk_tunnel '#e6e6e6'>
 <!ENTITY color_motorway_tunnel '#cccccc'>
+
+<!ENTITY color_lozoom '#303030'>
+<!ENTITY color_residential_lozoom '&color_lozoom;'>
+<!ENTITY color_tertiary_lozoom '&color_lozoom;'>
+<!ENTITY color_secondary_lozoom '&color_lozoom;'>
+<!ENTITY color_primary_lozoom '&color_lozoom;'>
 
 <!ENTITY color_pedestrian "rgb(255,212,212)">
 <!ENTITY color_pedestrian_bicycle "rgb(212,212,255)">

@@ -315,7 +315,7 @@
 
 <Style name="cycleway">
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
@@ -327,7 +327,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
@@ -339,7 +339,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom9;
     <LineSymbolizer>
@@ -352,7 +352,7 @@
   </Rule>
 
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
@@ -364,7 +364,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
@@ -376,7 +376,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom10;
     &minscale_zoom11;
     <LineSymbolizer>
@@ -389,7 +389,7 @@
   </Rule>
 
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
@@ -401,7 +401,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
@@ -413,7 +413,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom12;
     &minscale_zoom12;
     <LineSymbolizer>
@@ -426,7 +426,7 @@
   </Rule>
 
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_ncn;</CssParameter>
@@ -437,7 +437,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_rcn;</CssParameter>
@@ -448,7 +448,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_lcn;</CssParameter>
@@ -461,7 +461,7 @@
 
   <!-- proposed -->
   <Rule>
-    <Filter>([ncn]!='' and [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
         <CssParameter name="stroke">&color_ncn;</CssParameter>
@@ -473,7 +473,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
         <CssParameter name="stroke">&color_rcn;</CssParameter>
@@ -485,7 +485,7 @@
     </LineSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <LineSymbolizer>
         <CssParameter name="stroke">&color_lcn;</CssParameter>
@@ -499,70 +499,70 @@
 </Style>
 <Style name="cycleway-text">
   <Rule>
-    <Filter>([ncn]!='' and [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([ncn]!='' and [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([ncn]!='' and not [state]='proposed')</Filter>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
 
   <Rule>
-    <Filter>([rcn]!='' and [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([rcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
 
   <Rule>
-    <Filter>([lcn]!='' and [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and  [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="book-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
   <Rule>
-    <Filter>([lcn]!='' and not [state]='proposed')</Filter>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
