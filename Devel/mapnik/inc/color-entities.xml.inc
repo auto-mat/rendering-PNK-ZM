@@ -21,7 +21,7 @@
 <!ENTITY color_bicycle_footway_tunnel "rgb(108,75,129)">
 
 <!ENTITY color_residential '#ffffff'>
-<!ENTITY color_tertiary '#ffe2a5'>
+<!ENTITY color_tertiary '#ffeac3'>
 <!ENTITY color_secondary '#e9d2a7'>
 <!ENTITY color_primary '#cec4ae'>
 <!ENTITY color_trunk '#8e8e8e'>
@@ -33,6 +33,11 @@
 <!ENTITY color_primary_tunnel '#ccceae'>
 <!ENTITY color_trunk_tunnel '#a9a9a9'>
 <!ENTITY color_motorway_tunnel '#a9a9a9'>
+
+<!ENTITY color_road_background '#606060'>
+<!ENTITY color_tertiary_background '#b4b100'>
+<!ENTITY color_secondary_background '#c86400'>
+<!ENTITY color_primary_background '#a00000'>
 
 <!ENTITY color_lozoom '#606060'>
 <!ENTITY color_residential_lozoom '&color_lozoom;'>
@@ -52,6 +57,8 @@
 <!ENTITY color_police '&color_bicycle_amenity;'>
 <!ENTITY color_camp_site 'rgb(0,102,255)'>
 <!ENTITY color_bicycle_directions '&color_bicycle_amenity;'>
+
+<!ENTITY color_cycleway_directions 'black'>
 
 <!ENTITY color_food '&color_non_bicycle_amenity;'>
 <!ENTITY color_culture '&color_non_bicycle_amenity;'>
