@@ -115,6 +115,13 @@ way       incline          text     linear
 
 way       surface      text     linear
 
+way       state            text     linear
+node,way  cycleway         text     linear
+way       cycleway:left    text     linear
+way       cycleway:right   text     linear
+way       cycleway:both   text     linear
+way       oneway:bicycle   text     linear
+
 #navic podle Bartone
 
 # Czech style hiking tracks.
