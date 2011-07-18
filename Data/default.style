@@ -192,8 +192,6 @@ way       incline          text     linear
 
 #additions for cycleway comfortmeasurements
 
-way       cycleway         text     linear
-
 way       cycleway:buffer       text     linear
 
 way       cycleway:comfort       text     linear
@@ -201,6 +199,14 @@ way       cycleway:comfort       text     linear
 way       cycleway:surface       text     linear
 
 way       cycleway:width       text     linear
+
+
+way       state            text     linear
+node,way  cycleway         text     linear
+way       cycleway:left    text     linear
+way       cycleway:right   text     linear
+way       cycleway:both   text     linear
+way       oneway:bicycle   text     linear
 
 
 

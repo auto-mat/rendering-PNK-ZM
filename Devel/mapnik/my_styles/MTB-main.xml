@@ -2,6 +2,7 @@
 <!DOCTYPE Map [
 <!ENTITY % entities SYSTEM "../inc/entities.xml.inc">
 %entities;
+%color-entities;
 ]>
 <Map srs="&srs900913;" bgcolor="rgb(255,255,255)">
     &fontset-settings;
@@ -28,6 +29,7 @@
 </Layer>-->
 
 <!-- Hypsometry layer. -->
+<!--
 <Layer name="hypsometry" status="on" srs="&srs900913;">
     <StyleName>hypsometry</StyleName>
     <Datasource>
@@ -36,6 +38,7 @@
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
+-->
 
 <!-- Lesy, hriste, skoly, vojenske prostory, kempy, vse jako polygon -->
 <Layer name="leisure" srs="&srs900913;">
@@ -67,6 +70,7 @@
     </Datasource>
 </Layer>
 <!-- Hillshading layer. -->
+<!--
 <Layer name="hillshade" status="on" srs="&srs900913;">
 <StyleName>shading</StyleName>
     <Datasource>
@@ -75,7 +79,9 @@
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 5 metrech -->
+<!--
 <Layer name="contours5" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours5</StyleName>
     <Datasource>
@@ -83,7 +89,9 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 10 metrech -->
+<!--
 <Layer name="contours10" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours10</StyleName>
     <StyleName>contours-text10</StyleName>
@@ -92,7 +100,9 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 20 metrech -->
+<!--
 <Layer name="contours20" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours20</StyleName>
     <StyleName>contours-text20</StyleName>
@@ -101,7 +111,9 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 25 metrech -->
+<!--
 <Layer name="contours25" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours25</StyleName>
     <StyleName>contours-text25</StyleName>
@@ -110,7 +122,9 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 50 metrech -->
+<!--
 <Layer name="contours50" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours50</StyleName>
     <StyleName>contours-text50</StyleName>
@@ -119,7 +133,9 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice po 100 metrech -->
+<!--
 <Layer name="contours100" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours100</StyleName>
     <StyleName>contours-text100</StyleName>
@@ -128,6 +144,7 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
+-->
 
 <!-- ledovce nejsou v CR potreba -->
 <!--<Layer name="glaciers-text" srs="&srs900913;">
@@ -286,7 +303,17 @@
 <StyleName>tracks-notunnel-nobridge</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype from planet_osm_line where (highway='track' or (highway='cycleway' and tracktype is not null)) and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0')) and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- vsechny nezpevnene stezky, pesiny -->
+<Layer name="tracks-notunnel-nobridge-bicycle" srs="&srs900913;">
+<StyleName>tracks-notunnel-nobridge-bicycle</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0')) and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -296,7 +323,16 @@
 <StyleName>tracks-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype from planet_osm_line where (highway='track' or (highway='cycleway' and tracktype is not null)) and tunnel in ('yes','true','1')) as tracks
+      (select way,tracktype from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="tracks-tunnels-bicycle" srs="&srs900913;">
+<StyleName>tracks-tunnels-bicycle</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -329,6 +365,18 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+
+<Layer name="bicycle-lanes" srs="&srs900913;">
+    <StyleName>cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+           (select way, cycleway, "cycleway:left", "cycleway:right",
+          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- ploty, zdi -->
 <Layer name="polygon barriers" srs="&srs900913;">
 <StyleName>barriers</StyleName>
@@ -357,10 +405,10 @@
 <StyleName>minor-roads-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,service,
+      (select way,highway,service,bicycle,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -371,7 +419,7 @@
 <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from planet_osm_polygon
+      (select way,highway,bicycle from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
        order by z_order,way_area desc) as roads
       </Parameter>
@@ -428,6 +476,20 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="cycleway-fill" srs="&srs900913;">
+<StyleName>cycleway-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,bicycle,foot,construction,aeroway,service,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       from planet_osm_line
+       where highway is not null
+       order by z_order) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- neco jako mosty pro tekouci vodu, skoro se nevyskytuji -->
 <Layer name="waterway-bridges" srs="&srs900913;">
 <StyleName>waterway-bridges</StyleName>
@@ -474,21 +536,43 @@
     </Datasource>
 </Layer>
 <!-- mostky na pesinach -->
-<Layer name="tracks-bridges" srs="&srs900913;">
-<StyleName>tracks-bridges</StyleName>
+<Layer name="tracks-bridges-bicycle" srs="&srs900913;">
+<StyleName>tracks-bridges-bicycle</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype from planet_osm_line where (highway='track' or (highway='cycleway' and tracktype is not null)) and bridge in ('yes','true','1')) as tracks
+         (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="tracks-bridges" srs="&srs900913;">
+<StyleName>tracks-bridges</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<Layer name="surface" srs="&srs900913;">
+    <StyleName>surface</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select way, surface from planet_osm_line where surface!='') as surface
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
+
+
+
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
 <Layer name="cycleways" srs="&srs900913;">
     <StyleName>cycleway</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, lcn_ref, lwn_ref, rcn_ref, rwn_ref, ncn_ref, nwn_ref, lcn, lwn, rcn, rwn, ncn, nwn, osm_id, route, way, highway, ref
+        (select bicycle, lcn_ref, lwn_ref, rcn_ref, rwn_ref, ncn_ref, nwn_ref, lcn, lwn, rcn, rwn, ncn, nwn, osm_id, route, way, highway, ref, state
         from planet_osm_line
         where ((highway='cycleway') or (lcn_ref is not null) or (lwn_ref is not null) or (rcn_ref is not null) or (rwn_ref is not null) or (ncn_ref is not null) or (nwn_ref is not null) or (lcn is not null) or (lwn is not null) or (rcn is not null) or (rwn is not null) or (ncn is not null) or (nwn is not null))) as cycleway
         </Parameter>
@@ -830,9 +914,9 @@
     <StyleName>nobicycle</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id,way
+        (select osm_id,way,highway,bicycle
         from planet_osm_line
-        where (bicycle = 'no')) as nobicycle
+        where (bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -1001,6 +1085,22 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bicycle_directions" srs="&srs900913;">
+   <StyleName>bicycle_directions</StyleName>
+   <Datasource>
+      <Parameter name="table">
+         (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
+       case when "oneway:bicycle" in ('no','false') then 'no'::text end as "oneway:bicycle",
+       case when cycleway in ('opposite', 'opposite_lane') then 'opposite'::text end as cycleway
+         from planet_osm_line
+       where (oneway is not null) and (cycleway is not null)
+         and (highway is not null or railway is not null or waterway is not null)
+      ) as bicycle_directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 
 <!-- administrativni hranice
 admin 0 - nemecke obvody
@@ -1108,7 +1208,7 @@ admin 8 - uzemi samostatnych obci
     <StyleName>symbols</StyleName>
     <StyleName>points</StyleName>
     <Datasource>
-      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL or historic is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL or cycleway is NOT NULL) as amenity</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
@@ -1204,7 +1304,7 @@ admin 8 - uzemi samostatnych obci
     <StyleName>cycleway-text</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, ref, name, lcn, ncn, rcn
+        (select way, ref, name, lcn, ncn, rcn, state
         from planet_osm_line
         where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway
         </Parameter>

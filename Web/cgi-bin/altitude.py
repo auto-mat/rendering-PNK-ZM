@@ -110,7 +110,7 @@ def dist(index, nodes):
 ## basic "get height" method from SRTM forum
 #
 #def SRTMExtract(intLat, intLon, x, y):
-#    zip_path = '/home/xtesar7/Data/shadingdata/N' + str(intLat) + 'E0'\
+#    zip_path = '../../Data/shadingdata/N' + str(intLat) + 'E0'\
 #    + str(intLon) + '.hgt.zip'
 #    zip_file = zipfile.ZipFile(zip_path, 'r')
 #    zip_file_name = zip_file.namelist()[0]
@@ -126,7 +126,7 @@ def appendHeights(nodes):
     10-90 degrees north and longitudes 10-99 degrees east.
     """
     hgtArrays = {}
-    zip_path = '/home/xtesar7/Devel/mtbmap-czechrep/Data/shadingdata/'
+    zip_path = '../../Data/shadingdata/'
     for i in range(len(nodes)):
         key = 'N' + str(int(math.floor(nodes[i][0]))) + 'E0' + str(int(math.floor(nodes[i][1])))
         if not (hgtArrays.has_key(key)):

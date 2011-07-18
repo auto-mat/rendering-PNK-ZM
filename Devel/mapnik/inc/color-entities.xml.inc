@@ -24,7 +24,9 @@
 <!ENTITY color_track_fill "rgb(72,72,72)">
 <!ENTITY color_track_casing "rgb(255,255,255)">
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
+<!ENTITY color_track_lozoom "rgb(72,72,72)">
 
+<!ENTITY color_bicycle_track '#bb8a4b'>
 <!ENTITY color_bicycle '#ff9207'>
 <!ENTITY color_bicycle_footway '#d68d30'>
 
