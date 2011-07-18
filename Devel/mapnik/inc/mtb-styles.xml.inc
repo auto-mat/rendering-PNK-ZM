@@ -2,7 +2,7 @@
 <Style name="bicycle_directions">
     <Rule>
             <Filter>([oneway]='yes' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
@@ -29,7 +29,7 @@
     </Rule>
     <Rule>
             <Filter>([oneway]='-1' and ([cycleway]='opposite' or [oneway:bicycle]='no'))</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
@@ -425,12 +425,6 @@
 <Style name="cycleway-text">
   <Rule>
     <Filter>([ncn]!='' and [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="true"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([ncn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="true"></TextSymbolizer>
   </Rule>
@@ -448,12 +442,6 @@
 
   <Rule>
     <Filter>([rcn]!='' and [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([rcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
@@ -469,12 +457,6 @@
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
   </Rule>
 
-  <Rule>
-    <Filter>([lcn]!='' and  [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
-  </Rule>
   <Rule>
     <Filter>([lcn]!='' and [state]!='')</Filter>
     &maxscale_zoom13;

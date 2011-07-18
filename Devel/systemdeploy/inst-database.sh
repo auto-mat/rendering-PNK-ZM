@@ -21,7 +21,7 @@ mkdir sw Data
 sudo apt-get install postgresql postgresql-server-dev-8.4 postgresql-contrib-8.4
 # GUI for PostgreSQL, not needed
 #sudo apt-get install pgadmin3
-sudo apt-get install proj libgeos-dev libxml2-dev python-psycopg2 svn
+sudo apt-get install proj libgeos-dev libxml2-dev python-psycopg2 subversion
 
 cd sw
 sudo apt-get install postgis
@@ -32,7 +32,7 @@ sudo apt-get install postgis
 # make
 # sudo make install
 sudo passwd postgres
-sudo -u postgres createuser $USER
+sudo -u postgres createuser $DBUSER
 createdb -E UTF8 -O $DBUSER $DATABASE
 createlang plpgsql gisczech
 psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql

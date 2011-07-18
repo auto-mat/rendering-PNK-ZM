@@ -14,8 +14,9 @@
 <!ENTITY color_track "rgb(72,72,72)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
+<!ENTITY color_bicycle_track '#bb8a4b'>
 <!ENTITY color_bicycle '#ff9207'>
-<!ENTITY color_bicycle_footway '#e28f24'>
+<!ENTITY color_bicycle_footway '#d68d30'>
 
 <!ENTITY color_bicycle_tunnel "rgb(75,75,128)">
 <!ENTITY color_bicycle_footway_tunnel "rgb(108,75,129)">
@@ -34,10 +35,10 @@
 <!ENTITY color_trunk_tunnel '#a9a9a9'>
 <!ENTITY color_motorway_tunnel '#a9a9a9'>
 
-<!ENTITY color_road_background '#606060'>
-<!ENTITY color_tertiary_background '#b4b100'>
-<!ENTITY color_secondary_background '#c86400'>
-<!ENTITY color_primary_background '#a00000'>
+<!ENTITY color_road_background '#000000'>
+<!ENTITY color_tertiary_background '#000000'>
+<!ENTITY color_secondary_background '#000000'>
+<!ENTITY color_primary_background '#000000'>
 
 <!ENTITY color_lozoom '#606060'>
 <!ENTITY color_residential_lozoom '&color_lozoom;'>
@@ -79,4 +80,3 @@
 <!ENTITY color_park 'rgb(182,253,182)'>
 
 <!ENTITY color_building 'rgb(188,169,169)'>
-

@@ -320,7 +320,7 @@
 <Style name="directions">
     <Rule>
             <Filter>([oneway]='yes')</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
@@ -347,7 +347,7 @@
     </Rule>
     <Rule>
             <Filter>([oneway]='-1')</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(108,112,213)</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
@@ -2878,48 +2878,6 @@
             </LineSymbolizer>
     </Rule>
     <Rule>
-       <!-- stezka pro cyklisty -->
-            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom10;
-            &minscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule>
-       <!-- stezka pro cyklisty -->
-            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule>
-       <!-- stezka pro pěší a cyklisty -->
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom10;
-            &minscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule>
-       <!-- stezka pro pěší a cyklisty -->
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule>
             <Filter>((([highway]='path') and not (([bicycle]='designated') or ([foot]='designated'))) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
@@ -3103,6 +3061,50 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(187,187,204)</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="cycleway-fill">
+    <Rule>
+       <!-- stezka pro cyklisty -->
+            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule>
+       <!-- stezka pro cyklisty -->
+            <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule>
+       <!-- stezka pro pěší a cyklisty -->
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule>
+       <!-- stezka pro pěší a cyklisty -->
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -4002,7 +4004,13 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='bicycle_rental')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom15;
+            &minscale_zoom13;
+            <PointSymbolizer file="&symbols-path;50%/rental_bicycle.p.20.png" type="png" width="10" height="10" allow_owerlap="true"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([amenity]='bicycle_rental')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" type="png" width="20" height="20" allow_owerlap="true"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4033,7 +4041,13 @@
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom12;
+            &maxscale_zoom15;
+            &minscale_zoom12;
+            <PointSymbolizer file="&symbols-path;50%/camping.n.16.png" type="png" width="8" height="8"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([tourism]='camp_site')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;camping.n.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4058,7 +4072,7 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='fuel')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom17;
             <PointSymbolizer file="&symbols-path;fuel.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4073,12 +4087,24 @@
     </Rule>
     <Rule>
             <Filter>([tourism]='hostel')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
+            &minscale_zoom14;
+            <PointSymbolizer file="&symbols-path;50%/hostel.p.20.png" type="png" width="10" height="10"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([tourism]='hostel')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;hostel.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='hotel')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
+            &minscale_zoom14;
+            <PointSymbolizer file="&symbols-path;50%/hotel2.p.20.png" type="png" width="10" height="10"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([tourism]='hotel')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;hotel2.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4088,7 +4114,13 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='library')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
+            &minscale_zoom14;
+            <PointSymbolizer file="&symbols-path;50%/library.p.20.png" type="png" width="10" height="10"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([amenity]='library')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;library.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4153,6 +4185,12 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='pub')</Filter>
+            &maxscale_zoom15;
+            &minscale_zoom14;
+            <PointSymbolizer file="&symbols-path;50%/pub.p.16.png" type="png" width="8" height="8"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([amenity]='pub')</Filter>
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;pub.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
@@ -4163,7 +4201,13 @@
     </Rule>
     <Rule>
             <Filter>([amenity]='restaurant')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
+            &minscale_zoom14;
+            <PointSymbolizer file="&symbols-path;50%/restaurant.p.16.png" type="png" width="8" height="8"></PointSymbolizer>
+    </Rule>
+    <Rule>
+            <Filter>([amenity]='restaurant')</Filter>
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;restaurant.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
     <Rule>
@@ -4633,7 +4677,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_primary;</CssParameter>
+                <CssParameter name="stroke">&color_trunk;</CssParameter>
                 <CssParameter name="stroke-width">14.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -5843,7 +5887,7 @@
                 <CssParameter name="stroke-width">3.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-opacity">0.7</CssParameter>
             </LineSymbolizer>
@@ -5861,7 +5905,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -5882,7 +5926,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -5902,7 +5946,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -5923,7 +5967,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -5944,7 +5988,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -6083,7 +6127,7 @@
                 <CssParameter name="stroke-opacity">0.4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
             </LineSymbolizer>
@@ -6099,7 +6143,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6118,7 +6162,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6137,7 +6181,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6156,7 +6200,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6175,7 +6219,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -6307,7 +6351,7 @@
                 <CssParameter name="stroke-width">3.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
             </LineSymbolizer>
@@ -6327,7 +6371,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6350,7 +6394,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6372,7 +6416,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6395,7 +6439,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6418,7 +6462,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track;</CssParameter>
                 <CssParameter name="stroke-width">1.8</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -6815,7 +6859,7 @@
             &maxscale_zoom17;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_road_background;</CssParameter>
-                <CssParameter name="stroke-width">16</CssParameter>
+                <CssParameter name="stroke-width">15</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -7610,6 +7654,20 @@
           or railway is not null
        order by z_order
       ) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="cycleway-fill" srs="&srs900913;">
+<StyleName>cycleway-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,bicycle,foot,construction,aeroway,service,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       from planet_osm_line
+       where highway is not null
+       order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>

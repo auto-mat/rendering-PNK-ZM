@@ -21,7 +21,7 @@ def updateFromFile(filename):
     except OSError, msg:
         raise UpdateError('osm2pgsql is not present')
     str("asdf")
-    ret = os.system('./osm2pgsql -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/default.style -C 2000')
+    ret = os.system('./osm2pgsql -r pbf -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/default.style -C 2000')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
@@ -78,8 +78,16 @@ if __name__ == "__main__":
 
         connection.close()
 
-        filename1 = 'czech_republic.osm.bz2'
-        url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.bz2'
+        #filename1 = 'czech_republic.osm.bz2'
+        #url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.bz2'
+        filename1 = 'czech_republic.osm.pbf'
+        url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.pbf'
+        #filename1 = 'austria.osm.pbf'
+        #url1 = 'http://download.geofabrik.de/osm/europe/austria.osm.pbf'
+        #filename1 = 'baden-wuerttemberg.osm.pbf'
+        #url1 = 'http://download.geofabrik.de/osm/europe/germany/baden-wuerttemberg.osm.pbf'
+        #filename1 = 'switzerland.osm.pbf'
+        #url1 = 'http://download.geofabrik.de/osm/europe/switzerland.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
         url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
 
@@ -93,9 +101,9 @@ if __name__ == "__main__":
         if download == 'false':
            updateFromFile(filename1)
         else:
-           if (os.system('wget -t 3 ' + url1)==0):
+           if (os.system('wget -t 3 ' + url1 + ' -O ' + filename1)==0):
                updateFromFile(filename1)
-           elif (os.system('wget -t 3 ' + url2)==0):
+           elif (os.system('wget -t 3 ' + url2 + ' -O ' + filename2)==0):
                updateFromFile(filename2)
            else:
                raise UpdateError('An error occured while downloading from given URLs ')
