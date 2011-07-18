@@ -313,115 +313,6 @@
   </Rule>
 </Style>
 
-<Style name="cycleway">
-  <Rule>
-    &maxscale_zoom8;
-    &minscale_zoom9;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_ncn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-
-  <Rule>
-    &maxscale_zoom10;
-    &minscale_zoom11;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_ncn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-
-  <Rule>
-    &maxscale_zoom12;
-    &minscale_zoom12;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_ncn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">8</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-
-  <Rule>
-    <Filter>([ncn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_ncn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">12</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([rcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_rcn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">10</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([lcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_lcn;</CssParameter>
-      <CssParameter name="stroke-opacity">0.3</CssParameter>
-      <CssParameter name="stroke-width">8</CssParameter>
-      <CssParameter name="stroke-linejoin">round</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-
-  <!-- proposed -->
-  <Rule>
-    <Filter>([ncn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-        <CssParameter name="stroke">&color_ncn;</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 20</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([rcn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-        <CssParameter name="stroke">&color_rcn;</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 20</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([lcn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <LineSymbolizer>
-        <CssParameter name="stroke">&color_lcn;</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-        <CssParameter name="stroke-dasharray">1, 20</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-</Style>
 <Style name="cycleway-text">
   <Rule>
     <Filter>([ncn]!='' and [state]!='')</Filter>
@@ -475,97 +366,128 @@
   </Rule>
 </Style>
 
-<!--
 <Style name="cycleway">
   <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
     &maxscale_zoom8;
     &minscale_zoom8;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.6</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">1</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
     &maxscale_zoom9;
     &minscale_zoom9;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.6</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">1.5</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
     &maxscale_zoom10;
     &minscale_zoom10;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.6</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
     &maxscale_zoom11;
     &minscale_zoom11;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.6</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
+<!--
+      <CssParameter name="stroke-offset">2</CssParameter>
+-->
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
+    &maxscale_zoom12;
+    &minscale_zoom13;
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">3</CssParameter>
+<!--
+      <CssParameter name="stroke-offset">3</CssParameter>
+-->
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklostezka">
+    <Filter>(not [state]!='')</Filter>
+    &maxscale_zoom14;
+    &minscale_zoom14;
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">3</CssParameter>
       <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklostezka">
-    &maxscale_zoom12;
-    &minscale_zoom13;
+    <Filter>(not [state]!='')</Filter>
+    &maxscale_zoom15;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.8</CssParameter>
-      <CssParameter name="stroke-width">3</CssParameter>
-      <CssParameter name="stroke-offset">3</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
   </Rule>
+
+<!-- proposed -->
   <Rule title="cyklostezka">
+    <Filter>([state]!='')</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.8</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">3</CssParameter>
-      <CssParameter name="stroke-offset">4.5</CssParameter>
+      <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 20</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklostezka">
+    <Filter>([state]!='')</Filter>
     &maxscale_zoom15;
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">0.8</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-offset">6</CssParameter>
+      <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">5, 5</CssParameter>
     </LineSymbolizer>
   </Rule>
 </Style>
-<Style name="cycleway-text">
-  <Rule>
-    &maxscale_zoom14;
-    &minscale_zoom18;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="275" min_distance="28"></TextSymbolizer>
-  </Rule>
-</Style>
--->
 
 <!-- Styles for MTB tracks -->
 <Style name="mtb_basic">

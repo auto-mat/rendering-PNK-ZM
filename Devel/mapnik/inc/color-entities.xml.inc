@@ -109,5 +109,4 @@
 <!ENTITY color_water_fill_tunnel 'rgb(255,255,255)'>
 <!ENTITY color_water_text 'rgb(80,109,177)'>
 
-
-
+<!ENTITY opacity_cycleway '0.6'>
