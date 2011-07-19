@@ -112,3 +112,8 @@
 <!ENTITY color_water_text 'rgb(80,109,177)'>
 
 <!ENTITY opacity_cycleway '0.6'>
+
+<!ENTITY width_track_fill '2'>
+<!ENTITY width_track_casing '3'>
+<!ENTITY width_track_fill_lozoom '0.6'>
+<!ENTITY width_track_casing_lozoom '1'>
