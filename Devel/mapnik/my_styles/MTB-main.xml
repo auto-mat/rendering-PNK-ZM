@@ -572,7 +572,7 @@
     <StyleName>cycleway</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, lcn_ref, rcn_ref, ncn_ref, lcn, rcn, ncn, osm_id, route, way, highway, ref
+        (select bicycle, lcn_ref, rcn_ref, ncn_ref, lcn, rcn, ncn, osm_id, route, way, highway, ref, state
         from planet_osm_line
         where ((lcn_ref is not null) or (rcn_ref is not null) or (ncn_ref is not null) or (lcn is not null) or (rcn is not null) or (ncn is not null))) as cycleway
         </Parameter>
