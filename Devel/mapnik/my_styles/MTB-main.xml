@@ -574,7 +574,7 @@
         <Parameter name="table">
         (select bicycle, lcn_ref, lwn_ref, rcn_ref, rwn_ref, ncn_ref, nwn_ref, lcn, lwn, rcn, rwn, ncn, nwn, osm_id, route, way, highway, ref, state
         from planet_osm_line
-        where ((highway='cycleway') or (lcn_ref is not null) or (lwn_ref is not null) or (rcn_ref is not null) or (rwn_ref is not null) or (ncn_ref is not null) or (nwn_ref is not null) or (lcn is not null) or (lwn is not null) or (rcn is not null) or (rwn is not null) or (ncn is not null) or (nwn is not null))) as cycleway
+        where ((lcn_ref is not null) or (lwn_ref is not null) or (rcn_ref is not null) or (rwn_ref is not null) or (ncn_ref is not null) or (nwn_ref is not null) or (lcn is not null) or (lwn is not null) or (rcn is not null) or (rwn is not null) or (ncn is not null) or (nwn is not null))) as cycleway
         </Parameter>
         &datasource-settings;
     </Datasource>
