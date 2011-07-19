@@ -84,7 +84,7 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
@@ -102,13 +102,13 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom18;
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='tertiary')</Filter>
@@ -176,27 +176,27 @@
     <Rule>
             <Filter>(((([amenity]='pub') or ([amenity]='restaurant')) or ([amenity]='cafe')) or ([amenity]='fast_food'))</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='bar')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>((([amenity]='cinema') or ([amenity]='library')) or ([amenity]='theatre'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_culture;" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_parking;" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_police;" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='fire_station')</Filter>
@@ -261,47 +261,47 @@
     <Rule>
             <Filter>(([tourism]='hotel') or ([tourism]='hostel'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_accomodation;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='embassy')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_embasy;" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='guest_house')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,102,255)" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="&color_accomodation;" dy="13" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([amenity]='fuel') or ([amenity]='bus_station'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_non_bicycle_amenity;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            &maxscale_zoom14;
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_camp_site;" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='caravan_site')</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_caravan_site;" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='museum')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_culture;" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='prison')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_prison;" dy="16" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='attraction')</Filter>
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(102,0,51)" halo_radius="2" wrap_width="10"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_attraction;" halo_radius="2" wrap_width="10"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='university')</Filter>
@@ -346,7 +346,7 @@
     <Rule>
             <Filter>([amenity]='pharmacy')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(218,0,146)" dy="13" vertical_alignment="bottom" halo_radius="1" wrap_width="12"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="&color_pharmacy;" dy="13" vertical_alignment="bottom" halo_radius="1" wrap_width="12"></TextSymbolizer>
     </Rule>
 <!--    <Rule>
             <Filter>([highway]='motorway_junction')</Filter>
@@ -381,7 +381,7 @@
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(172,57,172)" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule title="!zřícenina">
             <Filter>([historic]='ruins')</Filter>
@@ -404,32 +404,32 @@
     <Rule>
             <Filter>(((([amenity]='pub') or ([amenity]='restaurant')) or ([amenity]='cafe')) or ([amenity]='fast_food'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="14" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='bar')</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_food;" dy="15" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>((([amenity]='cinema') or ([amenity]='library')) or ([amenity]='theatre'))</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="rgb(115,74,8)" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="&color_culture;" dy="18" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,102,255)" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_parking;" dy="14" vertical_alignment="bottom" halo_radius="1" wrap_width="34"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_amenity;" dy="16" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='fire_station')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(115,74,8)" dy="20" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_fire_station;" dy="20" vertical_alignment="bottom" halo_radius="1" wrap_width="30"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='place_of_worship')</Filter>
@@ -463,13 +463,13 @@
     </Rule>
     <Rule>
             <Filter>([tourism]='camp_site')</Filter>
-            &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            &maxscale_zoom14;
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_camp_site;" dy="15" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([tourism]='caravan_site')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,102,255)" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_caravan_site;" dy="19" vertical_alignment="bottom" halo_radius="1" wrap_width="70"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='motorway_junction')</Filter>
@@ -503,7 +503,7 @@
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(172,57,172)" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule title="!zřícenina">
             <Filter>([historic]='ruins')</Filter>

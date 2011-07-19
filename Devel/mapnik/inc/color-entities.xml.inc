@@ -26,7 +26,11 @@
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle_track '#bb8a4b'>
+<!ENTITY color_bicycle_track_fill "#bb8a4b">
+<!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
+<!ENTITY color_bicycle_track_tunnel "rgb(128,128,128)">
+<!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
+
 <!ENTITY color_bicycle '#ff9207'>
 <!ENTITY color_bicycle_footway '#d68d30'>
 
@@ -42,14 +46,12 @@
 <!ENTITY color_tertiary '#ffeac3'>
 <!ENTITY color_secondary '#e9d2a7'>
 <!ENTITY color_primary '#cec4ae'>
-<!ENTITY color_trunk '#8e8e8e'>
 <!ENTITY color_motorway '#8e8e8e'>
 
 <!ENTITY color_residential_tunnel '#ffffff'>
 <!ENTITY color_tertiary_tunnel '#fdffa5'>
 <!ENTITY color_secondary_tunnel '#e5e9a7'>
 <!ENTITY color_primary_tunnel '#ccceae'>
-<!ENTITY color_trunk_tunnel '#a9a9a9'>
 <!ENTITY color_motorway_tunnel '#a9a9a9'>
 
 <!ENTITY color_road_background '#999999'>

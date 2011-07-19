@@ -523,7 +523,7 @@
 <StyleName>mwaybridge_layer5_fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,aeroway,railway,layer,bicycle,foot,bridge
+      (select way,highway,aeroway,railway,layer,bicycle,foot,bridge,tunnel
        from planet_osm_line
        where (highway is not null
               or aeroway in ('runway','taxiway')
