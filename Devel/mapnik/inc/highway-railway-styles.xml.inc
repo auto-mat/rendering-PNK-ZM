@@ -34,25 +34,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 22</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 9, 23</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 2, 24</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 9, 43</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 1, 25</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
+                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="jednosměrná ulice">
@@ -61,25 +61,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 22</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 13, 9, 22</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 14, 2, 28</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 13, 9, 42</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 15, 1, 28</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
+                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -498,7 +498,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
                 <CssParameter name="stroke-width">16</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1448,7 +1448,7 @@
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(221,221,221)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">9.4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1459,7 +1459,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(221,221,221)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">13</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>

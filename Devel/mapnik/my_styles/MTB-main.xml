@@ -572,9 +572,34 @@
     <StyleName>cycleway</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, lcn_ref, rcn_ref, ncn_ref, lcn, rcn, ncn, osm_id, route, way, highway, ref, state
-        from planet_osm_line
-        where ((lcn_ref is not null) or (rcn_ref is not null) or (ncn_ref is not null) or (lcn is not null) or (rcn is not null) or (ncn is not null))) as cycleway
+        (select bicycle, osm_id, route, state, way,
+        case 
+          when cycleway in ('lane', 'opposite_lane') then 'low'::text 
+          when 'cycleway:left' in ('lane', 'opposite_lane') then 'low'::text 
+          when 'cycleway:right' in ('lane', 'opposite_lane') then 'low'::text 
+          when highway in ('primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link') then 'heavy'::text 
+          when highway in ('tertiary', 'unclassified', 'residential', 'road', 'tertiary_link') then 'medium'::text
+          else 'low' end as traffic,
+
+        case  
+          when smoothness in ('excellent', 'good', 'intermediate') then 'good'::text 
+          when smoothness in ('intermediate') then 'unpaved'::text 
+          when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
+
+          when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'concrete:plates', 'cobblestone:flattened') then 'good'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
+
+          when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
+          when highway in ('path', 'bridleway') then 'bad'::text 
+
+          when tracktype in ('grade1') then 'good'::text 
+          when tracktype in ('grade2', 'grade3') then 'unpaved'::text 
+          when tracktype in ('grade4', 'grade5') then 'bad'::text 
+
+          else 'bad' end as surface_type
+        from planet_osm_cycleway_rels
+        where (route='bicycle')) as cycleroute
         </Parameter>
         &datasource-settings;
     </Datasource>

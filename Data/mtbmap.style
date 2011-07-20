@@ -114,6 +114,7 @@ way       mtb:scale:uphill text     linear
 way       incline          text     linear
 
 way       surface      text     linear
+way       smoothness      text     linear
 
 way       state            text     linear
 node,way  cycleway         text     linear

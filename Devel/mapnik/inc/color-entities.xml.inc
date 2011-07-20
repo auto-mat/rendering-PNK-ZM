@@ -7,8 +7,10 @@
 <!ENTITY color_lcn_text '#6e6eff'>
 <!ENTITY color_cycleway_background_text '#000000'>
 <!ENTITY color_cycleway_background_text_proposed '#666666'>
-<!ENTITY color_cycleway 'rgb(255,17,255)'>
-<!ENTITY color_mtb_track 'rgb(113,0,104)'>
+<!ENTITY color_cycleway '#800080'>
+<!ENTITY color_cycleway_traffic '#cc00de'>
+<!ENTITY color_cycleway_heavy_traffic '#ff1d92'>
+<!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
 <!-- hiking tracks -->
 <!ENTITY color_kct_yellow 'rgb(248,238,0)'>
@@ -26,19 +28,19 @@
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle_track_fill "#bb8a4b">
+<!ENTITY color_bicycle_track_fill "&color_cycleway;">
 <!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
-<!ENTITY color_bicycle_track_tunnel "rgb(128,128,128)">
+<!ENTITY color_bicycle_track_tunnel "&color_cycleway;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle '#ff9207'>
-<!ENTITY color_bicycle_footway '#d68d30'>
+<!ENTITY color_bicycle '&color_cycleway;'>
+<!ENTITY color_bicycle_footway '&color_cycleway;'>
 
-<!ENTITY color_bicycle_tunnel "rgb(75,75,128)">
-<!ENTITY color_bicycle_footway_tunnel "rgb(108,75,129)">
+<!ENTITY color_bicycle_tunnel "&color_cycleway;">
+<!ENTITY color_bicycle_footway_tunnel "&color_cycleway;">
 
 <!-- highway-roads -->
-<!ENTITY color_oneway_arrow 'rgb(108,112,213)'>
+<!ENTITY color_oneway_arrow '#888cdd'>
 <!ENTITY color_residential_casing '#ffffff'>
 <!ENTITY color_residential_fill '#ffffff'>
 
@@ -76,7 +78,7 @@
 <!ENTITY color_bicycle_shop '&color_bicycle_amenity;'>
 <!ENTITY color_police '&color_bicycle_amenity;'>
 <!ENTITY color_camp_site 'rgb(0,102,255)'>
-<!ENTITY color_bicycle_directions '&color_bicycle_amenity;'>
+<!ENTITY color_bicycle_directions '#ec1dff'>
 
 <!ENTITY color_cycleway_directions 'black'>
 
@@ -111,7 +113,7 @@
 <!ENTITY color_water_fill_tunnel 'rgb(255,255,255)'>
 <!ENTITY color_water_text 'rgb(80,109,177)'>
 
-<!ENTITY opacity_cycleway '0.6'>
+<!ENTITY opacity_cycleway '1'>
 
 <!ENTITY width_track_fill '2'>
 <!ENTITY width_track_casing '3'>

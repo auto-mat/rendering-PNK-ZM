@@ -6,25 +6,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 10, 32</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 3, 9, 32</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 10, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 4, 2, 38</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 3, 9, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 5, 1, 38</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 4, 2, 58</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
+                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 5, 1, 58</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule>
@@ -33,25 +33,25 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 10, 32</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 9, 33</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 10, 52</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 8, 2, 34</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 9, 53</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 8, 1, 35</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 8, 2, 54</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
+                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 8, 1, 55</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -367,124 +367,81 @@
 </Style>
 
 <Style name="cycleway">
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom8;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">1</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom9;
-    &minscale_zoom9;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">1.5</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom10;
-    &minscale_zoom10;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom11;
-    &minscale_zoom11;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-<!--
-      <CssParameter name="stroke-offset">2</CssParameter>
--->
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom12;
-    &minscale_zoom13;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">3</CssParameter>
-<!--
-      <CssParameter name="stroke-offset">3</CssParameter>
--->
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom14;
-    &minscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">3</CssParameter>
-      <CssParameter name="stroke-offset">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>(not [state]!='')</Filter>
-    &maxscale_zoom15;
+  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+    <Filter>([traffic]='low' and [surface_type]='good')</Filter>
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway;</CssParameter>
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+    <Filter>([traffic]='low' and [surface_type]='unpaved')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+    <Filter>([traffic]='low' and [surface_type]='bad')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">3, 3</CssParameter>
     </LineSymbolizer>
   </Rule>
 
-<!-- proposed -->
-  <Rule title="cyklostezka">
-    <Filter>([state]!='')</Filter>
-    &maxscale_zoom14;
-    &minscale_zoom14;
+  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+    <Filter>([traffic]='medium' and [surface_type]='good')</Filter>
     <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">3</CssParameter>
-      <CssParameter name="stroke-offset">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 20</CssParameter>
-    </LineSymbolizer>
-  </Rule>
-  <Rule title="cyklostezka">
-    <Filter>([state]!='')</Filter>
-    &maxscale_zoom15;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-offset">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">5, 5</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+    <Filter>([traffic]='medium' and [surface_type]='unpaved')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+    <Filter>([traffic]='medium' and [surface_type]='bad')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">3, 3</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
+  <Rule title="cyklotrasa s hustým provozem">
+    <Filter>([traffic]='heavy')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 7</CssParameter>
     </LineSymbolizer>
   </Rule>
 </Style>
