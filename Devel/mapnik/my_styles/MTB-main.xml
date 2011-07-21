@@ -564,6 +564,70 @@
     </Datasource>
 </Layer>
 
+<!-- zpravidla pomocne cesty v arealech, nepristupne -->
+<Layer name="access" srs="&srs900913;">
+<StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,bicycle from planet_osm_line where access is not null) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- tramvajove koleje -->
+<Layer name="trams" srs="&srs900913;">
+<StyleName>trams</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- zastavky tramvaji, mene vyznamna nadrazi,  -->
+<Layer name="amenity-stations" srs="&srs900913;">
+<StyleName>stations</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,name,railway,aerialway,disused
+      from planet_osm_point
+      where railway in ('station','halt','tram_stop')
+         or aerialway='station'
+      ) as stations
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- vetsinou hlavni zeleznicni nadrazi -->
+<Layer name="amenity-stations-poly" srs="&srs900913;">
+<StyleName>stations</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,name,railway,aerialway,disused
+      from planet_osm_polygon
+      where railway in ('station','halt','tram_stop')
+         or aerialway='station'
+      ) as stations
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- elektricke vedeni -->
+<Layer name="power" srs="&srs900913;">
+<StyleName>power</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_line where "power"='line') as power</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- stozary elektrickeho vedeni -->
+<Layer name="power_towers" srs="&srs900913;">
+<StyleName>power_towers</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_point where power='tower') as power_towers</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 
 
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
@@ -1030,70 +1094,6 @@
     </Datasource>
 </Layer>
 
-<!-- zpravidla pomocne cesty v arealech, nepristupne -->
-<Layer name="access" srs="&srs900913;">
-<StyleName>access</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,access,highway,bicycle from planet_osm_line where access is not null) as access
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- tramvajove koleje -->
-<Layer name="trams" srs="&srs900913;">
-<StyleName>trams</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- zastavky tramvaji, mene vyznamna nadrazi,  -->
-<Layer name="amenity-stations" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_point
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vetsinou hlavni zeleznicni nadrazi -->
-<Layer name="amenity-stations-poly" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_polygon
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- elektricke vedeni -->
-<Layer name="power" srs="&srs900913;">
-<StyleName>power</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from planet_osm_line where "power"='line') as power</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- stozary elektrickeho vedeni -->
-<Layer name="power_towers" srs="&srs900913;">
-<StyleName>power_towers</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from planet_osm_point where power='tower') as power_towers</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- smerove sipky jednosmerek -->
 <Layer name="directions" srs="&srs900913;">
 <StyleName>directions</StyleName>
