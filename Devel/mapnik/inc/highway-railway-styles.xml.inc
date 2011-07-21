@@ -84,7 +84,7 @@
     </Rule>
 </Style>
 <Style name="footbikecycle-tunnels">
-    <Rule>
+    <Rule title="!podchod">
             <Filter>([highway]='bridleway')</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
@@ -280,7 +280,7 @@
             <Filter>((([highway]='residential') or ([highway]='unclassified')) or ([highway]='service'))</Filter>
             &maxscale_zoom14;
             <PolygonSymbolizer>
-                <CssParameter name="fill">&color_residential;</CssParameter>
+                <CssParameter name="fill">&color_road;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
     <Rule title="!pěší zóna">
@@ -509,7 +509,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
                 <CssParameter name="stroke-width">16</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1032,7 +1032,7 @@
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1445,32 +1445,10 @@
     </Rule>
     <Rule title="ostatní silnice">
             <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom16;
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
-                <CssParameter name="stroke-width">9.4</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom18;
-            &maxscale_zoom17;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
-                <CssParameter name="stroke-width">13</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
             &minscale_zoom12;
             &maxscale_zoom9;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_lozoom;</CssParameter>
+                <CssParameter name="stroke">&color_road_lozoom;</CssParameter>
                 <CssParameter name="stroke-width">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1481,7 +1459,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1492,7 +1470,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1503,7 +1481,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1514,7 +1492,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">9.4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1525,7 +1503,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">13</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2895,7 +2873,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">7.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2906,7 +2884,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">9.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2917,7 +2895,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke">&color_road;</CssParameter>
                 <CssParameter name="stroke-width">14</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3557,7 +3535,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke">&color_road_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3568,7 +3546,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke">&color_road_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3601,7 +3579,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke">&color_road_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3612,7 +3590,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke">&color_road_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">9.4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3623,7 +3601,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke">&color_road_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">13</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>

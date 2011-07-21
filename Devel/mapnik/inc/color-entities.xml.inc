@@ -41,16 +41,14 @@
 
 <!-- highway-roads -->
 <!ENTITY color_oneway_arrow '#888cdd'>
-<!ENTITY color_residential_casing '#ffffff'>
-<!ENTITY color_residential_fill '#ffffff'>
 
-<!ENTITY color_residential '#ffffff'>
+<!ENTITY color_road '#ffffff'>
 <!ENTITY color_tertiary '#ffeac3'>
 <!ENTITY color_secondary '#e9d2a7'>
 <!ENTITY color_primary '#cec4ae'>
 <!ENTITY color_motorway '#8e8e8e'>
 
-<!ENTITY color_residential_tunnel '#ffffff'>
+<!ENTITY color_road_tunnel '#ffffff'>
 <!ENTITY color_tertiary_tunnel '#fdffa5'>
 <!ENTITY color_secondary_tunnel '#e5e9a7'>
 <!ENTITY color_primary_tunnel '#ccceae'>
@@ -62,7 +60,7 @@
 <!ENTITY color_primary_background '#a00000'>
 
 <!ENTITY color_lozoom '#606060'>
-<!ENTITY color_residential_lozoom '&color_lozoom;'>
+<!ENTITY color_road_lozoom '&color_lozoom;'>
 <!ENTITY color_tertiary_lozoom '&color_lozoom;'>
 <!ENTITY color_secondary_lozoom '&color_lozoom;'>
 <!ENTITY color_primary_lozoom '&color_lozoom;'>
