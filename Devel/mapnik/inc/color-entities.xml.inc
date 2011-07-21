@@ -76,9 +76,7 @@
 <!ENTITY color_bicycle_shop '&color_bicycle_amenity;'>
 <!ENTITY color_police '&color_bicycle_amenity;'>
 <!ENTITY color_camp_site 'rgb(0,102,255)'>
-<!ENTITY color_bicycle_directions '#ec1dff'>
-
-<!ENTITY color_cycleway_directions 'black'>
+<!ENTITY color_bicycle_directions '#a200ff'>
 
 <!ENTITY color_food '&color_non_bicycle_amenity;'>
 <!ENTITY color_culture '&color_non_bicycle_amenity;'>
@@ -121,4 +119,3 @@
 <!ENTITY cyclelane_offset_highest_zoom '8'>
 <!ENTITY cyclelane_offset_high_zoom '6'>
 <!ENTITY cyclelane_offset_medium_zoom '4'>
-<!ENTITY cyclelane_offset_low_zoom '0'>
