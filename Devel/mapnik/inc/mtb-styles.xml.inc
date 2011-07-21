@@ -396,7 +396,7 @@
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">3, 3</CssParameter>
+      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
 
@@ -429,7 +429,7 @@
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">3, 3</CssParameter>
+      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
 

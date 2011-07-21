@@ -577,8 +577,8 @@
           when cycleway in ('lane', 'opposite_lane') then 'low'::text 
           when 'cycleway:left' in ('lane', 'opposite_lane') then 'low'::text 
           when 'cycleway:right' in ('lane', 'opposite_lane') then 'low'::text 
-          when highway in ('primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link') then 'heavy'::text 
-          when highway in ('tertiary', 'unclassified', 'residential', 'road', 'tertiary_link') then 'medium'::text
+          when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
+          when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
           else 'low' end as traffic,
 
         case  

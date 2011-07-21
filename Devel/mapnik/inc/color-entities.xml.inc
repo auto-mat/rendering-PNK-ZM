@@ -7,8 +7,8 @@
 <!ENTITY color_lcn_text '#6e6eff'>
 <!ENTITY color_cycleway_background_text '#000000'>
 <!ENTITY color_cycleway_background_text_proposed '#666666'>
-<!ENTITY color_cycleway '#800080'>
-<!ENTITY color_cycleway_traffic '#cc00de'>
+<!ENTITY color_cycleway '#760076'>
+<!ENTITY color_cycleway_traffic '#ff00ff'>
 <!ENTITY color_cycleway_heavy_traffic '#ff1d92'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
