@@ -1,7 +1,7 @@
 <!-- -->
 <Style name="access">
     <Rule title="soukromá komunikace">
-            <Filter>(([access]='private') or ([access]='no'))</Filter>
+            <Filter>((([access]='private') or ([access]='no')) and not ([bicycle]='yes'))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(239,169,169)</CssParameter>
@@ -3124,7 +3124,8 @@
                 <CssParameter name="stroke-dasharray">1, 8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(68,68,68)</CssParameter>
+                <CssParameter name="stroke">&color_tram;</CssParameter>
+                <CssParameter name="stroke-width">0.5</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="koleje tramvají">
@@ -3136,8 +3137,8 @@
                 <CssParameter name="stroke-dasharray">1, 8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(68,68,68)</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke">&color_tram;</CssParameter>
+                <CssParameter name="stroke-width">1</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>

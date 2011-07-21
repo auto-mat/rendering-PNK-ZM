@@ -10,7 +10,6 @@
 &height-styles;
 &admin-styles;
 &mtb-styles;
-&kct-styles;
 &water-styles;
 &placenames-styles;
 &shapefiles-styles;
@@ -1036,7 +1035,7 @@
 <StyleName>access</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,access,highway from planet_osm_line where access is not null) as access
+      (select way,access,highway,bicycle from planet_osm_line where access is not null) as access
       </Parameter>
       &datasource-settings;
     </Datasource>
