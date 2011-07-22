@@ -66,5 +66,5 @@
 <!ENTITY landuse-styles SYSTEM "landuse-styles.xml.inc">
 
 <!ENTITY symbols-path "../symbols/">
-<!ENTITY shapefiles "/home/xtesar7/Devel/mtbmap-czechrep/Data/shapefile">
-<!ENTITY hgtdata "/home/xtesar7/Devel/mtbmap-czechrep/Data/shadingdata">
+<!ENTITY shapefiles "../../../Data/shapefile">
+<!ENTITY hgtdata "../../../Data/shadingdata">
