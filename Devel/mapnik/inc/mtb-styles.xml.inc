@@ -56,6 +56,19 @@
     </Rule>
 </Style>
 
+<Style name="cycleway-directions">
+    <Rule>
+            <Filter>([role]='backward')</Filter>
+            &maxscale_zoom14;
+            <LinePatternSymbolizer width="100" type="png" file="../symbols/role_backward.png"/>
+    </Rule>
+    <Rule>
+            <Filter>([role]='forward')</Filter>
+            &maxscale_zoom14;
+            <LinePatternSymbolizer width="100" type="png" file="../symbols/role_forward.png"/>
+    </Rule>
+</Style>
+
 <Style name="surface">
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>

@@ -629,6 +629,18 @@
     </Datasource>
 </Layer>
 
+<!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
+<Layer name="cycleway-directions" srs="&srs900913;">
+    <StyleName>cycleway-directions</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select bicycle, osm_id, route, state, way, role
+        from planet_osm_cycleway_rels
+        where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
 
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
 <Layer name="cycleways" srs="&srs900913;">
