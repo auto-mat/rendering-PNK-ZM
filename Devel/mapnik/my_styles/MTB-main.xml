@@ -647,7 +647,7 @@
           else 'low' end as traffic,
 
         case  
-          when smoothness in ('excellent', 'good', 'intermediate') then 'good'::text 
+          when smoothness in ('excellent', 'good') then 'good'::text
           when smoothness in ('intermediate') then 'unpaved'::text 
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
 
