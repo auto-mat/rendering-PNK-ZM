@@ -10,7 +10,7 @@
 from psycopg2 import *
 
 # Create connection to DB server.
-connection = connect("dbname='gisczech' user='petr' password=''");
+connection = connect("dbname='gisczech' user='mtbmap' password=''");
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 

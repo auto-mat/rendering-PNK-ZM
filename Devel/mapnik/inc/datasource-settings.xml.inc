@@ -8,7 +8,7 @@ Note: feel free to leave password, host, port, or use blank
 <Parameter name="password"></Parameter>
 <Parameter name="host">'localhost'</Parameter>
 <Parameter name="port">5432</Parameter>
-<Parameter name="user">petr</Parameter>
+<Parameter name="user">mtbmap</Parameter>
 <Parameter name="dbname">gisczech</Parameter>
 <!-- this should be 'false' if you are manually providing the 'extent' -->
 <Parameter name="estimate_extent">false</Parameter>

@@ -43,8 +43,8 @@ psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/_int.sql
 
 # spatial database is now created, but must be prepared OSM data input
 
-sudo apt-get install autoconf libbz2-dev libxml2-dev libgeos-dev libproj-dev
-sudo apt-get install osm2pgsql
+sudo apt-get install libxml2-dev libgeos-dev libpq-dev libbz2-dev proj autoconf automake libtool make g++ libprotobuf-c0-dev
+#sudo apt-get install osm2pgsql
 cd $MTBMAP_DIRECTORY/sw
 svn co http://svn.openstreetmap.org/applications/utils/export/osm2pgsql
 cd osm2pgsql

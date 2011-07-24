@@ -20,12 +20,12 @@ def updateFromFile(filename):
         os.chdir(homepath + '/sw/osm2pgsql')
     except OSError, msg:
         raise UpdateError('osm2pgsql is not present')
-    str("asdf")
     ret = os.system('./osm2pgsql -r pbf -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
         os.system(homepath + '/Devel/relations2lines.py')
+        os.system(homepath + '/Devel/cycle_relations2lines.py')
     except OSError, msg:
         raise UpdateError('relations2lines.py failed, osm data uploaded')
     refreshDate('index.html', str(date))
@@ -97,16 +97,12 @@ if __name__ == "__main__":
             raise UpdateError(homepath + '/Data directory is not present')
 
     
-        download = os.getenv('MTBMAP_DOWNLOAD')
-        if download == 'false':
-           updateFromFile(filename1)
+        if (os.system('wget -t 3 ' + url1 + ' -O ' + filename1)==0):
+            updateFromFile(filename1)
+        elif (os.system('wget -t 3 ' + url2 + ' -O ' + filename2)==0):
+            updateFromFile(filename2)
         else:
-           if (os.system('wget -t 3 ' + url1 + ' -O ' + filename1)==0):
-               updateFromFile(filename1)
-           elif (os.system('wget -t 3 ' + url2 + ' -O ' + filename2)==0):
-               updateFromFile(filename2)
-           else:
-               raise UpdateError('An error occured while downloading from given URLs ')
+            raise UpdateError('An error occured while downloading from given URLs ')
 
     except UpdateError, ue:
         print ue.msg
