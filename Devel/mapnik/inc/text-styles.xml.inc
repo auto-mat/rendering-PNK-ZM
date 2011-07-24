@@ -224,16 +224,6 @@
             <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="rgb(116,64,44)" dy="6" vertical_alignment="bottom" allow_overlap="true" halo_radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
-            <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
-            &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="oblique-fonts" size="10" fill="#000000" dy="-16" vertical_alignment="top" allow_overlap="true" halo_radius="1" wrap_width="30"/>
-    </Rule>
-    <Rule>
-            <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
-            &maxscale_zoom16;
-            <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="10" fill="#000000" dy="5" vertical_alignment="bottom" allow_overlap="true" halo_radius="1" wrap_width="30"/>
-    </Rule>
-    <Rule>
             <Filter>((([leisure]&lt;&gt;'') or ([landuse]&lt;&gt;'')) and ([point]='yes'))</Filter>
             &maxscale_zoom15;
             <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" halo_radius="2" wrap_width="10"></TextSymbolizer>

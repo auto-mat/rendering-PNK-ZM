@@ -1398,3 +1398,24 @@
   </Rule>
 </Style>
 
+
+<Style name="symbols">
+    <Rule title="rozcestí tras KČT">
+      &maxscale_zoom14;
+      <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
+      <PointSymbolizer file= "&symbols-path;signpost2.png" type="png" width="12" height="24"/>
+    </Rule>
+</Style>
+
+<Style name="text">
+    <Rule>
+            <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
+            &maxscale_zoom14;
+            <TextSymbolizer name="name" fontset_name="oblique-fonts" size="10" fill="#000000" dy="-16" vertical_alignment="top" allow_overlap="true" halo_radius="1" wrap_width="30"/>
+    </Rule>
+    <Rule>
+            <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
+            &maxscale_zoom16;
+            <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="10" fill="#000000" dy="5" vertical_alignment="bottom" allow_overlap="true" halo_radius="1" wrap_width="30"/>
+    </Rule>
+</Style>

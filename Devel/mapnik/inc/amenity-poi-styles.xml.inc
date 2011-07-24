@@ -451,11 +451,6 @@
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;peak.png" type="png" width="8" height="8"></PointSymbolizer>
     </Rule>
-    <Rule title="rozcestí tras KČT">
-      &maxscale_zoom14;
-      <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
-      <PointSymbolizer file= "&symbols-path;signpost2.png" type="png" width="12" height="24"/>
-    </Rule>
     <Rule title="pramen">
             <Filter>([natural]='spring')</Filter>
             &maxscale_zoom14;

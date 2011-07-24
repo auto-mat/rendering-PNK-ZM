@@ -32,7 +32,7 @@ def updateFromFile(filename):
     refreshDate('en.html', str(date))
     # restart renderd:
     try:
-        os.chdir('../../mod_tile')
+        os.chdir('../../sw/mod_tile')
         os.system('kill $(pidof renderd)')
         os.system('./renderd')
     except OSError, msg:

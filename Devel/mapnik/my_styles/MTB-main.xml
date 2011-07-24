@@ -10,6 +10,9 @@
 &height-styles;
 &admin-styles;
 &mtb-styles;
+<!--
+&kct-styles;
+-->
 &water-styles;
 &placenames-styles;
 &shapefiles-styles;
@@ -74,7 +77,7 @@
 <StyleName>shading</StyleName>
     <Datasource>
       <Parameter name="type">gdal</Parameter>
-      <Parameter name="file">&hgtdata;/hillshade.tif</Parameter>
+      <Parameter name="file">&hgtdata;/hillshade30.tif</Parameter>
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
@@ -630,19 +633,6 @@
 </Layer>
 
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
-<Layer name="cycleway-directions" srs="&srs900913;">
-    <StyleName>cycleway-directions</StyleName>
-    <Datasource>
-        <Parameter name="table">
-        (select bicycle, osm_id, route, state, way, role
-        from planet_osm_cycleway_rels
-        where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
-        </Parameter>
-        &datasource-settings;
-    </Datasource>
-</Layer>
-
-<!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
 <Layer name="cycleways" srs="&srs900913;">
     <StyleName>cycleway</StyleName>
     <Datasource>
@@ -679,6 +669,20 @@
         &datasource-settings;
     </Datasource>
 </Layer>
+
+<!-- Směrové šipky na cyklotrasách -->
+<Layer name="cycleway-directions" srs="&srs900913;">
+    <StyleName>cycleway-directions</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select bicycle, osm_id, route, state, way, role
+        from planet_osm_cycleway_rels
+        where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
+
 <!-- MTB stezky dohromady s KCT znacenim, MTB je stranou -->
 <!-- <Layer name="mtboffset" srs="&srs900913;">
     <StyleName>mtb_offset</StyleName>
