@@ -9,10 +9,11 @@
 
 &height-styles;
 &admin-styles;
-&mtb-styles;
 <!--
+&mtb-styles;
 &kct-styles;
 -->
+&bicycle-styles;
 &water-styles;
 &placenames-styles;
 &shapefiles-styles;
