@@ -86,6 +86,15 @@
             </PolygonSymbolizer>
     </Rule>
 </Style>
+<Style name="water_areas_fill_island">
+    <Rule title="!ostrov">
+            <Filter>([natural]='land')</Filter>
+            &maxscale_zoom10;
+            <PolygonSymbolizer>
+                <CssParameter name="fill">&color_island;</CssParameter>
+            </PolygonSymbolizer>
+    </Rule>
+</Style>
 
 <!-- vrstva navic, ktera umoznila plynule napojeni rek a vodnich ploch i s okrajem -->
 <Style name="water_areas_fill">

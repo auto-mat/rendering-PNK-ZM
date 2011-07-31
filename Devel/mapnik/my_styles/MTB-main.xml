@@ -223,6 +223,7 @@
 
 <Layer name="water_areas_fill" srs="&srs900913;">
 <StyleName>water_areas_fill</StyleName>
+<StyleName>water_areas_fill_island</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,"natural",waterway,landuse,name
