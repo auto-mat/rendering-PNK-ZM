@@ -616,7 +616,7 @@
 
           else 'bad' end as surface_type
         from planet_osm_cycleway_rels
-        where (route='bicycle')) as cycleroute
+        ) as cycleroute
         </Parameter>
         &datasource-settings;
     </Datasource>

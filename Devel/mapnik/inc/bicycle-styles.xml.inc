@@ -102,7 +102,7 @@
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
     <LinePatternSymbolizer offset="-&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
   </Rule>
   <Rule>
@@ -113,14 +113,14 @@
   <Rule>
     <Filter>([cycleway:left]='share_busway' or ([cycleway]='share_busway' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
   </Rule>
 
   <Rule>
     &maxscale_zoom15;
     &minscale_zoom16;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
     <LinePatternSymbolizer offset="-&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
   </Rule>
   <Rule>
@@ -133,14 +133,14 @@
     <Filter>([cycleway:left]='share_busway' or ([cycleway]='share_busway' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
   </Rule>
 
   <Rule>
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
     <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
   </Rule>
   <Rule>
@@ -153,15 +153,15 @@
     <Filter>([cycleway:left]='share_busway' or ([cycleway]='share_busway' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite.png"/>
   </Rule>
 
   <!--   SHARED LANE -->
   <Rule>
     &maxscale_zoom17;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
-    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
+    <LinePatternSymbolizer offset="-&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
@@ -171,14 +171,14 @@
   <Rule>
     <Filter>([cycleway:left]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom17;
-    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
   </Rule>
 
   <Rule>
     &maxscale_zoom15;
     &minscale_zoom16;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
     <LinePatternSymbolizer offset="-&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
   </Rule>
   <Rule>
@@ -191,14 +191,14 @@
     <Filter>([cycleway:left]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
   </Rule>
 
   <Rule>
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
-    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
     <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
   </Rule>
   <Rule>
@@ -211,7 +211,7 @@
     <Filter>([cycleway:left]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared.png"/>
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared_opposite.png"/>
   </Rule>
 
   <!--   LANE -->
