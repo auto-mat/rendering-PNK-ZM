@@ -30,56 +30,64 @@
 <Style name="directions">
     <Rule title="jednosměrná ulice">
             <Filter>([oneway]='yes')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 12, 9, 43</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 9, 43</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="jednosměrná ulice">
             <Filter>([oneway]='-1')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 13, 9, 42</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 13, 9, 42</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -531,7 +539,7 @@
             &minscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -541,7 +549,7 @@
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
-                <CssParameter name="stroke-width">7</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -797,6 +805,7 @@
     </Rule>
 </Style>
 <Style name="minor-roads-fill">
+<!--
     <Rule title="silnice ve výstavbě">
             <Filter>(([highway]='construction') and not (([construction]&lt;&gt;'')))</Filter>
             &minscale_zoom12;
@@ -1053,6 +1062,7 @@
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
             </LineSymbolizer>
     </Rule>
+-->
     <Rule title="dálnice, rychlostní silnice">
             <Filter>((([highway]='motorway') or ([highway]='trunk')) and not (([tunnel]='yes')))</Filter>
             &minscale_zoom12;
@@ -1199,7 +1209,7 @@
             &minscale_zoom13;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 8, 1, 9, 1, 1</CssParameter>
@@ -1210,7 +1220,7 @@
             &minscale_zoom13;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1256,7 +1266,7 @@
             &minscale_zoom13;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1271,7 +1281,7 @@
             &minscale_zoom18;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">1,9,1,9</CssParameter>
@@ -1296,7 +1306,7 @@
             &minscale_zoom18;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1311,7 +1321,7 @@
             &minscale_zoom18;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1326,7 +1336,7 @@
             &minscale_zoom18;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1809,7 +1819,7 @@
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -1828,7 +1838,7 @@
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -3057,7 +3067,7 @@
             &minscale_zoom9;
             &maxscale_zoom8;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="elektrifikovaná železnice">
@@ -3065,7 +3075,7 @@
             &minscale_zoom11;
             &maxscale_zoom10;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">3.4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">1, 8</CssParameter>
@@ -3076,7 +3086,7 @@
             &minscale_zoom11;
             &maxscale_zoom10;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">1.2</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -3085,7 +3095,7 @@
             &minscale_zoom12;
             &maxscale_zoom10;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="">
@@ -3093,7 +3103,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(45,45,45)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -3122,10 +3132,12 @@
                 <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-dasharray">1, 8</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-width">0.5</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="koleje tramvají">
@@ -3135,10 +3147,12 @@
                 <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">1, 8</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-width">1</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>

@@ -68,7 +68,9 @@
 <!ENTITY color_pedestrian "rgb(255,212,212)">
 <!ENTITY color_pedestrian_bicycle "rgb(212,212,255)">
 
-<!ENTITY color_tram "rgb(68,68,68)">
+<!ENTITY color_railway "rgb(128,128,128)">
+<!ENTITY color_tram "black">
+<!ENTITY opacity_tram '0.5'>
 
 <!ENTITY color_non_bicycle_amenity '#6f6f6f'>
 <!ENTITY color_bicycle_amenity '#c800da'>
@@ -116,6 +118,6 @@
 <!ENTITY width_track_fill_lozoom '0.6'>
 <!ENTITY width_track_casing_lozoom '1'>
 
-<!ENTITY cyclelane_offset_highest_zoom '8'>
-<!ENTITY cyclelane_offset_high_zoom '6'>
-<!ENTITY cyclelane_offset_medium_zoom '4'>
+<!ENTITY cyclelane_offset_highest_zoom '9'>
+<!ENTITY cyclelane_offset_high_zoom '7'>
+<!ENTITY cyclelane_offset_medium_zoom '5'>

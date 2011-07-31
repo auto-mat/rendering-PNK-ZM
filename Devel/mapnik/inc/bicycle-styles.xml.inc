@@ -7,24 +7,28 @@
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 2, 10, 52</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 3, 9, 52</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 3, 9, 52</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 4, 2, 58</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 5, 1, 58</CssParameter>
+                <CssParameter name="stroke-offset">-4</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule>
@@ -34,24 +38,28 @@
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 2, 10, 52</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">bevel</CssParameter>
+                <CssParameter name="stroke-dasharray">0, 2, 9, 53</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 2, 9, 53</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 8, 2, 54</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_directions;</CssParameter>
-                <CssParameter name="stroke-width">9</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 8, 1, 55</CssParameter>
+                <CssParameter name="stroke-offset">4</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -60,12 +68,12 @@
     <Rule>
             <Filter>([role]='backward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer width="100" type="png" file="../symbols/role_backward.png"/>
+            <LinePatternSymbolizer offset="13" width="100" type="png" file="../symbols/role_backward.png"/>
     </Rule>
     <Rule>
             <Filter>([role]='forward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer width="100" type="png" file="../symbols/role_forward.png"/>
+            <LinePatternSymbolizer offset="-13" width="100" type="png" file="../symbols/role_forward.png"/>
     </Rule>
 </Style>
 
@@ -315,6 +323,17 @@
     <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
     <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28"></TextSymbolizer>
+  </Rule>
+</Style>
+
+<Style name="cycleway-tunnel">
+  <Rule title="tunel">
+    <Filter>([tunnel]='yes')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">white</CssParameter>
+      <CssParameter name="stroke-opacity">0.6</CssParameter>
+      <CssParameter name="stroke-width">2.5</CssParameter>
+    </LineSymbolizer>
   </Rule>
 </Style>
 

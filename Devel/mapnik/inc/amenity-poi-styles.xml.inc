@@ -143,6 +143,7 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shelter2.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="bankomat">
             <Filter>([amenity]='atm')</Filter>
             &maxscale_zoom17;
@@ -158,10 +159,11 @@
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;bar.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="půjčovna jízdních kol">
             <Filter>([amenity]='bicycle_rental')</Filter>
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" allow_overlap="true" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
     <Rule title="zastávka autobusů">
             <Filter>(([amenity]='bus_stop') or ([highway]='bus_stop'))</Filter>
@@ -184,6 +186,7 @@
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;traffic_light.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="kavárna">
             <Filter>([amenity]='cafe')</Filter>
             &maxscale_zoom15;
@@ -224,11 +227,13 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;guest_house.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="nemocnice">
             <Filter>([amenity]='hospital')</Filter>
             &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;hospital.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;hospital.p.16.png" allow_overlap="true" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="hostel">
             <Filter>([tourism]='hostel')</Filter>
             &maxscale_zoom14;
@@ -259,6 +264,7 @@
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;parking.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="lékárna">
             <Filter>([amenity]='pharmacy')</Filter>
             &maxscale_zoom16;
@@ -291,9 +297,10 @@
     </Rule>
     <Rule title="policejní stanice">
             <Filter>([amenity]='police')</Filter>
-            &maxscale_zoom17;
-            <PointSymbolizer file="&symbols-path;police.p.16.png" type="png" width="16" height="16"></PointSymbolizer>
+            &maxscale_zoom15;
+            <PointSymbolizer file="&symbols-path;police.p.16.png" allow_overlap="true" type="png" width="16" height="16"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="poštovní schránka">
             <Filter>([amenity]='post_box')</Filter>
             &maxscale_zoom17;
@@ -339,11 +346,13 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;toilets.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="pitná voda">
             <Filter>([amenity]='drinking_water')</Filter>
-            &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
+            &maxscale_zoom13;
+            <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" allow_overlap="true" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="věznice">
             <Filter>([amenity]='prison')</Filter>
             &maxscale_zoom16;
@@ -359,6 +368,7 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;tower_water.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
+-->
 </Style>
 <Style name="stations">
     <Rule title="nádraží">
@@ -510,7 +520,7 @@
     <Rule title="cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom13;
-            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow_overlap="true" type="png" width="20" height="12"></PointSymbolizer>
     </Rule>
     <Rule title="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
@@ -641,7 +651,7 @@
     <Rule title="!cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom13;
-            <PointSymbolizer file="&symbols-path;shop_bicycle.png" type="png" width="20" height="12"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow_overlap="true" type="png" width="20" height="12"></PointSymbolizer>
     </Rule>
     <Rule title="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
