@@ -84,7 +84,7 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
@@ -102,26 +102,27 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom18;
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='tertiary')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_tertiary;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='tertiary')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_tertiary;"></TextSymbolizer>
     </Rule>
+<!--
     <Rule>
             <Filter>(([highway]='construction'))</Filter>
             &minscale_zoom15;
@@ -134,23 +135,24 @@
             &maxscale_zoom16;
             <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo_radius="1"></TextSymbolizer>
     </Rule>
+-->
     <Rule>
             <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="300"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="300"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([highway]='unclassified') or ([highway]='residential'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="400"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo_radius="1" spacing="400" halo_fill="&color_residential;"></TextSymbolizer>
     </Rule>
 <!--     <Rule>
             <ElseFilter/>
