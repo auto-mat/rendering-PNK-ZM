@@ -160,6 +160,11 @@
             <PointSymbolizer file="&symbols-path;bar.p.20.png" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
 -->
+    <Rule title="stojany pro jízdní kola">
+            <Filter>([amenity]='bicycle_parking')</Filter>
+            &maxscale_zoom14;
+            <PointSymbolizer file="&symbols-path;bicycle_parking.png" type="png" width="20" height="20"></PointSymbolizer>
+    </Rule>
     <Rule title="půjčovna jízdních kol">
             <Filter>([amenity]='bicycle_rental')</Filter>
             &maxscale_zoom14;

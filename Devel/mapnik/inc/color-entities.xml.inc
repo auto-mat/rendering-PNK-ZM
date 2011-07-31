@@ -1,3 +1,6 @@
+<!-- colors -->
+<!ENTITY color_white "rgb(255,255,255)">
+
 <!-- cycleways -->
 <!ENTITY color_ncn "rgb(255,0,255)">
 <!ENTITY color_rcn "rgb(255,0,255)">
@@ -42,22 +45,28 @@
 <!-- highway-roads -->
 <!ENTITY color_oneway_arrow '#888cdd'>
 
-<!ENTITY color_road '#ffffff'>
+<!ENTITY color_road 'rgb(180,180,180)'>
+<!ENTITY color_residential 'rgb(255,255,255)'>
 <!ENTITY color_tertiary '#ffeac3'>
 <!ENTITY color_secondary '#e9d2a7'>
 <!ENTITY color_primary '#cec4ae'>
 <!ENTITY color_motorway '#8e8e8e'>
 
-<!ENTITY color_road_tunnel '#ffffff'>
+<!ENTITY color_road_tunnel 'rgb(150,150,150)'>
+<!ENTITY color_residential_tunnel 'rgb(255,255,255)'>
 <!ENTITY color_tertiary_tunnel '#fdffa5'>
 <!ENTITY color_secondary_tunnel '#e5e9a7'>
 <!ENTITY color_primary_tunnel '#ccceae'>
 <!ENTITY color_motorway_tunnel '#a9a9a9'>
 
+
+<!ENTITY color_pedestrian_background 'rgb(128,128,128)'>
 <!ENTITY color_road_background '#999999'>
+<!ENTITY color_residential_background 'rgb(120,120,120)'>
 <!ENTITY color_tertiary_background '#b4b100'>
 <!ENTITY color_secondary_background '#c86400'>
 <!ENTITY color_primary_background '#a00000'>
+<!ENTITY color_motorway_background 'rgb(80,96,119)'>
 
 <!ENTITY color_lozoom '#606060'>
 <!ENTITY color_road_lozoom '&color_lozoom;'>
@@ -68,9 +77,11 @@
 <!ENTITY color_pedestrian "rgb(237,237,237)">
 <!ENTITY color_pedestrian_bicycle "rgb(255,212,212)">
 
-<!ENTITY color_railway "rgb(128,128,128)">
+<!ENTITY color_raceway "rgb(255,192,203)">
+
 <!ENTITY color_tram "black">
 <!ENTITY opacity_tram '0.5'>
+<!ENTITY color_railway "rgb(128,128,128)">
 
 <!ENTITY color_non_bicycle_amenity '#6f6f6f'>
 <!ENTITY color_bicycle_amenity '#c800da'>
@@ -95,7 +106,7 @@
 
 <!ENTITY color_forest '#cdf0b5'>
 <!ENTITY color_wood '#d0dec8'>
-<!ENTITY color_village_green 'rgb(207,236,168)'>
+<!ENTITY color_grass 'rgb(207,236,168)'>
 <!ENTITY color_park 'rgb(182,253,182)'>
 
 <!ENTITY color_building 'rgb(188,169,169)'>

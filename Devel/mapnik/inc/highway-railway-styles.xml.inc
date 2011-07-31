@@ -278,17 +278,10 @@
 </Style>
 <Style name="highway-area-fill">
     <Rule title="!prostranství">
-            <Filter>([highway]='living_street')</Filter>
+            <Filter>((([highway]='residential') or ([highway]='unclassified')) or ([highway]='service') or ([highway]='living_street'))</Filter>
             &maxscale_zoom14;
             <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(204,204,204)</CssParameter>
-            </PolygonSymbolizer>
-    </Rule>
-    <Rule title="!prostranství">
-            <Filter>((([highway]='residential') or ([highway]='unclassified')) or ([highway]='service'))</Filter>
-            &maxscale_zoom14;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_road;</CssParameter>
+                <CssParameter name="fill">&color_residential;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
     <Rule title="!pěší zóna pro cyklisty">
@@ -299,7 +292,7 @@
             </PolygonSymbolizer>
     </Rule>
     <Rule title="!pěší zóna">
-            <Filter>((([highway]='pedestrian') or ([highway]='footway')) and not ([bicycle]='yes'))</Filter>
+            <Filter>((([highway]='pedestrian') or ([highway]='service')) or ([highway]='footway')) and not ([bicycle]='yes')</Filter>
             &maxscale_zoom14;
             <PolygonSymbolizer>
                 <CssParameter name="fill">&color_pedestrian;</CssParameter>
@@ -312,7 +305,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -343,7 +336,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -353,7 +346,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(141,67,70)</CssParameter>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
                 <CssParameter name="stroke-width">7.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -374,7 +367,7 @@
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">10</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -384,7 +377,7 @@
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(141,67,70)</CssParameter>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
                 <CssParameter name="stroke-width">11.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -405,7 +398,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">13</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -433,6 +426,17 @@
     </Rule>
     <Rule title="silnice 3. třídy">
             <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom12;
+            &maxscale_zoom12;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
+                <CssParameter name="stroke-width">2.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 3. třídy">
+            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
@@ -443,12 +447,23 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="ostatní silnice">
-            <Filter>((((([highway]='living_street') or ([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road')) and not (([tunnel]='yes')))</Filter>
+            <Filter>((((([highway]='living_street') or ([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified'))) and not (([tunnel]='yes')))</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_road_background;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -465,7 +480,18 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">4.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
@@ -475,19 +501,52 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom15;
+    <Rule title="silnice 3. třídy">
+            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
+                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
+                <CssParameter name="stroke-width">11</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">8.1</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">11</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke-width">8.1</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
@@ -499,17 +558,6 @@
     </Rule>
     <Rule title="silnice 3. třídy">
             <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
-            &minscale_zoom16;
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
-                <CssParameter name="stroke-width">11</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
@@ -520,12 +568,23 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom18;
+            &maxscale_zoom17;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">15</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_road_background;</CssParameter>
-                <CssParameter name="stroke-width">16</CssParameter>
+                <CssParameter name="stroke-width">15</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -535,7 +594,7 @@
             &minscale_zoom15;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -566,7 +625,7 @@
             &minscale_zoom18;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -576,7 +635,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -587,7 +646,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -597,7 +656,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">3.6</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -608,7 +667,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">3.6</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -618,7 +677,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -629,7 +688,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -638,7 +697,7 @@
             <Filter>(([highway]='pedestrian') and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">9</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -648,7 +707,7 @@
             <Filter>(([highway]='pedestrian') and ([tunnel]='yes'))</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
                 <CssParameter name="stroke-width">9</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -660,8 +719,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -671,8 +729,8 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
-                <CssParameter name="stroke-width">4.5</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">4.6</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -681,8 +739,8 @@
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">8.1</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -691,7 +749,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">11</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -785,7 +843,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,192,203)</CssParameter>
+                <CssParameter name="stroke">&color_raceway;</CssParameter>
                 <CssParameter name="stroke-width">1.2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -795,7 +853,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,192,203)</CssParameter>
+                <CssParameter name="stroke">&color_raceway;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -805,7 +863,7 @@
             &minscale_zoom18;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,192,203)</CssParameter>
+                <CssParameter name="stroke">&color_raceway;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -818,11 +876,11 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(153,204,204)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -836,7 +894,7 @@
                 <CssParameter name="stroke-width">2</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -850,7 +908,7 @@
                 <CssParameter name="stroke-width">2</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -864,7 +922,7 @@
                 <CssParameter name="stroke-width">2</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -874,11 +932,11 @@
             &minscale_zoom15;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(153,204,204)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -892,7 +950,7 @@
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -906,7 +964,7 @@
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -920,7 +978,7 @@
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -934,7 +992,7 @@
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -944,11 +1002,11 @@
             &minscale_zoom15;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(170,170,170)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
             </LineSymbolizer>
@@ -963,7 +1021,7 @@
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 4</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
@@ -974,11 +1032,11 @@
             &minscale_zoom18;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(153,204,204)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -992,7 +1050,7 @@
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1006,7 +1064,7 @@
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1020,7 +1078,7 @@
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1034,7 +1092,7 @@
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1044,11 +1102,11 @@
             &minscale_zoom18;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(170,170,170)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
             </LineSymbolizer>
@@ -1063,7 +1121,7 @@
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 6</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
@@ -1114,10 +1172,10 @@
     </Rule>
     <Rule title="silnice 1. třídy">
             <Filter>(([highway]='primary') and not (([tunnel]='yes')))</Filter>
-            &minscale_zoom12;
-            &maxscale_zoom12;
+            &minscale_zoom11;
+            &maxscale_zoom11;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_primary;</CssParameter>
+                <CssParameter name="stroke">&color_primary_lozoom;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1125,10 +1183,10 @@
     </Rule>
     <Rule title="silnice 1. třídy">
             <Filter>(([highway]='primary') and not (([tunnel]='yes')))</Filter>
-            &minscale_zoom11;
-            &maxscale_zoom11;
+            &minscale_zoom12;
+            &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_primary_lozoom;</CssParameter>
+                <CssParameter name="stroke">&color_primary;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1232,7 +1290,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">1</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1256,7 +1314,7 @@
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1278,7 +1336,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-dasharray">8, 12</CssParameter>
             </LineSymbolizer>
@@ -1303,7 +1361,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1318,7 +1376,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 11, 8, 1</CssParameter>
             </LineSymbolizer>
@@ -1333,7 +1391,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">1</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
@@ -1348,7 +1406,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">0.7</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 11, 8, 1</CssParameter>
@@ -1373,7 +1431,7 @@
                 <CssParameter name="stroke-dasharray">5, 3</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
@@ -1386,7 +1444,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(68,68,68)</CssParameter>
+                <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-dasharray">5, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1395,7 +1453,7 @@
             &minscale_zoom18;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(68,68,68)</CssParameter>
+                <CssParameter name="stroke">&color_tram;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-dasharray">5, 3</CssParameter>
             </LineSymbolizer>
@@ -1436,94 +1494,6 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(153,153,153)</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom13;
-            &maxscale_zoom13;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom14;
-            &maxscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom12;
-            &maxscale_zoom9;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_lozoom;</CssParameter>
-                <CssParameter name="stroke-width">0.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom13;
-            &maxscale_zoom13;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom14;
-            &maxscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom15;
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
-                <CssParameter name="stroke-width">6.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom16;
-            &maxscale_zoom16;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
-                <CssParameter name="stroke-width">9.4</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="ostatní silnice">
-            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
-            &minscale_zoom18;
-            &maxscale_zoom17;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_road;</CssParameter>
-                <CssParameter name="stroke-width">13</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="silnice 3. třídy">
@@ -1592,12 +1562,155 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') or ([highway]='road')) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom12;
+            &maxscale_zoom9;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_lozoom;</CssParameter>
+                <CssParameter name="stroke-width">0.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">6.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">9.4</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ostatní silnice">
+            <Filter>(((([highway]='living_street') or ([highway]='residential') or ([highway]='minor') or ([highway]='unclassified') ) and not ([tunnel]='yes')) or (([highway]='service') and not (([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            &minscale_zoom18;
+            &maxscale_zoom17;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">13</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">6.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">9.4</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice s chybějící klasifikací">
+            <Filter>(([highway]='road') and not ([tunnel]='yes'))</Filter>
+            &minscale_zoom18;
+            &maxscale_zoom17;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">13</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
     <Rule title="parkovací pruh">
             <Filter>(([highway]='service') and ([service]='parking_aisle'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1608,7 +1721,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1619,7 +1732,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1630,7 +1743,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">5.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1640,7 +1753,7 @@
             <Filter>([highway]='pedestrian')</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1730,7 +1843,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-opacity">0.4</CssParameter>
             </LineSymbolizer>
@@ -2281,7 +2394,7 @@
                 <CssParameter name="stroke-width">5.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
@@ -2298,7 +2411,7 @@
                 <CssParameter name="stroke-width">5.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
@@ -2660,7 +2773,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -2879,14 +2992,58 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="most na ostatní silnici">
-            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified') or ([highway]='road') or ([highway]='service'))</Filter>
+            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')  or ([highway]='service'))</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">7.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="most na ostatní silnici">
+            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')  or ([highway]='service'))</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">9.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="most na ostatní silnici">
+            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')  or ([highway]='service'))</Filter>
+            &minscale_zoom18;
+            &maxscale_zoom17;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential;</CssParameter>
+                <CssParameter name="stroke-width">14</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="most na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="most na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
@@ -2896,8 +3053,8 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="most na ostatní silnici">
-            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified') or ([highway]='road') or ([highway]='service'))</Filter>
+    <Rule title="most na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
@@ -2907,8 +3064,8 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="most na ostatní silnici">
-            <Filter>((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified') or ([highway]='road') or ([highway]='service'))</Filter>
+    <Rule title="most na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
@@ -2923,7 +3080,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2934,7 +3091,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2945,7 +3102,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">5.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2955,10 +3112,120 @@
             <Filter>([highway]='pedestrian')</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="roads-casing">
+    <Rule title="dálnice, rychlostní silnice">
+            <Filter>(([highway]='motorway') or ([highway]='trunk'))</Filter>
+            &minscale_zoom6;
+            &maxscale_zoom6;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">2.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="dálnice, rychlostní silnice">
+            <Filter>(([highway]='motorway') or ([highway]='trunk'))</Filter>
+            &minscale_zoom8;
+            &maxscale_zoom7;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="dálnice, rychlostní silnice">
+            <Filter>(([highway]='motorway') or ([highway]='trunk'))</Filter>
+            &minscale_zoom9;
+            &maxscale_zoom9;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="dálnice, rychlostní silnice">
+            <Filter>(([highway]='motorway') or ([highway]='trunk'))</Filter>
+            &minscale_zoom10;
+            &maxscale_zoom10;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="dálnice, rychlostní silnice">
+            <Filter>(([highway]='motorway') or ([highway]='motorway_link') or ([highway]='trunk') or ([highway]='trunk_link'))</Filter>
+            &minscale_zoom11;
+            &maxscale_zoom11;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
+                <CssParameter name="stroke-width">4.6</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 1. třídy">
+            <Filter>([highway]='primary')</Filter>
+            &minscale_zoom8;
+            &maxscale_zoom7;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
+                <CssParameter name="stroke-width">2.4</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 1. třídy">
+            <Filter>([highway]='primary')</Filter>
+            &minscale_zoom9;
+            &maxscale_zoom9;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 1. třídy">
+            <Filter>([highway]='primary')</Filter>
+            &minscale_zoom10;
+            &maxscale_zoom10;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 1. třídy">
+            <Filter>(([highway]='primary') or ([highway]='primary_link'))</Filter>
+            &minscale_zoom11;
+            &maxscale_zoom11;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_primary_background;</CssParameter>
+                <CssParameter name="stroke-width">4.1</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 2. třídy">
+            <Filter>([highway]='secondary')</Filter>
+            &minscale_zoom9;
+            &maxscale_zoom9;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_secondary_background;</CssParameter>
+                <CssParameter name="stroke-width">2.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 2. třídy">
+            <Filter>([highway]='secondary')</Filter>
+            &minscale_zoom10;
+            &maxscale_zoom10;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_secondary_background;</CssParameter>
+                <CssParameter name="stroke-width">2.8</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="silnice 2. třídy">
+            <Filter>(([highway]='secondary') or ([highway]='secondary_link'))</Filter>
+            &minscale_zoom11;
+            &maxscale_zoom11;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_secondary_background;</CssParameter>
+                <CssParameter name="stroke-width">3.6</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -3120,12 +3387,12 @@
             &minscale_zoom18;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(153,153,153)</CssParameter>
+                <CssParameter name="stroke">&color_railway;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
+                <CssParameter name="stroke">&color_white;</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 1, 8, 1</CssParameter>
             </LineSymbolizer>
@@ -3169,7 +3436,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -3179,7 +3446,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -3189,7 +3456,7 @@
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">10</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -3199,7 +3466,7 @@
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(80,96,119)</CssParameter>
+                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">13</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -3305,17 +3572,37 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">4.5</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
@@ -3324,18 +3611,48 @@
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
-            &minscale_zoom15;
+    <Rule title="tunel silnice 3. třídy">
+            <Filter>([highway]='tertiary')</Filter>
+            &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
+                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
+                <CssParameter name="stroke-width">11</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">8.1</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel ostatní silnice">
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
+                <CssParameter name="stroke-width">11</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke-width">8.1</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
@@ -3355,21 +3672,21 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>((((([highway]='residential')) or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>((((([highway]='tertiary') or ([highway]='residential')) or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
                 <CssParameter name="stroke-width">15</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="silnice 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
                 <CssParameter name="stroke-width">16</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
@@ -3425,7 +3742,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_primary;</CssParameter>
+                <CssParameter name="stroke">&color_primary_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3469,7 +3786,7 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_secondary;</CssParameter>
+                <CssParameter name="stroke">&color_secondary_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3553,7 +3870,29 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel ostatní silnice">
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
@@ -3563,8 +3902,8 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
@@ -3597,7 +3936,29 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke-width">6.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel ostatní silnice">
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom16;
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke-width">9.4</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
@@ -3607,8 +3968,8 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-    <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
@@ -3619,7 +3980,18 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel ostatní silnice">
-            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) or ([highway]='road'))</Filter>
+            <Filter>(((([highway]='residential') or ([highway]='minor')) or ([highway]='unclassified')) )</Filter>
+            &minscale_zoom18;
+            &maxscale_zoom17;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_residential_tunnel;</CssParameter>
+                <CssParameter name="stroke-width">13</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="tunel na silnici s chybějící klasifikací">
+            <Filter>([highway]='road')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer>

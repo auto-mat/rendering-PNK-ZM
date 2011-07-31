@@ -13,7 +13,7 @@
 &mtb-styles;
 &kct-styles;
 -->
-&bicycle-styles;
+&cycleways-styles;
 &water-styles;
 &placenames-styles;
 &shapefiles-styles;
@@ -186,7 +186,7 @@
       from planet_osm_polygon
       where waterway in ('dock','mill_pond','riverbank','canal')
          or landuse in ('reservoir','water','basin')
-         or "natural" in ('lake','water','land','marsh','scrub','wetland','glacier')
+         or "natural" in ('lake','water','land','marsh','wetland','glacier')
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;
@@ -474,7 +474,7 @@
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_roads
-       where highway is not null
+       where highway in ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link', 'primary_link', 'secondary_link')
           or railway is not null
        order by z_order
       ) as roads
@@ -572,15 +572,6 @@
 </Layer>
 
 <!-- zpravidla pomocne cesty v arealech, nepristupne -->
-<Layer name="access" srs="&srs900913;">
-<StyleName>access</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,access,highway,bicycle from planet_osm_line where access is not null) as access
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
 <Layer name="cycleways" srs="&srs900913;">
@@ -628,56 +619,12 @@
 <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="table">
-         (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and osm_id > 0) as trams
+      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and osm_id > 0) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
 <!-- zastavky tramvaji, mene vyznamna nadrazi,  -->
-<Layer name="amenity-stations" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_point
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vetsinou hlavni zeleznicni nadrazi -->
-<Layer name="amenity-stations-poly" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_polygon
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- elektricke vedeni -->
-<Layer name="power" srs="&srs900913;">
-<StyleName>power</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from planet_osm_line where "power"='line') as power</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- stozary elektrickeho vedeni -->
-<Layer name="power_towers" srs="&srs900913;">
-<StyleName>power_towers</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from planet_osm_point where power='tower') as power_towers</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-
 <!-- Směrové šipky na cyklotrasách -->
 <Layer name="cycleway-directions" srs="&srs900913;">
     <StyleName>cycleway-directions</StyleName>
@@ -996,7 +943,7 @@
     </Datasource>
 </Layer>
 <!-- cyklostezky paralelne s MTB trasami -->
-<Layer name="cycleway-mtb" srs="&srs900913;">
+<!--<Layer name="cycleway-mtb" srs="&srs900913;">
     <StyleName>cycleway-mtb</StyleName>
     <Datasource>
         <Parameter name="table">
@@ -1007,7 +954,7 @@
         </Parameter>
         &datasource-settings;
     </Datasource>
-</Layer>
+</Layer>-->
 <!-- Zakladni MTB stezky -->
 <Layer name="mtbasic" srs="&srs900913;">
     <StyleName>mtb_basic</StyleName>
@@ -1026,9 +973,9 @@
     <StyleName>nobicycle</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id,way,highway,bicycle
+        (select osm_id,way
         from planet_osm_line
-        where (bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
+        where (bicycle = 'no')) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -1045,7 +992,7 @@
         &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="mtb5" srs="&srs900913;" clear_label_cache="yes">
+<!--<Layer name="mtb5" srs="&srs900913;" clear_label_cache="yes">
     <StyleName>mtb_shield5</StyleName>
     <Datasource>
         <Parameter name="table">
@@ -1116,8 +1063,62 @@
         </Parameter>
         &datasource-settings;
     </Datasource>
-</Layer>
+</Layer>-->
 
+<!-- zpravidla pomocne cesty v arealech, nepristupne -->
+<Layer name="access" srs="&srs900913;">
+<StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,bicycle from planet_osm_line where access is not null) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- zastavky tramvaji, mene vyznamna nadrazi,  -->
+<Layer name="amenity-stations" srs="&srs900913;">
+<StyleName>stations</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,name,railway,aerialway,disused
+      from planet_osm_point
+      where railway in ('station','halt','tram_stop')
+         or aerialway='station'
+      ) as stations
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- vetsinou hlavni zeleznicni nadrazi -->
+<Layer name="amenity-stations-poly" srs="&srs900913;">
+<StyleName>stations</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,name,railway,aerialway,disused
+      from planet_osm_polygon
+      where railway in ('station','halt','tram_stop')
+         or aerialway='station'
+      ) as stations
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- elektricke vedeni -->
+<Layer name="power" srs="&srs900913;">
+<StyleName>power</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_line where "power"='line') as power</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- stozary elektrickeho vedeni -->
+<Layer name="power_towers" srs="&srs900913;">
+<StyleName>power_towers</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_point where power='tower') as power_towers</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- smerove sipky jednosmerek -->
 <Layer name="directions" srs="&srs900913;">
 <StyleName>directions</StyleName>
@@ -1223,9 +1224,21 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
+<!-- symboly mest, mensich mest v malych zoomech -->
+<Layer name="placenames-medium-symbols" srs="&srs900913;" clear_label_cache="yes">
+<StyleName>town-symbols</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,population
+      from planet_osm_point
+      where place in ('city','metropolis','town','large_town','small_town')
+        and (capital is null or capital&lt;&gt;'yes')
+      order by population desc) as placenamessymbols</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- jmena mest, mensich mest -->
 <Layer name="placenames-medium" srs="&srs900913;" clear_label_cache="yes">
-<StyleName>city</StyleName>
 <StyleName>town</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -1233,7 +1246,7 @@ admin 8 - uzemi samostatnych obci
       from planet_osm_point
       where place in ('city','metropolis','town','large_town','small_town')
         and (capital is null or capital&lt;&gt;'yes')
-      ) as placenames</Parameter>
+      order by population) as placenames</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
@@ -1247,7 +1260,7 @@ admin 8 - uzemi samostatnych obci
       (select way,place,upper(name),name,ref
       from planet_osm_point
       where place in ('country','state')
-         or (place in ('city','metropolis') and capital='yes')
+         or (place in ('city','metropolis','town') and capital='yes')
       ) as placenames</Parameter>
       &datasource-settings;
     </Datasource>

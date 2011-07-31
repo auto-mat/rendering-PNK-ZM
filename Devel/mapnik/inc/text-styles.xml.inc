@@ -84,7 +84,7 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([highway]='trunk') or ([highway]='primary'))</Filter>
@@ -102,13 +102,13 @@
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='secondary')</Filter>
             &minscale_zoom18;
             &maxscale_zoom15;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="&color_secondary;"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="rgb(0,0,0)" placement="line" halo_radius="1" halo_fill="rgb(252,252,181)"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([highway]='tertiary')</Filter>

@@ -73,18 +73,6 @@
             &maxscale_zoom13;
             <PolygonPatternSymbolizer file="&symbols-path;marsh.png" type="png" width="30" height="30"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="strniště">
-            <Filter>([natural]='scrub')</Filter>
-            &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;scrub.png" type="png" width="30" height="30"></PolygonPatternSymbolizer>
-    </Rule>
-    <Rule title="!ostrov">
-            <Filter>([natural]='land')</Filter>
-            &maxscale_zoom10;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_island;</CssParameter>
-            </PolygonSymbolizer>
-    </Rule>
 </Style>
 <Style name="water_areas_fill_island">
     <Rule title="!ostrov">
