@@ -47,6 +47,9 @@ while True:
            if key == 'route' and value == 'bicycle':
               tags[key] = value
 
+        if not tags.has_key('route'):
+              continue
+
         roles = {}
         l = len(row[3])
         for I in range(0, l/2):

@@ -422,7 +422,9 @@
 <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,bicycle from planet_osm_polygon
+      (select way,highway,
+       case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
+       from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
        order by z_order,way_area desc) as roads
       </Parameter>
@@ -595,6 +597,8 @@
           else 'low' end as traffic,
 
         case  
+          when highway in ('steps') then 'steps'::text 
+
           when smoothness in ('excellent', 'good') then 'good'::text
           when smoothness in ('intermediate') then 'unpaved'::text 
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
@@ -623,7 +627,7 @@
 <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
+         (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and osm_id > 0) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>

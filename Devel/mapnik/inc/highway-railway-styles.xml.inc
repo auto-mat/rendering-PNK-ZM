@@ -291,11 +291,18 @@
                 <CssParameter name="fill">&color_road;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
-    <Rule title="!pěší zóna">
-            <Filter>(([highway]='pedestrian') or ([highway]='footway'))</Filter>
+    <Rule title="!pěší zóna pro cyklisty">
+            <Filter>((([highway]='pedestrian') or ([highway]='footway')) and ([bicycle]='yes'))</Filter>
             &maxscale_zoom14;
             <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(237,237,237)</CssParameter>
+                <CssParameter name="fill">&color_pedestrian_bicycle;</CssParameter>
+            </PolygonSymbolizer>
+    </Rule>
+    <Rule title="!pěší zóna">
+            <Filter>((([highway]='pedestrian') or ([highway]='footway')) and not ([bicycle]='yes'))</Filter>
+            &maxscale_zoom14;
+            <PolygonSymbolizer>
+                <CssParameter name="fill">&color_pedestrian;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
 </Style>

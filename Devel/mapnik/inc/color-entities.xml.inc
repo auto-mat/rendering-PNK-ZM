@@ -65,8 +65,8 @@
 <!ENTITY color_secondary_lozoom '&color_lozoom;'>
 <!ENTITY color_primary_lozoom '&color_lozoom;'>
 
-<!ENTITY color_pedestrian "rgb(255,212,212)">
-<!ENTITY color_pedestrian_bicycle "rgb(212,212,255)">
+<!ENTITY color_pedestrian "rgb(237,237,237)">
+<!ENTITY color_pedestrian_bicycle "rgb(255,212,212)">
 
 <!ENTITY color_railway "rgb(128,128,128)">
 <!ENTITY color_tram "black">

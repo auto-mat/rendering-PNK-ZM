@@ -68,12 +68,12 @@
     <Rule>
             <Filter>([role]='backward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer offset="13" width="100" type="png" file="../symbols/role_backward.png"/>
+            <LinePatternSymbolizer offset="10" width="100" type="png" file="../symbols/role_backward.png"/>
     </Rule>
     <Rule>
             <Filter>([role]='forward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer offset="-13" width="100" type="png" file="../symbols/role_forward.png"/>
+            <LinePatternSymbolizer offset="-10" width="100" type="png" file="../symbols/role_forward.png"/>
     </Rule>
 </Style>
 
@@ -338,6 +338,18 @@
 </Style>
 
 <Style name="cycleway">
+  <Rule title="cyklotrasa po schodech">
+    <Filter>([surface_type]='steps')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
   <Rule title="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good')</Filter>
     <LineSymbolizer>
