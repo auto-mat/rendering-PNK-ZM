@@ -547,6 +547,7 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;castle14.png" type="png" width="15" height="14"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="informační tabule">
             <Filter>([information]='board')</Filter>
             &maxscale_zoom14;
@@ -562,6 +563,7 @@
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;infoOffice14.png" type="png" width="14" height="14"></PointSymbolizer>
     </Rule>
+-->
 </Style>
 <Style name="symbols-poly">
     <Rule title="!letiště">

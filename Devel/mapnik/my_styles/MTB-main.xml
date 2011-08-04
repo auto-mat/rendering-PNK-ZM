@@ -370,17 +370,6 @@
     </Datasource>
 </Layer>
 
-<Layer name="bicycle-lanes" srs="&srs900913;">
-    <StyleName>cyclelane</StyleName>
-    <Datasource>
-        <Parameter name="table">
-           (select way, cycleway, "cycleway:left", "cycleway:right",
-          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
-           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
-        </Parameter>
-        &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- ploty, zdi -->
 <Layer name="polygon barriers" srs="&srs900913;">
 <StyleName>barriers</StyleName>
@@ -480,6 +469,17 @@
       ) as roads
       </Parameter>
       &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bicycle-lanes" srs="&srs900913;">
+    <StyleName>cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+           (select way, cycleway, "cycleway:left", "cycleway:right",
+          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
+        </Parameter>
+        &datasource-settings;
     </Datasource>
 </Layer>
 <Layer name="cycleway-fill" srs="&srs900913;">
@@ -586,7 +586,7 @@
           when 'cycleway:right' in ('lane', 'opposite_lane') then 'low'::text 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
-          else 'low' end as traffic,
+          else 'low'::text end as traffic,
 
         case  
           when highway in ('steps') then 'steps'::text 
@@ -595,8 +595,8 @@
           when smoothness in ('intermediate') then 'unpaved'::text 
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
 
-          when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'concrete:plates', 'cobblestone:flattened') then 'good'::text 
-          when surface in ('unpaved', 'compacted', 'cobblestone', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
           when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
 
           when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
@@ -606,8 +606,11 @@
           when tracktype in ('grade2', 'grade3') then 'unpaved'::text 
           when tracktype in ('grade4', 'grade5') then 'bad'::text 
 
-          else 'bad' end as surface_type
-        from planet_osm_cycleway_rels
+          else 'bad'::text end as surface_type
+          from planet_osm_cycleway_rels
+          where cycleway is null or not (cycleway in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
+          or 'cycleway:right' in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
+          or 'cycleway:left' in ('lane', 'opposite_lane', 'shared_lane', 'share_busway'))
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -630,7 +633,8 @@
     <StyleName>cycleway-directions</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, osm_id, route, state, way, role
+        (select bicycle, osm_id, route, state, way, role,
+        case when cycleway in ('lane', 'shared_lane', 'share_busway') or 'cycleway:right' in ('lane', 'shared_lane', 'share_busway') then 'yes'::text else 'no'::text end as cyclelane
         from planet_osm_cycleway_rels
         where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
         </Parameter>
@@ -1197,7 +1201,11 @@ admin 8 - uzemi samostatnych obci
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,name,ref,admin_level,char_length(ref) as length,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when (NOT EXISTS (SELECT
+               * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
+               planet_osm_line.osm_id))
+               then 'no'::text else 'yes'::text end as cycleway
        from planet_osm_line
        where waterway IS NULL
          and leisure IS NULL
@@ -1369,7 +1377,11 @@ admin 8 - uzemi samostatnych obci
     <StyleName>cycleway-text</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, ref, name, lcn, ncn, rcn, state
+        (select way, ref, name, state,
+        case when ref in ('A1','A2') then 'yes'::text
+        when ref in ('PAN') then ''::text else ncn end as ncn,
+        case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
+        case when ref in ('PAN') then ''::text else lcn end as lcn
         from planet_osm_line
         where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway
         </Parameter>

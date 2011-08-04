@@ -36,8 +36,8 @@
 <!ENTITY color_bicycle_track_tunnel "&color_cycleway;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle '&color_cycleway;'>
-<!ENTITY color_bicycle_footway '&color_cycleway;'>
+<!ENTITY color_bicycle '#9c699d'>
+<!ENTITY color_bicycle_footway '#9c699d'>
 
 <!ENTITY color_bicycle_tunnel "&color_cycleway;">
 <!ENTITY color_bicycle_footway_tunnel "&color_cycleway;">

@@ -66,12 +66,23 @@
 
 <Style name="cycleway-directions">
     <Rule>
-            <Filter>([role]='backward')</Filter>
+            <Filter>([role]='backward' and [cyclelane]='yes')</Filter>
+            &maxscale_zoom14;
+            <LinePatternSymbolizer offset="15" width="100" type="png" file="../symbols/role_backward.png"/>
+    </Rule>
+    <Rule>
+            <Filter>([role]='forward' and [cyclelane]='yes')</Filter>
+            &maxscale_zoom14;
+            <LinePatternSymbolizer offset="-15" width="100" type="png" file="../symbols/role_forward.png"/>
+    </Rule>
+
+    <Rule>
+            <Filter>([role]='backward' and [cyclelane]='no')</Filter>
             &maxscale_zoom14;
             <LinePatternSymbolizer offset="10" width="100" type="png" file="../symbols/role_backward.png"/>
     </Rule>
     <Rule>
-            <Filter>([role]='forward')</Filter>
+            <Filter>([role]='forward' and [cyclelane]='no')</Filter>
             &maxscale_zoom14;
             <LinePatternSymbolizer offset="-10" width="100" type="png" file="../symbols/role_forward.png"/>
     </Rule>

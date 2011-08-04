@@ -430,7 +430,7 @@
             &maxscale_zoom12;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_tertiary_background;</CssParameter>
-                <CssParameter name="stroke-width">2.5</CssParameter>
+                <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
