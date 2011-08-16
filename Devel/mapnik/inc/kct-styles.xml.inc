@@ -1,4 +1,31 @@
 <!-- Style for yellow hiking tracks. -->
+<Style name="yellow-track-text">
+  <Rule title="žlutá turistická trasa">
+    &maxscale_zoom9;
+    &minscale_zoom9;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="žlutá turistická trasa">
+    &maxscale_zoom10;
+    &minscale_zoom10;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="žlutá turistická trasa">
+    &maxscale_zoom11;
+    &minscale_zoom11;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="žlutá turistická trasa">
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="žlutá turistická trasa">
+    &maxscale_zoom15;
+    &minscale_zoom18;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+</Style>
 <Style name="yellow-track">
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom9;
@@ -61,6 +88,34 @@
 </Style>
 
 <!-- Style for red hiking tracks. -->
+<Style name="red-track-text">
+  <Rule title="červená turistická trasa">
+    &maxscale_zoom9;
+    &minscale_zoom9;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="červená turistická trasa">
+    &maxscale_zoom10;
+    &minscale_zoom10;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="červená turistická trasa">
+    &maxscale_zoom11;
+    &minscale_zoom11;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="červená turistická trasa">
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="červená turistická trasa">
+    &maxscale_zoom15;
+    &minscale_zoom18;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+</Style>
+
 <Style name="red-track">
   <Rule title="červená turistická trasa">
     &maxscale_zoom9;
@@ -123,6 +178,33 @@
 </Style>
 
 <!-- Style for green hiking tracks. -->
+<Style name="zelená-track-text">
+  <Rule title="zelená turistická trasa">
+    &maxscale_zoom9;
+    &minscale_zoom9;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="zelená turistická trasa">
+    &maxscale_zoom10;
+    &minscale_zoom10;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="zelená turistická trasa">
+    &maxscale_zoom11;
+    &minscale_zoom11;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="zelená turistická trasa">
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="zelená turistická trasa">
+    &maxscale_zoom15;
+    &minscale_zoom18;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+</Style>
 <Style name="green-track">
   <Rule title="zelená turistická trasa">
     &maxscale_zoom9;
@@ -185,6 +267,33 @@
 </Style>
 
 <!-- Style for blue hiking tracks. -->
+<Style name="blue-track-text">
+  <Rule title="modrá turistická trasa">
+    &maxscale_zoom9;
+    &minscale_zoom9;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="modrá turistická trasa">
+    &maxscale_zoom10;
+    &minscale_zoom10;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="modrá turistická trasa">
+    &maxscale_zoom11;
+    &minscale_zoom11;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="modrá turistická trasa">
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+  <Rule title="modrá turistická trasa">
+    &maxscale_zoom15;
+    &minscale_zoom18;
+    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+  </Rule>
+</Style>
 <Style name="blue-track">
   <Rule title="modrá turistická trasa">
     &maxscale_zoom9;

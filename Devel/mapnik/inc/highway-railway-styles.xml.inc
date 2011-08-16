@@ -262,17 +262,17 @@
 </Style>
 <Style name="highway-area-casing">
     <Rule title="!prostranství">
-            <Filter>(([highway]='residential') or ([highway]='unclassified'))</Filter>
+            <Filter>((([highway]='residential') or ([highway]='unclassified')) or ([highway]='service') or ([highway]='living_street'))</Filter>
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_residential_background;</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="!pěší zóna">
             <Filter>((([highway]='pedestrian') or ([highway]='service')) or ([highway]='footway'))</Filter>
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(237,237,237)</CssParameter>
+                <CssParameter name="stroke">&color_pedestrian;</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -1945,7 +1945,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes')) or [bicycle]='designated') and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer>
@@ -1954,7 +1954,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes')) or [bicycle]='designated') and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
@@ -2516,7 +2516,7 @@
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">7</CssParameter>
+                <CssParameter name="stroke-width">9</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle;</CssParameter>

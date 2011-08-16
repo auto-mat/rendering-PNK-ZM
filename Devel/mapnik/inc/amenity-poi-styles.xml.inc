@@ -163,7 +163,7 @@
     <Rule title="stojany pro jízdní kola">
             <Filter>([amenity]='bicycle_parking')</Filter>
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;bicycle_parking.png" type="png" width="20" height="20"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;bicycle_parking.png" allow_overlap="true" type="png" width="20" height="20"></PointSymbolizer>
     </Rule>
     <Rule title="půjčovna jízdních kol">
             <Filter>([amenity]='bicycle_rental')</Filter>
@@ -482,11 +482,13 @@
             &maxscale_zoom17;
             <PointSymbolizer file="&symbols-path;tree2.png" type="png" width="5" height="5"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="jeskyně">
             <Filter>([natural]='cave_entrance')</Filter>
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;cave20.png" type="png" width="20" height="15"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="větrná elektrárna">
             <Filter>(([man_made]='power_wind') or (([power]='generator') and ([power_source]='wind')))</Filter>
             &maxscale_zoom15;

@@ -31,16 +31,16 @@
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle_track_fill "&color_cycleway;">
+<!ENTITY color_bicycle_track_fill "&color_bicycle;">
 <!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
-<!ENTITY color_bicycle_track_tunnel "&color_cycleway;">
+<!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle '#9c699d'>
-<!ENTITY color_bicycle_footway '#9c699d'>
+<!ENTITY color_bicycle_footway '&color_bicycle;'>
 
-<!ENTITY color_bicycle_tunnel "&color_cycleway;">
-<!ENTITY color_bicycle_footway_tunnel "&color_cycleway;">
+<!ENTITY color_bicycle_tunnel "&color_bicycle;">
+<!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
 
 <!-- highway-roads -->
 <!ENTITY color_oneway_arrow '#888cdd'>
@@ -87,7 +87,7 @@
 <!ENTITY color_bicycle_amenity '#c800da'>
 
 <!ENTITY color_bicycle_shop '&color_bicycle_amenity;'>
-<!ENTITY color_police '&color_bicycle_amenity;'>
+<!ENTITY color_police '#666666'>
 <!ENTITY color_camp_site 'rgb(0,102,255)'>
 <!ENTITY color_bicycle_directions '#a200ff'>
 
@@ -100,7 +100,7 @@
 <!ENTITY color_caravan_site '&color_non_bicycle_amenity;'>
 <!ENTITY color_parking '&color_non_bicycle_amenity;'>
 
-<!ENTITY color_pharmacy '#47e01b'>
+<!ENTITY color_pharmacy '#666666'>
 
 <!ENTITY color_attraction 'rgb(102,0,51)'>
 

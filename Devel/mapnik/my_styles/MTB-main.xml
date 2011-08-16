@@ -412,10 +412,21 @@
 <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,
+      (select way,highway, surface,
        case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
        from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
+       order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="highway-area-fill-cobblestone" srs="&srs900913;">
+<StyleName>highway-area-fill-cobblestone</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway, surface
+       from planet_osm_polygon
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -561,11 +572,11 @@
     </Datasource>
 </Layer>
 
-<Layer name="surface" srs="&srs900913;">
-    <StyleName>surface</StyleName>
+<Layer name="surface-cobblestone" srs="&srs900913;">
+    <StyleName>surface-cobblestone</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, surface from planet_osm_line where surface!='') as surface
+        (select way, highway, surface from planet_osm_line where surface='cobblestone') as surface
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -581,6 +592,9 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel,
         case 
+          when motorcar in ('no', 'permissive', 'destination') then 'low'::text 
+          when access in ('no', 'permissive', 'destination') then 'low'::text 
+
           when cycleway in ('lane', 'opposite_lane') then 'low'::text 
           when 'cycleway:left' in ('lane', 'opposite_lane') then 'low'::text 
           when 'cycleway:right' in ('lane', 'opposite_lane') then 'low'::text 
@@ -660,6 +674,20 @@
 </Layer>
  -->
 <!-- Pesi znacene trasy KCT -->
+<Layer name="yellow-track-text" status="on" srs="&srs900913;">
+    <StyleName>yellow-track-text</StyleName>
+    <!--<StyleName>yellow-shield</StyleName>-->
+    <Datasource>
+      <Parameter name="table">
+        (select way, route_name
+        from planet_osm_line where
+        osm_id &lt; 0 and
+        ((kct_yellow IS NOT NULL) OR (marked_trail_yellow IS NOT NULL))
+        ) as yellow_track_text
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="yellow-track" status="on" srs="&srs900913;">
     <StyleName>yellow-track</StyleName>
     <!--<StyleName>yellow-shield</StyleName>-->
@@ -674,6 +702,19 @@
 			      ((kct_red IS NULL) AND (marked_trail_red IS NULL)) AND
 			      ((kct_green IS NULL) AND (marked_trail_green IS NULL)) AND
 			      ((kct_blue IS NULL) AND (marked_trail_blue IS NULL)))) as yellow_track</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="red-track-text" status="on" srs="&srs900913;">
+    <StyleName>red-track-text</StyleName>
+    <Datasource>
+      <Parameter name="table">
+        (select way, route_name
+        from planet_osm_line where
+        osm_id &lt; 0 and
+        ((kct_red IS NOT NULL) OR (marked_trail_red IS NOT NULL))
+        ) as red_track_text
+      </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
@@ -694,20 +735,43 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="green-track-text" status="on" srs="&srs900913;">
+    <StyleName>green-track-text</StyleName>
+    <Datasource>
+      <Parameter name="table">((SELECT osm_id,way,route,name,ref,kct_green,marked_trail_green,char_length(ref) AS length FROM &prefix;_line WHERE osm_id > 0 AND
+			      ((kct_green IS NOT NULL) OR (marked_trail_green IS NOT NULL))
+			      ) UNION
+			      (SELECT osm_id,way,route,name,ref,kct_green,marked_trail_green,char_length(ref) AS length FROM &prefix;_track_rels WHERE
+			      ((kct_green IS NOT NULL) OR (marked_trail_green IS NOT NULL))
+			      )) as green_track</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="green-track" status="on" srs="&srs900913;">
     <StyleName>green-track</StyleName>
     <!--<StyleName>green-shield</StyleName>-->
     <Datasource>
-      <Parameter name="table">((SELECT osm_id,way,route,name,ref,kct_green,marked_trail_green,char_length(ref) AS length FROM &prefix;_line WHERE osm_id > 0 AND
-			      ((kct_yellow IS NULL) AND (marked_trail_yellow IS NULL)) AND
-			      ((kct_red IS NULL) AND (marked_trail_red IS NULL)) AND
-			      ((kct_green IS NOT NULL) OR (marked_trail_green IS NOT NULL)) AND
-			      ((kct_blue IS NULL) AND (marked_trail_blue IS NULL))) UNION
-			      (SELECT osm_id,way,route,name,ref,kct_green,marked_trail_green,char_length(ref) AS length FROM &prefix;_track_rels WHERE
-			      ((kct_yellow IS NULL) AND (marked_trail_yellow IS NULL)) AND
-			      ((kct_red IS NULL) AND (marked_trail_red IS NULL)) AND
-			      ((kct_green IS NOT NULL) OR (marked_trail_green IS NOT NULL)) AND
-			      ((kct_blue IS NULL) AND (marked_trail_blue IS NULL)))) as green_track</Parameter>
+      <Parameter name="table">
+        (select way, route_name
+        from planet_osm_line where
+        osm_id &lt; 0 and
+        ((kct_green IS NOT NULL) OR (marked_trail_green IS NOT NULL))
+        ) as green_track_text
+       </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="blue-track-text" status="on" srs="&srs900913;">
+    <StyleName>blue-track-text</StyleName>
+    <!--<StyleName>blue-shield</StyleName>-->
+    <Datasource>
+      <Parameter name="table">
+        (select way, route_name
+        from planet_osm_line where
+        osm_id &lt; 0 and
+        ((kct_blue IS NOT NULL) OR (marked_trail_blue IS NOT NULL))
+        ) as blue_track_text
+      </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
@@ -979,7 +1043,7 @@
         <Parameter name="table">
         (select osm_id,way
         from planet_osm_line
-        where (bicycle = 'no')) as nobicycle
+        where (bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -1145,8 +1209,7 @@
       <Parameter name="table">
          (select way,
        case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
-       case when "oneway:bicycle" in ('no','false') then 'no'::text end as "oneway:bicycle",
-       case when cycleway in ('opposite', 'opposite_lane') then 'opposite'::text end as cycleway
+       case when cycleway in ('opposite', 'opposite_lane') or "oneway:bicycle" in ('no','false') then 'opposite'::text end as cycleway
          from planet_osm_line
        where (oneway is not null) and (cycleway is not null)
          and (highway is not null or railway is not null or waterway is not null)
@@ -1373,6 +1436,21 @@ admin 8 - uzemi samostatnych obci
 </Layer>
 
 <!-- popisy znacenych cyklostezek -->
+<Layer name="cycleway-name" status="on" srs="&srs900913;">
+    <StyleName>cycleway-name</StyleName>
+    <!--<StyleName>yellow-shield</StyleName>-->
+    <Datasource>
+      <Parameter name="table">
+        (select way, route_name
+        from planet_osm_line where
+        osm_id &lt; 0 and
+        ref is not null and (lcn is not null or ncn is not null or rcn is not null)
+        ) as cycleway_name
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 <Layer name="cycleway-text" srs="&srs900913;">
     <StyleName>cycleway-text</StyleName>
     <Datasource>
@@ -1383,7 +1461,7 @@ admin 8 - uzemi samostatnych obci
         case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
         case when ref in ('PAN') then ''::text else lcn end as lcn
         from planet_osm_line
-        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway
+        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
         </Parameter>
         &datasource-settings;
     </Datasource>
