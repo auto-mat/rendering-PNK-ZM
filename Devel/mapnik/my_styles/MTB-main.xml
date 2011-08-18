@@ -592,8 +592,9 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel,
         case 
-          when motorcar in ('no', 'permissive', 'destination') then 'low'::text 
-          when access in ('no', 'permissive', 'destination') then 'low'::text 
+          when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
 
           when cycleway in ('lane', 'opposite_lane') then 'low'::text 
           when 'cycleway:left' in ('lane', 'opposite_lane') then 'low'::text 
@@ -1207,11 +1208,11 @@
    <StyleName>bicycle_directions</StyleName>
    <Datasource>
       <Parameter name="table">
-         (select way,
+         (select way, "oneway:bicycle",
        case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
        case when cycleway in ('opposite', 'opposite_lane') or "oneway:bicycle" in ('no','false') then 'opposite'::text end as cycleway
          from planet_osm_line
-       where (oneway is not null) and (cycleway is not null)
+       where (oneway is not null) and ((cycleway is not null) or ('oneway:bicycle' is not null))
          and (highway is not null or railway is not null or waterway is not null)
       ) as bicycle_directions
       </Parameter>
@@ -1466,6 +1467,7 @@ admin 8 - uzemi samostatnych obci
         &datasource-settings;
     </Datasource>
 </Layer>
+
 <!-- hranice narodnich parku -->
 <Layer name="misc_boundaries" srs="&srs900913;">
 <StyleName>boundary</StyleName>
