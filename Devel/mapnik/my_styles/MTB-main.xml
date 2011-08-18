@@ -407,16 +407,11 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- vypln odpovidajicich uzemi -->
-<Layer name="highway-area-fill" srs="&srs900913;">
-<StyleName>highway-area-fill</StyleName>
+<Layer name="tracks-nt-nb-casing" srs="&srs900913;">
+<StyleName>tracks-nt-nb-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway, surface,
-       case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
-       from planet_osm_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
-       order by z_order,way_area desc) as roads
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -432,13 +427,48 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<!-- VF: Posunuto pred vsechny ostatni fill, ktere se kresli na ni hlavne kvuli pesim zonam-->
+<!-- vypln odpovidajicich uzemi -->
+<Layer name="highway-area-fill" srs="&srs900913;">
+<StyleName>highway-area-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway, surface,
+       case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
+       from planet_osm_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
+       order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="tracks-notunnel-nobridge" srs="&srs900913;">
+<StyleName>tracks-notunnel-nobridge</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0')) and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- vsechny nezpevnene stezky, pesiny, cyklo -->
+<Layer name="tracks-notunnel-nobridge-bicycle" srs="&srs900913;">
+<StyleName>tracks-notunnel-nobridge-bicycle</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0')) and (bicycle in ('yes', 'designated'))) as tracks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- vypln vsech cest, koleji -->
 <Layer name="minor-roads-fill" srs="&srs900913;">
 <StyleName>minor-roads-fill-links</StyleName>
 <StyleName>minor-roads-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,bicycle,foot,construction,aeroway,service,electrified,
+      (select way,highway,foot,construction,aeroway,service,electrified,
+       case when bicycle in ('yes','designated','1') then 'yes'::text else bicycle end as bicycle,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
@@ -482,17 +512,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="bicycle-lanes" srs="&srs900913;">
-    <StyleName>cyclelane</StyleName>
-    <Datasource>
-        <Parameter name="table">
-           (select way, cycleway, "cycleway:left", "cycleway:right",
-          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
-           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
-        </Parameter>
-        &datasource-settings;
-    </Datasource>
-</Layer>
 <Layer name="cycleway-fill" srs="&srs900913;">
 <StyleName>cycleway-fill</StyleName>
     <Datasource>
@@ -507,6 +526,17 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bicycle-lanes" srs="&srs900913;">
+    <StyleName>cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+           (select way, cycleway, "cycleway:left", "cycleway:right",
+          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- neco jako mosty pro tekouci vodu, skoro se nevyskytuji -->
 <Layer name="waterway-bridges" srs="&srs900913;">
 <StyleName>waterway-bridges</StyleName>
@@ -519,7 +549,8 @@
 <Layer name="bridges" srs="&srs900913;">
 <StyleName>road-bridges-casing</StyleName>
 <StyleName>road-bridges-fill</StyleName>
-<StyleName>noncased-ways-bridges</StyleName>
+<!--<StyleName>noncased-ways-bridges</StyleName>--><!--replaced by separation of bridge casing and fill-->
+<StyleName>noncased-ways-bridges_casing</StyleName><!-- added by VF-->
 <StyleName>primarybridge_layer0_casing</StyleName>
 <StyleName>mwaybridge_layer0_casing</StyleName>
 <StyleName>primarybridge_layer0_fill</StyleName>
@@ -528,6 +559,7 @@
 <StyleName>mwaybridge_layer1_casing</StyleName>
 <StyleName>primarybridge_layer1_fill</StyleName>
 <StyleName>mwaybridge_layer1_fill</StyleName>
+<StyleName>noncased-ways-bridges_fill</StyleName><!-- added by VF-->
 <StyleName>primarybridge_layer2_casing</StyleName>
 <StyleName>mwaybridge_layer2_casing</StyleName>
 <StyleName>primarybridge_layer2_fill</StyleName>
@@ -648,8 +680,7 @@
     <StyleName>cycleway-directions</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, osm_id, route, state, way, role,
-        case when cycleway in ('lane', 'shared_lane', 'share_busway') or 'cycleway:right' in ('lane', 'shared_lane', 'share_busway') then 'yes'::text else 'no'::text end as cyclelane
+        (select bicycle, osm_id, route, state, way, role
         from planet_osm_cycleway_rels
         where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
         </Parameter>
@@ -1044,7 +1075,7 @@
         <Parameter name="table">
         (select osm_id,way
         from planet_osm_line
-        where (bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
+        where (((access='private' or access='no') and (bicycle is null or not (bicycle = 'yes')))  or bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>

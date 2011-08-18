@@ -23,7 +23,7 @@
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
 <!ENTITY color_footway "rgb(218, 151, 146)">
-<!ENTITY color_steps "&color_footway;">
+<!ENTITY color_steps "rgb(128,128,128)">
 
 <!ENTITY color_bridleway "rgb(0,128,0)">
 <!ENTITY color_track_fill "rgb(72,72,72)">
@@ -32,12 +32,13 @@
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle_track_fill "&color_bicycle;">
-<!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
+<!ENTITY color_bicycle_track_casing "&color_bicycle_casing;">
 <!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle '#9c699d'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
+<!ENTITY color_bicycle_casing "#333333">
 
 <!ENTITY color_bicycle_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
@@ -45,19 +46,20 @@
 <!-- highway-roads -->
 <!ENTITY color_oneway_arrow '#888cdd'>
 
-<!ENTITY color_road 'rgb(180,180,180)'>
+<!ENTITY color_road '#ffffee'>
 <!ENTITY color_residential 'rgb(255,255,255)'>
 <!ENTITY color_tertiary '#ffeac3'>
 <!ENTITY color_secondary '#e9d2a7'>
 <!ENTITY color_primary '#cec4ae'>
-<!ENTITY color_motorway '#8e8e8e'>
+<!ENTITY color_motorway '#a0a0a0'>
 
-<!ENTITY color_road_tunnel 'rgb(150,150,150)'>
+<!ENTITY opacity_tunnel '1'>
+<!ENTITY color_road_tunnel '#ffffff'>
 <!ENTITY color_residential_tunnel 'rgb(255,255,255)'>
-<!ENTITY color_tertiary_tunnel '#fdffa5'>
-<!ENTITY color_secondary_tunnel '#e5e9a7'>
-<!ENTITY color_primary_tunnel '#ccceae'>
-<!ENTITY color_motorway_tunnel '#a9a9a9'>
+<!ENTITY color_tertiary_tunnel '#ffeddd'>
+<!ENTITY color_secondary_tunnel '#ffeddd'>
+<!ENTITY color_primary_tunnel '#ffeddd'>
+<!ENTITY color_motorway_tunnel '#ffeddd'>
 
 
 <!ENTITY color_pedestrian_background 'rgb(128,128,128)'>
@@ -82,6 +84,7 @@
 <!ENTITY color_tram "black">
 <!ENTITY opacity_tram '0.5'>
 <!ENTITY color_railway "rgb(128,128,128)">
+<!ENTITY color_railway_tunnel "rgb(177,177,177)">
 
 <!ENTITY color_non_bicycle_amenity '#6f6f6f'>
 <!ENTITY color_bicycle_amenity '#c800da'>
@@ -129,6 +132,9 @@
 <!ENTITY width_track_fill_lozoom '0.6'>
 <!ENTITY width_track_casing_lozoom '1'>
 
-<!ENTITY cyclelane_offset_highest_zoom '9'>
-<!ENTITY cyclelane_offset_high_zoom '7'>
-<!ENTITY cyclelane_offset_medium_zoom '5'>
+<!ENTITY cyclelane_offset_highest_zoom '5'>
+<!ENTITY cyclelane_offset_high_zoom '4'>
+<!ENTITY cyclelane_offset_medium_zoom '3'>
+
+<!ENTITY offset_directions '4'>
+<!ENTITY offset_directions_high '5'>
