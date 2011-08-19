@@ -416,17 +416,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="highway-area-fill-cobblestone" srs="&srs900913;">
-<StyleName>highway-area-fill-cobblestone</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,highway, surface
-       from planet_osm_polygon
-       order by z_order,way_area desc) as roads
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- VF: Posunuto pred vsechny ostatni fill, ktere se kresli na ni hlavne kvuli pesim zonam-->
 <!-- vypln odpovidajicich uzemi -->
 <Layer name="highway-area-fill" srs="&srs900913;">
@@ -437,6 +426,17 @@
        case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
        from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
+       order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="highway-area-fill-cobblestone" srs="&srs900913;">
+<StyleName>highway-area-fill-cobblestone</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway, surface
+       from planet_osm_polygon
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
