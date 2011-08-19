@@ -549,8 +549,7 @@
 <Layer name="bridges" srs="&srs900913;">
 <StyleName>road-bridges-casing</StyleName>
 <StyleName>road-bridges-fill</StyleName>
-<!--<StyleName>noncased-ways-bridges</StyleName>--><!--replaced by separation of bridge casing and fill-->
-<StyleName>noncased-ways-bridges_casing</StyleName><!-- added by VF-->
+<StyleName>noncased-ways-bridges_casing</StyleName>
 <StyleName>primarybridge_layer0_casing</StyleName>
 <StyleName>mwaybridge_layer0_casing</StyleName>
 <StyleName>primarybridge_layer0_fill</StyleName>
@@ -559,7 +558,7 @@
 <StyleName>mwaybridge_layer1_casing</StyleName>
 <StyleName>primarybridge_layer1_fill</StyleName>
 <StyleName>mwaybridge_layer1_fill</StyleName>
-<StyleName>noncased-ways-bridges_fill</StyleName><!-- added by VF-->
+<StyleName>noncased-ways-bridges_fill</StyleName>
 <StyleName>primarybridge_layer2_casing</StyleName>
 <StyleName>mwaybridge_layer2_casing</StyleName>
 <StyleName>primarybridge_layer2_fill</StyleName>
