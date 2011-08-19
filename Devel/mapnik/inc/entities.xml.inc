@@ -65,7 +65,7 @@
 <!ENTITY amenity-poi-styles SYSTEM "amenity-poi-styles.xml.inc">
 <!ENTITY text-styles SYSTEM "text-styles.xml.inc">
 <!ENTITY landuse-styles SYSTEM "landuse-styles.xml.inc">
+<!ENTITY layer-amenity-stations SYSTEM "layer-amenity-stations.xml.inc">
 
-<!ENTITY symbols-path "../symbols/">
 <!ENTITY shapefiles "../../../Data/shapefile">
 <!ENTITY hgtdata "../../../Data/shadingdata">

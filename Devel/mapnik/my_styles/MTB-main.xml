@@ -265,13 +265,29 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<!-- nektere budovy, dalsi se kresli pomoci ? -->
+<Layer name="buildings" srs="&srs900913;">
+<StyleName>buildings</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,building,leisure,railway,amenity,aeroway from planet_osm_polygon
+       where building is not null
+          or leisure in ('pitch','track')
+          or railway='station'
+          or amenity='place_of_worship'
+          or aeroway='terminal'
+       order by z_order,way_area desc) as buildings
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- tunely vsech cest naraz, okraje i vypln -->
 <Layer name="tunnels" srs="&srs900913;">
 <StyleName>tunnels-casing</StyleName>
 <StyleName>tunnels-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from planet_osm_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway,service from planet_osm_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','service') and tunnel in ('yes','true','1') order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -342,22 +358,6 @@
     </Datasource>
 </Layer>
 
-<!-- nektere budovy, dalsi se kresli pomoci ? -->
-<Layer name="buildings" srs="&srs900913;">
-<StyleName>buildings</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,building,leisure,railway,amenity,aeroway from planet_osm_polygon
-       where building is not null
-          or leisure in ('pitch','track')
-          or railway='station'
-          or amenity='place_of_worship'
-          or aeroway='terminal'
-       order by z_order,way_area desc) as buildings
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- utesy, bariery -->
 <Layer name="line features" srs="&srs900913;">
 <StyleName>cliffs</StyleName>
@@ -1174,34 +1174,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- zastavky tramvaji, mene vyznamna nadrazi,  -->
-<Layer name="amenity-stations" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_point
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vetsinou hlavni zeleznicni nadrazi -->
-<Layer name="amenity-stations-poly" srs="&srs900913;">
-<StyleName>stations</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,name,railway,aerialway,disused
-      from planet_osm_polygon
-      where railway in ('station','halt','tram_stop')
-         or aerialway='station'
-      ) as stations
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-amenity-stations;
 <!-- elektricke vedeni -->
 <Layer name="power" srs="&srs900913;">
 <StyleName>power</StyleName>
@@ -1369,7 +1342,6 @@ admin 8 - uzemi samostatnych obci
 </Layer>
 <!-- zajimave body - zastavky autobusu, hrady, zamky, kostely, skoly, obchody, letiste, vrcholy, rozcesti, parkoviste -->
 <Layer name="amenity" status="on" srs="&srs900913;" clear_label_cache="yes">
-    <StyleName>stations</StyleName>    
     <StyleName>symbols</StyleName>
     <StyleName>points</StyleName>
     <Datasource>
@@ -1378,7 +1350,6 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <Layer name="amenity-poly" status="on" srs="&srs900913;">
-    <StyleName>stations</StyleName>
     <StyleName>symbols-poly</StyleName>
     <StyleName>points</StyleName>
     <Datasource>

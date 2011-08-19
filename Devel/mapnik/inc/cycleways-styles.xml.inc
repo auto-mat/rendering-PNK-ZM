@@ -239,7 +239,7 @@
   </Rule>
 
   <Rule>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <Filter>([cycleway]='share_busway' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite_narrow.png"/>
@@ -247,13 +247,13 @@
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='share_busway' or ([cycleway]='share_busway' and [oneway]='yes'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share_narrow.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='share_busway' or ([cycleway]='share_busway' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclebuslane_share_opposite_narrow.png"/>
   </Rule>
@@ -297,7 +297,7 @@
   </Rule>
 
   <Rule>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <Filter>([cycleway]='shared_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared_opposite_narrow.png"/>
@@ -305,13 +305,13 @@
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='yes'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared_narrow.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='shared_lane' or ([cycleway]='shared_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" type="png" file="../symbols/cyclelane_shared_opposite_narrow.png"/>
   </Rule>
@@ -355,7 +355,7 @@
   </Rule>
 
   <Rule>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <Filter>([cycleway]='lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;"  type="png" file="../symbols/cyclelane_narrow.png"/>
@@ -363,13 +363,13 @@
   </Rule>
   <Rule>
     <Filter>([cycleway:right]='lane' or ([cycleway]='lane' and [oneway]='yes'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;"  type="png" file="../symbols/cyclelane_narrow.png"/>
   </Rule>
   <Rule>
     <Filter>([cycleway:left]='lane' or ([cycleway]='lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
-    &maxscale_zoom14;
+    &maxscale_zoom12;
     &minscale_zoom14;
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;"  type="png" file="../symbols/cyclelane_narrow.png"/>
   </Rule>

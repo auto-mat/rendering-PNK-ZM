@@ -22,7 +22,7 @@
 <!ENTITY color_kct_green 'rgb(0,221,0)'>
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
-<!ENTITY color_footway "rgb(218, 151, 146)">
+<!ENTITY color_footway "rgb(128,128,128)">
 <!ENTITY color_steps "rgb(128,128,128)">
 
 <!ENTITY color_bridleway "rgb(0,128,0)">
@@ -32,13 +32,13 @@
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle_track_fill "&color_bicycle;">
-<!ENTITY color_bicycle_track_casing "&color_bicycle_casing;">
+<!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
 <!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle '#9c699d'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
-<!ENTITY color_bicycle_casing "#333333">
+<!ENTITY color_bicycle_casing "rgb(255,255,255)">
 
 <!ENTITY color_bicycle_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
@@ -85,6 +85,7 @@
 <!ENTITY opacity_tram '0.5'>
 <!ENTITY color_railway "rgb(128,128,128)">
 <!ENTITY color_railway_tunnel "rgb(177,177,177)">
+<!ENTITY color_stations "&color_non_bicycle_amenity;">
 
 <!ENTITY color_non_bicycle_amenity '#6f6f6f'>
 <!ENTITY color_bicycle_amenity '#c800da'>
