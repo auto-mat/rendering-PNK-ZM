@@ -309,18 +309,18 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
-                <CssParameter name="stroke-width">5.5</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-opacity">0.4</CssParameter>
+                <CssParameter name="stroke-opacity">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">0.5</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 3</CssParameter>
@@ -351,15 +351,8 @@
                 <CssParameter name="fill">&color_residential;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
-    <Rule title="!pěší zóna pro cyklisty">
-            <Filter>((([highway]='pedestrian') or ([highway]='footway')) and ([bicycle]='yes'))</Filter>
-            &maxscale_zoom14;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_pedestrian_bicycle;</CssParameter>
-            </PolygonSymbolizer>
-    </Rule>
     <Rule title="!pěší zóna">
-            <Filter>((([highway]='pedestrian') or ([highway]='service')) or ([highway]='footway')) and not ([bicycle]='yes')</Filter>
+            <Filter>((([highway]='pedestrian') or ([highway]='service')) or ([highway]='footway'))</Filter>
             &maxscale_zoom14;
             <PolygonSymbolizer>
                 <CssParameter name="fill">&color_pedestrian;</CssParameter>
@@ -414,7 +407,7 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_primary_background;</CssParameter>
-                <CssParameter name="stroke-width">7.5</CssParameter>
+                <CssParameter name="stroke-width">7</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1245,7 +1238,7 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_primary;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -1806,50 +1799,6 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
-
-    <Rule title="pěší zóna">
-            <Filter>([highway]='pedestrian' and [bicycle]='yes')</Filter>
-            &minscale_zoom13;
-            &maxscale_zoom13;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">1.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="pěší zóna">
-            <Filter>([highway]='pedestrian' and [bicycle]='yes')</Filter>
-            &minscale_zoom14;
-            &maxscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="pěší zóna">
-            <Filter>([highway]='pedestrian' and [bicycle]='yes')</Filter>
-            &minscale_zoom15;
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">5.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="pěší zóna">
-            <Filter>([highway]='pedestrian' and [bicycle]='yes')</Filter>
-            &maxscale_zoom16;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
     <Rule title="nástupiště">
             <Filter>(([highway]='platform') or ([railway]='platform'))</Filter>
             &maxscale_zoom16;
@@ -1951,15 +1900,13 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-opacity">0.4</CssParameter>
+                <CssParameter name="stroke-opacity">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">0.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -2015,6 +1962,60 @@
             </LineSymbolizer>
     </Rule>
 </Style>
+<Style name="bicycle-roads-fill">
+    <Rule title="ulice pro cyklisty bez aut">
+            &minscale_zoom13;
+            &maxscale_zoom13;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">1.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ulice pro cyklisty bez aut">
+            &minscale_zoom14;
+            &maxscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ulice pro cyklisty bez aut">
+            &minscale_zoom15;
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">5.5</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="ulice pro cyklisty bez aut">
+            &maxscale_zoom16;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="stroke-width">8</CssParameter>
+                <CssParameter name="stroke-linejoin">round</CssParameter>
+                <CssParameter name="stroke-linecap">round</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="bicycle-roads-fill">
+    <Rule title="plocha pro cyklisty bez aut">
+            &maxscale_zoom14;
+            <PolygonSymbolizer>
+                <CssParameter name="fill">&color_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="fill-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+            </PolygonSymbolizer>
+    </Rule>
+</Style>
 <Style name="cycleway-fill">
     <Rule title="stezka pro cyklisty">
             <Filter>((([highway]='cycleway') and not ([foot]='yes' or [foot]='designated')) and not (([tunnel]='yes')))</Filter>
@@ -2036,7 +2037,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes')) or [bicycle]='designated') and not (([tunnel]='yes')))</Filter>
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer>
@@ -2045,7 +2046,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes')) or [bicycle]='designated') and not (([tunnel]='yes')))</Filter>
+            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle_footway;</CssParameter>
@@ -2639,19 +2640,17 @@
             <Filter>((([highway]='path') and [bicycle]='designated'))</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">2.5</CssParameter>
+                <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">0.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">6, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -2864,7 +2863,6 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_motorway_background;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -2873,7 +2871,6 @@
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_primary_background;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -3167,7 +3164,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and not ([bicycle]='yes'))</Filter>
+            <Filter>([highway]='pedestrian')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
@@ -3178,7 +3175,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and not ([bicycle]='yes'))</Filter>
+            <Filter>([highway]='pedestrian')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
@@ -3189,7 +3186,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and not ([bicycle]='yes'))</Filter>
+            <Filter>([highway]='pedestrian')</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
@@ -3200,54 +3197,10 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and not ([bicycle]='yes'))</Filter>
+            <Filter>([highway]='pedestrian')</Filter>
             &maxscale_zoom16;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian;</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-
-    <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and ([bicycle]='yes'))</Filter>
-            &minscale_zoom13;
-            &maxscale_zoom13;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">1.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and ([bicycle]='yes'))</Filter>
-            &minscale_zoom14;
-            &maxscale_zoom14;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and ([bicycle]='yes'))</Filter>
-            &minscale_zoom15;
-            &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">5.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-    </Rule>
-    <Rule title="!most v pěší zóně">
-            <Filter>([highway]='pedestrian' and ([bicycle]='yes'))</Filter>
-            &maxscale_zoom16;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>

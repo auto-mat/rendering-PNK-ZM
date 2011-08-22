@@ -32,7 +32,6 @@
 </Layer>-->
 
 <!-- Hypsometry layer. -->
-<!--
 <Layer name="hypsometry" status="on" srs="&srs900913;">
     <StyleName>hypsometry</StyleName>
     <Datasource>
@@ -41,7 +40,6 @@
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
--->
 
 <!-- Lesy, hriste, skoly, vojenske prostory, kempy, vse jako polygon -->
 <Layer name="leisure" srs="&srs900913;">
@@ -73,7 +71,6 @@
     </Datasource>
 </Layer>
 <!-- Hillshading layer. -->
-<!--
 <Layer name="hillshade" status="on" srs="&srs900913;">
 <StyleName>shading</StyleName>
     <Datasource>
@@ -82,7 +79,6 @@
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 5 metrech -->
 <!--
 <Layer name="contours5" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
@@ -127,7 +123,6 @@
 </Layer>
 -->
 <!-- vrstevnice po 50 metrech -->
-<!--
 <Layer name="contours50" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours50</StyleName>
     <StyleName>contours-text50</StyleName>
@@ -136,9 +131,7 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 100 metrech -->
-<!--
 <Layer name="contours100" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours100</StyleName>
     <StyleName>contours-text100</StyleName>
@@ -147,7 +140,6 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 
 <!-- ledovce nejsou v CR potreba -->
 <!--<Layer name="glaciers-text" srs="&srs900913;">
@@ -422,11 +414,24 @@
 <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway, surface,
-       case when bicycle in ('yes','true','1') then 'yes'::text else bicycle end as bicycle
+      (select way,highway, surface
        from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
        order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bicycle-area-fill" srs="&srs900913;">
+<StyleName>bicycle-area-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway
+      from planet_osm_polygon
+      where (highway in ('pedestrian', 'footway', 'track')
+      or bicycle='designated'
+      or motorcar='no')
+       order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -483,6 +488,20 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bicycle-roads-fill" srs="&srs900913;">
+<StyleName>bicycle-roads-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway
+      from planet_osm_line
+      where (highway in ('pedestrian')
+      or bicycle='designated'
+      or motorcar='no')
+       order by z_order) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <!-- lanovky -->
 <Layer name="aerialways" srs="&srs900913;">
 <StyleName>aerialways</StyleName>
@@ -520,7 +539,7 @@
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from planet_osm_line
-       where highway is not null
+       where highway is not null or bicycle='designated'
        order by z_order) as roads
       </Parameter>
       &datasource-settings;

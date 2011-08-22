@@ -68,7 +68,8 @@
             <Filter>(((([building]&lt;&gt;'station') and ([building]&lt;&gt;'supermarket')) and ([building]&lt;&gt;'')) and (not (([amenity]&lt;&gt;'')) or ([amenity]&lt;&gt;'place_of_worship')))</Filter>
             &maxscale_zoom10;
             <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(188,169,169)</CssParameter>
+                <CssParameter name="fill">&color_building;</CssParameter>
+                <CssParameter name="fill-opacity">&opacity_building;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
     <Rule title="!terminál letiště">

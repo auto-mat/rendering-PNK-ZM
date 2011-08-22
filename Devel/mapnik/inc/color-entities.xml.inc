@@ -32,13 +32,13 @@
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle_track_fill "&color_bicycle;">
-<!ENTITY color_bicycle_track_casing "rgb(255,255,255)">
+<!ENTITY color_bicycle_track_casing "&color_bicycle_casing;">
 <!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
 <!ENTITY color_bicycle '#9c699d'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
-<!ENTITY color_bicycle_casing "rgb(255,255,255)">
+<!ENTITY color_bicycle_casing "#333333">
 
 <!ENTITY color_bicycle_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
@@ -77,7 +77,9 @@
 <!ENTITY color_primary_lozoom '&color_lozoom;'>
 
 <!ENTITY color_pedestrian "rgb(237,237,237)">
-<!ENTITY color_pedestrian_bicycle "rgb(255,212,212)">
+
+<!ENTITY color_pedestrian_bicycle "#ffabab">
+<!ENTITY opacity_pedestrian_bicycle "0.5">
 
 <!ENTITY color_raceway "rgb(255,192,203)">
 
@@ -113,7 +115,11 @@
 <!ENTITY color_grass 'rgb(207,236,168)'>
 <!ENTITY color_park 'rgb(182,253,182)'>
 
+<!--
 <!ENTITY color_building 'rgb(188,169,169)'>
+-->
+<!ENTITY color_building '#704141'>
+<!ENTITY opacity_building '0.5'>
 
 <!ENTITY color_placenames_text 'rgb(0,0,0)'>
 <!ENTITY color_countries_text 'rgb(157,108,157)'>
