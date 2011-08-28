@@ -670,6 +670,23 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
+    <Rule title="stezka pro pěší / chodnik">
+            <Filter>(([highway]='footway') and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke-width">2.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="stezka pro pěší / chodnik">
+            <Filter>(([highway]='footway') and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke-width">3.5</CssParameter>
+            </LineSymbolizer>
+    </Rule>
     <Rule title="pěší zóna">
             <Filter>(([highway]='pedestrian') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom13;
@@ -1818,6 +1835,10 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_steps;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
+            </LineSymbolizer>
+            <LineSymbolizer>
+                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 1</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1840,19 +1861,18 @@
     <Rule title="stezka pro pěší">
             <Filter>(([highway]='footway' or ([highway]='path' and [foot]='designated')) and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
             &maxscale_zoom13;
+            &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
-                <CssParameter name="stroke-opacity">0.4</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_footway;</CssParameter>
+                <CssParameter name="stroke">white</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-                <CssParameter name="stroke-dasharray">1, 3</CssParameter>
+            </LineSymbolizer>
+    </Rule>
+    <Rule title="stezka pro pěší">
+            <Filter>(([highway]='footway' or ([highway]='path' and [foot]='designated')) and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer>
+                <CssParameter name="stroke">white</CssParameter>
+                <CssParameter name="stroke-width">2.5</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="!ostatní neurčené stezky">
