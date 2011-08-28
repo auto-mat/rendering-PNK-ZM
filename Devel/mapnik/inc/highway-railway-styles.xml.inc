@@ -197,7 +197,7 @@
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(250,128,114)</CssParameter>
+                <CssParameter name="stroke">&color_footway;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -1485,6 +1485,8 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_tram;</CssParameter>
+                <CssParameter name="stroke-width">0.5</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
                 <CssParameter name="stroke-dasharray">5, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1494,7 +1496,8 @@
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_tram;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-width">1</CssParameter>
+                <CssParameter name="stroke-opacity">&opacity_tram;</CssParameter>
                 <CssParameter name="stroke-dasharray">5, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -2007,7 +2010,7 @@
             </LineSymbolizer>
     </Rule>
 </Style>
-<Style name="bicycle-roads-fill">
+<Style name="bicycle-area-fill">
     <Rule title="plocha pro cyklisty bez aut">
             &maxscale_zoom14;
             <PolygonSymbolizer>

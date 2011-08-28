@@ -428,9 +428,9 @@
       <Parameter name="table">
       (select way,highway
       from planet_osm_polygon
-      where (highway in ('pedestrian', 'footway', 'track')
+      where ((highway in ('pedestrian', 'footway', 'track') and bicycle in ('true', 'yes', '1'))
       or bicycle='designated'
-      or motorcar='no')
+      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -494,9 +494,9 @@
       <Parameter name="table">
       (select way,highway
       from planet_osm_line
-      where (highway in ('pedestrian')
+      where ((highway in ('pedestrian') and bicycle in ('true', 'yes', '1'))
       or bicycle='designated'
-      or motorcar='no')
+      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -543,17 +543,6 @@
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="bicycle-lanes" srs="&srs900913;">
-    <StyleName>cyclelane</StyleName>
-    <Datasource>
-        <Parameter name="table">
-           (select way, cycleway, "cycleway:left", "cycleway:right",
-          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
-           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
-        </Parameter>
-        &datasource-settings;
     </Datasource>
 </Layer>
 <!-- neco jako mosty pro tekouci vodu, skoro se nevyskytuji -->
@@ -619,6 +608,17 @@
       (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
       </Parameter>
       &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bicycle-lanes" srs="&srs900913;">
+    <StyleName>cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+           (select way, cycleway, "cycleway:left", "cycleway:right",
+          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
+        </Parameter>
+        &datasource-settings;
     </Datasource>
 </Layer>
 
@@ -1477,10 +1477,10 @@ admin 8 - uzemi samostatnych obci
     <Datasource>
         <Parameter name="table">
         (select way, ref, name, state,
-        case when ref in ('A1','A2') then 'yes'::text
-        when ref in ('PAN') then ''::text else ncn end as ncn,
-        case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
-        case when ref in ('PAN') then ''::text else lcn end as lcn
+        case when ref in ('A1 ','A2 ') then 'yes'::text
+        when ref in ('PAN ') then ''::text else ncn end as ncn,
+        case when ref in ('A1 ','A2 ', 'PAN ') then ''::text else rcn end as rcn,
+        case when ref in ('PAN ') then ''::text else lcn end as lcn
         from planet_osm_line
         where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
         </Parameter>
