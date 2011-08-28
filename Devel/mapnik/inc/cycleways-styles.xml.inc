@@ -541,6 +541,13 @@
 
 <Style name="nobicycle">
   <Rule title="zákaz vjezdu cyklistů">
+    <Filter>([access_mode]='destination')</Filter>
+    &maxscale_zoom13;
+    &minscale_zoom18;
+    <LinePatternSymbolizer type="png" file="../symbols/nobicycle-destination.png"/>
+  </Rule>
+  <Rule title="zákaz vjezdu cyklistů">
+    <Filter>([access_mode]='no_access')</Filter>
     &maxscale_zoom13;
     &minscale_zoom18;
     <LinePatternSymbolizer type="png" file="../symbols/nobicycle.png"/>

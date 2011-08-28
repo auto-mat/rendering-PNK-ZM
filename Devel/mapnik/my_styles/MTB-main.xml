@@ -1091,9 +1091,15 @@
     <StyleName>nobicycle</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id,way
+        (select osm_id,way, access,
+        case when access in ('destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
         from planet_osm_line
-        where (((access='private' or access='no') and (bicycle is null or not (bicycle = 'yes')))  or bicycle = 'no') or (highway in ('trunk','motorway','trunk_link', 'motorway_link') and (bicycle is null or bicycle not in ('yes','designated')))) as nobicycle
+        where ((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
+        and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
+        and (not highway in ('footway'))) 
+        or (highway in ('trunk','motorway','trunk_link', 'motorway_link') 
+        and (bicycle is null or bicycle not in ('yes','designated', '1', 'true'))))
+        ) as nobicycle
         </Parameter>
         &datasource-settings;
     </Datasource>

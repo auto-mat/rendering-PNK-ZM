@@ -109,6 +109,7 @@
 <!ENTITY color_parking '&color_non_bicycle_amenity;'>
 
 <!ENTITY color_pharmacy '#666666'>
+<!ENTITY color_hospital '&color_non_bicycle_amenity;'>
 
 <!ENTITY color_attraction 'rgb(102,0,51)'>
 

@@ -393,7 +393,7 @@
     <Rule>
             <Filter>([amenity]='hospital')</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="rgb(218,0,146)" dy="16" vertical_alignment="bottom" halo_radius="2" wrap_width="12"></TextSymbolizer>
+            <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="&color_hospital;" dy="16" vertical_alignment="bottom" halo_radius="2" wrap_width="12"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='pharmacy')</Filter>
