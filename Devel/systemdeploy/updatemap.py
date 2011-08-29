@@ -24,9 +24,7 @@ def updateFromFile(filename):
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
-        os.system(homepath + '/Devel/relations2lines.py')
-        os.system(homepath + '/Devel/cycle_relations2lines.py')
-        os.system(homepath + '/Devel/cycleway_text.py')
+        os.system(homepath + '/Devel/db_scripts.py')
     except OSError, msg:
         raise UpdateError('relations2lines.py failed, osm data uploaded')
     refreshDate('index.html', str(date))

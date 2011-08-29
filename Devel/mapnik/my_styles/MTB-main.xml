@@ -204,7 +204,8 @@
     <StyleName>water-lines-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,waterway,name
+      (select way,waterway,
+       case when short_name is not null then short_name else name end as name
       from planet_osm_line
       where waterway in ('river','canal','stream','drain')
       ) as water_lines_text
@@ -1292,7 +1293,8 @@ admin 8 - uzemi samostatnych obci
 <StyleName>roads-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,aeroway,name,ref,admin_level,char_length(ref) as length,
+      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
+       case when short_name is not null then short_name else name end as name,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
        case when (NOT EXISTS (SELECT
                * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
@@ -1427,7 +1429,8 @@ admin 8 - uzemi samostatnych obci
 <StyleName>text-poly</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,highway,leisure,landuse,man_made,"tower:type","natural",place,tourism,historic,ruins,NULL as ele,name,ref,shop,military,'no'::text as point
+      (select way,aeroway,amenity,highway,leisure,landuse,man_made,"tower:type","natural",place,tourism,historic,ruins,NULL as ele,ref,shop,military,'no'::text as point,
+       case when short_name is not null then short_name else name end as name
        from planet_osm_polygon
        where amenity is not null
           or leisure is not null
@@ -1450,7 +1453,8 @@ admin 8 - uzemi samostatnych obci
 <StyleName>area-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,way_area,name, landuse, "natural"
+      (select way,way_area,landuse, "natural",
+       case when short_name is not null then short_name else name end as name
        from planet_osm_polygon
        where name is not null
          and (waterway is null or waterway &lt;&gt; 'riverbank')
