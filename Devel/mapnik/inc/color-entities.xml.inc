@@ -15,7 +15,7 @@
 <!ENTITY color_cycleway_heavy_traffic '#ff1d92'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
-<!ENTITY text_max_angle '30'>
+<!ENTITY text_max_angle '10'>
 
 <!-- hiking tracks -->
 <!ENTITY color_kct_yellow 'rgb(248,238,0)'>
