@@ -26,6 +26,7 @@ def updateFromFile(filename):
     try:
         os.system(homepath + '/Devel/relations2lines.py')
         os.system(homepath + '/Devel/cycle_relations2lines.py')
+        os.system(homepath + '/Devel/cycleway_text.py')
     except OSError, msg:
         raise UpdateError('relations2lines.py failed, osm data uploaded')
     refreshDate('index.html', str(date))
