@@ -673,9 +673,9 @@
 
           else 'bad'::text end as surface_type
           from planet_osm_cycleway_rels
-          where cycleway is null or not (cycleway in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
-          or 'cycleway:right' in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
-          or 'cycleway:left' in ('lane', 'opposite_lane', 'shared_lane', 'share_busway'))
+          where (cycleway is null and "cycleway:right" is null and "cycleway:left" is null) or not (cycleway in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
+          or "cycleway:right" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
+          or "cycleway:left" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway'))
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -1092,7 +1092,7 @@
     <Datasource>
         <Parameter name="table">
         (select osm_id,way, access,
-        case when access in ('destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
+        case when access in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
         from planet_osm_line
         where ((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
