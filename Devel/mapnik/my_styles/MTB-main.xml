@@ -432,7 +432,6 @@
       where ((highway in ('pedestrian', 'footway', 'track') and bicycle in ('true', 'yes', '1'))
       or bicycle='designated'
       or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
-      or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -499,7 +498,6 @@
       where ((highway in ('pedestrian') and bicycle in ('true', 'yes', '1'))
       or bicycle='designated'
       or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
-      or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -646,10 +644,9 @@
         (select bicycle, osm_id, route, state, way, tunnel,
         case 
           when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or not bicycle in ('yes', '1', 'true')) then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
 
