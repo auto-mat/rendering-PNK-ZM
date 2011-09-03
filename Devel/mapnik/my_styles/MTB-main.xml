@@ -645,6 +645,9 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel,
         case 
+          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or not bicycle in ('yes', '1', 'true')) then 'nobicycle'::text
+
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -680,7 +683,6 @@
           where ((cycleway is null and "cycleway:right" is null and "cycleway:left" is null) or not (cycleway in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
           and "cycleway:right" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
           and "cycleway:left" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')))
-          and not (highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')))
         ) as cycleroute
         </Parameter>
         &datasource-settings;

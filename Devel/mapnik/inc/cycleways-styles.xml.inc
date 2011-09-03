@@ -460,6 +460,39 @@
     </LineSymbolizer>
   </Rule>
 
+  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+    <Filter>([traffic]='nobicycle' and [surface_type]='good')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+    <Filter>([traffic]='nobicycle' and [surface_type]='unpaved')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+    <Filter>([traffic]='nobicycle' and [surface_type]='bad')</Filter>
+    <LineSymbolizer>
+      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
+      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
+      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-linejoin">bevel</CssParameter>
+      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
+    </LineSymbolizer>
+  </Rule>
+
   <Rule title="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good')</Filter>
     <LineSymbolizer>
