@@ -5,14 +5,14 @@
 <!ENTITY color_ncn "rgb(255,0,255)">
 <!ENTITY color_rcn "rgb(255,0,255)">
 <!ENTITY color_lcn "rgb(255,0,255)">
-<!ENTITY color_ncn_text '#ff8888'>
-<!ENTITY color_rcn_text '#88d4ff'>
-<!ENTITY color_lcn_text '#6e6eff'>
+<!ENTITY color_ncn_text '#ffa4a4'>
+<!ENTITY color_rcn_text '#afe2ff'>
+<!ENTITY color_lcn_text '#8e8eff'>
 <!ENTITY color_cycleway_background_text '#000000'>
-<!ENTITY color_cycleway_background_text_proposed '#666666'>
+<!ENTITY color_cycleway_background_text_proposed '#444444'>
 <!ENTITY color_cycleway '#760076'>
-<!ENTITY color_cycleway_traffic '#ff00ff'>
-<!ENTITY color_cycleway_heavy_traffic '#ff1d92'>
+<!ENTITY color_cycleway_traffic '#c300c3'>
+<!ENTITY color_cycleway_heavy_traffic '#ff0076'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
 <!ENTITY text_max_angle '10'>
@@ -24,12 +24,13 @@
 <!ENTITY color_kct_green 'rgb(0,221,0)'>
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
-<!ENTITY color_footway "rgb(128,128,128)">
-<!ENTITY color_steps "rgb(128,128,128)">
+<!ENTITY color_footway "#ffff88">
+<!ENTITY color_steps "&color_footway;">
+<!ENTITY color_steps_background "rgb(128,128,128)">
 
 <!ENTITY color_bridleway "rgb(0,128,0)">
 <!ENTITY color_track_fill "rgb(72,72,72)">
-<!ENTITY color_track_casing "rgb(255,255,255)">
+<!ENTITY color_track_casing "&color_bicycle_casing;">
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
@@ -38,7 +39,7 @@
 <!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle '#9c699d'>
+<!ENTITY color_bicycle '#cb93cb'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
 <!ENTITY color_bicycle_casing "#333333">
 
@@ -72,16 +73,18 @@
 <!ENTITY color_primary_background '#a00000'>
 <!ENTITY color_motorway_background 'rgb(80,96,119)'>
 
+<!ENTITY color_parking '&color_residential;'>
+
 <!ENTITY color_lozoom '#606060'>
 <!ENTITY color_road_lozoom '&color_lozoom;'>
 <!ENTITY color_tertiary_lozoom '&color_lozoom;'>
 <!ENTITY color_secondary_lozoom '&color_lozoom;'>
 <!ENTITY color_primary_lozoom '&color_lozoom;'>
 
-<!ENTITY color_pedestrian "rgb(237,237,237)">
+<!ENTITY color_pedestrian "#ffffc3">
 
-<!ENTITY color_pedestrian_bicycle "#ffabab">
-<!ENTITY opacity_pedestrian_bicycle "0.5">
+<!ENTITY color_pedestrian_bicycle "#ffcccc">
+<!ENTITY opacity_pedestrian_bicycle "1">
 
 <!ENTITY color_raceway "rgb(255,192,203)">
 

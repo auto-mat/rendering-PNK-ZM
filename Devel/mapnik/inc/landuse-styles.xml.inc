@@ -270,7 +270,7 @@
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom11;
             <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(247,239,183)</CssParameter>
+                <CssParameter name="fill">&color_parking;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
     <Rule title="parkoviště">

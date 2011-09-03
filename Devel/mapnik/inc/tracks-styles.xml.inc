@@ -130,7 +130,7 @@
             &maxscale_zoom13;
             &minscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -139,7 +139,7 @@
             &maxscale_zoom14;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -148,7 +148,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -157,7 +157,7 @@
             &maxscale_zoom16;
             &minscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -165,7 +165,7 @@
             <Filter>([tracktype]='grade1' or [tracktype]='grade2')</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -174,7 +174,7 @@
             &maxscale_zoom13;
             &minscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -184,7 +184,7 @@
             &maxscale_zoom14;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -194,7 +194,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -204,7 +204,7 @@
             &maxscale_zoom16;
             &minscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -213,7 +213,7 @@
             <Filter>(not ([tracktype]='grade1' or [tracktype]='grade2' or [tracktype]='grade3' or [tracktype]='grade4' or [tracktype]='grade5'))</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>

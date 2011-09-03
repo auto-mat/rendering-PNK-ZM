@@ -49,14 +49,14 @@
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
                 <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">&offset_directions;</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
                 <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
@@ -81,14 +81,14 @@
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
                 <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
                 <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
@@ -113,14 +113,14 @@
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
                 <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
                 <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
@@ -144,14 +144,14 @@
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
                 <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
+                <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-linejoin">bevel</CssParameter>
                 <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
                 <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
@@ -1833,11 +1833,11 @@
             <Filter>([highway]='steps')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_steps;</CssParameter>
+                <CssParameter name="stroke">&color_steps_background;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_steps;</CssParameter>
                 <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 1</CssParameter>
             </LineSymbolizer>
@@ -1863,7 +1863,7 @@
             &maxscale_zoom13;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">white</CssParameter>
+                <CssParameter name="stroke">&color_footway;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1871,7 +1871,7 @@
             <Filter>(([highway]='footway' or ([highway]='path' and [foot]='designated')) and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">white</CssParameter>
+                <CssParameter name="stroke">&color_footway;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -1906,7 +1906,7 @@
             &minscale_zoom14;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_white;</CssParameter>
+                <CssParameter name="stroke">&color_steps_background;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
                 <CssParameter name="stroke-opacity">0.4</CssParameter>
             </LineSymbolizer>

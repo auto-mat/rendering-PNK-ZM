@@ -468,11 +468,13 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bollard.png" type="png" width="3" height="3"></PointSymbolizer>
     </Rule>
+<!--
     <Rule title="cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow_overlap="true" type="png" width="20" height="12"></PointSymbolizer>
     </Rule>
+-->
     <Rule title="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom13;
