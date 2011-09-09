@@ -1410,7 +1410,7 @@
             </LineSymbolizer>
     </Rule>
     <Rule title="železniční most">
-            <Filter>(([railway]='rail') and ([bridge]='yes'))</Filter>
+            <Filter>(([railway]='rail' or [railway]='tram') and ([bridge]='yes'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom14;
             <LineSymbolizer>
@@ -2034,8 +2034,7 @@
     <Rule title="plocha pro cyklisty bez aut">
             &maxscale_zoom14;
             <PolygonSymbolizer>
-                <CssParameter name="fill">&color_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="fill-opacity">&opacity_pedestrian_bicycle;</CssParameter>
+                <CssParameter name="fill">&color_pedestrian_bicycle_area;</CssParameter>
             </PolygonSymbolizer>
     </Rule>
 </Style>

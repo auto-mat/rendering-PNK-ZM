@@ -7,13 +7,8 @@
                 <CssParameter name="stroke-width">5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_fill;</CssParameter>
-                <CssParameter name="stroke-width">2.5</CssParameter>
-                <CssParameter name="stroke-opacity">0.7</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="štěrková nebo kamenitá cesta">
@@ -23,18 +18,10 @@
                 <CssParameter name="stroke-width">4.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_fill;</CssParameter>
-                <CssParameter name="stroke-width">1.8</CssParameter>
-                <CssParameter name="stroke-opacity">0.9</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">butt</CssParameter>
-                <CssParameter name="stroke-dasharray">12, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="částečně nezpevněná cesta">
@@ -107,17 +94,10 @@
                 <CssParameter name="stroke-width">4.5</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">3</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_track_fill;</CssParameter>
-                <CssParameter name="stroke-width">1.8</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">butt</CssParameter>
-                <CssParameter name="stroke-dasharray">5, 3, 2, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
@@ -130,7 +110,7 @@
             &maxscale_zoom13;
             &minscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -139,7 +119,7 @@
             &maxscale_zoom14;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -148,7 +128,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -157,7 +137,7 @@
             &maxscale_zoom16;
             &minscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">6</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -165,7 +145,7 @@
             <Filter>([tracktype]='grade1' or [tracktype]='grade2')</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">8</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -174,7 +154,7 @@
             &maxscale_zoom13;
             &minscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -184,7 +164,7 @@
             &maxscale_zoom14;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -194,7 +174,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -204,7 +184,7 @@
             &maxscale_zoom16;
             &minscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -213,7 +193,7 @@
             <Filter>(not ([tracktype]='grade1' or [tracktype]='grade2' or [tracktype]='grade3' or [tracktype]='grade4' or [tracktype]='grade5'))</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_bicycle_track_casing;</CssParameter>
+                <CssParameter name="stroke">&color_track_casing_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">5</CssParameter>
                 <CssParameter name="stroke-dasharray">2, 2</CssParameter>
             </LineSymbolizer>
@@ -227,7 +207,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -238,7 +218,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -249,7 +229,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -260,7 +240,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -270,7 +250,7 @@
             <Filter>([tracktype]='grade1')</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">#ffffff</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -281,7 +261,7 @@
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">#dddddd</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -292,7 +272,7 @@
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">#dddddd</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -303,7 +283,7 @@
             &minscale_zoom15;
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">#dddddd</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -314,7 +294,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer>
-                <CssParameter name="stroke">#dddddd</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">4.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
@@ -324,7 +304,7 @@
             <Filter>([tracktype]='grade2')</Filter>
             &maxscale_zoom17;
             <LineSymbolizer>
-                <CssParameter name="stroke">#dddddd</CssParameter>
+                <CssParameter name="stroke">&color_track_fill_doubleline2;</CssParameter>
                 <CssParameter name="stroke-width">6.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>

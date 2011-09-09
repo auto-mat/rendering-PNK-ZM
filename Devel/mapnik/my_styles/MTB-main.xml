@@ -429,9 +429,9 @@
       <Parameter name="table">
       (select way,highway
       from planet_osm_polygon
-      where ((highway in ('pedestrian', 'footway', 'track') and bicycle in ('true', 'yes', '1'))
-      or bicycle='designated'
-      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
+      where 
+      (highway in ('pedestrian') or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')) 
+      and (bicycle is null or bicycle not in ('no', '-1')))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -495,9 +495,9 @@
       <Parameter name="table">
       (select way,highway
       from planet_osm_line
-      where ((highway in ('pedestrian') and bicycle in ('true', 'yes', '1'))
-      or bicycle='designated'
-      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') and (bicycle is null or bicycle not in ('no', '-1'))))
+      where
+      (highway in ('pedestrian') or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')) 
+      and (bicycle is null or bicycle not in ('no', '-1')))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -1101,7 +1101,8 @@
         where ((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
         and (not highway in ('footway'))) 
-        or (highway in ('trunk','motorway','trunk_link', 'motorway_link') 
+        or ((highway in ('motorway','trunk_link', 'motorway_link') 
+        or (motorroad='yes'))
         and (bicycle is null or bicycle not in ('yes','designated', '1', 'true'))))
         ) as nobicycle
         </Parameter>
@@ -1230,7 +1231,7 @@
        from planet_osm_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and not highway='construction'
+         and not highway in ('construction', 'proposed')
       ) as directions
       </Parameter>
       &datasource-settings;

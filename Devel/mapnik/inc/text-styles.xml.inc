@@ -430,11 +430,13 @@
             &maxscale_zoom17;
             <TextSymbolizer name="ref" fontset_name="book-fonts" size="10" fill="rgb(170,102,204)" halo_radius="1" wrap_width="10"></TextSymbolizer>
     </Rule>
+<!--
     <Rule>
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom14;
             <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical_alignment="bottom" halo_radius="1"></TextSymbolizer>
     </Rule>
+-->
     <Rule title="!zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom14;

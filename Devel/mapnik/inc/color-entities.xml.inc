@@ -13,7 +13,7 @@
 <!ENTITY color_cycleway '#760076'>
 <!ENTITY color_cycleway_nobicycle '#ffff00'>
 <!ENTITY color_cycleway_traffic '#c300c3'>
-<!ENTITY color_cycleway_heavy_traffic '#ff0076'>
+<!ENTITY color_cycleway_heavy_traffic '#ff5597'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
 <!ENTITY text_max_angle '10'>
@@ -25,13 +25,16 @@
 <!ENTITY color_kct_green 'rgb(0,221,0)'>
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
-<!ENTITY color_footway "#ffff88">
+<!ENTITY color_footway "#ffff90">
 <!ENTITY color_steps "&color_footway;">
 <!ENTITY color_steps_background "rgb(128,128,128)">
 
 <!ENTITY color_bridleway "rgb(0,128,0)">
 <!ENTITY color_track_fill "rgb(72,72,72)">
-<!ENTITY color_track_casing "&color_bicycle_casing;">
+<!ENTITY color_track_casing "rgb(255,255,255)">
+<!ENTITY color_track_casing_doubleline "&color_bicycle_casing;">
+<!ENTITY color_track_fill_doubleline "#ffffff">
+<!ENTITY color_track_fill_doubleline2 "#dddddd">
 <!ENTITY color_track_tunnel "rgb(128,128,128)">
 <!ENTITY color_track_lozoom "rgb(72,72,72)">
 
@@ -84,8 +87,9 @@
 
 <!ENTITY color_pedestrian "#ffffc3">
 
-<!ENTITY color_pedestrian_bicycle "#ffcccc">
-<!ENTITY opacity_pedestrian_bicycle "1">
+<!ENTITY color_pedestrian_bicycle "#ffabab">
+<!ENTITY color_pedestrian_bicycle_area "#ffc5c5">
+<!ENTITY opacity_pedestrian_bicycle "0.5">
 
 <!ENTITY color_raceway "rgb(255,192,203)">
 
