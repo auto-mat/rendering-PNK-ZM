@@ -55,6 +55,7 @@ node,way   man_made     text         polygon
 node,way   military     text         polygon
 node,way   motorcar     text         linear #povoleni motorovych vozidel
 node,way   motor_vehicle     text         linear #povoleni motorovych vozidel
+node,way   motorroad     text         linear
 node,way   vehicle      text         linear
 node,way   name         text         linear
 node,way   natural      text         polygon  # natural=coastline tags are discarded by a hard coded rule in osm2pgsql
