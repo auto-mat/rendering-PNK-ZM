@@ -1101,7 +1101,7 @@
         where ((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
         and (not highway in ('footway'))) 
-        or ((highway in ('motorway','trunk_link', 'motorway_link') 
+        or ((highway in ('motorway','motorway_link') 
         or (motorroad='yes'))
         and (bicycle is null or bicycle not in ('yes','designated', '1', 'true'))))
         ) as nobicycle
