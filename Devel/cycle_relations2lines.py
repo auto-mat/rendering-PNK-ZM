@@ -16,10 +16,10 @@ auxilary_cursor = connection.cursor()
 
 # Read allowed tags of line table.
 copy_tags = {'route': True}
-copy_tags1 = {'ref': True, 'network': True, 'state': True}
+# copy_tags1 = {'ref': True, 'network': True, 'state': True}
 
-proposed_refs = {}
-refs = {}
+# proposed_refs = {}
+# refs = {}
 
 # Clean previous cycleways.
 auxilary_cursor.execute("DROP TABLE IF EXISTS planet_osm_cycleway_rels")
@@ -28,7 +28,7 @@ auxilary_cursor.execute("CREATE TABLE planet_osm_cycleway_rels AS SELECT * FROM 
 auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'planet_osm_cycleway_rels'")
 auxilary_cursor.execute("INSERT INTO geometry_columns VALUES ('', 'public', 'planet_osm_cycleway_rels', 'way', 2, 900913, 'LINESTRING')")
 auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text;")
-auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD refs text, ADD proposed_refs text;")
+# auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD refs text, ADD proposed_refs text;")
 
 # Select all route relations.
 relation_cursor.execute("SELECT id, parts, tags, members FROM planet_osm_rels WHERE"
@@ -51,32 +51,32 @@ while True:
            value = row[2][I + 1]
            if key == 'route' and value == 'bicycle':
               tags[key] = value
-           if copy_tags1.has_key(key):
-              tags[key] = value
+           # if copy_tags1.has_key(key):
+           #    tags[key] = value
 
         if not tags.has_key('route'):
               continue
 
-        if tags.has_key('ref'):
-           for way_id in row[1]:
-              if tags.has_key('state'):
-                 last_refs = ""
-                 if proposed_refs.has_key(way_id):
-                    last_refs = ", " + proposed_refs[way_id]
-                 else:
-                    proposed_refs[way_id] = {}
+        # if tags.has_key('ref'):
+        #    for way_id in row[1]:
+        #       if tags.has_key('state'):
+        #          last_refs = ""
+        #          if proposed_refs.has_key(way_id):
+        #             last_refs = ", " + proposed_refs[way_id]
+        #          else:
+        #             proposed_refs[way_id] = {}
 
-                 proposed_refs[way_id] = tags['ref'] + last_refs
-                 #print proposed_refs[way_id]
-              else:
-                 last_refs = ""
-                 if refs.has_key(way_id):
-                    last_refs = ", " + refs[way_id]
-                 else:
-                    refs[way_id] = {}
+        #          proposed_refs[way_id] = tags['ref'] + last_refs
+        #          #print proposed_refs[way_id]
+        #       else:
+        #          last_refs = ""
+        #          if refs.has_key(way_id):
+        #             last_refs = ", " + refs[way_id]
+        #          else:
+        #             refs[way_id] = {}
 
-                 refs[way_id] = tags['ref'] + last_refs
-                 #print refs[way_id]
+        #          refs[way_id] = tags['ref'] + last_refs
+        #          #print refs[way_id]
 
         roles = {}
         l = len(row[3])
@@ -114,12 +114,12 @@ while True:
               " osm_id IN (%s)" % (set_statement, where_statement))
 
 # update all refs
-for way_id in refs.keys():
-   auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET refs = '%s' WHERE"
-     " osm_id = %s" % (refs[way_id].replace('\'', '\\\''), way_id))
-for way_id in proposed_refs.keys():
-   auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET proposed_refs = '%s' WHERE"
-     " osm_id = %s" % (proposed_refs[way_id].replace('\'', '\\\''), way_id))
+# for way_id in refs.keys():
+#    auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET refs = '%s' WHERE"
+#      " osm_id = %s" % (refs[way_id].replace('\'', '\\\''), way_id))
+# for way_id in proposed_refs.keys():
+#    auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET proposed_refs = '%s' WHERE"
+#      " osm_id = %s" % (proposed_refs[way_id].replace('\'', '\\\''), way_id))
 
 auxilary_cursor.close()
 relation_cursor.close()

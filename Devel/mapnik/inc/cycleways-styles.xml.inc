@@ -1,4 +1,18 @@
 <!-- Styles for cycling paths-->
+<Style name="mtb_incline">
+  <Rule title="příkré stoupání">
+    &maxscale_zoom13;
+    &minscale_zoom18;
+    <Filter>([incline]='up')</Filter>
+    <LinePatternSymbolizer width="50" height="12" type="png" file="../symbols/mtb_down.png"/>
+  </Rule>
+  <Rule title="prudké klesání">
+    &maxscale_zoom13;
+    &minscale_zoom18;
+    <Filter>([incline]='down')</Filter>
+    <LinePatternSymbolizer width="50" height="12" type="png" file="../symbols/mtb_up.png"/>
+  </Rule>
+</Style>
 <Style name="bicycle_directions">
     <Rule>
             <Filter>([oneway]='yes' and [cycleway]='opposite')</Filter>

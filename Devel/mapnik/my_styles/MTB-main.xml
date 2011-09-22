@@ -1130,10 +1130,10 @@
     <StyleName>mtb_incline</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id,way,incline,"mtb:scale:uphill", "mtb:scale"
+        (select osm_id,way,incline
         from planet_osm_line
-        where (("mtb:scale:uphill" in ('3', '4', '5') and incline in ('up','down'))
-        or ("mtb:scale" in ('2-', '2', '2+', '3-', '3', '3+', '4-', '4', '4+', '5-', '5', '5+') and incline in ('up','down')))) as mtb_incline
+        where (incline in ('up','down')))
+         as mtb_incline
         </Parameter>
         &datasource-settings;
     </Datasource>
