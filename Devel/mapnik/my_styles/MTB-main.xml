@@ -429,9 +429,16 @@
       <Parameter name="table">
       (select way,highway
       from planet_osm_polygon
-      where 
-      (highway in ('pedestrian') or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')) 
-      and (bicycle is null or bicycle not in ('no', '-1')))
+      where
+      ((highway in ('pedestrian') 
+      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural'))
+      or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
+      and (bicycle is null or bicycle not in ('no', '-1'))
+      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link')))
+
+      or
+      (bicycle = 'yes' and highway='pedestrian')
+
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -496,8 +503,15 @@
       (select way,highway
       from planet_osm_line
       where
-      (highway in ('pedestrian') or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')) 
-      and (bicycle is null or bicycle not in ('no', '-1')))
+      ((highway in ('pedestrian') 
+      or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural'))
+      or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
+      and (bicycle is null or bicycle not in ('no', '-1'))
+      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link')))
+
+      or
+      (bicycle = 'yes' and highway='pedestrian')
+
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -647,6 +661,7 @@
           when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
 
@@ -1096,9 +1111,11 @@
     <Datasource>
         <Parameter name="table">
         (select osm_id,way, access,
-        case when access in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
+        case when access in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural')
+        or vehicle in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
         from planet_osm_line
-        where ((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
+        where (((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
+        or (vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
         and (not highway in ('footway'))) 
         or ((highway in ('motorway','motorway_link') 
@@ -1490,13 +1507,9 @@ admin 8 - uzemi samostatnych obci
     <StyleName>cycleway-text</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, ref, name, state,
-        case when ref in ('A1 ','A2 ') then 'yes'::text
-        when ref in ('PAN ') then ''::text else ncn end as ncn,
-        case when ref in ('A1 ','A2 ', 'PAN ') then ''::text else rcn end as rcn,
-        case when ref in ('PAN ') then ''::text else lcn end as lcn
-        from planet_osm_line
-        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
+        (select way, refs, proposed_refs
+        from planet_osm_cycleway_rels
+        where refs is not null or proposed_refs is not null) as cycleway_text
         </Parameter>
         &datasource-settings;
     </Datasource>

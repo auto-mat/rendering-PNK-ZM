@@ -5,13 +5,17 @@
 <!ENTITY color_ncn "rgb(255,0,255)">
 <!ENTITY color_rcn "rgb(255,0,255)">
 <!ENTITY color_lcn "rgb(255,0,255)">
-<!ENTITY color_ncn_text '#ffa4a4'>
-<!ENTITY color_rcn_text '#afe2ff'>
-<!ENTITY color_lcn_text '#8e8eff'>
-<!ENTITY color_cycleway_background_text '#000000'>
-<!ENTITY color_cycleway_background_text_proposed '#444444'>
+<!ENTITY color_ncn_text 'black'>
+<!ENTITY color_rcn_text 'black'>
+<!ENTITY color_lcn_text 'black'>
+<!ENTITY color_cycleway_background_text '#ffff00'>
+<!ENTITY color_cycleway_background_text_proposed '#ffffff'>
+<!ENTITY halo_radius_cycleway '2'>
+<!ENTITY halo_radius_cycleway_proposed '1'>
+<!ENTITY min_distance_cycleway_text '0'>
+<!ENTITY spacing_cycleway_text '500'>
 <!ENTITY color_cycleway '#760076'>
-<!ENTITY color_cycleway_nobicycle '#ffff00'>
+<!ENTITY color_cycleway_nobicycle '&color_cycleway;'>
 <!ENTITY color_cycleway_traffic '#c300c3'>
 <!ENTITY color_cycleway_heavy_traffic '#ff5597'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
@@ -25,7 +29,7 @@
 <!ENTITY color_kct_green 'rgb(0,221,0)'>
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
-<!ENTITY color_footway "#ffff90">
+<!ENTITY color_footway "#ffffc0">
 <!ENTITY color_steps "&color_footway;">
 <!ENTITY color_steps_background "rgb(128,128,128)">
 

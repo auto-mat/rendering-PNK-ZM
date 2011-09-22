@@ -385,54 +385,23 @@
 
 <Style name="cycleway-text">
   <Rule>
-    <Filter>([ncn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([ncn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([ncn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
+    <Filter>([refs]!='' and [proposed_refs]!='')</Filter>
+    <ShieldSymbolizer name="refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" dy="-8"/>
   </Rule>
 
   <Rule>
-    <Filter>([rcn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([rcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([rcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_rcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
+    <Filter>([refs]!='' and [proposed_refs]!='')</Filter>
+    <ShieldSymbolizer name="proposed_refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text2.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" dy="8"/>
   </Rule>
 
   <Rule>
-    <Filter>([lcn]!='' and [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
+    <Filter>([refs]!='' and not [proposed_refs]!='')</Filter>
+    <ShieldSymbolizer name="refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;"/>
   </Rule>
+
   <Rule>
-    <Filter>([lcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom8;
-    &minscale_zoom12;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <Filter>([lcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_lcn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="1" spacing="100" min_distance="28" allow_owerlap="false" max_char_angle_delta="&text_max_angle;"></TextSymbolizer>
+    <Filter>(not [refs]!='' and [proposed_refs]!='')</Filter>
+    <ShieldSymbolizer name="proposed_refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text2.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;"/>
   </Rule>
 </Style>
 
@@ -465,7 +434,7 @@
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
     </LineSymbolizer>
@@ -475,7 +444,7 @@
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
       <CssParameter name="stroke-dasharray">10, 4</CssParameter>
@@ -486,7 +455,7 @@
     <LineSymbolizer>
       <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
+      <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
       <CssParameter name="stroke-linecap">butt</CssParameter>
       <CssParameter name="stroke-dasharray">5, 2</CssParameter>
