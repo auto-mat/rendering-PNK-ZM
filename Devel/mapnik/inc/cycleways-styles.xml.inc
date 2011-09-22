@@ -385,24 +385,37 @@
 
 <Style name="cycleway-text">
   <Rule>
-    <Filter>([refs]!='' and [proposed_refs]!='')</Filter>
-    <ShieldSymbolizer name="refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" dy="-8"/>
+    <Filter>([ncn]!='' and not [state]!='')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and not [state]!='')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and not [state]!='')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
   <Rule>
-    <Filter>([refs]!='' and [proposed_refs]!='')</Filter>
-    <ShieldSymbolizer name="proposed_refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text2.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" dy="8"/>
+    <Filter>([ncn]!='' and [state]!='')</Filter>
+    &maxscale_zoom15;
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    &maxscale_zoom15;
+    <Filter>([rcn]!='' and [state]!='')</Filter>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    &maxscale_zoom15;
+    <Filter>([lcn]!='' and [state]!='')</Filter>
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
-  <Rule>
-    <Filter>([refs]!='' and not [proposed_refs]!='')</Filter>
-    <ShieldSymbolizer name="refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;"/>
-  </Rule>
-
-  <Rule>
-    <Filter>(not [refs]!='' and [proposed_refs]!='')</Filter>
-    <ShieldSymbolizer name="proposed_refs" face_name="DejaVu Sans Bold" size="10" fill="#000000" file="../symbols/cycleway_text2.png" type="png" placement="line" allow_owerlap="true" spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;"/>
-  </Rule>
 </Style>
 
 <Style name="cycleway-tunnel">

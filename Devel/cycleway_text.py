@@ -27,7 +27,7 @@ while True:
     # Process relations.
     for row in rows:
        ref = row[1].strip()
-       ref = ref + ' '
+       ref = ref + '  '
        print ref
        auxilary_cursor.execute("UPDATE planet_osm_line SET ref = '%s' WHERE"
          " osm_id = %s" % (ref, row[0]))

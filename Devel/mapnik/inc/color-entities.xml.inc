@@ -12,8 +12,8 @@
 <!ENTITY color_cycleway_background_text_proposed '#ffffff'>
 <!ENTITY halo_radius_cycleway '2'>
 <!ENTITY halo_radius_cycleway_proposed '1'>
-<!ENTITY min_distance_cycleway_text '0'>
-<!ENTITY spacing_cycleway_text '500'>
+<!ENTITY min_distance_cycleway_text '5'>
+<!ENTITY spacing_cycleway_text '200'>
 <!ENTITY color_cycleway '#760076'>
 <!ENTITY color_cycleway_nobicycle '&color_cycleway;'>
 <!ENTITY color_cycleway_traffic '#c300c3'>
