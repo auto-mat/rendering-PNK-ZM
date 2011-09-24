@@ -159,12 +159,12 @@
     <Rule>
             <Filter>([role]='backward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer offset="10" width="100" type="png" file="../symbols/role_backward.png"/>
+            <MarkersSymbolizer spacing="100" file="../symbols/SVG/role.svg" transform="translate(0 -10) scale(-0.5)"/>
     </Rule>
     <Rule>
             <Filter>([role]='forward')</Filter>
             &maxscale_zoom14;
-            <LinePatternSymbolizer offset="-10" width="100" type="png" file="../symbols/role_forward.png"/>
+            <MarkersSymbolizer spacing="100" file="../symbols/SVG/role.svg" transform="translate(0 10) scale(0.5)"/>
     </Rule>
 </Style>
 
