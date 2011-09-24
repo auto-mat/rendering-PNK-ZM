@@ -67,20 +67,8 @@
 <Style name="highway-area-fill-cobblestone">
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
-    &maxscale_zoom17;
-    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
-  </Rule>
-  <Rule>
-    <Filter>([surface]='cobblestone')</Filter>
-    &maxscale_zoom15;
-    &minscale_zoom16;
-    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
-  </Rule>
-  <Rule>
-    <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom14;
-    &minscale_zoom14;
-    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
+    <PolygonPatternSymbolizer file="../symbols/cobblestone2.png"/>
   </Rule>
 </Style>
 
