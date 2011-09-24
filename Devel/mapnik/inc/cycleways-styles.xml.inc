@@ -68,19 +68,19 @@
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom17;
-    <PolygonPatternSymbolizer width="3" height="3" type="png" file="../symbols/cobblestone.png"/>
+    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <PolygonPatternSymbolizer width="3" height="3" type="png" file="../symbols/cobblestone.png"/>
+    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
   </Rule>
   <Rule>
     <Filter>([surface]='cobblestone')</Filter>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <PolygonPatternSymbolizer width="3" height="3" type="png" file="../symbols/cobblestone.png"/>
+    <PolygonPatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
   </Rule>
 </Style>
 
