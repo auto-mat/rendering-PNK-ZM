@@ -55,7 +55,6 @@
 <!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
 
 <!-- highway-roads -->
-<!ENTITY color_oneway_arrow '#888cdd'>
 
 <!ENTITY color_road '#ffffee'>
 <!ENTITY color_residential 'rgb(255,255,255)'>
@@ -109,7 +108,6 @@
 <!ENTITY color_bicycle_shop '&color_bicycle_amenity;'>
 <!ENTITY color_police '#666666'>
 <!ENTITY color_camp_site 'rgb(0,102,255)'>
-<!ENTITY color_bicycle_directions '#a200ff'>
 
 <!ENTITY color_food '&color_non_bicycle_amenity;'>
 <!ENTITY color_culture '&color_non_bicycle_amenity;'>
@@ -158,5 +156,15 @@
 <!ENTITY cyclelane_offset_high_zoom '4'>
 <!ENTITY cyclelane_offset_medium_zoom '3'>
 
+<!ENTITY color_oneway_arrow '#888cdd'>
+<!ENTITY color_bicycle_directions '#a200ff'>
+<!ENTITY color_role_directions '&color_cycleway;'>
+<!ENTITY spacing_directions '70'>
+<!ENTITY spacing_role_directions '140'>
+<!ENTITY stroke-width_directions '0.5'>
+<!ENTITY stroke_directions 'white'>
+<!ENTITY scale_directions '1.2'>
+<!ENTITY scale_role_directions '1.5'>
 <!ENTITY offset_directions '4'>
+<!ENTITY offset_role_directions '10'>
 <!ENTITY offset_directions_high '5'>

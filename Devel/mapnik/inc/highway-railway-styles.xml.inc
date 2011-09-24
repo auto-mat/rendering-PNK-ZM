@@ -34,128 +34,24 @@
             <Filter>([oneway]='yes')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 9, 43</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions;</CssParameter>
-            </LineSymbolizer>
+            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions;) scale(&scale_directions;)"/>
     </Rule>
     <Rule title="jednosměrná ulice">
             <Filter>([oneway]='-1')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 13, 9, 42</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions;</CssParameter>
-            </LineSymbolizer>
+            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions;) scale(-&scale_directions;)"/>
     </Rule>
 
     <Rule title="jednosměrná ulice">
             <Filter>([oneway]='yes')</Filter>
             &maxscale_zoom17;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 9, 43</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 2, 44</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 18, 1, 45</CssParameter>
-                <CssParameter name="stroke-offset">-&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
+            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions_high;) scale(&scale_directions;)"/>
     </Rule>
     <Rule title="jednosměrná ulice">
             <Filter>([oneway]='-1')</Filter>
             &maxscale_zoom17;
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 12, 10, 42</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 13, 9, 42</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">5</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 14, 2, 48</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_oneway_arrow;</CssParameter>
-                <CssParameter name="stroke-width">6</CssParameter>
-                <CssParameter name="stroke-linejoin">bevel</CssParameter>
-                <CssParameter name="stroke-dasharray">0, 15, 1, 48</CssParameter>
-                <CssParameter name="stroke-offset">&offset_directions_high;</CssParameter>
-            </LineSymbolizer>
+            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions_high;) scale(-&scale_directions;)"/>
     </Rule>
 </Style>
 <Style name="footbikecycle-tunnels">
