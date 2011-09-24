@@ -88,36 +88,36 @@
   <Rule>
     &maxscale_zoom14;
     <Filter>([highway]='track' or [highway]='footway' or [highway]='path')</Filter>
-    <LinePatternSymbolizer width="3" height="7" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone7.png"/>
   </Rule>
   <Rule>
     &maxscale_zoom15;
     <Filter>([highway]='pedestrian' or [highway]='service')</Filter>
-    <LinePatternSymbolizer width="3" height="7" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone7.png"/>
   </Rule>
   <Rule>
     &maxscale_zoom14;
     &minscale_zoom14;
     <Filter>([highway]='pedestrian' or [highway]='service')</Filter>
-    <LinePatternSymbolizer width="3" height="3" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone3.png"/>
   </Rule>
 
   <Rule>
     <ElseFilter/>
     &maxscale_zoom17;
-    <LinePatternSymbolizer width="3" height="13" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone13.png"/>
   </Rule>
   <Rule>
     <ElseFilter/>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <LinePatternSymbolizer width="3" height="10" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone10.png"/>
   </Rule>
   <Rule>
     <ElseFilter/>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <LinePatternSymbolizer width="3" height="7" type="png" file="../symbols/cobblestone.png"/>
+    <LinePatternSymbolizer type="png" file="../symbols/cobblestone7.png"/>
   </Rule>
 </Style>
 
