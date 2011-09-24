@@ -1888,7 +1888,7 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
                 <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">1.5</CssParameter>
+                <CssParameter name="stroke-width">2</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
@@ -1899,28 +1899,28 @@
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
                 <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">3</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="ulice pro cyklisty bez aut">
-            &minscale_zoom15;
+            &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
                 <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">5.5</CssParameter>
+                <CssParameter name="stroke-width">8</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="ulice pro cyklisty bez aut">
-            &maxscale_zoom16;
+            &maxscale_zoom17;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_bicycle;</CssParameter>
                 <CssParameter name="stroke-opacity">&opacity_pedestrian_bicycle;</CssParameter>
-                <CssParameter name="stroke-width">8</CssParameter>
+                <CssParameter name="stroke-width">12</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>

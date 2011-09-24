@@ -347,7 +347,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -359,7 +359,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
@@ -369,7 +369,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">10, 4</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -380,7 +380,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -392,7 +392,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
@@ -402,7 +402,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">10, 4</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -413,7 +413,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -425,7 +425,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -435,7 +435,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">10, 4</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -446,7 +446,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -458,7 +458,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
   </Rule>
   <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -468,7 +468,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">10, 4</CssParameter>
     </LineSymbolizer>
   </Rule>
@@ -479,7 +479,7 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
       <CssParameter name="stroke-dasharray">5, 2</CssParameter>
     </LineSymbolizer>
   </Rule>
