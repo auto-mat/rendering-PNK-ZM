@@ -1,16 +1,28 @@
 <!-- Styles for cycling paths-->
 <Style name="mtb_incline">
-  <Rule title="příkré stoupání">
+  <Rule title="stoupání">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <Filter>([incline]='up')</Filter>
-    <LinePatternSymbolizer width="50" height="12" type="png" file="../symbols/mtb_down.png"/>
+    <Filter>([incline]='up' and not [incline_steep]='yes')</Filter>
+    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline.svg"/>
+  </Rule>
+  <Rule title="klesání">
+    &maxscale_zoom13;
+    &minscale_zoom18;
+    <Filter>([incline]='down' and not [incline_steep]='yes')</Filter>
+    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
+  </Rule>
+  <Rule title="prudké stoupání">
+    &maxscale_zoom13;
+    &minscale_zoom18;
+    <Filter>([incline]='up' and [incline_steep]='yes')</Filter>
+    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline_steep.svg"/>
   </Rule>
   <Rule title="prudké klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <Filter>([incline]='down')</Filter>
-    <LinePatternSymbolizer width="50" height="12" type="png" file="../symbols/mtb_up.png"/>
+    <Filter>([incline]='down' and [incline_steep]='yes')</Filter>
+    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline_steep.svg" transform="scale(-1)"/>
   </Rule>
 </Style>
 <Style name="bicycle_directions">
@@ -401,33 +413,33 @@
   <Rule>
     <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
   <Rule>
     <Filter>([ncn]!='' and [state]!='')</Filter>
     &maxscale_zoom15;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     &maxscale_zoom15;
     <Filter>([rcn]!='' and [state]!='')</Filter>
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     &maxscale_zoom15;
     <Filter>([lcn]!='' and [state]!='')</Filter>
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_owerlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
 </Style>

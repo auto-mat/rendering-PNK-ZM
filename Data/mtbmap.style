@@ -115,6 +115,7 @@ way       mtb:scale:uphill text     linear
 # way       mtb_ref          text     linear
 
 way       incline          text     linear
+way       incline_steep          text     linear
 
 way       surface      text     linear
 way       smoothness      text     linear
