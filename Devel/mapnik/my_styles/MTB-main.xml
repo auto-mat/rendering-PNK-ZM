@@ -80,7 +80,6 @@
     </Datasource>
 </Layer>
 <!-- vrstevnice po 5 metrech -->
-<!--
 <Layer name="contours5" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours5</StyleName>
     <Datasource>
@@ -88,9 +87,7 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 10 metrech -->
-<!--
 <Layer name="contours10" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours10</StyleName>
     <StyleName>contours-text10</StyleName>
@@ -99,9 +96,7 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 20 metrech -->
-<!--
 <Layer name="contours20" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours20</StyleName>
     <StyleName>contours-text20</StyleName>
@@ -110,9 +105,7 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 25 metrech -->
-<!--
 <Layer name="contours25" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours25</StyleName>
     <StyleName>contours-text25</StyleName>
@@ -121,7 +114,6 @@
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
--->
 <!-- vrstevnice po 50 metrech -->
 <Layer name="contours50" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours50</StyleName>
