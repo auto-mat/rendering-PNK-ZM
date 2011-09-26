@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+#downloaded from https://github.com/newsapps/making-maps-demo/blob/master/render_tiles.py
+
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
@@ -118,18 +121,19 @@ class RenderThread:
                 break
             else:
                 (name, tile_dir, x, y, z) = r
+            tile_uri = "%s%s/%s/%s.png" % (tile_dir, z, x*aggregate, y*aggregate)
 
             exists= ""
-            if os.path.isfile(tile_dir):
+            if os.path.isfile(tile_uri):
                 exists= "exists"
             else:
-                self.render_tile(tile_dir, x, y, z)
-            bytes=os.stat(tile_dir)[6]
+                self.render_tile(tile_uri, x, y, z)
+            bytes=os.stat(tile_uri)[6]
             empty= ''
             if bytes == 103:
                 empty = " Empty Tile "
             self.printLock.acquire()
-            print name, ":", z, x, y, exists, empty
+            print name, ":", z, x*aggregate, y*aggregate, exists, empty
             self.printLock.release()
             self.q.task_done()
 
