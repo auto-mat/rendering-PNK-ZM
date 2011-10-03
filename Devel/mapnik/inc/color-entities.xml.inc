@@ -30,6 +30,8 @@
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
 <!ENTITY color_footway "#ffffc0">
+<!ENTITY color_footway_tunnel "#ffffc0">
+<!ENTITY color_footway_casing "rgb(128,128,128)">
 <!ENTITY color_steps "&color_footway;">
 <!ENTITY color_steps_background "rgb(128,128,128)">
 
@@ -47,7 +49,7 @@
 <!ENTITY color_bicycle_track_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_track_lozoom "rgb(72,72,72)">
 
-<!ENTITY color_bicycle '#cb93cb'>
+<!ENTITY color_bicycle '#c07dc0'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
 <!ENTITY color_bicycle_casing "#333333">
 

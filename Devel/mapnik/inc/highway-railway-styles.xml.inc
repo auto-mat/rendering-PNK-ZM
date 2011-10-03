@@ -82,23 +82,15 @@
             <Filter>(([highway]='footway' or ([highway]='path' and [foot]='designated')) and not ([bicycle]='yes' or [bicycle]='designated'))</Filter>
             &maxscale_zoom13;
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
-                <CssParameter name="stroke-width">5.5</CssParameter>
-                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+                <CssParameter name="stroke">&color_footway_casing;</CssParameter>
+                <CssParameter name="stroke-width">6.5</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 4</CssParameter>
             </LineSymbolizer>
             <LineSymbolizer>
-                <CssParameter name="stroke">rgb(255,255,255)</CssParameter>
-                <CssParameter name="stroke-width">3.5</CssParameter>
-                <CssParameter name="stroke-linejoin">round</CssParameter>
-                <CssParameter name="stroke-linecap">round</CssParameter>
-            </LineSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">&color_footway;</CssParameter>
+                <CssParameter name="stroke">&color_footway_tunnel;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
-                <CssParameter name="stroke-opacity">0.5</CssParameter>
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
-                <CssParameter name="stroke-dasharray">1, 3</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="tunel na stezce pro pěší a cyklisty">
@@ -571,7 +563,7 @@
             &maxscale_zoom13;
             &minscale_zoom14;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_footway_casing;</CssParameter>
                 <CssParameter name="stroke-width">2.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -579,7 +571,7 @@
             <Filter>(([highway]='footway') and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer>
-                <CssParameter name="stroke">&color_road_background;</CssParameter>
+                <CssParameter name="stroke">&color_footway_casing;</CssParameter>
                 <CssParameter name="stroke-width">3.5</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -600,7 +592,7 @@
             &maxscale_zoom13;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
+                <CssParameter name="stroke-width">4</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
     </Rule>
@@ -621,8 +613,8 @@
             &maxscale_zoom14;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
-                <CssParameter name="stroke-width">3.6</CssParameter>
-                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+                <CssParameter name="stroke-width">5.6</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 4</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="pěší zóna">
@@ -642,8 +634,8 @@
             &maxscale_zoom15;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
-                <CssParameter name="stroke-width">6.5</CssParameter>
-                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+                <CssParameter name="stroke-width">9.5</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 4</CssParameter>
             </LineSymbolizer>
     </Rule>
     <Rule title="pěší zóna">
@@ -661,8 +653,8 @@
             &maxscale_zoom16;
             <LineSymbolizer>
                 <CssParameter name="stroke">&color_pedestrian_background;</CssParameter>
-                <CssParameter name="stroke-width">9</CssParameter>
-                <CssParameter name="stroke-dasharray">4, 2</CssParameter>
+                <CssParameter name="stroke-width">12</CssParameter>
+                <CssParameter name="stroke-dasharray">4, 4</CssParameter>
             </LineSymbolizer>
     </Rule>
 </Style>
