@@ -27,7 +27,7 @@ auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'plan
 auxilary_cursor.execute("CREATE TABLE planet_osm_cycleway_rels AS SELECT * FROM planet_osm_line WHERE osm_id = 0")
 auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'planet_osm_cycleway_rels'")
 auxilary_cursor.execute("INSERT INTO geometry_columns VALUES ('', 'public', 'planet_osm_cycleway_rels', 'way', 2, 900913, 'LINESTRING')")
-auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text;")
+auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD role_forward boolean default false, ADD role_backward boolean default false;")
 # auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD refs text, ADD proposed_refs text;")
 
 # Select all route relations.
@@ -98,11 +98,21 @@ while True:
               " planet_osm_line.osm_id)" % (where_statement))
 
         # Add roles
-        if len(roles) and len(row[1]):
-           for r in roles.keys():
-               role_statement = ", ".join([str(way_id) for way_id in roles[r]])
-               auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role = '%s' WHERE"
-                 " osm_id IN (%s)" % (r, role_statement))
+        # if len(roles) and len(row[1]):
+        #    for r in roles.keys():
+        #        role_statement = ", ".join([str(way_id) for way_id in roles[r]])
+        #        auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role = '%s' WHERE"
+        #          " osm_id IN (%s)" % (r, role_statement))
+        # Add forward roles
+        if roles.has_key("forward"):
+            role_statement = ", ".join([str(way_id) for way_id in roles['forward']])
+            auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_forward = 'true' WHERE"
+              " osm_id IN (%s)" % (role_statement))
+        # Add backward roles
+        if roles.has_key("backward"):
+            role_statement = ", ".join([str(way_id) for way_id in roles['backward']])
+            auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_backward = 'true' WHERE"
+              " osm_id IN (%s)" % (role_statement))
 
         # For each line in relation.
         if len(tags) and len(row[1]):

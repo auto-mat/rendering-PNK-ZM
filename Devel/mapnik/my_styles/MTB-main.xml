@@ -709,9 +709,9 @@
     <StyleName>cycleway-directions</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, osm_id, route, state, way, role
+        (select osm_id, way, role_forward, role_backward
         from planet_osm_cycleway_rels
-        where (route='bicycle' and role in ('forward', 'backward'))) as cycledirection
+        ) as cycledirection
         </Parameter>
         &datasource-settings;
     </Datasource>

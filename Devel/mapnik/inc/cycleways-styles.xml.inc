@@ -53,12 +53,12 @@
 
 <Style name="cycleway-directions">
     <Rule>
-            <Filter>([role]='backward')</Filter>
+            <Filter>([role_backward]=true)</Filter>
             &maxscale_zoom14;
             <MarkersSymbolizer spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(0 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
     </Rule>
     <Rule>
-            <Filter>([role]='forward')</Filter>
+            <Filter>([role_forward]=true)</Filter>
             &maxscale_zoom14;
             <MarkersSymbolizer spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(0 &offset_role_directions;) scale(&scale_role_directions;)"/>
     </Rule>
