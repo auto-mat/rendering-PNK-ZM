@@ -1128,7 +1128,7 @@
            when incline like E'%\\%' then 'up' 
            else incline end as incline,
         case 
-           when (to_number(substring(incline from E'-*(.*)\\%'), 'S9999') > 10) then 'yes'
+           when (to_number(substring(incline from E'-*(.*)\\%'), 'S9999') > 7) then 'yes'
            else incline_steep end as incline_steep
         from planet_osm_line)
          as mtb_incline
