@@ -295,35 +295,51 @@
 
 <Style name="cycleway-text">
   <Rule>
+    <Filter>([ncn]!='' and [state]='recommended')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    <Filter>([rcn]!='' and [state]='recommended')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+  <Rule>
+    <Filter>([lcn]!='' and [state]='recommended')</Filter>
+    &maxscale_zoom13;
+    <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+  </Rule>
+
+  <Rule>
     <Filter>([ncn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and not [state]!='')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
   <Rule>
-    <Filter>([ncn]!='' and [state]!='')</Filter>
+    <Filter>([ncn]!='' and [state]!='' and [state]!='recommended')</Filter>
     &maxscale_zoom15;
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     &maxscale_zoom15;
-    <Filter>([rcn]!='' and [state]!='')</Filter>
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <Filter>([rcn]!='' and [state]!='' and [state]!='recommended')</Filter>
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     &maxscale_zoom15;
-    <Filter>([lcn]!='' and [state]!='')</Filter>
-    <TextSymbolizer name="ref" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
+    <Filter>([lcn]!='' and [state]!='' and [state]!='recommended')</Filter>
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
 </Style>

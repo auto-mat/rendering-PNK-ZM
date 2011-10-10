@@ -1500,16 +1500,17 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
+-->
 
 <Layer name="cycleway-text" srs="&srs900913;">
     <StyleName>cycleway-text</StyleName>
     <Datasource>
         <Parameter name="table">
         (select way, ref, name, state,
-        case when ref in ('A1  ','A2  ') then 'yes'::text
-        when ref in ('PAN  ') then ''::text else ncn end as ncn,
-        case when ref in ('A1  ','A2  ', 'PAN  ') then ''::text else rcn end as rcn,
-        case when ref in ('PAN  ') then ''::text else lcn end as lcn
+        case when ref in ('A1','A2') then 'yes'::text
+        when ref in ('PAN') then ''::text else ncn end as ncn,
+        case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
+        case when ref in ('PAN') then ''::text else lcn end as lcn
         from planet_osm_line
         where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
         </Parameter>
