@@ -92,8 +92,8 @@
 
 <!ENTITY color_pedestrian "#ffffc3">
 
-<!ENTITY color_pedestrian_bicycle "#ffabab">
-<!ENTITY color_pedestrian_bicycle_area "#ffc5c5">
+<!ENTITY color_pedestrian_bicycle "&color_bicycle;">
+<!ENTITY color_pedestrian_bicycle_area "#e2bce2">
 <!ENTITY opacity_pedestrian_bicycle "0.5">
 
 <!ENTITY color_raceway "rgb(255,192,203)">
