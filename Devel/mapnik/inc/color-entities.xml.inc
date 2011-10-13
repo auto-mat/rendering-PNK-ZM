@@ -17,7 +17,7 @@
 <!ENTITY color_cycleway '#760076'>
 <!ENTITY color_cycleway_nobicycle '&color_cycleway;'>
 <!ENTITY color_cycleway_traffic '#c300c3'>
-<!ENTITY color_cycleway_heavy_traffic '#ff5597'>
+<!ENTITY color_cycleway_heavy_traffic '#ff97bf'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
 <!ENTITY text_max_angle '10'>
