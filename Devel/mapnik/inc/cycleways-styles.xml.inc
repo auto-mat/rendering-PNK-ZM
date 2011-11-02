@@ -55,12 +55,12 @@
     <Rule>
             <Filter>([role_backward]=true)</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(0 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
+            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
     </Rule>
     <Rule>
             <Filter>([role_forward]=true)</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(0 &offset_role_directions;) scale(&scale_role_directions;)"/>
+            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
     </Rule>
 </Style>
 
@@ -296,17 +296,17 @@
 <Style name="cycleway-text">
   <Rule>
     <Filter>([ncn]!='' and [state]='recommended')</Filter>
-    &maxscale_zoom13;
+    &maxscale_zoom15;
     <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and [state]='recommended')</Filter>
-    &maxscale_zoom13;
+    &maxscale_zoom15;
     <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and [state]='recommended')</Filter>
-    &maxscale_zoom13;
+    &maxscale_zoom15;
     <TextSymbolizer name="' (' + [ref]+ ') '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
@@ -317,27 +317,27 @@
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
+    &maxscale_zoom14;
     <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and not [state]!='')</Filter>
-    &maxscale_zoom13;
+    &maxscale_zoom15;
     <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text;" placement="line" halo_radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
 
   <Rule>
     <Filter>([ncn]!='' and [state]!='' and [state]!='recommended')</Filter>
-    &maxscale_zoom15;
+    &maxscale_zoom12;
     <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="10" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
-    &maxscale_zoom15;
+    &maxscale_zoom13;
     <Filter>([rcn]!='' and [state]!='' and [state]!='recommended')</Filter>
     <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="9" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
   <Rule>
-    &maxscale_zoom15;
+    &maxscale_zoom14;
     <Filter>([lcn]!='' and [state]!='' and [state]!='recommended')</Filter>
     <TextSymbolizer name="'  ' + [ref]+ '  '" fontset_name="bold-fonts" size="8" fill="&color_ncn_text;" halo_fill="&color_cycleway_background_text_proposed;" placement="line" halo_radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" min_distance="&min_distance_cycleway_text;" allow_overlap="false" max_char_angle_delta="&text_max_angle;" />
   </Rule>
