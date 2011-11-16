@@ -396,8 +396,8 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">2</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
     </LineSymbolizer>
   </Rule>
 
@@ -429,8 +429,8 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
     </LineSymbolizer>
   </Rule>
 
@@ -462,8 +462,8 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
     </LineSymbolizer>
   </Rule>
 
@@ -495,8 +495,8 @@
       <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
       <CssParameter name="stroke-width">4</CssParameter>
       <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">5, 2</CssParameter>
+      <CssParameter name="stroke-linecap">round</CssParameter>
+      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
     </LineSymbolizer>
   </Rule>
 </Style>
