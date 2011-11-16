@@ -162,7 +162,7 @@
 <!ENTITY color_bicycle_directions '#a200ff'>
 <!ENTITY color_role_directions '&color_cycleway;'>
 <!ENTITY spacing_directions '70'>
-<!ENTITY spacing_role_directions '50'>
+<!ENTITY spacing_role_directions '70'>
 <!ENTITY stroke-width_directions '0.5'>
 <!ENTITY stroke_directions 'white'>
 <!ENTITY scale_directions '1.2'>

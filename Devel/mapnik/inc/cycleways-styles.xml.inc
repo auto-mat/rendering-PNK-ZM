@@ -4,25 +4,25 @@
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and not [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline.svg"/>
+    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg"/>
   </Rule>
   <Rule title="klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and not [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
+    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
   </Rule>
   <Rule title="prudké stoupání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline_steep.svg"/>
+    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline_steep.svg"/>
   </Rule>
   <Rule title="prudké klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="50" file="../symbols/SVG/incline_steep.svg" transform="scale(-1)"/>
+    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline_steep.svg" transform="scale(-1)"/>
   </Rule>
 </Style>
 <Style name="bicycle_directions">
