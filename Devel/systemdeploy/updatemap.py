@@ -24,7 +24,7 @@ def updateFromFile(filename):
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
-        os.system('cd' + homepath + '/Devel/')
+        os.chdir(homepath + 'Devel/systemdeploy/db_scripts/')
         os.system('./db_scripts.sh')
     except OSError, msg:
         raise UpdateError('relations2lines.py failed, osm data uploaded')
