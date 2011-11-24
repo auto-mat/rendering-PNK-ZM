@@ -709,7 +709,11 @@
     <StyleName>cycleway-directions</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select osm_id, way, role_forward, role_backward
+        (select osm_id, way, role_forward, role_backward, role_bidirectional,
+        case 
+          when bicycle in ('no', '-1', 'false') then 'yes'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'yes'::text
+          else 'no'::text end as nobicycle
         from planet_osm_cycleway_rels
         ) as cycledirection
         </Parameter>

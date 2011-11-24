@@ -53,14 +53,25 @@
 
 <Style name="cycleway-directions">
     <Rule>
-            <Filter>([role_backward]=true)</Filter>
+            <Filter>([role_backward]>0 and [role_bidirectional]=0 and [nobicycle]='no')</Filter>
             &maxscale_zoom14;
             <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
     </Rule>
     <Rule>
-            <Filter>([role_forward]=true)</Filter>
+            <Filter>([role_forward]>0 and [role_bidirectional]=0 and [nobicycle]='no')</Filter>
             &maxscale_zoom14;
             <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
+    </Rule>
+
+    <Rule>
+            <Filter>([role_backward]>0 and [role_bidirectional]=0 and [nobicycle]='yes')</Filter>
+            &maxscale_zoom14;
+            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
+    </Rule>
+    <Rule>
+            <Filter>([role_forward]>0 and [role_bidirectional]=0 and [nobicycle]='yes')</Filter>
+            &maxscale_zoom14;
+            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
     </Rule>
 </Style>
 
