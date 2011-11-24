@@ -647,7 +647,7 @@
     <StyleName>cycleway-tunnel</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select bicycle, osm_id, route, state, way, tunnel,
+        (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
           when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
           when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text

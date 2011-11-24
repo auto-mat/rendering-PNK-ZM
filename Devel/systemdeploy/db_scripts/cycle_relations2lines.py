@@ -51,6 +51,13 @@ while True:
            value = row[2][I + 1]
            if key == 'route' and value == 'bicycle':
               tags[key] = value
+
+           if key == 'network' and value == 'ncn':
+              tags['ncn'] = 'yes'
+           if key == 'network' and value == 'rcn':
+              tags['rcn'] = 'yes'
+           if key == 'network' and value == 'lcn':
+              tags['lcn'] = 'yes'
            # if copy_tags1.has_key(key):
            #    tags[key] = value
 
