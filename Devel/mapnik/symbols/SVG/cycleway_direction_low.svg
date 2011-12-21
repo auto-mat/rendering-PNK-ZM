@@ -9,7 +9,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="5.2869134"
+   width="9.4933586"
    height="7.0492182"
    id="svg2"
    inkscape:label="Pozadí"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="45.254834"
-     inkscape:cx="3.8288654"
-     inkscape:cy="3.1237371"
+     inkscape:cx="3.7042819"
+     inkscape:cy="3.1237021"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,7 +35,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1360"
+     inkscape:window-width="1366"
      inkscape:window-height="744"
      inkscape:window-x="0"
      inkscape:window-y="24"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      inkscape:label="Vrstva 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0.76230449,-1046.8375)">
+     transform="translate(4.96875,-1046.8375)">
     <path
        inkscape:transform-center-y="-0.00023461088"
        inkscape:transform-center-x="-0.8811522"
@@ -90,8 +90,14 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m -0.69826203,2.1459635 -1e-8,-1.72884836 0,-1.72884834 1.49722664,0.86442423 1.4972266,0.86442415 -1.49722668,0.86442422 z"
-       transform="matrix(1.0018524,0,0,1.1568395,0.69955547,1049.8796)"
+       transform="matrix(1.0018524,0,0,1.1568395,0.69955547,1049.8795)"
        inkscape:transform-center-x="-0.50000001"
        inkscape:transform-center-y="-0.00017343386" />
+    <path
+       style="fill:none;stroke:#ffff00;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m -4.9623045,1050.3617 4.99999993,4e-4"
+       id="path3155-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
