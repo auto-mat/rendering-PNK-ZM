@@ -642,6 +642,97 @@
 <!-- zpravidla pomocne cesty v arealech, nepristupne -->
 
 <!-- Cyklostezky, zpravidla zpevnene, v realu oznacene zlutymi cedulkami -->
+<Layer name="cycleways-with-cyclelane" srs="&srs900913;">
+    <StyleName>cycleway-with-cyclelane</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
+        case 
+          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+
+          when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+
+          when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
+          when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
+          else 'low'::text end as traffic,
+
+        case  
+          when highway in ('steps') then 'steps'::text 
+
+          when smoothness in ('excellent', 'good') then 'good'::text
+          when smoothness in ('intermediate') then 'unpaved'::text 
+          when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
+
+          when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
+
+          when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
+          when highway in ('path', 'bridleway') then 'bad'::text 
+
+          when tracktype in ('grade1') then 'good'::text 
+          when tracktype in ('grade2', 'grade3') then 'unpaved'::text 
+          when tracktype in ('grade4', 'grade5') then 'bad'::text 
+
+          else 'bad'::text end as surface_type
+          from planet_osm_cycleway_rels
+          where (("cycleway:right" in ('lane', 'shared_lane', 'share_busway')))
+        ) as cycleroute
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
+
+<Layer name="cycleways-with-cyclelane_opposite" srs="&srs900913;">
+    <StyleName>cycleway-with-cyclelane_opposite</StyleName>
+    <Datasource>
+        <Parameter name="table">
+        (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
+        case 
+          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+
+          when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+          when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
+
+          when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
+          when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
+          else 'low'::text end as traffic,
+
+        case  
+          when highway in ('steps') then 'steps'::text 
+
+          when smoothness in ('excellent', 'good') then 'good'::text
+          when smoothness in ('intermediate') then 'unpaved'::text 
+          when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
+
+          when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
+
+          when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
+          when highway in ('path', 'bridleway') then 'bad'::text 
+
+          when tracktype in ('grade1') then 'good'::text 
+          when tracktype in ('grade2', 'grade3') then 'unpaved'::text 
+          when tracktype in ('grade4', 'grade5') then 'bad'::text 
+
+          else 'bad'::text end as surface_type
+          from planet_osm_cycleway_rels
+          where (cycleway in ('opposite_lane')
+          or ("cycleway:left" in ('lane', 'shared_lane', 'share_busway')))
+        ) as cycleroute
+        </Parameter>
+        &datasource-settings;
+    </Datasource>
+</Layer>
+
 <Layer name="cycleways" srs="&srs900913;">
     <StyleName>cycleway</StyleName>
     <StyleName>cycleway-tunnel</StyleName>
@@ -657,9 +748,6 @@
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
 
-          when cycleway in ('lane', 'opposite_lane') then 'low'::text 
-          when 'cycleway:left' in ('lane', 'opposite_lane') then 'low'::text 
-          when 'cycleway:right' in ('lane', 'opposite_lane') then 'low'::text 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
           else 'low'::text end as traffic,
