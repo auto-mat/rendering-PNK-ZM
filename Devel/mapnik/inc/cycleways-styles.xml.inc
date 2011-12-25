@@ -77,7 +77,7 @@
 
 <Style name="highway-area-fill-cobblestone">
   <Rule>
-    <Filter>([surface]='cobblestone')</Filter>
+    <Filter>([surface]='cobblestone' or [surface] = 'setts')</Filter>
     &maxscale_zoom14;
     <PolygonPatternSymbolizer file="../symbols/cobblestone2.png"/>
   </Rule>
