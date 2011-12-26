@@ -28,7 +28,7 @@ auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'plan
 auxilary_cursor.execute("CREATE TABLE planet_osm_cycleway_rels AS SELECT * FROM planet_osm_line WHERE osm_id = 0")
 auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'planet_osm_cycleway_rels'")
 auxilary_cursor.execute("INSERT INTO geometry_columns VALUES ('', 'public', 'planet_osm_cycleway_rels', 'way', 2, 900913, 'LINESTRING')")
-auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD role_forward integer default 0, ADD role_backward integer default 0, ADD role_bidirectional integer default 0;")
+auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD role_forward integer default 0, ADD role_backward integer default 0, ADD role_bidirectional integer default 0, ADD operator text;")
 # auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD refs text, ADD proposed_refs text;")
 
 # Select all route relations.
