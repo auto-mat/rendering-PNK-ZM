@@ -16,6 +16,7 @@ auxilary_cursor = connection.cursor()
 
 # Read allowed tags of line table.
 copy_tags = {'route': True}
+copy_tags1 = {'operator': True}
 # copy_tags1 = {'ref': True, 'network': True, 'state': True}
 
 # proposed_refs = {}
@@ -58,8 +59,8 @@ while True:
               tags['rcn'] = 'yes'
            if key == 'network' and value == 'lcn':
               tags['lcn'] = 'yes'
-           # if copy_tags1.has_key(key):
-           #    tags[key] = value
+           if copy_tags1.has_key(key):
+              tags[key] = value
 
         if not tags.has_key('route'):
               continue
@@ -133,7 +134,7 @@ while True:
         if len(tags) and len(row[1]):
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
-              .replace('\'', '\\\'')) for key in tags.keys()])
+              .replace('\'', '')) for key in tags.keys()])
             print "Updating lines:", where_statement
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
