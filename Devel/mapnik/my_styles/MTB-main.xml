@@ -681,7 +681,7 @@
           else 'bad'::text end as surface_type
           from planet_osm_cycleway_rels
           where ((("cycleway:right" in ('lane', 'shared_lane', 'share_busway')) and (oneway is null or oneway not in ('yes', '1', 'true')))
-          and operator is null or not operator='CZ:binko')
+          and (operator is null or not operator='CZ:binko'))
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -728,7 +728,7 @@
           from planet_osm_cycleway_rels
           where ((cycleway in ('opposite_lane')
           or ("cycleway:left" in ('lane', 'shared_lane', 'share_busway')) and (oneway is null or oneway not in ('no', '-1', 'false')))
-          and operator is null or not operator='CZ:binko')
+          and (operator is null or not operator='CZ:binko'))
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -777,7 +777,7 @@
           where (((cycleway is null and "cycleway:right" is null and "cycleway:left" is null) or not (cycleway in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
           and "cycleway:right" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')
           and "cycleway:left" in ('lane', 'opposite_lane', 'shared_lane', 'share_busway')))
-          and operator is null or not operator='CZ:binko')
+          and (operator is null or not operator='CZ:binko'))
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -806,7 +806,7 @@
           when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'yes'::text
           else 'no'::text end as nobicycle
         from planet_osm_cycleway_rels
-        where operator is null or not operator='CZ:binko'
+        where (operator is null or not operator='CZ:binko')
         ) as cycledirection
         </Parameter>
         &datasource-settings;
@@ -1608,8 +1608,9 @@ admin 8 - uzemi samostatnych obci
         case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
         case when ref in ('PAN') then ''::text else lcn end as lcn
         from planet_osm_line
-        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
-        and operator is null or not operator='CZ:binko'
+        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)
+        and (operator is null or not operator='CZ:binko')
+        ) as cycleway_text
         </Parameter>
         &datasource-settings;
     </Datasource>
