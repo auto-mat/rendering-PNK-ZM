@@ -16,8 +16,9 @@ auxilary_cursor = connection.cursor()
 
 # Read allowed tags of line table.
 copy_tags = {'route': True}
-copy_tags1 = {'operator': True}
 # copy_tags1 = {'ref': True, 'network': True, 'state': True}
+
+reject_tags = { 'operator' : 'CZ:binko' }
 
 # proposed_refs = {}
 # refs = {}
@@ -28,7 +29,7 @@ auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'plan
 auxilary_cursor.execute("CREATE TABLE planet_osm_cycleway_rels AS SELECT * FROM planet_osm_line WHERE osm_id = 0")
 auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'planet_osm_cycleway_rels'")
 auxilary_cursor.execute("INSERT INTO geometry_columns VALUES ('', 'public', 'planet_osm_cycleway_rels', 'way', 2, 900913, 'LINESTRING')")
-auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD role_forward integer default 0, ADD role_backward integer default 0, ADD role_bidirectional integer default 0, ADD operator text;")
+auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD role_forward integer default 0, ADD role_backward integer default 0, ADD role_bidirectional integer default 0;")
 # auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD refs text, ADD proposed_refs text;")
 
 # Select all route relations.
@@ -47,6 +48,7 @@ while True:
     for row in rows:
         # Read relation tags.
         tags = {}
+        continue_all = False
         for I in range(0, len(row[2]), 2):
            key = row[2][I]
            value = row[2][I + 1]
@@ -59,8 +61,14 @@ while True:
               tags['rcn'] = 'yes'
            if key == 'network' and value == 'lcn':
               tags['lcn'] = 'yes'
-           if copy_tags1.has_key(key):
-              tags[key] = value
+           # if copy_tags1.has_key(key):
+           #    tags[key] = value
+           if reject_tags.has_key(key) and reject_tags[key] == value:
+              continue_all = True
+              break
+
+        if continue_all:
+           continue
 
         if not tags.has_key('route'):
               continue
@@ -134,7 +142,7 @@ while True:
         if len(tags) and len(row[1]):
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
-              .replace('\'', '')) for key in tags.keys()])
+              .replace('\'', '\\\'')) for key in tags.keys()])
             print "Updating lines:", where_statement
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
