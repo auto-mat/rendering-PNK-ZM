@@ -120,6 +120,7 @@ way       incline_steep          text     linear
 way       surface      text     linear
 way       smoothness      text     linear
 
+way       operator            text     linear
 way       state            text     linear
 node,way  cycleway         text     linear
 way       cycleway:left    text     linear
