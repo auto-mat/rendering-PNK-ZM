@@ -1604,7 +1604,9 @@ admin 8 - uzemi samostatnych obci
         case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
         case when ref in ('PAN') then ''::text else lcn end as lcn
         from planet_osm_line
-        where ref is not null and (lcn is not null or ncn is not null or rcn is not null)) as cycleway_text
+        where (ref is not null and (lcn is not null or ncn is not null or rcn is not null))
+        and (operator is null or operator not in ('CZ:binko'))
+        ) as cycleway_text
         </Parameter>
         &datasource-settings;
     </Datasource>
