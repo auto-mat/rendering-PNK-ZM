@@ -133,7 +133,7 @@ while True:
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_backward = role_backward + 1 WHERE"
               " osm_id IN (%s)" % (role_statement))
         # Add no roles
-        if roles.has_key("bidirectional"):
+        if bidirectionals:
             role_statement = ", ".join([str(way_id) for way_id in bidirectionals])
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_bidirectional = role_bidirectional + 1 WHERE"
               " osm_id IN (%s)" % (role_statement))

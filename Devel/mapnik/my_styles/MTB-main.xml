@@ -680,7 +680,8 @@
 
           else 'bad'::text end as surface_type
           from planet_osm_cycleway_rels
-          where (("cycleway:right" in ('lane', 'shared_lane', 'share_busway')) and (oneway is null or oneway not in ('yes', '1', 'true')))
+          where ("cycleway:right" in ('lane', 'shared_lane', 'share_busway')) and (oneway is null or oneway not in ('yes', '1', 'true'))
+          and (role_backward>0 or role_bidirectional>0)
         ) as cycleroute
         </Parameter>
         &datasource-settings;
@@ -727,6 +728,7 @@
           from planet_osm_cycleway_rels
           where (cycleway in ('opposite_lane')
           or ("cycleway:left" in ('lane', 'shared_lane', 'share_busway')) and (oneway is null or oneway not in ('no', '-1', 'false')))
+          and (role_forward>0 or role_bidirectional>0)
         ) as cycleroute
         </Parameter>
         &datasource-settings;
