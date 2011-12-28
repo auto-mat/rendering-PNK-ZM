@@ -3,29 +3,17 @@
     <Rule title="!stínování reliéfu">
       &maxscale_zoom7;
       &minscale_zoom12;
-      <RasterSymbolizer>
-        <CssParameter name="opacity">0.5</CssParameter>
-        <CssParameter name="mode">multiply</CssParameter>
-        <CssParameter name="scaling">bilinear8</CssParameter>
-      </RasterSymbolizer>
+      <RasterSymbolizer opacity="0.5" scaling="bilinear8" mode="multiply"/>
     </Rule>
     <Rule title="!stínování reliéfu">
       &maxscale_zoom13;
       &minscale_zoom14;
-      <RasterSymbolizer>
-        <CssParameter name="opacity">0.4</CssParameter>
-        <CssParameter name="mode">multiply</CssParameter>
-        <CssParameter name="scaling">bilinear8</CssParameter>
-      </RasterSymbolizer>
+      <RasterSymbolizer opacity="0.4" scaling="bilinear8" mode="multiply"/>
     </Rule>
     <Rule title="!stínování reliéfu">
       &maxscale_zoom15;
       &minscale_zoom18;
-      <RasterSymbolizer>
-        <CssParameter name="opacity">0.35</CssParameter>
-        <CssParameter name="mode">multiply</CssParameter>
-        <CssParameter name="scaling">bilinear8</CssParameter>
-      </RasterSymbolizer>
+      <RasterSymbolizer opacity="0.35" scaling="bilinear8" mode="multiply"/>
     </Rule>
 </Style>
 <!-- Style for hypsometry. -->
@@ -33,11 +21,7 @@
     <Rule title="výškopis">
       &maxscale_zoom0;
       &minscale_zoom10;
-      <RasterSymbolizer>
-        <CssParameter name="opacity">0.6</CssParameter>
-        <CssParameter name="mode">multiply</CssParameter>
-        <CssParameter name="scaling">bilinear</CssParameter>
-      </RasterSymbolizer>
+      <RasterSymbolizer opacity="0.6" scaling="bilinear" mode="multiply"/>
     </Rule>
 </Style>
 <!-- Contour lines styles. -->
@@ -115,7 +99,7 @@
     <Rule title="!popis vrstevnic po 25 metrech">
       &maxscale_zoom15;
       &minscale_zoom18;
-      <TextSymbolizer name="height" face_name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo_radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
     </Rule>
 </Style>
 
@@ -123,14 +107,14 @@
     <Rule title="!popis vrstevnic po 50 metrech">
       &maxscale_zoom13;
       &minscale_zoom14;
-      <TextSymbolizer name="height" face_name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo_radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
     </Rule>
 </Style>
 <Style name="contours-text100">
     <Rule title="!popis vrstevnic po 100 metrech">
       &maxscale_zoom11;
       &minscale_zoom14;
-      <TextSymbolizer name="height" face_name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo_radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
     </Rule>
 </Style>
 

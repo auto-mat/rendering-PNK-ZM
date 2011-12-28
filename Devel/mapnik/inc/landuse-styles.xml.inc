@@ -4,17 +4,17 @@
             <Filter>([natural]='cliff')</Filter>
             &minscale_zoom14;
             &maxscale_zoom13;
-            <LinePatternSymbolizer file="&symbols-path;cliff.png" type="png" width="10" height="4"></LinePatternSymbolizer>
+            <LinePatternSymbolizer file="&symbols-path;cliff.png"></LinePatternSymbolizer>
     </Rule>
     <Rule title="útes, skála">
             <Filter>([natural]='cliff')</Filter>
             &maxscale_zoom15;
-            <LinePatternSymbolizer file="&symbols-path;cliff2.png" type="png" width="12" height="6"></LinePatternSymbolizer>
+            <LinePatternSymbolizer file="&symbols-path;cliff2.png"></LinePatternSymbolizer>
     </Rule>
     <Rule title="násep">
             <Filter>([man_made]='embankment')</Filter>
             &maxscale_zoom15;
-            <LinePatternSymbolizer file="&symbols-path;cliff.png" type="png" width="10" height="4"></LinePatternSymbolizer>
+            <LinePatternSymbolizer file="&symbols-path;cliff.png"></LinePatternSymbolizer>
     </Rule>
 </Style>
 <Style name="leisure">
@@ -58,7 +58,7 @@
     <Rule title="důl">
             <Filter>([landuse]='quarry')</Filter>
             &maxscale_zoom11;
-            <PolygonPatternSymbolizer file="&symbols-path;quarry2.png" type="png" width="30" height="30"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;quarry2.png"></PolygonPatternSymbolizer>
             <LineSymbolizer>
                 <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
                 <CssParameter name="stroke-width">0.5</CssParameter>
@@ -76,28 +76,28 @@
             <Filter>([landuse]='vineyard')</Filter>
             &minscale_zoom14;
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png" type="png" width="19" height="21"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="vinice">
             <Filter>([landuse]='vineyard')</Filter>
             &maxscale_zoom15;
-            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png" type="png" width="29" height="29"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="ovocný sad">
             <Filter>([landuse]='orchard')</Filter>
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;orchard.png" type="png" width="29" height="29"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;orchard.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve.png" type="png" width="21" height="24"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &maxscale_zoom14;
-            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve2.png" type="png" width="42" height="48"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve2.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
@@ -127,7 +127,7 @@
             <Filter>([military]='danger_area' or [landuse]='military')</Filter>
             &minscale_zoom18;
             &maxscale_zoom11;
-            <PolygonPatternSymbolizer file="&symbols-path;military_red_hz2.png" type="png" width="24" height="24"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;military_red_hz2.png"></PolygonPatternSymbolizer>
             <LineSymbolizer>
               <CssParameter name="stroke">#f55</CssParameter>
               <CssParameter name="stroke-width">3</CssParameter>
@@ -137,7 +137,7 @@
     <Rule title="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
             &maxscale_zoom14;
-            <PolygonPatternSymbolizer file="&symbols-path;grave_yard.png" type="png" width="16" height="16"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;grave_yard.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="louka">
             <Filter>(([landuse]='meadow') or ([landuse]='grass') or ([natural]='fell'))</Filter>
@@ -157,7 +157,7 @@
     <Rule title="zoologická zahrada">
             <Filter>([tourism]='zoo')</Filter>
             &maxscale_zoom11;
-            <PolygonPatternSymbolizer file="&symbols-path;zoo.png" type="png" width="21" height="24"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;zoo.png"></PolygonPatternSymbolizer>
     </Rule>
 <!--    <Rule title="volné prostranství">
             <Filter>([leisure]='common')</Filter>
@@ -296,12 +296,12 @@
     <Rule title="pláž">
             <Filter>([natural]='beach')</Filter>
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;beach.png" type="png" width="10" height="10"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;beach.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="strniště">
             <Filter>(([natural]='scrub') or ([natural]='heath'))</Filter>
             &maxscale_zoom11;
-            <PolygonPatternSymbolizer file="&symbols-path;scrub.png" type="png" width="30" height="30"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;scrub.png"></PolygonPatternSymbolizer>
     </Rule>
 </Style>
 <Style name="piers">
@@ -341,14 +341,14 @@
 <Style name="power">
     <Rule title="elektrické vedení">
             &maxscale_zoom14;
-            <LinePatternSymbolizer file="&symbols-path;power_line_cz.png" type="png" width="19" height="3">
+            <LinePatternSymbolizer file="&symbols-path;power_line_cz.png">
             </LinePatternSymbolizer>
     </Rule>
 </Style>
 <Style name="power_towers">
     <Rule title="sloup elektrického vedení">
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;power_tower_cz.png" type="png" width="5" height="5"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;power_tower_cz.png"></PointSymbolizer>
     </Rule>
 </Style>
 

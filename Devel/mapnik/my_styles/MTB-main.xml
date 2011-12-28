@@ -4,7 +4,7 @@
 %entities;
 %color-entities;
 ]>
-<Map srs="&srs900913;" bgcolor="rgb(255,255,255)">
+<Map srs="&srs900913;" background-color="rgb(255,255,255)">
     &fontset-settings;
 
 &height-styles;
@@ -1230,7 +1230,7 @@
         &datasource-settings;
     </Datasource>
 </Layer>
-<!--<Layer name="mtb5" srs="&srs900913;" clear_label_cache="yes">
+<!--<Layer name="mtb5" srs="&srs900913;" clear-label-cache="yes">
     <StyleName>mtb_shield5</StyleName>
     <Datasource>
         <Parameter name="table">
@@ -1369,7 +1369,7 @@ admin 2 - staty
 admin 3 - nejake nemecke obvody
 admin 4 - kraje 
  -->
-<Layer name="admin-01234" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="admin-01234" srs="&srs900913;" clear-label-cache="yes">
 <StyleName>admin-01234</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -1426,7 +1426,7 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
-<Layer name="placenames-small" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="placenames-small" srs="&srs900913;" clear-label-cache="yes">
 <StyleName>suburb</StyleName>
 <StyleName>village</StyleName>
 <StyleName>hamlet</StyleName>
@@ -1440,7 +1440,7 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <!-- symboly mest, mensich mest v malych zoomech -->
-<Layer name="placenames-medium-symbols" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="placenames-medium-symbols" srs="&srs900913;" clear-label-cache="yes">
 <StyleName>town-symbols</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -1453,7 +1453,7 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <!-- jmena mest, mensich mest -->
-<Layer name="placenames-medium" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="placenames-medium" srs="&srs900913;" clear-label-cache="yes">
 <StyleName>town</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -1466,7 +1466,7 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <!-- jmena zemi, kraju, hlavnich mest -->
-<Layer name="placenames-large" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="placenames-large" srs="&srs900913;" clear-label-cache="yes">
 <StyleName>country</StyleName>
 <StyleName>state</StyleName>
 <StyleName>capital</StyleName>
@@ -1481,7 +1481,7 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 <!-- zajimave body - zastavky autobusu, hrady, zamky, kostely, skoly, obchody, letiste, vrcholy, rozcesti, parkoviste -->
-<Layer name="amenity" status="on" srs="&srs900913;" clear_label_cache="yes">
+<Layer name="amenity" status="on" srs="&srs900913;" clear-label-cache="yes">
     <StyleName>symbols</StyleName>
     <StyleName>points</StyleName>
     <Datasource>

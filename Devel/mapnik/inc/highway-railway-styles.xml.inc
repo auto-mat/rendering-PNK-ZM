@@ -20,13 +20,13 @@
             <Filter>(([aerialway]='cable_car') or ([aerialway]='gondola'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom12;
-            <LinePatternSymbolizer file="&symbols-path;cable_car.png" type="png" width="28" height="3"></LinePatternSymbolizer>
+            <LinePatternSymbolizer file="&symbols-path;cable_car.png"></LinePatternSymbolizer>
     </Rule>
     <Rule title="sedačková lanovka, lyžařský vlek">
             <Filter>(([aerialway]='chair_lift') or ([aerialway]='drag_lift'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom12;
-            <LinePatternSymbolizer file="&symbols-path;chair_lift.png" type="png" width="30" height="5"></LinePatternSymbolizer>
+            <LinePatternSymbolizer file="&symbols-path;chair_lift.png"></LinePatternSymbolizer>
     </Rule>
 </Style>
 <Style name="directions">
@@ -4004,11 +4004,11 @@
     <Rule title="!točna pro auta">
             &minscale_zoom16;
             &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;turning_circle.15.png" type="png" width="15" height="15"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;turning_circle.15.png"></PointSymbolizer>
     </Rule>
     <Rule title="">
             &maxscale_zoom17;
-            <PointSymbolizer file="&symbols-path;turning_circle.19.png" type="png" width="19" height="19"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;turning_circle.19.png"></PointSymbolizer>
     </Rule>
 </Style>
 

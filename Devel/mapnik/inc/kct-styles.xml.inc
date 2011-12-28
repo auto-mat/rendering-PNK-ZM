@@ -3,27 +3,27 @@
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom9;
     &minscale_zoom9;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ffff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom10;
     &minscale_zoom10;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ffff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom11;
     &minscale_zoom11;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ffff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom12;
     &minscale_zoom14;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ffff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="žlutá turistická trasa">
     &maxscale_zoom15;
     &minscale_zoom18;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ffff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ffff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
 </Style>
 <Style name="yellow-track">
@@ -92,27 +92,27 @@
   <Rule title="červená turistická trasa">
     &maxscale_zoom9;
     &minscale_zoom9;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ff0000" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="červená turistická trasa">
     &maxscale_zoom10;
     &minscale_zoom10;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ff0000" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="červená turistická trasa">
     &maxscale_zoom11;
     &minscale_zoom11;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ff0000" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="červená turistická trasa">
     &maxscale_zoom12;
     &minscale_zoom14;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ff0000" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="červená turistická trasa">
     &maxscale_zoom15;
     &minscale_zoom18;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#ff0000" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#ff0000" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
 </Style>
 
@@ -182,27 +182,27 @@
   <Rule title="zelená turistická trasa">
     &maxscale_zoom9;
     &minscale_zoom9;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#00ff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="zelená turistická trasa">
     &maxscale_zoom10;
     &minscale_zoom10;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#00ff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="zelená turistická trasa">
     &maxscale_zoom11;
     &minscale_zoom11;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#00ff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="zelená turistická trasa">
     &maxscale_zoom12;
     &minscale_zoom14;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#00ff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="zelená turistická trasa">
     &maxscale_zoom15;
     &minscale_zoom18;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#00ff00" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#00ff00" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
 </Style>
 <Style name="green-track">
@@ -271,27 +271,27 @@
   <Rule title="modrá turistická trasa">
     &maxscale_zoom9;
     &minscale_zoom9;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#0000ff" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="modrá turistická trasa">
     &maxscale_zoom10;
     &minscale_zoom10;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#0000ff" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="modrá turistická trasa">
     &maxscale_zoom11;
     &minscale_zoom11;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#0000ff" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="modrá turistická trasa">
     &maxscale_zoom12;
     &minscale_zoom14;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#0000ff" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
   <Rule title="modrá turistická trasa">
     &maxscale_zoom15;
     &minscale_zoom18;
-    <TextSymbolizer name="route_name" dy="13" fontset_name="bold-fonts" size="15" fill="#0000ff" placement="line" halo_radius="0" spacing="300" halo_fill="&color_residential;"></TextSymbolizer>
+    <TextSymbolizer name="route_name" dy="13" fontset-name="bold-fonts" size="15" fill="#0000ff" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;"></TextSymbolizer>
   </Rule>
 </Style>
 <Style name="blue-track">
@@ -1512,7 +1512,7 @@
     <Rule title="rozcestí tras KČT">
       &maxscale_zoom14;
       <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
-      <PointSymbolizer file= "&symbols-path;signpost2.png" type="png" width="12" height="24"/>
+      <PointSymbolizer file= "&symbols-path;signpost2.png"/>
     </Rule>
 </Style>
 
@@ -1520,11 +1520,11 @@
     <Rule>
             <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="name" fontset_name="oblique-fonts" size="10" fill="#000000" dy="-16" vertical_alignment="top" allow_overlap="true" halo_radius="1" wrap_width="30"/>
+            <TextSymbolizer name="[name]" fontset-name="oblique-fonts" size="10" fill="#000000" dy="-16" vertical-alignment="top" allow-overlap="true" halo-radius="1" wrap-width="30"/>
     </Rule>
     <Rule>
             <Filter>[amenity]='signpost' or [information]='guidepost'</Filter>
             &maxscale_zoom16;
-            <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="10" fill="#000000" dy="5" vertical_alignment="bottom" allow_overlap="true" halo_radius="1" wrap_width="30"/>
+            <TextSymbolizer name="[ele]" fontset-name="oblique-fonts" size="10" fill="#000000" dy="5" vertical-alignment="bottom" allow-overlap="true" halo-radius="1" wrap-width="30"/>
     </Rule>
 </Style>

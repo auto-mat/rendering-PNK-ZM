@@ -107,7 +107,7 @@
     <Rule title="!popis chráněného území">
             &minscale_zoom11;
             &maxscale_zoom10;
-            <TextSymbolizer name="name" fontset_name="bold-fonts" size="11" fill="rgb(153,204,153)" halo_radius="1" wrap_width="14"></TextSymbolizer>
+            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="rgb(153,204,153)" halo-radius="1" wrap-width="14"></TextSymbolizer>
     </Rule>
 </Style>
 

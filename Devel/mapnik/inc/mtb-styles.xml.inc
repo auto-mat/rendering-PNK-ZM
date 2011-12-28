@@ -227,42 +227,42 @@
   <Rule title="MTB obtížnost 0">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale0.png" type="png" width="12" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale0.png" width="12" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>
 <Style name="mtb_shield1">
   <Rule title="MTB obtížnost 1">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale1.png" type="png" width="12" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale1.png" width="12" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>
 <Style name="mtb_shield2">
   <Rule title="MTB obtížnost 2">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale2.png" type="png" width="12" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale2.png" width="12" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>
 <Style name="mtb_shield3">
   <Rule title="MTB obtížnost 3">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale3.png" type="png" width="13" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale3.png" width="13" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>
 <Style name="mtb_shield4">
   <Rule title="MTB obtížnost 4">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale4.png" type="png" width="12" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale4.png" width="12" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>
 <Style name="mtb_shield5">
   <Rule title="MTB obtížnost 5">
     &maxscale_zoom13;
     &minscale_zoom18;
-    <ShieldSymbolizer name="osm_id" face_name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale5.png" type="png" width="12" height="12" min_distance="10" spacing="100"/>
+    <ShieldSymbolizer name="osm_id" face-name="DejaVu Sans Bold" no_text="true" size="0" placement="line" file= "../symbols/mtb_sh_scale5.png" width="12" height="12" minimum-distance="10" spacing="100"/>
   </Rule>
 </Style>-->
 <Style name="mtb_incline">
@@ -270,13 +270,13 @@
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up')</Filter>
-    <LinePatternSymbolizer width="20" height="12" type="png" file="../symbols/mtb_up.png"/>
+    <LinePatternSymbolizer width="20" height="12" file="../symbols/mtb_up.png"/>
   </Rule>
   <Rule title="prudké klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down')</Filter>
-    <LinePatternSymbolizer width="20" height="12" type="png" file="../symbols/mtb_down.png"/>
+    <LinePatternSymbolizer width="20" height="12" file="../symbols/mtb_down.png"/>
   </Rule>
 </Style>
 

@@ -9,7 +9,7 @@
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
-            <PolygonPatternSymbolizer file="&symbols-path;glacier.png" type="png" width="40" height="32"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;glacier.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="ledovec">
             <Filter>([natural]='glacier')</Filter>
@@ -19,7 +19,7 @@
                 <CssParameter name="stroke-width">1.5</CssParameter>
                 <CssParameter name="stroke-dasharray">4, 2</CssParameter>
             </LineSymbolizer>
-            <PolygonPatternSymbolizer file="&symbols-path;glacier2.png" type="png" width="70" height="56"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;glacier2.png"></PolygonPatternSymbolizer>
     </Rule>
     <Rule title="vodní plocha">
             <Filter>(([natural]='lake') or ([natural]='water') or (([landuse]='reservoir') and ([way_area]&gt;=500000)))</Filter>
@@ -71,7 +71,7 @@
     <Rule title="zamokřená půda">
             <Filter>(([natural]='marsh') or ([natural]='wetland'))</Filter>
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;marsh.png" type="png" width="30" height="30"></PolygonPatternSymbolizer>
+            <PolygonPatternSymbolizer file="&symbols-path;marsh.png"></PolygonPatternSymbolizer>
     </Rule>
 </Style>
 <Style name="water_areas_fill_island">
@@ -597,7 +597,7 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1"></TextSymbolizer>
     </Rule>
     <Rule title="!akvadukt">
             &minscale_zoom18;
@@ -612,6 +612,6 @@
                 <CssParameter name="stroke-linejoin">round</CssParameter>
                 <CssParameter name="stroke-linecap">round</CssParameter>
             </LineSymbolizer>
-            <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo_radius="1"></TextSymbolizer>
+            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1"></TextSymbolizer>
     </Rule>
 </Style>
