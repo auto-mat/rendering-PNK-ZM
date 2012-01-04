@@ -276,7 +276,7 @@
     <Rule>
             <Filter>([natural]='peak')</Filter>
             &maxscale_zoom14;
-            <TextSymbolizer name="[ele]" fontset-name="oblique-fonts" size="9" fill="rgb(116,64,44)" dy="6" vertical-alignment="bottom" allow-overlap="true" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer name="[ele] + ' m'" fontset-name="oblique-fonts" size="9" fill="rgb(116,64,44)" dy="6" vertical-alignment="bottom" allow-overlap="true" halo-radius="1"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>((([leisure]&lt;&gt;'') or ([landuse]&lt;&gt;'')) and ([point]='yes'))</Filter>
