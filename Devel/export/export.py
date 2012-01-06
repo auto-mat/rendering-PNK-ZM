@@ -76,6 +76,14 @@ def render_map(mapfile):
     filename = 'export_A0'
     render_size_x = 3370
     render_size_y = 2384
+    #A-1
+    #filename = 'export_A-1'
+    #render_size_x = 4768
+    #render_size_y = 3370
+    #A-2
+    #filename = 'export_A-2'
+    #render_size_x = 6740
+    #render_size_y = 4768
 
     m = mapnik.Map(render_size_x, render_size_y)
     # Load style XML
@@ -88,6 +96,10 @@ def render_map(mapfile):
     # Convert to map projection (e.g. mercator co-ords EPSG:900913)
     c0 = prj.forward(mapnik.Coord(14.33,50.05))
     c1 = prj.forward(mapnik.Coord(14.53,50.14))
+
+    #filename = filename + '_BIG'
+    #c0 = prj.forward(mapnik.Coord(14.25,49.95))
+    #c1 = prj.forward(mapnik.Coord(14.68,50.16))
 
     # Bounding box for the tile
     if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 800:
@@ -110,6 +122,7 @@ def render_map(mapfile):
 
     surface.dsc_comment ("%%Title: Cyklisticka mapa prahy")
     surface.dsc_comment ("%%Copyright: CC-BY-SA")
+    mapnik.render(m, surface)
 
     #surface = cairo.SVGSurface(filename + '.svg', render_size_x, render_size_y)
     #mapnik.render(m, surface)
