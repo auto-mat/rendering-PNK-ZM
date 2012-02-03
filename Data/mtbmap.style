@@ -127,6 +127,7 @@ way       cycleway:left    text     linear
 way       cycleway:right   text     linear
 way       cycleway:both   text     linear
 way       oneway:bicycle   text     linear
+way       maxspeed   text     linear
 
 #navic podle Bartone
 
