@@ -308,17 +308,17 @@
   <Rule>
     <Filter>([ncn]!='' and [state]='recommended')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="' (' + [ref]+ ') '" fontset-name="bold-fonts" size="10" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
+    <TextSymbolizer name="' ' + [ref]+ ' '" fontset-name="bold-fonts" size="10" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and [state]='recommended')</Filter>
     &maxscale_zoom13;
-    <TextSymbolizer name="' (' + [ref]+ ') '" fontset-name="bold-fonts" size="9" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
+    <TextSymbolizer name="' ' + [ref]+ ' '" fontset-name="bold-fonts" size="9" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and [state]='recommended')</Filter>
     &maxscale_zoom15;
-    <TextSymbolizer name="' (' + [ref]+ ') '" fontset-name="bold-fonts" size="8" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
+    <TextSymbolizer name="' ' + [ref]+ ' '" fontset-name="bold-fonts" size="8" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text_proposed;" placement="line" halo-radius="&halo_radius_cycleway_proposed;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" />
   </Rule>
 
   <Rule>
