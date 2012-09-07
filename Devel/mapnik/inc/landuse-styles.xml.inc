@@ -1,363 +1,363 @@
 <!-- styles for landuse -->
 <Style name="cliffs">
-    <Rule title="útes, skála">
+    <Rule name="útes, skála">
             <Filter>([natural]='cliff')</Filter>
             &minscale_zoom14;
             &maxscale_zoom13;
             <LinePatternSymbolizer file="&symbols-path;cliff.png"></LinePatternSymbolizer>
     </Rule>
-    <Rule title="útes, skála">
+    <Rule name="útes, skála">
             <Filter>([natural]='cliff')</Filter>
             &maxscale_zoom15;
             <LinePatternSymbolizer file="&symbols-path;cliff2.png"></LinePatternSymbolizer>
     </Rule>
-    <Rule title="násep">
+    <Rule name="násep">
             <Filter>([man_made]='embankment')</Filter>
             &maxscale_zoom15;
             <LinePatternSymbolizer file="&symbols-path;cliff.png"></LinePatternSymbolizer>
     </Rule>
 </Style>
 <Style name="leisure">
-<!--    <Rule title="přístaviště">
+<!--    <Rule name="přístaviště">
             <Filter>([leisure]='marina')</Filter>
             &maxscale_zoom10;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(114,155,249)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(114,155,249)"
+            />
     </Rule>-->
-    <Rule title="hřiště">
+    <Rule name="hřiště">
             <Filter>([leisure]='playground')</Filter>
             &maxscale_zoom13;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(204,255,241)</CssParameter>
-            </PolygonSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(102,102,102)</CssParameter>
-                <CssParameter name="stroke-width">0.3</CssParameter>
-            </LineSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(204,255,241)"
+            />
+            <LineSymbolizer
+                stroke="rgb(102,102,102)"
+                stroke-width="0.3"
+            />
     </Rule>
-    <Rule title="tábořiště">
+    <Rule name="tábořiště">
             <Filter>((([tourism]='camp_site') or ([tourism]='caravan_site')) or ([tourism]='picnic_site'))</Filter>
             &maxscale_zoom13;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(204,255,153)</CssParameter>
-                <CssParameter name="fill-opacity">0.5</CssParameter>
-            </PolygonSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(102,102,102)</CssParameter>
-                <CssParameter name="stroke-width">0.3</CssParameter>
-            </LineSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(204,255,153)"
+                fill-opacity="0.5"
+            />
+            <LineSymbolizer
+                stroke="rgb(102,102,102)"
+                stroke-width="0.3"
+            />
     </Rule>
-    <Rule title="!turistická zajímavost">
+    <Rule name="!turistická zajímavost">
             <Filter>([tourism]='attraction')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(242,202,234)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(242,202,234)"
+            />
     </Rule>
-    <Rule title="důl">
+    <Rule name="důl">
             <Filter>([landuse]='quarry')</Filter>
             &maxscale_zoom11;
             <PolygonPatternSymbolizer file="&symbols-path;quarry2.png"></PolygonPatternSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(128,128,128)</CssParameter>
-                <CssParameter name="stroke-width">0.5</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(128,128,128)"
+                stroke-width="0.5"
+            />
     </Rule>
-    <Rule title="přírodní rezervace, vinice">
+    <Rule name="přírodní rezervace, vinice">
             <Filter>(([leisure]='nature_reserve') or ([landuse]='vineyard') or ([landuse]='orchard'))</Filter>
             &minscale_zoom12;
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(171,223,150)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(171,223,150)"
+            />
     </Rule>
-    <Rule title="vinice">
+    <Rule name="vinice">
             <Filter>([landuse]='vineyard')</Filter>
             &minscale_zoom14;
             &maxscale_zoom13;
             <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="vinice">
+    <Rule name="vinice">
             <Filter>([landuse]='vineyard')</Filter>
             &maxscale_zoom15;
             <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="ovocný sad">
+    <Rule name="ovocný sad">
             <Filter>([landuse]='orchard')</Filter>
             &maxscale_zoom13;
             <PolygonPatternSymbolizer file="&symbols-path;orchard.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="přírodní rezervace">
+    <Rule name="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <PolygonPatternSymbolizer file="&symbols-path;nature_reserve.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="přírodní rezervace">
+    <Rule name="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &maxscale_zoom14;
             <PolygonPatternSymbolizer file="&symbols-path;nature_reserve2.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="hřbitov">
+    <Rule name="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
             &minscale_zoom14;
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(170,203,175)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(170,203,175)"
+            />
     </Rule>
-    <Rule title="zastavěná plocha">
+    <Rule name="zastavěná plocha">
             <Filter>([landuse]='residential')</Filter>
             &minscale_zoom18;
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(221,221,221)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(221,221,221)"
+            />
     </Rule>
-    <Rule title="vojenský objekt">
+    <Rule name="vojenský objekt">
             <Filter>([military]='barracks')</Filter>
             &minscale_zoom18;
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(255,143,143)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(255,143,143)"
+            />
     </Rule>
-    <Rule title="vojenský prostor">
+    <Rule name="vojenský prostor">
             <Filter>([military]='danger_area' or [landuse]='military')</Filter>
             &minscale_zoom18;
             &maxscale_zoom11;
             <PolygonPatternSymbolizer file="&symbols-path;military_red_hz2.png"></PolygonPatternSymbolizer>
-            <LineSymbolizer>
-              <CssParameter name="stroke">#f55</CssParameter>
-              <CssParameter name="stroke-width">3</CssParameter>
-              <CssParameter name="stroke-opacity">0.329</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+              stroke="#f55"
+              stroke-width="3"
+              stroke-opacity="0.329"
+            />
     </Rule>
-    <Rule title="hřbitov">
+    <Rule name="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
             &maxscale_zoom14;
             <PolygonPatternSymbolizer file="&symbols-path;grave_yard.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="louka">
+    <Rule name="louka">
             <Filter>(([landuse]='meadow') or ([landuse]='grass') or ([natural]='fell'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_grass;</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_grass;"
+            />
     </Rule>
-    <Rule title="park, zahrada">
+    <Rule name="park, zahrada">
             <Filter>(([leisure]='park') or ([leisure]='dog_park') or ([landuse]='recreation_ground') or ([landuse]='village_green') or ([leisure]='garden'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_park;</CssParameter>
-                <CssParameter name="fill-opacity">0.8</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_park;"
+                fill-opacity="0.8"
+            />
     </Rule>
-    <Rule title="zoologická zahrada">
+    <Rule name="zoologická zahrada">
             <Filter>([tourism]='zoo')</Filter>
             &maxscale_zoom11;
             <PolygonPatternSymbolizer file="&symbols-path;zoo.png"></PolygonPatternSymbolizer>
     </Rule>
-<!--    <Rule title="volné prostranství">
+<!--    <Rule name="volné prostranství">
             <Filter>([leisure]='common')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(207,236,168)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(207,236,168)"
+            />
     </Rule>-->
-    <Rule title="golfové hřiště">
+    <Rule name="golfové hřiště">
             <Filter>([leisure]='golf_course')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(181,227,181)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(181,227,181)"
+            />
     </Rule>
-    <Rule title="zahrádkářská kolonie">
+    <Rule name="zahrádkářská kolonie">
             <Filter>([landuse]='allotments')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(200,176,132)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(200,176,132)"
+            />
     </Rule>
-    <Rule title="les">
+    <Rule name="les">
             <Filter>([landuse]='forest')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_forest;</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_forest;"
+            />
     </Rule>
-    <Rule title="prales">
+    <Rule name="prales">
             <Filter>([natural]='wood')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_wood;</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_wood;"
+            />
     </Rule>
-    <Rule title="farma">
+    <Rule name="farma">
             <Filter>([landuse]='farmyard')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(221,191,146)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(221,191,146)"
+            />
     </Rule>
-    <Rule title="zemědělská plocha">
+    <Rule name="zemědělská plocha">
             <Filter>(([landuse]='farm') or ([landuse]='farmland'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(234,216,189)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(234,216,189)"
+            />
     </Rule>
-    <Rule title="">
+    <Rule name="">
             <Filter>([landuse]='retail')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(241,218,218)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(241,218,218)"
+            />
     </Rule>
-    <Rule title="průmyslová plocha">
+    <Rule name="průmyslová plocha">
             <Filter>(([landuse]='industrial') or ([landuse]='railway'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(223,209,214)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(223,209,214)"
+            />
     </Rule>
-    <Rule title="transformační stanice">
+    <Rule name="transformační stanice">
             <Filter>([power]='station')</Filter>
             &maxscale_zoom12;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(187,187,187)</CssParameter>
-            </PolygonSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(85,85,85)</CssParameter>
-                <CssParameter name="stroke-width">0.4</CssParameter>
-            </LineSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(187,187,187)"
+            />
+            <LineSymbolizer
+                stroke="rgb(85,85,85)"
+                stroke-width="0.4"
+            />
     </Rule>
-    <Rule title="transformační stanice">
+    <Rule name="transformační stanice">
             <Filter>([power]='sub_station')</Filter>
             &maxscale_zoom13;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(187,187,187)</CssParameter>
-            </PolygonSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(85,85,85)</CssParameter>
-                <CssParameter name="stroke-width">0.4</CssParameter>
-            </LineSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(187,187,187)"
+            />
+            <LineSymbolizer
+                stroke="rgb(85,85,85)"
+                stroke-width="0.4"
+            />
     </Rule>
-    <Rule title="plocha určená k výstavbě">
+    <Rule name="plocha určená k výstavbě">
             <Filter>(((([landuse]='brownfield') or ([landuse]='landfill')) or ([landuse]='greenfield')) or ([landuse]='construction'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(157,157,108)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(157,157,108)"
+            />
     </Rule>
-    <Rule title="škola">
+    <Rule name="škola">
             <Filter>((((([amenity]='university') or ([amenity]='college')) or ([amenity]='school')) or ([amenity]='hospital')) or ([amenity]='kindergarten'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(240,240,216)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(240,240,216)"
+            />
     </Rule>
-    <Rule title="škola">
+    <Rule name="škola">
             <Filter>((((([amenity]='university') or ([amenity]='college')) or ([amenity]='school')) or ([amenity]='hospital')) or ([amenity]='kindergarten'))</Filter>
             &maxscale_zoom12;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(165,42,42)</CssParameter>
-                <CssParameter name="stroke-width">0.3</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(165,42,42)"
+                stroke-width="0.3"
+            />
     </Rule>
-    <Rule title="parkoviště">
+    <Rule name="parkoviště">
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">&color_parking;</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_parking;"
+            />
     </Rule>
-    <Rule title="parkoviště">
+    <Rule name="parkoviště">
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(238,238,209)</CssParameter>
-                <CssParameter name="stroke-width">0.3</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(238,238,209)"
+                stroke-width="0.3"
+            />
     </Rule>
-    <Rule title="letiště">
+    <Rule name="letiště">
             <Filter>(([aeroway]='aerodrome') or ([aeroway]='apron'))</Filter>
             &maxscale_zoom11;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(233,209,255)</CssParameter>
-                <CssParameter name="fill-opacity">0.2</CssParameter>
-            </PolygonSymbolizer>
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(85,85,85)</CssParameter>
-                <CssParameter name="stroke-width">0.2</CssParameter>
-            </LineSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(233,209,255)"
+                fill-opacity="0.2"
+            />
+            <LineSymbolizer
+                stroke="rgb(85,85,85)"
+                stroke-width="0.2"
+            />
     </Rule>
-    <Rule title="pláž">
+    <Rule name="pláž">
             <Filter>([natural]='beach')</Filter>
             &maxscale_zoom13;
             <PolygonPatternSymbolizer file="&symbols-path;beach.png"></PolygonPatternSymbolizer>
     </Rule>
-    <Rule title="strniště">
+    <Rule name="strniště">
             <Filter>(([natural]='scrub') or ([natural]='heath'))</Filter>
             &maxscale_zoom11;
             <PolygonPatternSymbolizer file="&symbols-path;scrub.png"></PolygonPatternSymbolizer>
     </Rule>
 </Style>
 <Style name="piers">
-    <Rule title="molo">
+    <Rule name="molo">
             &minscale_zoom12;
             &maxscale_zoom11;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(242,239,233)</CssParameter>
-                <CssParameter name="stroke-width">2</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(242,239,233)"
+                stroke-width="2"
+            />
     </Rule>
-    <Rule title="molo">
+    <Rule name="molo">
             &minscale_zoom14;
             &maxscale_zoom13;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(242,239,233)</CssParameter>
-                <CssParameter name="stroke-width">4</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(242,239,233)"
+                stroke-width="4"
+            />
     </Rule>
-    <Rule title="molo">
+    <Rule name="molo">
             &minscale_zoom18;
             &maxscale_zoom15;
-            <LineSymbolizer>
-                <CssParameter name="stroke">rgb(242,239,233)</CssParameter>
-                <CssParameter name="stroke-width">7</CssParameter>
-            </LineSymbolizer>
+            <LineSymbolizer
+                stroke="rgb(242,239,233)"
+                stroke-width="7"
+            />
     </Rule>
 </Style>
 <Style name="piers-area">
-    <Rule title="molo">
+    <Rule name="molo">
             &maxscale_zoom12;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(242,239,233)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(242,239,233)"
+            />
     </Rule>
 </Style>
 <Style name="power">
-    <Rule title="elektrické vedení">
+    <Rule name="elektrické vedení">
             &maxscale_zoom14;
             <LinePatternSymbolizer file="&symbols-path;power_line_cz.png">
             </LinePatternSymbolizer>
     </Rule>
 </Style>
 <Style name="power_towers">
-    <Rule title="sloup elektrického vedení">
+    <Rule name="sloup elektrického vedení">
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;power_tower_cz.png"></PointSymbolizer>
     </Rule>
 </Style>
 
 <Style name="sports_grounds">
-    <Rule title="sportoviště">
+    <Rule name="sportoviště">
             &maxscale_zoom10;
-            <PolygonSymbolizer>
-                <CssParameter name="fill">rgb(51,204,153)</CssParameter>
-            </PolygonSymbolizer>
+            <PolygonSymbolizer
+                fill="rgb(51,204,153)"
+            />
     </Rule>
 </Style>
 

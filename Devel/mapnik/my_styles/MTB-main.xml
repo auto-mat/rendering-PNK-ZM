@@ -1597,7 +1597,6 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
--->
 
 <Layer name="cycleway-text" srs="&srs900913;">
     <StyleName>cycleway-text</StyleName>

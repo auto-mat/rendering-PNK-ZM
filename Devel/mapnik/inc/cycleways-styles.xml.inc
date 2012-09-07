@@ -1,24 +1,24 @@
 <!-- Styles for cycling paths-->
 <Style name="mtb_incline">
-  <Rule title="stoupání">
+  <Rule name="stoupání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and not [incline_steep]='yes')</Filter>
     <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg"/>
   </Rule>
-  <Rule title="klesání">
+  <Rule name="klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and not [incline_steep]='yes')</Filter>
     <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
   </Rule>
-  <Rule title="prudké stoupání">
+  <Rule name="prudké stoupání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and [incline_steep]='yes')</Filter>
     <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline_steep.svg"/>
   </Rule>
-  <Rule title="prudké klesání">
+  <Rule name="prudké klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and [incline_steep]='yes')</Filter>
@@ -354,1000 +354,1000 @@
 </Style>
 
 <Style name="cycleway-tunnel">
-  <Rule title="tunel">
+  <Rule name="tunel">
     <Filter>([tunnel]='yes')</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">white</CssParameter>
-      <CssParameter name="stroke-opacity">0.6</CssParameter>
-      <CssParameter name="stroke-width">2.5</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="white"
+      stroke-opacity="0.6"
+      stroke-width="2.5"
+    />
   </Rule>
 </Style>
 
 <Style name="cycleway-with-cyclelane">
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
   <!-- LCN -->
 
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
 </Style>
 
 <Style name="cycleway-with-cyclelane_opposite">
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
   <!-- LCN -->
 
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-      <CssParameter name="stroke-offset">-&cyclelane_offset_highest_zoom;</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="1, 9"
+      stroke-offset="-&cyclelane_offset_highest_zoom;"
+    />
   </Rule>
 
 </Style>
 
 <Style name="cycleway">
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and not ([rcn]='yes' or [ncn]='yes'))</Filter>
     &maxscale_zoom14;
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
   <!-- LCN -->
 
-  <Rule title="cyklotrasa po schodech">
+  <Rule name="cyklotrasa po schodech">
     <Filter>([surface_type]='steps' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">0, 2, 1, 0</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="0, 2, 1, 0"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s dobrým povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa s dobrým povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa se špatným povrchem a nutností vést kolo">
+  <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
     <Filter>([traffic]='nobicycle' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_nobicycle;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">2</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_nobicycle;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="2"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa s dobrým povrchem">
+  <Rule name="segregovaná cyklotrasa s dobrým povrchem">
     <Filter>([traffic]='low' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
 
-  <Rule title="segregovaná cyklotrasa se nezpevněným povrchem">
+  <Rule name="segregovaná cyklotrasa se nezpevněným povrchem">
     <Filter>([traffic]='low' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="segregovaná cyklotrasa se špatným povrchem">
+  <Rule name="segregovaná cyklotrasa se špatným povrchem">
     <Filter>([traffic]='low' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='medium' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='medium' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
-  <Rule title="cyklotrasa s mírným provozem a s dobrým povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s dobrým povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='good' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a s nezpevněným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='unpaved' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">butt</CssParameter>
-      <CssParameter name="stroke-dasharray">10, 4</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="butt"
+      stroke-dasharray="10, 4"
+    />
   </Rule>
-  <Rule title="cyklotrasa s mírným provozem a se špatným povrchem">
+  <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
     <Filter>([traffic]='heavy' and [surface_type]='bad' and ([rcn]='yes' or [ncn]='yes'))</Filter>
-    <LineSymbolizer>
-      <CssParameter name="stroke">&color_cycleway_heavy_traffic;</CssParameter>
-      <CssParameter name="stroke-opacity">&opacity_cycleway;</CssParameter>
-      <CssParameter name="stroke-width">4</CssParameter>
-      <CssParameter name="stroke-linejoin">bevel</CssParameter>
-      <CssParameter name="stroke-linecap">round</CssParameter>
-      <CssParameter name="stroke-dasharray">1, 9</CssParameter>
-    </LineSymbolizer>
+    <LineSymbolizer
+      stroke="&color_cycleway_heavy_traffic;"
+      stroke-opacity="&opacity_cycleway;"
+      stroke-width="4"
+      stroke-linejoin="bevel"
+      stroke-linecap="round"
+      stroke-dasharray="1, 9"
+    />
   </Rule>
 
 </Style>
 
 <Style name="nobicycle">
-  <Rule title="zákaz vjezdu cyklistů">
+  <Rule name="zákaz vjezdu cyklistů">
     <Filter>([access_mode]='destination')</Filter>
     &maxscale_zoom13;
     &minscale_zoom18;
     <LinePatternSymbolizer file="../symbols/nobicycle-destination.png"/>
   </Rule>
-  <Rule title="zákaz vjezdu cyklistů">
+  <Rule name="zákaz vjezdu cyklistů">
     <Filter>([access_mode]='no_access')</Filter>
     &maxscale_zoom13;
     &minscale_zoom18;
