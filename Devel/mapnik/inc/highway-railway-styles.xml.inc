@@ -1423,6 +1423,7 @@
                 stroke-width="2"
             />
     </Rule>
+<!--
     <Rule name="metro">
             <Filter>(([railway]='subway') and ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -1433,6 +1434,7 @@
                 stroke-dasharray="5, 3"
             />
     </Rule>
+-->
     <Rule name="metro na povrchu">
             <Filter>(([railway]='subway') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;
