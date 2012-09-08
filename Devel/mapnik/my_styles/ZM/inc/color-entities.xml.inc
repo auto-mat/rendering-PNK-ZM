@@ -1,3 +1,5 @@
+<!ENTITY color_background "rgb(255,255,255)">
+
 <!ENTITY color_building '#FCCCD2'>
 
 <!ENTITY color_industrial '#D0D0D0'>

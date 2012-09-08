@@ -4,7 +4,7 @@
 %entities;
 %color-entities;
 ]>
-<Map background-color="#b5d0d0" srs="&srs900913;" minimum-version="2.0.0">
+<Map background-color="&color_background;" srs="&srs900913;" minimum-version="2.0.0">
   &fontset-settings;
 <Style name="turning_circle-casing">
     <Rule>
@@ -1696,12 +1696,14 @@
       <Filter>[railway]='light_rail' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer stroke="#666" stroke-width="2"/>
     </Rule>
+    <!--
     <Rule>
       &maxscale_zoom12;
       &minscale_zoom18;
       <Filter>[railway]='subway' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer stroke="#999" stroke-width="2" stroke-dasharray="5,3"/>
     </Rule>
+    -->
     <Rule>
       &maxscale_zoom12;
       &minscale_zoom18;
@@ -3367,7 +3369,6 @@
     </Rule>
 </Style>
 
-&layer-shapefiles;
 &layer-landcover;
 &layer-water;
 &layer-water_features;
@@ -3601,7 +3602,7 @@
          and (highway is not null or railway is not null or waterway is not null)
          and (bridge is null or bridge not in ('yes','true','1','viaduct'))
          and highway not in ('construction', 'proposed')
-         and (tunnel is null or highway not in ('primary', 'secondary', 'tertiary'))
+         and (tunnel is null or highway not in ('primary', 'secondary', 'tertiary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'tertiary_link', 'trunk_link', 'motorway'))
       ) as directions
       </Parameter>
       &datasource-settings;
@@ -3943,7 +3944,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-&layer-admin;
 &layer-placenames;
 &layer-amenity-stations;
 &layer-amenity-symbols;
@@ -4009,7 +4009,7 @@
          and landuse IS NULL
          and name is not null
          and highway not in ('construction', 'proposed')
-         and (tunnel is null or highway not in ('primary', 'secondary', 'tertiary'))
+         and (tunnel is null or highway not in ('primary', 'secondary', 'tertiary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'tertiary_link', 'trunk_link', 'motorway_link'))
       ) as roads
       </Parameter>
       &datasource-settings;
