@@ -34,24 +34,24 @@
             <Filter>([oneway]='yes')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions;) scale(&scale_directions;)"/>
+            <MarkersSymbolizer spacing="&spacing_directions;" marker-type="arrow" allow-overlap="true" placement="line" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions;) scale(&scale_directions;)"/>
     </Rule>
     <Rule name="jednosměrná ulice">
             <Filter>([oneway]='-1')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions;) scale(-&scale_directions;)"/>
+            <MarkersSymbolizer spacing="&spacing_directions;" marker-type="arrow" allow-overlap="true" placement="line" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions;) scale(-&scale_directions;)"/>
     </Rule>
 
     <Rule name="jednosměrná ulice">
             <Filter>([oneway]='yes')</Filter>
             &maxscale_zoom17;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions_high;) scale(&scale_directions;)"/>
+            <MarkersSymbolizer spacing="&spacing_directions;" marker-type="arrow" allow-overlap="true" placement="line" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(7 &offset_directions_high;) scale(&scale_directions;)"/>
     </Rule>
     <Rule name="jednosměrná ulice">
             <Filter>([oneway]='-1')</Filter>
             &maxscale_zoom17;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions_high;) scale(-&scale_directions;)"/>
+            <MarkersSymbolizer spacing="&spacing_directions;" marker-type="arrow" allow-overlap="true" placement="line" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_oneway_arrow;" transform="translate(-7 -&offset_directions_high;) scale(-&scale_directions;)"/>
     </Rule>
 </Style>
 <Style name="footbikecycle-tunnels">

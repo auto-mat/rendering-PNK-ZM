@@ -3,17 +3,17 @@
     <Rule name="!stínování reliéfu">
       &maxscale_zoom7;
       &minscale_zoom12;
-      <RasterSymbolizer opacity="0.5" scaling="bilinear8" mode="multiply"/>
+      <RasterSymbolizer opacity="0.5" scaling="bilinear8" comp-op="multiply"/>
     </Rule>
     <Rule name="!stínování reliéfu">
       &maxscale_zoom13;
       &minscale_zoom14;
-      <RasterSymbolizer opacity="0.4" scaling="bilinear8" mode="multiply"/>
+      <RasterSymbolizer opacity="0.4" scaling="bilinear8" comp-op="multiply"/>
     </Rule>
     <Rule name="!stínování reliéfu">
       &maxscale_zoom15;
       &minscale_zoom18;
-      <RasterSymbolizer opacity="0.35" scaling="bilinear8" mode="multiply"/>
+      <RasterSymbolizer opacity="0.35" scaling="bilinear8" comp-op="multiply"/>
     </Rule>
 </Style>
 <!-- Style for hypsometry. -->
@@ -21,7 +21,7 @@
     <Rule name="výškopis">
       &maxscale_zoom0;
       &minscale_zoom10;
-      <RasterSymbolizer opacity="0.6" scaling="bilinear" mode="multiply"/>
+      <RasterSymbolizer opacity="0.6" scaling="bilinear" comp-op="multiply"/>
     </Rule>
 </Style>
 <!-- Contour lines styles. -->

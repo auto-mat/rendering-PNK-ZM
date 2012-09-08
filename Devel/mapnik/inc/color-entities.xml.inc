@@ -163,9 +163,9 @@
 <!ENTITY color_role_directions '&color_cycleway;'>
 <!ENTITY spacing_directions '70'>
 <!ENTITY spacing_role_directions '70'>
-<!ENTITY stroke-width_directions '0.5'>
+<!ENTITY stroke-width_directions '0.4'>
 <!ENTITY stroke_directions 'white'>
-<!ENTITY scale_directions '1.2'>
+<!ENTITY scale_directions '0.6'>
 <!ENTITY scale_role_directions '1'>
 <!ENTITY offset_directions '4'>
 <!ENTITY offset_role_directions '0'>

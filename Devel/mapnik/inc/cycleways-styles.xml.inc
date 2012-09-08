@@ -4,25 +4,25 @@
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and not [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg"/>
+    <MarkersSymbolizer placement="line" spacing="70" file="../symbols/SVG/incline.svg"/>
   </Rule>
   <Rule name="klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and not [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
+    <MarkersSymbolizer placement="line" spacing="70" file="../symbols/SVG/incline.svg" transform="scale(-1)"/>
   </Rule>
   <Rule name="prudké stoupání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='up' and [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline_steep.svg"/>
+    <MarkersSymbolizer placement="line" spacing="70" file="../symbols/SVG/incline_steep.svg"/>
   </Rule>
   <Rule name="prudké klesání">
     &maxscale_zoom13;
     &minscale_zoom18;
     <Filter>([incline]='down' and [incline_steep]='yes')</Filter>
-    <MarkersSymbolizer spacing="70" file="../symbols/SVG/incline_steep.svg" transform="scale(-1)"/>
+    <MarkersSymbolizer placement="line" spacing="70" file="../symbols/SVG/incline_steep.svg" transform="scale(-1)"/>
   </Rule>
 </Style>
 <Style name="bicycle_directions">
@@ -30,24 +30,24 @@
             <Filter>([oneway]='yes' and [cycleway]='opposite')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(-7 &offset_directions;) scale(-&scale_directions;)"/>
+            <MarkersSymbolizer placement="line" marker-type="arrow" spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(-7 &offset_directions;) scale(-&scale_directions;)"/>
     </Rule>
     <Rule>
             <Filter>([oneway]='-1' and [cycleway]='opposite')</Filter>
             &maxscale_zoom15;
             &minscale_zoom16;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(7 -&offset_directions;) scale(&scale_directions;)"/>
+            <MarkersSymbolizer placement="line" marker-type="arrow" spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(7 -&offset_directions;) scale(&scale_directions;)"/>
     </Rule>
 
     <Rule>
             <Filter>([oneway]='yes' and [cycleway]='opposite')</Filter>
             &maxscale_zoom17;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(-7 &offset_directions_high;) scale(-&scale_directions;)"/>
+            <MarkersSymbolizer placement="line" marker-type="arrow" spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(-7 &offset_directions_high;) scale(-&scale_directions;)"/>
     </Rule>
     <Rule>
             <Filter>([oneway]='-1' and [cycleway]='opposite')</Filter>
             &maxscale_zoom17;
-            <MarkersSymbolizer spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(7 -&offset_directions_high;) scale(&scale_directions;)"/>
+            <MarkersSymbolizer placement="line" marker-type="arrow" spacing="&spacing_directions;" allow-overlap="true" max-error="0" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_bicycle_directions;" transform="translate(7 -&offset_directions_high;) scale(&scale_directions;)"/>
     </Rule>
 </Style>
 
@@ -55,23 +55,23 @@
     <Rule>
             <Filter>([role_backward]>0 and [role_bidirectional]=0 and [nobicycle]='no')</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
+            <MarkersSymbolizer placement="line" file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
     </Rule>
     <Rule>
             <Filter>([role_forward]>0 and [role_bidirectional]=0 and [nobicycle]='no')</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
+            <MarkersSymbolizer placement="line" file="../symbols/SVG/cycleway_direction.svg" allow-overlap="true" spacing="&spacing_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
     </Rule>
 
     <Rule>
             <Filter>([role_backward]>0 and [role_bidirectional]=0 and [nobicycle]='yes')</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
+            <MarkersSymbolizer placement="line" file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" transform="translate(-3 -&offset_role_directions;) scale(-&scale_role_directions;)"/>
     </Rule>
     <Rule>
             <Filter>([role_forward]>0 and [role_bidirectional]=0 and [nobicycle]='yes')</Filter>
             &maxscale_zoom14;
-            <MarkersSymbolizer file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" stroke-width="&stroke-width_directions;" stroke="&stroke_directions;" fill="&color_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
+            <MarkersSymbolizer placement="line" file="../symbols/SVG/cycleway_direction_low.svg" allow-overlap="true" spacing="&spacing_role_directions;" transform="translate(3 &offset_role_directions;) scale(&scale_role_directions;)"/>
     </Rule>
 </Style>
 
@@ -375,7 +375,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="0, 2, 1, 0"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -388,7 +387,6 @@
       stroke-width="2"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
@@ -401,7 +399,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
@@ -414,7 +411,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -427,7 +423,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -441,7 +436,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="segregovaná cyklotrasa se špatným povrchem">
@@ -454,7 +448,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -467,7 +460,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -480,7 +472,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -493,7 +484,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -506,7 +496,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -519,7 +508,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -532,7 +520,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -547,7 +534,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="0, 2, 1, 0"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -559,7 +545,6 @@
       stroke-width="2"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
@@ -571,7 +556,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
@@ -583,7 +567,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -595,7 +578,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -608,7 +590,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="segregovaná cyklotrasa se špatným povrchem">
@@ -620,7 +601,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -632,7 +612,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -644,7 +623,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -656,7 +634,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -668,7 +645,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -680,7 +656,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -692,7 +667,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -709,7 +683,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="0, 2, 1, 0"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -722,7 +695,6 @@
       stroke-width="2"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
@@ -735,7 +707,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
@@ -748,7 +719,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -761,7 +731,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -775,7 +744,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="segregovaná cyklotrasa se špatným povrchem">
@@ -788,7 +756,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -801,7 +768,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -814,7 +780,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -827,7 +792,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -840,7 +804,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -853,7 +816,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -866,7 +828,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -881,7 +842,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="0, 2, 1, 0"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -893,7 +853,6 @@
       stroke-width="2"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se nezpevněným povrchem a nutností vést kolo">
@@ -905,7 +864,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa se špatným povrchem a nutností vést kolo">
@@ -917,7 +875,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -929,7 +886,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -942,7 +898,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="segregovaná cyklotrasa se špatným povrchem">
@@ -954,7 +909,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -966,7 +920,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -978,7 +931,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -990,7 +942,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
@@ -1002,7 +953,6 @@
       stroke-width="4"
       stroke-linejoin="bevel"
       stroke-linecap="butt"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a s nezpevněným povrchem">
@@ -1014,7 +964,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="10, 4"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
   <Rule name="cyklotrasa s mírným provozem a se špatným povrchem">
@@ -1026,7 +975,6 @@
       stroke-linejoin="bevel"
       stroke-linecap="butt"
       stroke-dasharray="1, 9"
-      stroke-offset="-&cyclelane_offset_highest_zoom;"
     />
   </Rule>
 
