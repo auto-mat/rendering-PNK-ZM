@@ -1,3 +1,4 @@
+    <!--
 <Style name="points">
      <Rule>
       &maxscale_zoom13;
@@ -260,11 +261,13 @@
       <Filter>[amenity]='toilets'</Filter>
       <PointSymbolizer file="&symbols;/toilets.p.20.png" placement="interior"/>
     </Rule>
+    -->
     <Rule>
       &maxscale_zoom17; 
       <Filter>[amenity]='drinking_water'</Filter> 
       <PointSymbolizer file="&symbols;/food_drinkingtap.p.20.png" placement="interior"/>
     </Rule> 
+    <!--
     <Rule> 
       &maxscale_zoom16; 
       <Filter>[amenity]='prison'</Filter> 
@@ -366,6 +369,7 @@
       <PointSymbolizer file="&symbols;/transport_slipway.p.20.png" placement="interior"/>
     </Rule>
 </Style>
+    -->
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
     <StyleName>points</StyleName>

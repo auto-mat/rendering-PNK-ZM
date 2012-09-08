@@ -116,7 +116,7 @@
     <Rule>
       <Filter>[leisure] = 'park' or [leisure] = 'recreation_ground'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill-opacity="0.6" fill="#b6fdb6"/>
+      <PolygonSymbolizer fill-opacity="0.6" fill="&color_park;"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>

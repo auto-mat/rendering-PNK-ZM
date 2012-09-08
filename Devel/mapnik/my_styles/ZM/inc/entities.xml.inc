@@ -6,6 +6,7 @@
 <!ENTITY srsmercator "+proj=merc +datum=WGS84 +over">
 <!ENTITY srs4326 "+init=epsg:4326">
 <!ENTITY % layers SYSTEM "layers.xml.inc">
+<!ENTITY % color-entities SYSTEM "color-entities.xml.inc">
 %layers;
 <!ENTITY maxscale_zoom0 "<MaxScaleDenominator>250000000000</MaxScaleDenominator>">
 <!ENTITY maxscale_zoom1 "<MaxScaleDenominator>500000000</MaxScaleDenominator>">
