@@ -1,5 +1,5 @@
-    <!--
 <Style name="points">
+    <!--
      <Rule>
       &maxscale_zoom13;
       <Filter>[tourism]='alpine_hut'</Filter>
@@ -368,8 +368,8 @@
       <Filter>[leisure]='slipway'</Filter>
       <PointSymbolizer file="&symbols;/transport_slipway.p.20.png" placement="interior"/>
     </Rule>
-</Style>
     -->
+</Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
     <StyleName>points</StyleName>
