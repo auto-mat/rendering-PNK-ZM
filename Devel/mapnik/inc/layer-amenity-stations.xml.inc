@@ -41,28 +41,28 @@
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="&color_halt;" dy="-8" halo-radius="1" wrap-width="0"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway] ='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_halt;" dy="-10" halo-radius="1" wrap-width="0"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0" allow-overlap="true"/>
     </Rule>
 </Style>
 

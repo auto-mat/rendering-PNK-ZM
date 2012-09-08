@@ -278,11 +278,13 @@
             &maxscale_zoom14;
             <TextSymbolizer name="[ele] + ' m'" fontset-name="oblique-fonts" size="9" fill="rgb(116,64,44)" dy="6" vertical-alignment="bottom" allow-overlap="true" halo-radius="1"></TextSymbolizer>
     </Rule>
+    <!--
     <Rule>
             <Filter>((([leisure]&lt;&gt;'') or ([landuse]&lt;&gt;'')) and ([point]='yes'))</Filter>
             &maxscale_zoom15;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,0)" halo-radius="2" wrap-width="10"></TextSymbolizer>
     </Rule>
+    -->
     <Rule>
             <Filter>([natural]='bay')</Filter>
             &maxscale_zoom14;
@@ -349,12 +351,12 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_prison;" dy="16" vertical-alignment="bottom" halo-radius="1"></TextSymbolizer>
     </Rule>
--->
     <Rule>
             <Filter>([tourism]='attraction')</Filter>
             &maxscale_zoom15;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_attraction;" halo-radius="2" wrap-width="10"></TextSymbolizer>
     </Rule>
+-->
     <Rule>
             <Filter>([amenity]='university')</Filter>
             &maxscale_zoom14;

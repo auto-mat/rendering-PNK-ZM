@@ -102,7 +102,8 @@
 <!ENTITY opacity_tram '0.5'>
 <!ENTITY color_railway "rgb(128,128,128)">
 <!ENTITY color_railway_tunnel "rgb(177,177,177)">
-<!ENTITY color_stations "&color_non_bicycle_amenity;">
+<!ENTITY color_halt "&color_non_bicycle_amenity;">
+<!ENTITY color_stations "#7981B0">
 
 <!ENTITY color_non_bicycle_amenity '#6f6f6f'>
 <!ENTITY color_bicycle_amenity '#c800da'>
