@@ -3944,7 +3944,8 @@
     <StyleName>highway-junctions</StyleName>
     <Datasource>
      <Parameter name="table">
-     (select way,ref,name
+     (select way,ref,
+      case when short_name is not null then short_name else name end as name
       from &prefix;_point
       where highway='motorway_junction'
      ) as junctions
@@ -3971,7 +3972,8 @@
      <StyleName>roads-text-name</StyleName>
      <Datasource>
       <Parameter name="table">
-      (select way,highway,name
+      (select way,highway,
+      case when short_name is not null then short_name else name end as name
        from &prefix;_line
        where waterway IS NULL
          and leisure IS NULL
@@ -3986,7 +3988,8 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
+      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,ref,military,aeroway,waterway,historic,'yes'::text as point,
+      case when short_name is not null then short_name else name end as name
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store','butcher','car','car_repair','bicycle','florist')
@@ -4009,7 +4012,8 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
+      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,ref,military,waterway,historic,'no'::text as point,
+      case when short_name is not null then short_name else name end as name
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher','car','car_repair','bicycle')
@@ -4030,7 +4034,8 @@
     <StyleName>area-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,way_area,name
+      (select way,way_area,
+      case when short_name is not null then short_name else name end as name
        from &prefix;_polygon
        where name is not null
          and (waterway is null or waterway != 'riverbank')
@@ -4046,7 +4051,9 @@
     <StyleName>boundary</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,way_area,name,boundary from &prefix;_polygon where boundary='national_park' and building is null) as boundary
+      (select way,way_area,
+      case when short_name is not null then short_name else name end as name,
+      boundary from &prefix;_polygon where boundary='national_park' and building is null) as boundary
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -4055,7 +4062,9 @@
     <StyleName>theme_park</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,name,tourism from &prefix;_polygon where tourism='theme_park') as theme_park
+      (select way,
+      case when short_name is not null then short_name else name end as name,
+      tourism from &prefix;_polygon where tourism='theme_park') as theme_park
       </Parameter>
       &datasource-settings;
     </Datasource>

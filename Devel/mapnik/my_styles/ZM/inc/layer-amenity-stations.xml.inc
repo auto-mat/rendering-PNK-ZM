@@ -70,7 +70,8 @@
     <StyleName>stations</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,name,railway,aerialway,disused
+      (select way,railway,aerialway,disused,
+      case when short_name is not null then short_name else name end as name
       from &prefix;_point
       where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
