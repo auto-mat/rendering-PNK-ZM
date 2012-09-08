@@ -74,6 +74,8 @@ shortcuts = (
       {"pattern": ur"(k|K)nihovna", "substitution": ur"\1nih."},
       {"pattern": ur"(v|V)elvyslanectví", "substitution": ur"\1elv."},
       {"pattern": ur"(g|G)ymn(a|á)(z|s)ium", "substitution": ur"\1ymn."},
+
+      {"pattern": ur", Metro .", "substitution": ur""},
       )
 
 #print shortcuts
