@@ -193,7 +193,7 @@
     <Rule>
       <Filter>[landuse] = 'industrial' or [landuse]='railway'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#dfd1d6"/>
+      <PolygonSymbolizer fill="&color_industrial;"/>
     </Rule>
     <Rule>
       <Filter>[power] = 'station' or [power]='generator'</Filter>
