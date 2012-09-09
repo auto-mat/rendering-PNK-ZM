@@ -1,3 +1,4 @@
+    <!--
 <Style name="buildings-lz">
     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
@@ -22,6 +23,7 @@
       <LineSymbolizer stroke="#111" stroke-width="0.3"/>
     </Rule>
 </Style>
+    -->
 
 <Style name="buildings">
     <Rule>
@@ -79,9 +81,10 @@
         end as building
        from &prefix;_polygon
        where (building is not null
-         and building not in ('no','station','supermarket','planned')
-         and (railway is null or railway != 'station')
-         and (amenity is null or amenity != 'place_of_worship'))
+         -- and building not in ('no','station','supermarket','planned')
+         -- and (railway is null or railway != 'station')
+         -- and (amenity is null or amenity != 'place_of_worship')
+      )
           or aeroway = 'terminal'
        order by z_order,way_area desc) as buildings
       </Parameter>

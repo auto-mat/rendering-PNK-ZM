@@ -54,7 +54,7 @@
       &maxscale_zoom10;
       &minscale_zoom18;
       <Filter>[landuse] = 'residential'</Filter>
-      <PolygonSymbolizer fill="#ddd"/>
+      <PolygonSymbolizer fill="&color_landuse_residential;"/>
     </Rule>
     <Rule>
       &maxscale_zoom12;
@@ -142,12 +142,15 @@
       <Filter>[landuse] = 'allotments'</Filter>
       &maxscale_zoom10;
       &minscale_zoom13;
-      <PolygonSymbolizer fill="#e5c7ab"/>
+      <PolygonSymbolizer fill="&color_allotments;"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
       &maxscale_zoom14;
+      <PolygonSymbolizer fill="&color_allotments;"/>
+    <!--
       <PolygonPatternSymbolizer file="&symbols;/allotments.png" />
+    -->
     </Rule>
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
