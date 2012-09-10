@@ -6,6 +6,12 @@
 ]>
 <Map background-color="&color_background;" srs="&srs900913;" minimum-version="2.0.0">
   &fontset-settings;
+<Style name="crossings">
+    <Rule>
+      &maxscale_zoom16;
+      <PointSymbolizer file="&symbols;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+</Style>
 <Style name="turning_circle-casing">
     <Rule>
       &maxscale_zoom15;
@@ -3940,6 +3946,39 @@
 &layer-amenity-stations;
 &layer-amenity-symbols;
 &layer-amenity-points;
+<Layer name="crossings" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>crossings</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (
+      select distinct on (p.way) p.way as way,
+        l.highway as int_tc_type,
+        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way), 
+                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle
+
+       from &prefix;_point p
+       join &prefix;_line l
+        on ST_DWithin(p.way,l.way,&dwithin_node_way;)
+       join (values
+        ('motorway',1),
+        ('trunk',2),
+        ('primary',3),
+        ('secondary',4),
+        ('tertiary',5),
+        ('unclassified',6),
+        ('residential',7),
+        ('living_street',8),
+        ('service',9),
+        ('cycleway',10)
+       ) as v (highway,prio)
+        on v.highway=l.highway
+       where p.highway='crossing'
+       order by p.way,v.prio
+     ) as crossing
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
     <!--
 &layer-power;
     -->
