@@ -1,10 +1,12 @@
 <Style name="symbols">
+    <!--
      <Rule>
       &maxscale_zoom16;
       <Filter>[aeroway]='helipad'</Filter>
       <PointSymbolizer file="&symbols;/helipad.p.16.png"/>
       <TextSymbolizer size="8" fill="#6692da" dy="-10" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
+    -->
     <Rule>
       &maxscale_zoom9;
       &minscale_zoom10;

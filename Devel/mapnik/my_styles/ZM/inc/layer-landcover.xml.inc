@@ -224,7 +224,7 @@
     <Rule>
       <Filter>[landuse] = 'brownfield' or [landuse]='landfill' or [landuse] = 'greenfield' or [landuse]='construction'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill-opacity="0.7" fill="#9d9d6c"/>
+      <PolygonSymbolizer fill-opacity="&opacity_construction;" fill="&color_construction;"/>
     </Rule>
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
@@ -275,12 +275,12 @@
     <Rule>
       <Filter>[amenity] = 'parking'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#f7efb7"/>
+      <PolygonSymbolizer fill="&color_parking;"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'parking'</Filter>
       &maxscale_zoom15;
-      <LineSymbolizer stroke="#eeeed1" stroke-width="0.3"/>
+      <LineSymbolizer stroke="&color_parking;" stroke-width="0.3"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'apron'</Filter>
