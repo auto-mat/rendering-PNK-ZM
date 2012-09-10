@@ -46,11 +46,13 @@
       <Filter>[amenity]='bus_station'</Filter>
       <PointSymbolizer file="&symbols;/bus_station.n.16.png" allow-overlap="false" placement="interior"/>
     </Rule>
+    -->
     <Rule>
-    &maxscale_zoom17;
+    &maxscale_zoom15;
     <Filter>[highway]='traffic_signals'</Filter>
-    <PointSymbolizer file="&symbols;/traffic_light.png" placement="interior"/>
+    <PointSymbolizer file="&symbols;/SVG/traffic_light.svg" placement="interior"/>
     </Rule>
+    <!--
     <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='cafe'</Filter>
