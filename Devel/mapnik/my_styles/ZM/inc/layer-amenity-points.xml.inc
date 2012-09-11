@@ -30,23 +30,26 @@
       <Filter>[amenity]='bicycle_rental'</Filter>
       <PointSymbolizer file="&symbols;/rental_bicycle.p.20.png" placement="interior"/>
     </Rule>
+    -->
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior"/>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file="&symbols;/bus_stop.p.12.png" placement="interior"/>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom16;
       <Filter>[amenity]='bus_station'</Filter>
       <PointSymbolizer file="&symbols;/bus_station.n.16.png" allow-overlap="false" placement="interior"/>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
-    -->
     <Rule>
     &maxscale_zoom15;
     <Filter>[highway]='traffic_signals'</Filter>
@@ -377,7 +380,7 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure,name
       from &prefix;_point
       where amenity is not null
          or shop is not null
@@ -396,7 +399,7 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure,name
       from &prefix;_polygon
       where amenity is not null
          or shop is not null

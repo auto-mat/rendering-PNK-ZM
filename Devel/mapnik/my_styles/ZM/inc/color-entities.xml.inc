@@ -1,10 +1,11 @@
-<!ENTITY color_background "#EADFCF">
+<!ENTITY color_background "#EAE3D8">
 
 <!ENTITY color_building '#FCCCD2'>
 
 <!ENTITY color_industrial '#D0D0D0'>
 <!ENTITY color_parking '#D0D0D0'>
 <!ENTITY color_construction '#D0D0D0'>
+<!ENTITY color_institution '#D0D0D0'>
 
 <!ENTITY color_barrier '#444'>
 <!ENTITY width_barrier '1'>
@@ -34,6 +35,7 @@
 
 <!ENTITY color_living_street_casing "#BDBDBD">
 
+<!ENTITY color_bus_stop_text "#0092DA">
 <!ENTITY color_tram_stop_text "#DA1B8A">
 <!ENTITY color_station_text "black">
 <!ENTITY color_halt_text "black">

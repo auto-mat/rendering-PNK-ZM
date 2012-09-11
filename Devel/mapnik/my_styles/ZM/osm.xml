@@ -3943,9 +3943,6 @@
     </Datasource>
 </Layer>
 &layer-placenames;
-&layer-amenity-stations;
-&layer-amenity-symbols;
-&layer-amenity-points;
 <Layer name="crossings" status="on" srs="&osm2pgsql_projection;">
     <StyleName>crossings</StyleName>
     <Datasource>
@@ -3979,6 +3976,9 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+&layer-amenity-stations;
+&layer-amenity-symbols;
+&layer-amenity-points;
     <!--
 &layer-power;
     -->
