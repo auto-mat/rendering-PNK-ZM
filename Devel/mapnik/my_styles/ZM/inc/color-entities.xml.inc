@@ -58,3 +58,10 @@
 <!ENTITY color_park '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
 <!ENTITY color_allotments '#B3E3B7'>
+
+<!ENTITY color_placenames_text '#2A3E92'>
+<!ENTITY color_road_text '#2A3E92'>
+<!ENTITY color_area_text '#2A3E92'>
+<!ENTITY color_island_text '#2A3E92'>
+
+<!ENTITY color_countries_text 'rgb(157,108,157)'>
