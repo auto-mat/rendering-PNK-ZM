@@ -26,6 +26,10 @@
 <!ENTITY color_cycleway "white">
 <!ENTITY color_bridleway "white">
 <!ENTITY color_path "white">
+<!ENTITY color_platform "white">
+
+<!ENTITY color_highway_platform_casing "#0092DA">
+<!ENTITY color_railway_platform_casing "gray">
 
 <!ENTITY color_steps "gray">
 

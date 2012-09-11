@@ -145,9 +145,14 @@
       <LineSymbolizer stroke="#996600" stroke-width="2"/>
    </Rule>
     <Rule>
-      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      <Filter>[highway] = 'platform'</Filter>
       &maxscale_zoom16;
-      <LineSymbolizer stroke-linejoin="round" stroke="grey" stroke-width="2" stroke-linecap="round"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform_casing;" stroke-width="2" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform_casing;" stroke-width="2" stroke-linecap="round"/>
     </Rule>
 </Style>
 <Style name="highway-area-fill">
@@ -174,7 +179,7 @@
     <Rule>
       <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
       &maxscale_zoom16;
-      <PolygonSymbolizer gamma=".65" fill="#bbbbbb"/>
+      <PolygonSymbolizer gamma=".65" fill="&color_platform;"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
@@ -1886,9 +1891,14 @@
       <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="8" stroke-linecap="round"/>
     </Rule>
     <Rule>
-       <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+       <Filter>[highway] = 'platform'</Filter>
        &maxscale_zoom16;
-       <LineSymbolizer stroke-linejoin="round" stroke="grey" stroke-width="6" stroke-linecap="round"/>
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
+    </Rule>
+    <Rule   >
+       <Filter>[railway] = 'platform'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
     </Rule>
     <Rule>
       <Filter>[railway] = 'turntable'</Filter>
@@ -1918,7 +1928,7 @@
     <Rule>
        <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
        &maxscale_zoom16;
-       <LineSymbolizer stroke-linejoin="round" stroke="#bbbbbb" stroke-width="4" stroke-linecap="round"/>
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_platform;" stroke-width="4" stroke-linecap="round"/>
      </Rule>
     <Rule>
       <Filter>[highway] = 'steps'</Filter>
