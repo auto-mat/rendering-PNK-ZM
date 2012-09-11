@@ -47,6 +47,7 @@
 <!ENTITY color_station_disused_text "grey">
 <!ENTITY color_subway_station_disused_text "grey">
 
+<!ENTITY color_ferry_route "blue">
 <!ENTITY color_tram "#DA1B8A">
 <!ENTITY color_railway "black">
 <!ENTITY color_tertiary '#E9E9E9'>

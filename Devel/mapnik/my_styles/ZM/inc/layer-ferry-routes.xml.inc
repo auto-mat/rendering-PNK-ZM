@@ -2,11 +2,11 @@
     <Rule>
       &maxscale_zoom7;
       &minscale_zoom10;
-      <LineSymbolizer stroke="#66f" stroke-width="0.4" stroke-dasharray="4,4"/>
+      <LineSymbolizer stroke="&color_ferry_route;" stroke-width="1"/>
     </Rule>
     <Rule>
       &maxscale_zoom11;
-      <LineSymbolizer stroke="#66f" stroke-width="0.8" stroke-dasharray="6,6"/>
+      <LineSymbolizer stroke="&color_ferry_route;" stroke-width="1"/>
     </Rule>
 </Style>
 
