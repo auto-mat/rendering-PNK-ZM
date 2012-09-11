@@ -32,6 +32,11 @@
     </Rule>
     -->
     <Rule>
+      &maxscale_zoom17;
+      <Filter>[amenity]='bench'</Filter>
+      <PointSymbolizer file="&symbols;/bench.png" placement="interior"/>
+    </Rule>
+    <Rule>
       &maxscale_zoom14;
       &minscale_zoom15;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
