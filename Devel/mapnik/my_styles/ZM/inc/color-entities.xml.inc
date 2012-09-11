@@ -39,7 +39,7 @@
 <!ENTITY color_tram_stop_text "#DA1B8A">
 <!ENTITY color_station_text "black">
 <!ENTITY color_halt_text "black">
-<!ENTITY color_subway_station_text "#66f">
+<!ENTITY color_subway_station_text "#0092DA">
 <!ENTITY color_station_disused_text "grey">
 <!ENTITY color_subway_station_disused_text "grey">
 
