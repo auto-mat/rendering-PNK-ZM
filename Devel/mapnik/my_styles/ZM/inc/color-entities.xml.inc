@@ -26,6 +26,10 @@
 <!ENTITY color_cycleway "white">
 <!ENTITY color_bridleway "white">
 <!ENTITY color_path "white">
+<!ENTITY color_platform "white">
+
+<!ENTITY color_highway_platform_casing "#0092DA">
+<!ENTITY color_railway_platform_casing "gray">
 
 <!ENTITY color_steps "gray">
 
@@ -43,6 +47,7 @@
 <!ENTITY color_station_disused_text "grey">
 <!ENTITY color_subway_station_disused_text "grey">
 
+<!ENTITY color_ferry_route "blue">
 <!ENTITY color_tram "#DA1B8A">
 <!ENTITY color_railway "black">
 <!ENTITY color_tertiary '#E9E9E9'>
@@ -54,3 +59,10 @@
 <!ENTITY color_park '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
 <!ENTITY color_allotments '#B3E3B7'>
+
+<!ENTITY color_placenames_text '#2A3E92'>
+<!ENTITY color_road_text '#2A3E92'>
+<!ENTITY color_area_text '#2A3E92'>
+<!ENTITY color_island_text '#2A3E92'>
+
+<!ENTITY color_countries_text 'rgb(157,108,157)'>

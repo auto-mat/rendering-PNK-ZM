@@ -47,7 +47,7 @@
       &minscale_zoom16;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior"/>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="6" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom17;

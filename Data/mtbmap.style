@@ -33,6 +33,7 @@ node,way   addr:housename    text  polygon # Pro ZM
 node,way   addr:interpolation  text  linear  # Pro ZM
 node,way   transport    text         polygon  # Pro ZM
 way        tree_row     text         linear  # Pro ZM
+node       crossing     text         linear  # Pro ZM
 way        admin_level  text         linear
 node,way   aerialway    text         linear
 node,way   aeroway      text         polygon
