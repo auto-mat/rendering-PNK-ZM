@@ -242,11 +242,13 @@
       <Filter>[amenity]='biergarten'</Filter>
       <PointSymbolizer file="&symbols;/biergarten.p.16.png" placement="interior"/>
     </Rule>
+    -->
     <Rule>
       &maxscale_zoom16;
       <Filter>[amenity]='recycling'</Filter>
       <PointSymbolizer file="&symbols;/recycling.p.16.png" placement="interior"/>
     </Rule>
+    <!--
     <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='restaurant'</Filter>
@@ -279,7 +281,7 @@
     </Rule>
     -->
     <Rule>
-      &maxscale_zoom17; 
+      &maxscale_zoom16; 
       <Filter>[amenity]='drinking_water'</Filter> 
       <PointSymbolizer file="&symbols;/food_drinkingtap.p.20.png" placement="interior"/>
     </Rule> 

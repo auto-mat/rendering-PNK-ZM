@@ -382,11 +382,13 @@
       &maxscale_zoom15;
       <TextSymbolizer size="10" fill="#6699cc" fontset-name="book-fonts" halo-radius="1" wrap-width="20" placement="interior">[name]</TextSymbolizer>
     </Rule>
+    <!--
     <Rule>
       <Filter>([leisure] != '' or [landuse] != '') and [point] = 'yes'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer size="9" fill="#000" fontset-name="book-fonts" halo-radius="2" wrap-width="10">[name]</TextSymbolizer>
     </Rule>
+    -->
     <Rule>
       <Filter>[natural] = 'bay'</Filter>
       &maxscale_zoom14;
