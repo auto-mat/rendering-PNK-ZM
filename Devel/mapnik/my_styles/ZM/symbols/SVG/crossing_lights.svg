@@ -92,4 +92,32 @@
      width="7"
      id="rect4060"
      style="fill:#d3d3d3;fill-opacity:1;stroke:none" />
+  <rect
+     style="fill:#ff0000;fill-opacity:1;stroke:none"
+     id="rect4062"
+     width="1.5"
+     height="1.5"
+     x="0"
+     y="2" />
+  <rect
+     y="3.5"
+     x="0"
+     height="1.5"
+     width="1.5"
+     id="rect4064"
+     style="fill:#00ff00;fill-opacity:1;stroke:none" />
+  <rect
+     y="2"
+     x="12"
+     height="1.5"
+     width="1.5"
+     id="rect4066"
+     style="fill:#ff0000;fill-opacity:1;stroke:none" />
+  <rect
+     style="fill:#00ff00;fill-opacity:1;stroke:none"
+     id="rect4068"
+     width="1.5"
+     height="1.5"
+     x="12"
+     y="3.5" />
 </svg>

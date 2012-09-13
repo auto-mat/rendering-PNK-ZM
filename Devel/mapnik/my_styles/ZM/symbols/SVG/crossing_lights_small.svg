@@ -10,11 +10,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="13.5"
+   width="10.5"
    height="7"
    id="svg3089"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="crossing.svg">
+   sodipodi:docname="crossing_lights.svg">
   <sodipodi:namedview
      pagecolor="#fffcff"
      bordercolor="#666666"
@@ -56,7 +56,7 @@
   <rect
      style="fill:#ffffff;fill-opacity:1;stroke:none"
      id="rect3257"
-     width="13.5"
+     width="10.5"
      height="7"
      x="0"
      y="0" />
@@ -85,11 +85,31 @@
      y="-9"
      transform="matrix(0,1,-1,0,0,0)" />
   <rect
-     transform="matrix(0,1,-1,0,0,0)"
-     y="-12"
+     style="fill:#ff0000;fill-opacity:1;stroke:none"
+     id="rect4062"
+     width="1.5"
+     height="1.5"
+     x="0"
+     y="2" />
+  <rect
+     y="3.5"
      x="0"
      height="1.5"
-     width="7"
-     id="rect4060"
-     style="fill:#d3d3d3;fill-opacity:1;stroke:none" />
+     width="1.5"
+     id="rect4064"
+     style="fill:#00ff00;fill-opacity:1;stroke:none" />
+  <rect
+     y="2"
+     x="9"
+     height="1.5"
+     width="1.5"
+     id="rect4066"
+     style="fill:#ff0000;fill-opacity:1;stroke:none" />
+  <rect
+     style="fill:#00ff00;fill-opacity:1;stroke:none"
+     id="rect4068"
+     width="1.5"
+     height="1.5"
+     x="9"
+     y="3.5" />
 </svg>

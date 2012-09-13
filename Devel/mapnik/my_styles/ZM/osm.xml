@@ -8,7 +8,25 @@
   &fontset-settings;
 <Style name="crossings">
     <Rule>
+      <Filter>[crossing]='traffic_lights'</Filter>
       &maxscale_zoom16;
+      &minscale_zoom16;;
+      <PointSymbolizer file="&symbols;/SVG/crossing_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      <Filter>[crossing]='traffic_lights'</Filter>
+      &maxscale_zoom17;
+      <PointSymbolizer file="&symbols;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      <Filter>not [crossing]='traffic_lights'</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom16;;
+      <PointSymbolizer file="&symbols;/SVG/crossing_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      <Filter>not [crossing]='traffic_lights'</Filter>
+      &maxscale_zoom17;
       <PointSymbolizer file="&symbols;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
