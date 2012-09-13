@@ -9,12 +9,14 @@
       &minscale_zoom12;
       <Filter>[railway]='station' and [transport]='subway' and not [disused]='yes'</Filter>
       <PointSymbolizer file="&symbols;/subway_station_smallest.png" placement="interior"/>
+      <TextSymbolizer size="9" fill="&color_subway_station_text;" dy="-8" allow-overlap="true" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom14;
       <Filter>[railway]='station' and [transport]='subway' and not [disused]='yes'</Filter>
       <PointSymbolizer file="&symbols;/subway_station_small.png" placement="interior"/>
+      <TextSymbolizer size="9" fill="&color_subway_station_text;" dy="-8" allow-overlap="true" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom13;
@@ -25,6 +27,7 @@
       &maxscale_zoom15;
       <Filter>[railway]='station' and [transport]='subway' and not [disused]='yes'</Filter>
       <PointSymbolizer file="&symbols;/subway_station.png" placement="interior"/>
+      <TextSymbolizer size="9" fill="&color_subway_station_text;" dy="-8" allow-overlap="true" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
 
     <Rule>
@@ -107,7 +110,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[railway]='station' andnot  [transport]='subway' and [disused]='yes'</Filter>
+      <Filter>[railway]='station' and not [transport]='subway' and [disused]='yes'</Filter>
       <TextSymbolizer size="9" fill="&color_station_disused_text;" dy="-9" allow-overlap="true" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">([name])</TextSymbolizer>
     </Rule>
 
