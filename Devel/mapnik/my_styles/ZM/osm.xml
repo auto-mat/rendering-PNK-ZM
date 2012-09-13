@@ -150,9 +150,14 @@
       <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform_casing;" stroke-width="2" stroke-linecap="round"/>
     </Rule>
     <Rule>
-      <Filter>[railway] = 'platform'</Filter>
+      <Filter>[railway] = 'platform' and not [tram]='yes'</Filter>
       &maxscale_zoom16;
       <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform_casing;" stroke-width="2" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform' and [tram]='yes'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_tram_platform_casing;" stroke-width="2" stroke-linecap="round"/>
     </Rule>
 </Style>
 <Style name="highway-area-fill">
@@ -177,9 +182,19 @@
       <PolygonSymbolizer fill="#dfcc66"/>
    </Rule>
     <Rule>
-      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      <Filter>[highway] = 'platform'</Filter>
       &maxscale_zoom16;
-      <PolygonSymbolizer gamma=".65" fill="&color_platform;"/>
+      <PolygonSymbolizer gamma=".65" fill="&color_highway_platform;"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform' and not [tram]='yes'</Filter>
+      &maxscale_zoom16;
+      <PolygonSymbolizer gamma=".65" fill="&color_railway_platform;"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform' and [tram]='yes'</Filter>
+      &maxscale_zoom16;
+      <PolygonSymbolizer gamma=".65" fill="&color_tram_platform;"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
@@ -1867,80 +1882,10 @@
       &minscale_zoom18;
       <LineSymbolizer stroke-linejoin="round" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
    </Rule>
-   <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
-      &maxscale_zoom13;
-      &minscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="1.5" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
-      &maxscale_zoom14;
-      &minscale_zoom14;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="3" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
-      &maxscale_zoom15;
-      &minscale_zoom15;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="5.5" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
-      &maxscale_zoom16;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="8" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-       <Filter>[highway] = 'platform'</Filter>
-       &maxscale_zoom16;
-       <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
-    </Rule>
-    <Rule   >
-       <Filter>[railway] = 'platform'</Filter>
-       &maxscale_zoom16;
-       <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
-    </Rule>
     <Rule>
       <Filter>[railway] = 'turntable'</Filter>
       &maxscale_zoom16;
       <LineSymbolizer stroke="#999" stroke-width="1.5"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'steps'</Filter>
-      &maxscale_zoom15;
-      <LineSymbolizer stroke="&color_steps;" stroke-width="5.0" stroke-dasharray="2,1"/>
-    </Rule>  
-    <Rule>
-      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not [tunnel]='yes'</Filter>
-      &maxscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway;"/>
-    </Rule>  
-    <Rule>
-      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not [tunnel]='yes'</Filter>
-      &maxscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="&stroke_width_footway;" stroke-linecap="round"/>
-    </Rule>   
-    <Rule>
-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
-      &maxscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path;"/>
-    </Rule>
-    <Rule>
-       <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
-       &maxscale_zoom16;
-       <LineSymbolizer stroke-linejoin="round" stroke="&color_platform;" stroke-width="4" stroke-linecap="round"/>
-     </Rule>
-    <Rule>
-      <Filter>[highway] = 'steps'</Filter>
-      &maxscale_zoom13;
-      &minscale_zoom14;
-      <LineSymbolizer stroke="#fff" stroke-width="6" stroke-opacity="0.4"/>
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_steps;" stroke-width="2.0" stroke-dasharray="1,3" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
-      &maxscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-linecap="round"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'byway'</Filter>
@@ -2007,6 +1952,93 @@
       <Filter>[aeroway] = 'taxiway' and not [bridge]='yes'</Filter>
       &maxscale_zoom15;
       <LineSymbolizer stroke="#bbc" stroke-width="6"/>
+    </Rule>
+</Style>
+<Style name="foot-roads-fill"> 
+    <Rule>
+       <Filter>[highway] = 'platform'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform' and not [tram]='yes'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform_casing;" stroke-width="6" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'platform' and [tram]='yes'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_tram_platform_casing;" stroke-width="6" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'steps'</Filter>
+      &maxscale_zoom15;
+      <LineSymbolizer stroke="&color_steps;" stroke-width="5.0" stroke-dasharray="2,1"/>
+    </Rule>  
+    <Rule>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not [tunnel]='yes'</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway;"/>
+    </Rule>  
+    <Rule>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not [tunnel]='yes'</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="&stroke_width_footway;" stroke-linecap="round"/>
+    </Rule>   
+    <Rule>
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path;"/>
+    </Rule>
+    <Rule>
+       <Filter>[railway] = 'platform' and not [tram] = 'yes'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_railway_platform;" stroke-width="4" stroke-linecap="round"/>
+     </Rule>
+    <Rule>
+       <Filter>[railway] = 'platform' and [tram] = 'yes'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_tram_platform;" stroke-width="4" stroke-linecap="round"/>
+     </Rule>
+    <Rule>
+       <Filter>[highway] = 'platform'</Filter>
+       &maxscale_zoom16;
+       <LineSymbolizer stroke-linejoin="round" stroke="&color_highway_platform;" stroke-width="4" stroke-linecap="round"/>
+     </Rule>
+    <Rule>
+      <Filter>[highway] = 'steps'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom14;
+      <LineSymbolizer stroke="#fff" stroke-width="6" stroke-opacity="0.4"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_steps;" stroke-width="2.0" stroke-dasharray="1,3" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-linecap="round"/>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="1.5" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="3" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="5.5" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="8" stroke-linecap="round"/>
     </Rule>
 </Style>
     <!--
@@ -3460,7 +3492,7 @@
     <StyleName>highway-area-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,railway from &prefix;_polygon
+      (select way,highway,railway,tram from &prefix;_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','track','path','platform')
           or railway='platform'
        order by z_order,way_area desc) as roads
@@ -3488,7 +3520,7 @@
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,railway,aeroway from &prefix;_polygon
+      (select way,highway,railway,aeroway,tram from &prefix;_polygon
        where (highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform','services')
           or railway='platform'
           or aeroway in ('runway','taxiway','helipad'))
@@ -3511,9 +3543,10 @@
 <Layer name="minor-roads-fill" status="on" srs="&osm2pgsql_projection;">
     <StyleName>minor-roads-fill-links</StyleName>
     <StyleName>minor-roads-fill</StyleName>
+    <StyleName>foot-roads-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,horse,bicycle,foot,construction,aeroway,
+      (select way,highway,horse,bicycle,foot,construction,aeroway,tram,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1','viaduct') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
