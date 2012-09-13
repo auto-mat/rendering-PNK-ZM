@@ -404,7 +404,7 @@
       <Parameter name="table">
       (select way
        from &prefix;_polygon
-       where ((barrier is not null and (access is null or access in ('yes', 'public')))
+       where ((barrier is not null and (access is null or access not in ('yes', 'public')))
        or access in ('private', 'no', 'permissive', 'customer', 'customers')
        or 'garden:type' in ('residential'))
        and (fee is null or fee!='yes')
