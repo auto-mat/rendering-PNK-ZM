@@ -26,7 +26,7 @@
 
 # OsmType  Tag          DataType     Flags
 
-node,way   access       text         linear
+node,way   access       text         polygon
 node,way   addr:flats   text         polygon # Pro ZM
 node,way   addr:housenumber    text  polygon # Pro ZM
 node,way   addr:housename    text  polygon # Pro ZM
@@ -34,12 +34,14 @@ node,way   addr:interpolation  text  linear  # Pro ZM
 node,way   transport    text         polygon  # Pro ZM
 way        tree_row     text         linear  # Pro ZM
 node       crossing     text         linear  # Pro ZM
+way        fee          text         polygon  # Pro ZM
+way        garden:type  text         polygon  # Pro ZM
 way        admin_level  text         linear
 node,way   aerialway    text         linear
 node,way   aeroway      text         polygon
 way        area         text         polygon
 node,way   amenity      text         nocache,polygon
-node,way   barrier      text         linear
+node,way   barrier      text         polygon
 node,way   bicycle      text         nocache
 node,way   bridge       text         linear
 node,way   boundary     text         linear

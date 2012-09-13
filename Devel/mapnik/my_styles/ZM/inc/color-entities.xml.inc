@@ -57,8 +57,11 @@
 <!ENTITY color_motorway '#BFBFBF'>
 
 <!ENTITY color_park '#73C82C'>
+<!ENTITY color_meadow '#73C82C'>
+<!ENTITY color_village_green '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
-<!ENTITY color_allotments '#B3E3B7'>
+<!ENTITY color_allotments '#73C82C'>
+<!ENTITY color_garden "#73C82C">
 
 <!ENTITY color_placenames_text '#2A3E92'>
 <!ENTITY color_road_text '#2A3E92'>
@@ -66,3 +69,9 @@
 <!ENTITY color_island_text '#2A3E92'>
 
 <!ENTITY color_countries_text 'rgb(157,108,157)'>
+
+<!ENTITY color_no_access 'white'>
+<!ENTITY opacity_no_access '0.6'>
+
+<!ENTITY color_paid_access 'white'>
+<!ENTITY opacity_paid_access '0.3'>

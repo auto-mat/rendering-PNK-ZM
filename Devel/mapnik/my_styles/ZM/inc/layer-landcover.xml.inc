@@ -111,12 +111,12 @@
     <Rule>
       &maxscale_zoom10;
       <Filter>[landuse] = 'meadow' or [landuse] = 'grass'</Filter>
-      <PolygonSymbolizer fill="#cfeca8"/>
+      <PolygonSymbolizer fill="&color_meadow;"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'park' or [leisure] = 'recreation_ground'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill-opacity="0.6" fill="&color_park;"/>
+      <PolygonSymbolizer fill="&color_park;"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>
@@ -131,7 +131,7 @@
     <Rule>
       <Filter>[leisure] = 'garden'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#cfeca8"/>
+      <PolygonSymbolizer fill="&color_garden;"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'golf_course'</Filter>
@@ -181,7 +181,7 @@
     <Rule>
       <Filter>[landuse] = 'village_green'</Filter>
       &maxscale_zoom11;
-      <PolygonSymbolizer fill="#cfeca8"/>
+      <PolygonSymbolizer fill="&color_village_green;"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'retail'</Filter>
@@ -229,7 +229,7 @@
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
       &maxscale_zoom8;
-      <PolygonSymbolizer fill="#aed1a0"/>
+      <PolygonPatternSymbolizer file="&symbols;/forest.png" />
     </Rule>
     <Rule>
       <Filter>[natural] = 'desert'</Filter>
@@ -334,6 +334,18 @@
       <LineSymbolizer stroke="#888" stroke-width="0.5"/>
     </Rule>
 </Style>
+<Style name="no_access">
+     <Rule>
+      &maxscale_zoom14;
+      <PolygonSymbolizer fill="&color_no_access;" fill-opacity="&opacity_no_access;"/>
+    </Rule>
+</Style>
+<Style name="paid_access">
+     <Rule>
+      &maxscale_zoom14;
+      <PolygonSymbolizer fill="&color_paid_access;" fill-opacity="&opacity_paid_access;"/>
+    </Rule>
+</Style>
 
 <Layer name="landcover" status="on" srs="&osm2pgsql_projection;">
     <StyleName>landcover</StyleName>
@@ -386,3 +398,30 @@
     </Datasource>
 </Layer>
 
+<Layer name="no_access" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>no_access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way
+       from &prefix;_polygon
+       where ((barrier is not null and (access is null or access in ('yes', 'public')))
+       or access in ('private', 'no', 'permissive', 'customer', 'customers')
+       or 'garden:type' in ('residential'))
+       and (fee is null or fee!='yes')
+      ) as no_access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="paid_access" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>paid_access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way
+       from &prefix;_polygon
+       where fee = 'yes'
+      ) as paid_access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
