@@ -2043,6 +2043,51 @@
       <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="8" stroke-linecap="round"/>
     </Rule>
 </Style>
+<Style name="foot-roads-fill-dots"> 
+    <Rule>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated'))</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-dasharray="1,4" stroke-width="&stroke_width_bridleway;"/>
+    </Rule>  
+    <Rule>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated'))</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="&stroke_width_footway;" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>   
+    <Rule>
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated')</Filter> 
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-dasharray="1,4" stroke-width="&stroke_width_path;"/>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated'))</Filter>
+      &maxscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="1.5" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="3" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="5.5" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_pedestrian;" stroke-width="8" stroke-dasharray="1,4" stroke-linecap="round"/>
+    </Rule>
+</Style>
     <!--
 <Style name="access">
      <Rule>
@@ -2097,7 +2142,6 @@
       <LineSymbolizer stroke-linejoin="round" stroke-opacity="0.5" stroke="#efa9a9" stroke-linecap="round" stroke-dasharray="6,8" stroke-width="6"/>
     </Rule>
 </Style>
-    -->
 <Style name="footbikecycle-tunnels">
     <Rule>
       <Filter>[highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')</Filter>
@@ -2120,6 +2164,7 @@
       <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-linecap="round" stroke-dasharray="1,4" stroke-width="&stroke_width_cycleway;"/>
     </Rule>
 </Style>
+    -->
 <Style name="tracks-notunnel-nobridge">
     <Rule>
       <Filter>[tracktype]='grade1'</Filter>
@@ -3455,6 +3500,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<!--
 <Layer name="footbikecycle-tunnels" status="on" srs="&osm2pgsql_projection;">
     <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
@@ -3464,6 +3510,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+-->
 <Layer name="tracks-tunnels" status="on" srs="&osm2pgsql_projection;">
     <StyleName>tracks-tunnels</StyleName>
     <Datasource>
@@ -3976,6 +4023,27 @@
     <Datasource>
       <Parameter name="table">
       (select way,railway,bridge from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and (service is null or service not in ('yard'))) as trams
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="minor-roads-fill-dots" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>foot-roads-fill-dots</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,horse,bicycle,foot,construction,aeroway,tram,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when bridge in ('yes','true','1','viaduct') then 'yes'::text else bridge end as bridge,
+       case when railway in ('spur','siding')
+              or (railway='rail' and service in ('spur','siding','yard'))
+            then 'spur-siding-yard'::text else railway end as railway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
+       from &prefix;_line
+       where (highway is not null
+          or aeroway in ('runway','taxiway')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature','turntable'))
+         and (access is null or access not in ('private', 'no') or foot in ('yes', 'designated', '1', 'true'))
+       order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
