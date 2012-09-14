@@ -47,19 +47,16 @@
       &minscale_zoom16;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior"/>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="6" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file="&symbols;/bus_stop.p.12.png" placement="interior"/>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom16;
       <Filter>[amenity]='bus_station'</Filter>
       <PointSymbolizer file="&symbols;/bus_station.n.16.png" allow-overlap="true" placement="interior"/>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
     &maxscale_zoom15;
@@ -388,6 +385,31 @@
     </Rule>
     -->
 </Style>
+<Style name="bus_stops">
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="6" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      &minscale_zoom17;
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom18;
+      &minscale_zoom18;
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[amenity]='bus_station'</Filter>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+</Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
     <StyleName>points</StyleName>
@@ -421,6 +443,26 @@
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
          or leisure='playground'
+      ) as points</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<Layer name="bus_stops" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>bus_stops</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select p1.way as way, p1.amenity, p1.highway,
+         coalesce(p2.name, p1.name) as name
+         from &prefix;_point as p1
+         left join &prefix;_station_points_rels as p2
+         on p1.osm_id = p2.osm_id
+         where (p1.highway='bus_stop'
+         and (
+            p2.osm_id is null
+            or not exists(select * from &prefix;_station_points_rels as p3 where p3.highway='bus_stop' and p3.rel_id = p2.rel_id and ST_Y(p2.way) > ST_Y(p3.way))
+         )
+         )
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
