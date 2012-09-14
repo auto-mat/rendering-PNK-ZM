@@ -76,23 +76,23 @@
       &maxscale_zoom13;
       &minscale_zoom14;
       <Filter>[railway]='tram_stop'</Filter>
-      <PointSymbolizer file="&symbols;/tram_stop.png" placement="interior"/>
+      <PointSymbolizer file="&symbols;/tram_stop.png" placement="interior" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='tram_stop'</Filter>
-      <PointSymbolizer file="&symbols;/tram_stop_small.png" placement="interior"/>
+      <PointSymbolizer file="&symbols;/tram_stop_small.png" placement="interior" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='tram_stop'</Filter>
-      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='tram_stop'</Filter>
-      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" placement="interior">[name]</TextSymbolizer>
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom14;

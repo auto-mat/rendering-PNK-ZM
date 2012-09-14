@@ -4117,9 +4117,9 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-&layer-amenity-stations;
 &layer-amenity-symbols;
 &layer-amenity-points;
+&layer-amenity-stations;
     <!--
 &layer-power;
     -->

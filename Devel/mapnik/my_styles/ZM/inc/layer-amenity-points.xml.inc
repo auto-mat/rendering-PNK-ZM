@@ -40,23 +40,24 @@
       &maxscale_zoom14;
       &minscale_zoom15;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
-      <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior"/>
+      <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
-      <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior"/>
+      <PointSymbolizer file="&symbols;/bus_stop_small.png" placement="interior" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
-      <PointSymbolizer file="&symbols;/bus_stop.p.12.png" placement="interior"/>
+      <PointSymbolizer file="&symbols;/bus_stop.p.12.png" placement="interior" allow-overlap="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
       <Filter>[amenity]='bus_station'</Filter>
       <PointSymbolizer file="&symbols;/bus_station.n.16.png" allow-overlap="true" placement="interior"/>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
     <Rule>
     &maxscale_zoom15;
@@ -402,11 +403,6 @@
       &maxscale_zoom18;
       &minscale_zoom18;
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom16;
-      <Filter>[amenity]='bus_station'</Filter>
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
 </Style>
