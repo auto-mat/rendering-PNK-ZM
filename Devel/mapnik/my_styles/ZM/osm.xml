@@ -4044,15 +4044,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="trams" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>trams</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,railway,bridge from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and (service is null or service not in ('yard'))) as trams
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <Layer name="minor-roads-fill-dots" status="on" srs="&osm2pgsql_projection;">
     <StyleName>foot-roads-fill-dots</StyleName>
     <Datasource>
@@ -4070,6 +4061,15 @@
           or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature','turntable'))
          and (access is null or access not in ('private', 'no') or foot in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="trams" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>trams</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,railway,bridge from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and (service is null or service not in ('yard'))) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>
