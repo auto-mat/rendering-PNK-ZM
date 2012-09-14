@@ -242,7 +242,7 @@
     </Rule>
     -->
     <Rule>
-      &maxscale_zoom16;
+      &maxscale_zoom17;
       <Filter>[amenity]='recycling'</Filter>
       <PointSymbolizer file="&symbols;/recycling.p.16.png" placement="interior"/>
     </Rule>
