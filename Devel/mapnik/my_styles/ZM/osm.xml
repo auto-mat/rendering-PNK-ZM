@@ -3269,48 +3269,48 @@
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
-      <TextSymbolizer size="8" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
-      <TextSymbolizer size="8" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
-      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0">[name]</TextSymbolizer>
+      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
-      <TextSymbolizer size="10" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0">[name]</TextSymbolizer>
+      <TextSymbolizer size="10" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="0" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
-      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;">[name]</TextSymbolizer>
+      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule><Rule>
       <Filter>[highway] = 'secondary'</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
-      <TextSymbolizer size="10" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;">[name]</TextSymbolizer>
+      <TextSymbolizer size="10" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" halo-fill="&color_secondary;" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
-      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
-      <TextSymbolizer size="11" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="11" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <!--
     <Rule>
@@ -3330,31 +3330,31 @@
       <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
-      <TextSymbolizer size="8" fill="&color_road_text;" spacing="300" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_road_text;" spacing="300" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
-      <TextSymbolizer size="9" fill="&color_road_text;" spacing="300" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="9" fill="&color_road_text;" spacing="300" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
-      <TextSymbolizer size="11" fill="&color_road_text;" spacing="400" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="11" fill="&color_road_text;" spacing="400" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <ElseFilter/>
       &maxscale_zoom15;
       &minscale_zoom16;
-      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="9" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <ElseFilter/>
       &maxscale_zoom17;
       &minscale_zoom18;
-      <TextSymbolizer size="11" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
+      <TextSymbolizer size="11" fill="&color_road_text;" placement="line" fontset-name="book-fonts" halo-radius="1" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="cliffs">

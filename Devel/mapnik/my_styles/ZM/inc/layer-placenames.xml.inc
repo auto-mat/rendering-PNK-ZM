@@ -106,12 +106,12 @@
       <Filter>[place] = 'suburb'</Filter>
       &maxscale_zoom12;
       &minscale_zoom13;
-      <TextSymbolizer size="10" fill="&color_placenames_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer size="10" fill="&color_placenames_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[place] = 'suburb'</Filter>
       &maxscale_zoom14;
-      <TextSymbolizer size="13" fill="&color_placenames_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer size="13" fill="&color_placenames_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" text-transform="uppercase">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="village">
