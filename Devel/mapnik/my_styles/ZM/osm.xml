@@ -3378,11 +3378,11 @@
 <Style name="barriers_area">
     <Rule>
       <Filter>[natural]='hedge' or [barrier] = 'hedge'</Filter>
-      &maxscale_zoom16;
+      &maxscale_zoom15;
       <PolygonSymbolizer fill="#aed1a0"/>
     </Rule>
     <Rule>
-      &maxscale_zoom16;
+      &maxscale_zoom15;
       <Filter>[barrier] != '' and not [barrier] = 'hedge'</Filter>
       <LineSymbolizer stroke="#444" stroke-width="0.4"/>
     </Rule>
@@ -3394,12 +3394,12 @@
       <LineSymbolizer stroke="#444" stroke-width="0.4"/>
     </Rule>
     <Rule>
-      &maxscale_zoom16;
+      &maxscale_zoom15;
       <Filter>[natural]='hedge' or [barrier] = 'hedge'</Filter>
       <LineSymbolizer stroke="#aed1a0" stroke-width="3"/>
     </Rule>
     <Rule>
-      &maxscale_zoom16;
+      &maxscale_zoom15;
       <Filter>[barrier] != '' and not ([barrier] = 'hedge' or [barrier] = 'embankment')</Filter>
       <LineSymbolizer stroke="&color_barrier;" stroke-width="&width_barrier;"/>
     </Rule>
