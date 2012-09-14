@@ -2879,26 +2879,6 @@
       <LineSymbolizer stroke-linejoin="round" stroke="#debd9c" stroke-width="4" stroke-dasharray="4,6" stroke-linecap="round"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')</Filter>
-      &maxscale_zoom14;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway;"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')</Filter>
-      &maxscale_zoom14;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="2.0" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated')</Filter>
-      &maxscale_zoom14;  
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path;"/>
-    </Rule>         
-    <Rule>
-      <Filter>[highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')</Filter>
-      &maxscale_zoom14;
-      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-linecap="round"/>
-    </Rule>
-    <Rule>
       <Filter>[highway] = 'byway'</Filter>
       &maxscale_zoom14;
       <LineSymbolizer stroke-linejoin="round" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="3,4" stroke-linecap="round"/>
@@ -2960,6 +2940,28 @@
       &maxscale_zoom14;
       <LineSymbolizer stroke="&color_track;" stroke-width="&stroke_width_track;"/>
      </Rule>    
+</Style>
+<Style name="foot_bridges_fill">
+    <Rule>
+      <Filter>[highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')</Filter>
+      &maxscale_zoom14;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway;"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')</Filter>
+      &maxscale_zoom14;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="2.0" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated')</Filter>
+      &maxscale_zoom14;  
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path;"/>
+    </Rule>         
+    <Rule>
+      <Filter>[highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')</Filter>
+      &maxscale_zoom14;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-linecap="round"/>
+    </Rule>
 </Style>
 <Style name="roads">
     <Rule>
@@ -3716,6 +3718,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
@@ -3770,6 +3773,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
@@ -3824,6 +3828,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
@@ -3878,6 +3883,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
@@ -3932,6 +3938,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
@@ -3986,6 +3993,7 @@
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
+    <StyleName>foot_bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,horse,bicycle,foot,tracktype,
