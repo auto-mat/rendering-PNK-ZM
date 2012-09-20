@@ -2520,7 +2520,7 @@
       &maxscale_zoom13;
       &minscale_zoom18;
       <Filter>[railway] = 'rail'</Filter>
-      <LineSymbolizer stroke-linejoin="round" stroke="black" stroke-width="6.5"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_railway;" stroke-width="6.5"/>
     </Rule>
     <!--
     <Rule>
@@ -3076,20 +3076,22 @@
       &maxscale_zoom6;
       &minscale_zoom8;
       <Filter>[railway] = 'rail'</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="0.6"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="0.6"/>
     </Rule>
     <Rule>
       &maxscale_zoom9;
       &minscale_zoom9;
       <Filter>[railway] = 'rail' and not [tunnel]='yes'</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="1"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="1"/>
     </Rule>
+<!--
     <Rule>
       &maxscale_zoom9;
       &minscale_zoom9;
       <Filter>[railway] = 'rail' and [tunnel]='yes'</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="1" stroke-dasharray="5,2"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="1" stroke-dasharray="5,2"/>
     </Rule>
+-->
     <Rule>
       &maxscale_zoom8;
       &minscale_zoom9;
@@ -3100,14 +3102,16 @@
       &maxscale_zoom10;
       &minscale_zoom12;
       <Filter>[railway] = 'rail' and not [tunnel]='yes'</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="2"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="2"/>
     </Rule>
+<!--
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom12;
       <Filter>[railway] = 'rail' and [tunnel]='yes'</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="2" stroke-dasharray="5,2"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="2" stroke-dasharray="5,2"/>
     </Rule>
+-->
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom12;
