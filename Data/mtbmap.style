@@ -37,6 +37,7 @@ node       crossing     text         linear  # Pro ZM
 way        fee          text         polygon  # Pro ZM
 way        garden:type  text         polygon  # Pro ZM
 way        tram         text         polygon  # Pro ZM
+way        wheelchair   text         polygon  # Pro ZM
 way        admin_level  text         linear
 node,way   aerialway    text         linear
 node,way   aeroway      text         polygon
