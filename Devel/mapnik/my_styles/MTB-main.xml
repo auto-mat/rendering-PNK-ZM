@@ -47,12 +47,12 @@
 <Style name="turning_symbols">
     <Rule>
       &maxscale_zoom17;
-      <Filter>[highway]='crossing' and [crossing]='traffic_lights'</Filter>
-      <PointSymbolizer file="&symbols-path;/SVG/crossing_lights.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+      <Filter>[highway]='crossing' and [bicycle]='yes'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/crossing_bicycle.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[highway]='crossing' and not [crossing]='traffic_lights'</Filter>
+      <Filter>[highway]='crossing' and not [bicycle]='yes'</Filter>
       <PointSymbolizer file="&symbols-path;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 
@@ -1485,7 +1485,7 @@ admin 8 - uzemi samostatnych obci
         degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way),
                             coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.highway,
-        p.crossing,
+        p.bicycle,
         p.osm_id,
         p.cycleway,
         p.traffic_calming

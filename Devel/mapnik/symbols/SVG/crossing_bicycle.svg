@@ -11,10 +11,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="13.5"
-   height="7"
+   height="9"
    id="svg3089"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="crossing_lights.svg">
+   sodipodi:docname="crossing_bicycle.svg">
   <sodipodi:namedview
      pagecolor="#fffcff"
      bordercolor="#666666"
@@ -32,9 +32,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="113.625"
-     inkscape:cx="6.5384668"
-     inkscape:cy="2.0496693"
+     inkscape:zoom="56.8125"
+     inkscape:cx="7.4056871"
+     inkscape:cy="4.2229128"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -47,7 +47,9 @@
        enabled="true"
        snapvisiblegridlinesonly="true"
        spacingx="0.5px"
-       spacingy="0.5px" />
+       spacingy="0.5px"
+       originx="0px"
+       originy="0px" />
   </sodipodi:namedview>
   <metadata
      id="metadata3095">
@@ -57,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,67 +69,78 @@
      style="fill:#ffffff;fill-opacity:1;stroke:none"
      id="rect3257"
      width="13.5"
-     height="7"
+     height="9"
      x="0"
      y="0" />
   <rect
      style="fill:#d3d3d3;fill-opacity:1;stroke:none"
      id="rect3224"
-     width="7"
+     width="5"
      height="1.5"
-     x="0"
+     x="4"
      y="-3"
      transform="matrix(0,1,-1,0,0,0)" />
   <rect
      y="-6"
-     x="0"
+     x="4"
      height="1.5"
-     width="7"
+     width="5"
      id="rect3226"
      style="fill:#d3d3d3;fill-opacity:1;stroke:none"
      transform="matrix(0,1,-1,0,0,0)" />
   <rect
      style="fill:#d3d3d3;fill-opacity:1;stroke:none"
      id="rect3228"
-     width="7"
+     width="5"
      height="1.5"
-     x="0"
+     x="4"
      y="-9"
      transform="matrix(0,1,-1,0,0,0)" />
   <rect
      transform="matrix(0,1,-1,0,0,0)"
      y="-12"
-     x="0"
+     x="4"
      height="1.5"
-     width="7"
+     width="5"
      id="rect4060"
      style="fill:#d3d3d3;fill-opacity:1;stroke:none" />
   <rect
+     transform="matrix(0,1,-1,0,0,0)"
+     y="-3"
+     x="0"
+     height="1.5"
+     width="1.5"
+     id="rect4537"
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none" />
+  <rect
+     transform="matrix(0,1,-1,0,0,0)"
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none"
+     id="rect4539"
+     width="1.5"
+     height="1.5"
+     x="0"
+     y="-6" />
+  <rect
+     transform="matrix(0,1,-1,0,0,0)"
+     y="-9"
+     x="0"
+     height="1.5"
+     width="1.5"
+     id="rect4541"
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none" />
+  <rect
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none"
+     id="rect4543"
+     width="1.5"
+     height="1.5"
+     x="0"
+     y="-12"
+     transform="matrix(0,1,-1,0,0,0)" />
+  <rect
      style="fill:#ff0000;fill-opacity:1;stroke:none"
-     id="rect4062"
-     width="3"
-     height="3"
+     id="rect4564"
+     width="13.5"
+     height="2.5"
      x="0"
-     y="0.5" />
-  <rect
-     y="3.5"
-     x="0"
-     height="3"
-     width="3"
-     id="rect4064"
-     style="fill:#00ff00;fill-opacity:1;stroke:none" />
-  <rect
-     y="0.5"
-     x="10.5"
-     height="3"
-     width="3"
-     id="rect4066"
-     style="fill:#ff0000;fill-opacity:1;stroke:none" />
-  <rect
-     style="fill:#00ff00;fill-opacity:1;stroke:none"
-     id="rect4068"
-     width="3"
-     height="3"
-     x="10.5"
-     y="3.5" />
+     y="1.5" />
 </svg>
