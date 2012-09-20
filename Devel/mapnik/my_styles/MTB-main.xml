@@ -7,7 +7,9 @@
 <Map srs="&srs900913;" background-color="rgb(255,255,255)">
     &fontset-settings;
 
+<!--
 &height-styles;
+-->
 &admin-styles;
 <!--
 &mtb-styles;
@@ -41,12 +43,28 @@
     </Datasource>
 </Layer>
 
-<!-- Příčné prahy -->
-<Style name="traffic_calming">
+<!-- Otáčecí symboly -->
+<Style name="turning_symbols">
     <Rule>
-      &maxscale_zoom16;
+      &maxscale_zoom17;
+      <Filter>[highway]='crossing' and [crossing]='traffic_lights'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/crossing_lights.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[highway]='crossing' and not [crossing]='traffic_lights'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[traffic_calming]='bump'</Filter>
       <PointSymbolizer file="&symbols-path;/SVG/bump.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[cycleway]='asl'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/asl.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
 
@@ -1458,15 +1476,18 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 
-<Layer name="traffic_calming" status="on" srs="&srs900913;">
-    <StyleName>traffic_calming</StyleName>
+<Layer name="turning_symbols" status="on" srs="&srs900913;">
+    <StyleName>turning_symbols</StyleName>
     <Datasource>
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        l.highway as int_tc_type,
         degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way),
                             coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
+        p.highway,
+        p.crossing,
+        p.osm_id,
+        p.cycleway,
         p.traffic_calming
 
        from &prefix;_point p
@@ -1486,6 +1507,8 @@ admin 8 - uzemi samostatnych obci
        ) as v (highway,prio)
         on v.highway=l.highway
        where p.traffic_calming is not null
+       or p.cycleway is not null
+       or p.highway is not null
        order by p.way,v.prio
      ) as crossing
       </Parameter>
