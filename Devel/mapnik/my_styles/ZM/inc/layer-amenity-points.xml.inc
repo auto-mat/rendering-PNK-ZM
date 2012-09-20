@@ -386,23 +386,29 @@
     </Rule>
     -->
 </Style>
+<Style name="bus_sites">
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+      <PolygonSymbolizer fill="&color_bus_site;" stroke-opacity="&opacity_bus_site;"/>
+      <LineSymbolizer stroke="&color_bus_site;" stroke-width="3" stroke-opacity="&opacity_bus_site;"/>
+    </Rule>
+</Style>
 <Style name="bus_stops">
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
-      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="6" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       &minscale_zoom17;
-      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom18;
       &minscale_zoom18;
-      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="12" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
 </Style>
@@ -444,21 +450,31 @@
     </Datasource>
 </Layer>
 
+<Layer name="bus_sites" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>bus_sites</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select ST_ConvexHull(ST_Collect(p1.way)) as way,
+         p2.name
+         from &prefix;_point as p1
+         join &prefix;_station_points_rels as p2
+         on p1.osm_id = p2.osm_id
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
+         group by p2.rel_id, p2.name        
+
+      ) as points</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 <Layer name="bus_stops" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bus_stops</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select p1.way as way, p1.amenity, p1.highway,
-         coalesce(p2.name, p1.name) as name
+      (select way, name
          from &prefix;_point as p1
-         left join &prefix;_station_points_rels as p2
-         on p1.osm_id = p2.osm_id
-         where (p1.highway='bus_stop'
-         and (
-            p2.osm_id is null
-            or not exists(select * from &prefix;_station_points_rels as p3 where p3.highway='bus_stop' and p3.rel_id = p2.rel_id and ST_Y(p2.way) > ST_Y(p3.way))
-         )
-         )
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
+         and not exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id)
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
