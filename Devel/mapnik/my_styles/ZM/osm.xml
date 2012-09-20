@@ -11,12 +11,12 @@
       &maxscale_zoom16;
       &minscale_zoom16;
       <Filter>[crossing]='traffic_lights'</Filter>
-      <PointSymbolizer file="&symbols;/SVG/crossing_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+      <PointSymbolizer file="&symbols;/SVG/crossing_lights_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[crossing]='traffic_lights'</Filter>
-      <PointSymbolizer file="&symbols;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+      <PointSymbolizer file="&symbols;/SVG/crossing_lights.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
@@ -4118,7 +4118,7 @@
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        l.highway as int_tc_type,
+        p.crossing,
         degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way), 
                             coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle
 
