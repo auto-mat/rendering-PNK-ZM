@@ -4210,6 +4210,7 @@
          and name is not null
          and highway not in ('construction', 'proposed')
          and (tunnel is null or highway not in ('primary', 'secondary', 'tertiary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'tertiary_link', 'trunk_link', 'motorway_link'))
+         and (access is null or access not in ('private', 'no') or foot in ('yes', 'designated', '1', 'true'))
       ) as roads
       </Parameter>
       &datasource-settings;
