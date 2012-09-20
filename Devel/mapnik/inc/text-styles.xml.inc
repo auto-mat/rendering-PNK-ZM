@@ -37,22 +37,22 @@
     </Rule>
     <Rule>
             <Filter>(([way_area]&gt;=150000) and not (([natural]='lake') or ([natural]='water') or ([landuse]='reservoir') or ([landuse]='water')))</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([way_area]&gt;=80000) and ([way_area]&lt;150000) and not (([natural]='lake') or ([natural]='water') or ([landuse]='reservoir') or ([landuse]='water')))</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([way_area]&gt;=20000) and ([way_area]&lt;80000) and not (([natural]='lake') or ([natural]='water') or ([landuse]='reservoir') or ([landuse]='water')))</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([way_area]&lt;20000) and not (([natural]='lake') or ([natural]='water') or ([landuse]='reservoir') or ([landuse]='water')))</Filter>
-            &maxscale_zoom17;
+            &maxscale_zoom18;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
 </Style>
@@ -257,12 +257,12 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(115,74,8)" dy="20" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
--->
     <Rule>
             <Filter>([amenity]='place_of_worship')</Filter>
             &maxscale_zoom15;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" dy="16" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+-->
     <Rule>
             <Filter>([natural]='wood')</Filter>
             &maxscale_zoom15;
@@ -359,32 +359,33 @@
 -->
     <Rule>
             <Filter>([amenity]='university')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="rgb(0,0,51)" halo-radius="1" wrap-width="16"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([amenity]='school') or ([amenity]='college'))</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,51)" halo-radius="1" wrap-width="14"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>([amenity]='kindergarten')</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="rgb(0,0,51)" halo-radius="1" wrap-width="14"></TextSymbolizer>
     </Rule>
+    <!--
     <Rule>
             <Filter>([man_made]='lighthouse')</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,51)" dy="16" vertical-alignment="bottom" halo-radius="2" wrap-width="12"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([man_made]='tower') and (([tower:type]='communication') or ([tower:type]='bts')))</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,0)" dy="12" vertical-alignment="bottom" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([man_made]='tower') and ([tower:type]='observation'))</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,0)" dy="12" vertical-alignment="bottom" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
     <Rule>
@@ -392,9 +393,10 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(115,74,8)" dy="12" vertical-alignment="bottom" halo-radius="1" wrap-width="20"></TextSymbolizer>
     </Rule>
+    -->
     <Rule>
             <Filter>([amenity]='hospital')</Filter>
-            &maxscale_zoom16;
+            &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="&color_hospital;" dy="16" vertical-alignment="bottom" halo-radius="2" wrap-width="12"></TextSymbolizer>
     </Rule>
     <Rule>
@@ -438,7 +440,6 @@
             &maxscale_zoom14;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical-alignment="bottom" halo-radius="1"></TextSymbolizer>
     </Rule>
--->
     <Rule name="!zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom14;
@@ -449,6 +450,7 @@
             &maxscale_zoom14;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,0)" dy="10" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+-->
 </Style>
 <Style name="text-poly">
     <Rule>
@@ -489,11 +491,13 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_fire_station;" dy="20" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+    <!--
     <Rule>
             <Filter>([amenity]='place_of_worship')</Filter>
             &maxscale_zoom15;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,51)" dy="16" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+    -->
     <Rule>
             <Filter>([natural]='wood')</Filter>
             &maxscale_zoom15;
@@ -565,6 +569,7 @@
             &maxscale_zoom14;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_bicycle_shop;" dy="10" vertical-alignment="bottom" halo-radius="1"></TextSymbolizer>
     </Rule>
+    <!--
     <Rule name="!zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom14;
@@ -575,6 +580,7 @@
             &maxscale_zoom14;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="rgb(0,0,0)" dy="10" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+    -->
 </Style>
 <Style name="water-lines-text">
     <Rule name="!řeka">

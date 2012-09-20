@@ -13,3 +13,11 @@ Settings for symbols, the spatial reference of your postgis tables, coastline sh
 
 <!-- use 'planet_osm' unless you have customized your database table prefix using the osm2pgsql 'prefix' flag -->
 <!ENTITY prefix "planet_osm">
+
+<!-- used for 'node in way' ST_DWithin spatial operations -->
+<!-- Use 0.1 (meters) when your database is in 900913     -->
+<!-- Use 0.000001 (degrees) when your database is in 4326 -->
+<!ENTITY dwithin_900913 "0.1">
+<!ENTITY dwithin_4326 "0.00001">
+<!ENTITY dwithin_node_way "&dwithin_900913;">
+

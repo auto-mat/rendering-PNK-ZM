@@ -299,12 +299,14 @@
     </Rule>
 </Style>
 <Style name="hamlet">
+    <!--
     <Rule>
             <Filter>(([place]='hamlet') or ([place]='locality'))</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="12" fill="&color_placenames_text;" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
+    -->
     <Rule>
             <Filter>(([place]='hamlet') or ([place]='locality'))</Filter>
             &maxscale_zoom16;

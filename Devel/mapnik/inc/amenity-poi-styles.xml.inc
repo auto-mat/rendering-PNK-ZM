@@ -32,6 +32,7 @@
                 fill-opacity="0.5"
             />
     </Rule>
+    <!--
     <Rule name="!náboženský chrám">
             <Filter>([amenity]='place_of_worship')</Filter>
             &minscale_zoom14;
@@ -53,6 +54,7 @@
                 stroke-width="0.3"
             />
     </Rule>
+    -->
     <Rule name="!sportoviště, dráha">
             <Filter>([leisure]='track')</Filter>
             &maxscale_zoom10;
@@ -65,7 +67,7 @@
             />
     </Rule>
     <Rule name="budova">
-            <Filter>(((([building]&lt;&gt;'station') and ([building]&lt;&gt;'supermarket')) and ([building]&lt;&gt;'')) and (not (([amenity]&lt;&gt;'')) or ([amenity]&lt;&gt;'place_of_worship')))</Filter>
+            <Filter>(((([building]&lt;&gt;'station') and ([building]&lt;&gt;'supermarket')) and ([building]&lt;&gt;'')))</Filter>
             &maxscale_zoom10;
             <PolygonSymbolizer
                 fill="&color_building;"
@@ -276,6 +278,7 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;pharmacy.p.16.png"></PointSymbolizer>
     </Rule>
+    <!--
     <Rule name="kostel">
             <Filter>(([amenity]='place_of_worship') and ([religion]='christian'))</Filter>
             &maxscale_zoom14;
@@ -301,6 +304,7 @@
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;place_of_worship3.p.16.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="policejní stanice">
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom15;
@@ -443,6 +447,7 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;windmill.png"></PointSymbolizer>
     </Rule>
+    <!--
     <Rule name="vysílač">
             <Filter>(([man_made]='tower') and (([tower:type]='communication') or ([tower:type]='bts')))</Filter>
             &maxscale_zoom13;
@@ -453,18 +458,24 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;observation.p.18.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="kruhový objezd">
             <Filter>([highway]='mini_roundabout')</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;mini_round.png"></PointSymbolizer>
     </Rule>
-    <Rule name="brána, závora">
+    <Rule name="brána">
             <Filter>(([highway]='gate') or ([barrier]='gate'))</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;gate2.png"></PointSymbolizer>
     </Rule>
+    <Rule name="závora">
+            <Filter>(([highway]='lift_gate') or ([barrier]='lift_gate'))</Filter>
+            &maxscale_zoom15;
+            <PointSymbolizer file="&symbols-path;liftgate.png"></PointSymbolizer>
+    </Rule>
     <Rule name="sloupek proti vjezdu">
-            <Filter>([barrier]='bollard')</Filter>
+            <Filter>([barrier]='bollard' or [barrier]='block')</Filter>
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bollard.png"></PointSymbolizer>
     </Rule>
@@ -474,7 +485,6 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
--->
     <Rule name="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom13;
@@ -495,7 +505,6 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;castle14.png"></PointSymbolizer>
     </Rule>
-<!--
     <Rule name="informační tabule">
             <Filter>([information]='board')</Filter>
             &maxscale_zoom14;
@@ -578,6 +587,7 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;windmill.png"></PointSymbolizer>
     </Rule>
+    <!--
     <Rule name="!vysílač">
             <Filter>(([man_made]='tower') and (([tower:type]='communication') or ([tower:type]='bts')))</Filter>
             &maxscale_zoom13;
@@ -588,18 +598,24 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;observation.p.18.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="!kruhový objezd">
             <Filter>([highway]='mini_roundabout')</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;mini_round.png"></PointSymbolizer>
     </Rule>
-    <Rule name="!brána, závora">
+    <Rule name="brána">
             <Filter>(([highway]='gate') or ([barrier]='gate'))</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;gate2.png"></PointSymbolizer>
     </Rule>
+    <Rule name="závora">
+            <Filter>(([highway]='lift_gate') or ([barrier]='lift_gate'))</Filter>
+            &maxscale_zoom15;
+            <PointSymbolizer file="&symbols-path;liftgate.png"></PointSymbolizer>
+    </Rule>
     <Rule name="!sloupek proti vjezdu">
-            <Filter>([barrier]='bollard')</Filter>
+            <Filter>([barrier]='bollard' or [barrier]='block')</Filter>
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bollard.png"></PointSymbolizer>
     </Rule>
@@ -608,6 +624,7 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
+    <!--
     <Rule name="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom13;
@@ -628,6 +645,7 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;castle14.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="informační tabule">
             <Filter>([information]='board')</Filter>
             &maxscale_zoom14;

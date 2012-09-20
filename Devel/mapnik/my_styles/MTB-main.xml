@@ -41,6 +41,15 @@
     </Datasource>
 </Layer>
 
+<!-- Příčné prahy -->
+<Style name="traffic_calming">
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[traffic_calming]='bump'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/bump.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+</Style>
+
 <!-- Lesy, hriste, skoly, vojenske prostory, kempy, vse jako polygon -->
 <Layer name="leisure" srs="&srs900913;">
 <StyleName>leisure</StyleName>
@@ -156,6 +165,7 @@
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
+        and (tunnel is null or tunnel not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines_casing</Parameter>
       &datasource-settings;
@@ -185,6 +195,7 @@
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
+        and (tunnel is null or tunnel not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines_fill</Parameter>
       &datasource-settings;
@@ -200,6 +211,7 @@
        case when short_name is not null then short_name else name end as name
       from planet_osm_line
       where waterway in ('river','canal','stream','drain')
+        and (tunnel is null or tunnel not in ('yes','true','1','aqueduct'))
       ) as water_lines_text
       </Parameter>
       &datasource-settings;
@@ -1428,61 +1440,6 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
-<Layer name="placenames-small" srs="&srs900913;" clear-label-cache="yes">
-<StyleName>suburb</StyleName>
-<StyleName>village</StyleName>
-<StyleName>hamlet</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,place,name
-      from planet_osm_point
-      where place in ('suburb','village','large_village','hamlet','locality')
-      ) as placenames</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- symboly mest, mensich mest v malych zoomech -->
-<Layer name="placenames-medium-symbols" srs="&srs900913;" clear-label-cache="yes">
-<StyleName>town-symbols</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,place,population
-      from planet_osm_point
-      where place in ('city','metropolis','town','large_town','small_town')
-        and (capital is null or capital&lt;&gt;'yes')
-      order by population desc) as placenamessymbols</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- jmena mest, mensich mest -->
-<Layer name="placenames-medium" srs="&srs900913;" clear-label-cache="yes">
-<StyleName>town</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,place,upper(name),name,population
-      from planet_osm_point
-      where place in ('city','metropolis','town','large_town','small_town')
-        and (capital is null or capital&lt;&gt;'yes')
-      order by population) as placenames</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<!-- jmena zemi, kraju, hlavnich mest -->
-<Layer name="placenames-large" srs="&srs900913;" clear-label-cache="yes">
-<StyleName>country</StyleName>
-<StyleName>state</StyleName>
-<StyleName>capital</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,place,upper(name),name,ref
-      from planet_osm_point
-      where place in ('country','state')
-         or (place in ('city','metropolis','town') and capital='yes')
-      ) as placenames</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- zajimave body - zastavky autobusu, hrady, zamky, kostely, skoly, obchody, letiste, vrcholy, rozcesti, parkoviste -->
 <Layer name="amenity" status="on" srs="&srs900913;" clear-label-cache="yes">
     <StyleName>symbols</StyleName>
@@ -1500,6 +1457,42 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
+
+<Layer name="traffic_calming" status="on" srs="&srs900913;">
+    <StyleName>traffic_calming</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (
+      select distinct on (p.way) p.way as way,
+        l.highway as int_tc_type,
+        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way),
+                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
+        p.traffic_calming
+
+       from &prefix;_point p
+       join &prefix;_line l
+        on ST_DWithin(p.way,l.way,&dwithin_node_way;)
+       join (values
+        ('motorway',1),
+        ('trunk',2),
+        ('primary',3),
+        ('secondary',4),
+        ('tertiary',5),
+        ('unclassified',6),
+        ('residential',7),
+        ('living_street',8),
+        ('service',9),
+        ('cycleway',10)
+       ) as v (highway,prio)
+        on v.highway=l.highway
+       where p.traffic_calming is not null
+       order by p.way,v.prio
+     ) as crossing
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 <!-- popisy cest pro zoom 10-12, zejmena cisla-->
 <!--<Layer name="planet roads text osm low zoom" srs="&srs900913;">
 <StyleName>roads-text-low-zoom</StyleName>
@@ -1639,6 +1632,61 @@ admin 8 - uzemi samostatnych obci
       <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0"/>
     </Rule>
 </Style>
+<!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
+<Layer name="placenames-small" srs="&srs900913;" clear-label-cache="yes">
+<StyleName>suburb</StyleName>
+<StyleName>village</StyleName>
+<StyleName>hamlet</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,name
+      from planet_osm_point
+      where place in ('suburb','village','large_village','hamlet','locality')
+      ) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- symboly mest, mensich mest v malych zoomech -->
+<Layer name="placenames-medium-symbols" srs="&srs900913;" clear-label-cache="yes">
+<StyleName>town-symbols</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,population
+      from planet_osm_point
+      where place in ('city','metropolis','town','large_town','small_town')
+        and (capital is null or capital&lt;&gt;'yes')
+      order by population desc) as placenamessymbols</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- jmena mest, mensich mest -->
+<Layer name="placenames-medium" srs="&srs900913;" clear-label-cache="yes">
+<StyleName>town</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,upper(name),name,population
+      from planet_osm_point
+      where place in ('city','metropolis','town','large_town','small_town')
+        and (capital is null or capital&lt;&gt;'yes')
+      order by population) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- jmena zemi, kraju, hlavnich mest -->
+<Layer name="placenames-large" srs="&srs900913;" clear-label-cache="yes">
+<StyleName>country</StyleName>
+<StyleName>state</StyleName>
+<StyleName>capital</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,upper(name),name,ref
+      from planet_osm_point
+      where place in ('country','state')
+         or (place in ('city','metropolis','town') and capital='yes')
+      ) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 
 <!-- hranice narodnich parku -->
 <Layer name="misc_boundaries" srs="&srs900913;">

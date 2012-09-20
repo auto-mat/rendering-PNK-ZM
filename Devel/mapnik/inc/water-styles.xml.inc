@@ -225,6 +225,7 @@
                 stroke="&color_water_fill;"
             />
     </Rule>
+    <!--
     <Rule name="řeka pod povrchem">
             <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
             &minscale_zoom14;
@@ -294,6 +295,7 @@
                 stroke-width="3"
             />
     </Rule>
+    -->
     <Rule name="plavební kanál">
             <Filter>(([waterway]='canal') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom16;
@@ -305,6 +307,7 @@
                 stroke-linecap="round"
             />
     </Rule>
+    <!--
     <Rule name="plavební kanál pod povrchem">
             <Filter>(([waterway]='canal') and ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -319,6 +322,7 @@
                 stroke-width="7"
             />
     </Rule>
+    -->
     <Rule name="plavební kanál">
             <Filter>(([waterway]='canal') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -330,6 +334,7 @@
                 stroke-linecap="round"
             />
     </Rule>
+    <!--
     <Rule name="potok pod povrchem">
             <Filter>((([waterway]='stream') or ([waterway]='drain')) and ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -344,6 +349,7 @@
                 stroke-width="1.2"
             />
     </Rule>
+    -->
     <Rule name="potok">
             <Filter>((([waterway]='stream') or ([waterway]='drain')) and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;
@@ -482,6 +488,7 @@
                 stroke="&color_water_stroke;"
             />
     </Rule>
+    <!--
     <Rule name="řeka pod povrchem">
             <Filter>(([waterway]='river') and ([tunnel]='yes'))</Filter>
             &minscale_zoom14;
@@ -531,6 +538,7 @@
                 stroke-dasharray="4, 2"
             />
     </Rule>
+    -->
     <Rule name="plavební kanál">
             <Filter>(([waterway]='canal') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom16;
@@ -542,6 +550,7 @@
                 stroke-linecap="round"
             />
     </Rule>
+    <!--
     <Rule name="plavební kanál pod povrchem">
             <Filter>(([waterway]='canal') and ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -552,6 +561,7 @@
                 stroke-dasharray="4, 2"
             />
     </Rule>
+    -->
     <Rule name="plavební kanál">
             <Filter>(([waterway]='canal') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -563,6 +573,7 @@
                 stroke-linecap="round"
             />
     </Rule>
+    <!--
     <Rule name="potok pod povrchem">
             <Filter>((([waterway]='stream') or ([waterway]='drain')) and ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
@@ -573,6 +584,7 @@
                 stroke-dasharray="4, 2"
             />
     </Rule>
+    -->
     <Rule name="potok">
             <Filter>((([waterway]='stream') or ([waterway]='drain')) and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;

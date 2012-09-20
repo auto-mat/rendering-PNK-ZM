@@ -38,6 +38,7 @@ way        fee          text         polygon  # Pro ZM
 way        garden:type  text         polygon  # Pro ZM
 way        tram         text         polygon  # Pro ZM
 way        wheelchair   text         polygon  # Pro ZM
+node	   traffic_calming      text         linear
 way        admin_level  text         linear
 node,way   aerialway    text         linear
 node,way   aeroway      text         polygon
