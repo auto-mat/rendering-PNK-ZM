@@ -391,7 +391,7 @@
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
-      <PolygonSymbolizer fill="&color_bus_site;" stroke-opacity="&opacity_bus_site;"/>
+      <PolygonSymbolizer fill="&color_bus_site;" fill-opacity="&opacity_bus_site;"/>
       <LineSymbolizer stroke="&color_bus_site;" stroke-width="3" stroke-opacity="&opacity_bus_site;"/>
     </Rule>
 </Style>
