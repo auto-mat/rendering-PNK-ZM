@@ -10,23 +10,23 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
-      <Filter>[crossing]='traffic_lights'</Filter>
+      <Filter>[crossing]='traffic_signals'</Filter>
       <PointSymbolizer file="&symbols;/SVG/crossing_lights_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[crossing]='traffic_lights'</Filter>
+      <Filter>[crossing]='traffic_signals'</Filter>
       <PointSymbolizer file="&symbols;/SVG/crossing_lights.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
-      <Filter>not [crossing]='traffic_lights'</Filter>
+      <Filter>not [crossing]='traffic_signals'</Filter>
       <PointSymbolizer file="&symbols;/SVG/crossing_small.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>not [crossing]='traffic_lights'</Filter>
+      <Filter>not [crossing]='traffic_signals'</Filter>
       <PointSymbolizer file="&symbols;/SVG/crossing.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
