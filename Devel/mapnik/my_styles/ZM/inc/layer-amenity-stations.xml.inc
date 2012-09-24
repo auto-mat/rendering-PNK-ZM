@@ -173,7 +173,7 @@
       <Parameter name="table">
       (select way,name,railway,aerialway,disused,transport, wheelchair
       from &prefix;_polygon
-      where railway in ('station','halt','tram_stop')
+      where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
       ) as stations
       </Parameter>
