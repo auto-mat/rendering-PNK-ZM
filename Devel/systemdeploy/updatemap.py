@@ -20,20 +20,22 @@ def updateFromFile(filename):
         os.chdir(homepath + '/sw/osm2pgsql')
     except OSError, msg:
         raise UpdateError('osm2pgsql is not present')
-    ret = os.system('./osm2pgsql -r pbf -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000')
+    #ret = os.system('./osm2pgsql -r pbf -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000')
+    ret = os.system('./osm2pgsql -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
         os.chdir(homepath + 'Devel/systemdeploy/db_scripts/')
         os.system('./db_scripts.sh')
     except OSError, msg:
+        print msg
         raise UpdateError('relations2lines.py failed, osm data uploaded')
-    refreshDate('index.html', str(date))
-    refreshDate('en.html', str(date))
+    # refreshDate('index.html', str(date))
+    # refreshDate('en.html', str(date))
     # restart renderd:
     try:
-        os.chdir('../../sw/mod_tile')
-        os.system('kill $(pidof renderd)')
+        os.chdir(homepath + 'sw/mod_tile/')
+        os.system('killall renderd')
         os.system('./renderd')
     except OSError, msg:
         raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
@@ -61,7 +63,7 @@ class UpdateError(Exception):
 if __name__ == "__main__":
     homepath = os.getenv('MTBMAP_DIRECTORY')
     if (homepath == None):
-        homepath = os.getcwd() + '/../..'
+        homepath = os.getcwd() + '/../../'
 
     date = datetime.date.today()
     try:
@@ -78,16 +80,9 @@ if __name__ == "__main__":
 
         connection.close()
 
-        #filename1 = 'czech_republic.osm.bz2'
-        #url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.bz2'
-        filename1 = 'czech_republic.osm.pbf'
-        url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.pbf'
-        #filename1 = 'austria.osm.pbf'
-        #url1 = 'http://download.geofabrik.de/osm/europe/austria.osm.pbf'
-        #filename1 = 'baden-wuerttemberg.osm.pbf'
-        #url1 = 'http://download.geofabrik.de/osm/europe/germany/baden-wuerttemberg.osm.pbf'
-        #filename1 = 'switzerland.osm.pbf'
-        #url1 = 'http://download.geofabrik.de/osm/europe/switzerland.osm.pbf'
+        filename1 = 'czech_republic.osm'
+        url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.20,49.96,14.65,50.17'
+        #url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
         url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
 
