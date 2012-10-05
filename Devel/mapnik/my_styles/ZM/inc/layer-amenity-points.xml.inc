@@ -407,13 +407,13 @@
       <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[bus_stop]=false and [tram_stop]=true</Filter>
+      <Filter>[bus_stop] is null and [tram_stop]=true</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="10" fill="&color_tram_stop_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[bus_stop]=true and [tram_stop]=false</Filter>
+      <Filter>[bus_stop]=true and [tram_stop] is null</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
