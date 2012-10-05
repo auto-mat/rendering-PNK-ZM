@@ -7,9 +7,7 @@
 <Map srs="&srs900913;" background-color="rgb(255,255,255)">
     &fontset-settings;
 
-<!--
 &height-styles;
--->
 &admin-styles;
 <!--
 &mtb-styles;
@@ -65,6 +63,11 @@
       &maxscale_zoom17;
       <Filter>[cycleway]='asl'</Filter>
       <PointSymbolizer file="&symbols-path;/SVG/asl.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[barrier]='lift_gate' or [highway]='lift_gate'</Filter>
+      <PointSymbolizer file="&symbols-path;/SVG/lift_gate.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
 
@@ -1486,7 +1489,7 @@ admin 8 - uzemi samostatnych obci
                             coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.highway,
         p.bicycle,
-        p.osm_id,
+        p.barrier,
         p.cycleway,
         p.traffic_calming
 
@@ -1509,6 +1512,7 @@ admin 8 - uzemi samostatnych obci
        where p.traffic_calming is not null
        or p.cycleway is not null
        or p.highway is not null
+       or p.barrier is not null
        order by p.way,v.prio
      ) as crossing
       </Parameter>
