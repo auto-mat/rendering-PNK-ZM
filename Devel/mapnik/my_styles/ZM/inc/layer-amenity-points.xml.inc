@@ -388,11 +388,49 @@
 </Style>
 <Style name="bus_sites">
     <Rule>
+      <Filter>[bus_stop]=true and [tram_stop]=true</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-5" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="5" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tram_stop]=true</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tram_stop]=true</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[bus_stop]=false and [tram_stop]=true</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[bus_stop]=true and [tram_stop]=false</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
-      <PolygonSymbolizer fill="&color_bus_site;" fill-opacity="&opacity_bus_site;"/>
-      <LineSymbolizer stroke="&color_bus_site;" stroke-width="3" stroke-opacity="&opacity_bus_site;"/>
+    </Rule>
+</Style>
+<Style name="bus_sites_lines">
+    <Rule>
+      <Filter>[railway]='tram_stop'</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <LineSymbolizer stroke="&color_tram_site;" stroke-width="3" stroke-opacity="&opacity_site;"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway]='bus_stop' or [amenity]='bus_stop'</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <LineSymbolizer stroke="&color_bus_site;" stroke-width="3" stroke-opacity="&opacity_site;"/>
     </Rule>
 </Style>
 <Style name="bus_stops">
@@ -450,16 +488,43 @@
     </Datasource>
 </Layer>
 
+<Layer name="bus_sites_lines" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>bus_sites_lines</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select ST_MakeLine(p1.way, 
+
+       (select ST_Centroid(ST_ConvexHull(ST_Collect(p3.way))) as way
+       from &prefix;_point as p3
+       join &prefix;_station_points_rels as p4
+       on p3.osm_id = p4.osm_id
+       where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+       and p4.rel_id = p2.rel_id
+       group by p4.rel_id, p4.name)
+    
+    ) as way,
+         p1.highway, p1.railway, p1.amenity
+         from &prefix;_station_points_rels as p1
+         join &prefix;_station_points_rels as p2
+         on p1.osm_id = p2.osm_id
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+      ) as points</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 <Layer name="bus_sites" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bus_sites</StyleName>
     <Datasource>
       <Parameter name="table">
       (select ST_ConvexHull(ST_Collect(p1.way)) as way,
+         bool_or(p1.highway='bus_stop' or p1.amenity = 'bus_stop') as bus_stop,
+         bool_or(p1.railway='tram_stop') as tram_stop,
          p2.name
          from &prefix;_point as p1
          join &prefix;_station_points_rels as p2
          on p1.osm_id = p2.osm_id
-         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
          group by p2.rel_id, p2.name        
 
       ) as points</Parameter>

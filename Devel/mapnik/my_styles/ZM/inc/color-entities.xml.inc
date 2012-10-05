@@ -44,7 +44,8 @@
 <!ENTITY color_living_street_casing "#BDBDBD">
 
 <!ENTITY color_bus_site "#0092DA">
-<!ENTITY opacity_bus_site "0.2">
+<!ENTITY color_tram_site "#DA1B8A">
+<!ENTITY opacity_site "0.2">
 
 <!ENTITY color_bus_stop_text "#0092DA">
 <!ENTITY color_tram_stop_text "#DA1B8A">

@@ -110,12 +110,12 @@
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom14;
-      <Filter>[railway]='tram_stop'</Filter>
+      <Filter>[railway]='tram_stop' and [in_relation]=false</Filter>
       <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[railway]='tram_stop'</Filter>
+      <Filter>[railway]='tram_stop' and [in_relation]=false</Filter>
       <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
@@ -158,8 +158,9 @@
     <Datasource>
       <Parameter name="table">
       (select way,railway,aerialway,disused,transport, wheelchair,
-      case when short_name is not null then short_name else name end as name
-      from &prefix;_point
+      case when short_name is not null then short_name else name end as name,
+      exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id) as in_relation
+      from &prefix;_point as p1
       where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
       ) as stations
@@ -171,8 +172,9 @@
     <StyleName>stations</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,name,railway,aerialway,disused,transport, wheelchair
-      from &prefix;_polygon
+      (select way,name,railway,aerialway,disused,transport, wheelchair,
+      exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id) as in_relation
+      from &prefix;_polygon as p1
       where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
       ) as stations
