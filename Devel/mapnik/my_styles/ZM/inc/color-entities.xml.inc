@@ -72,6 +72,7 @@
 <!ENTITY color_landuse_residential "#B3E3B7">
 <!ENTITY color_allotments '#73C82C'>
 <!ENTITY color_garden "#73C82C">
+<!ENTITY color_common_leisure "#73C82C">
 
 <!ENTITY color_placenames_text '#2A3E92'>
 <!ENTITY color_road_text '#2A3E92'>

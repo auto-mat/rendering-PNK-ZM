@@ -134,6 +134,11 @@
       <PolygonSymbolizer fill="&color_garden;"/>
     </Rule>
     <Rule>
+      <Filter>[leisure] = 'common'</Filter>
+      &maxscale_zoom10;
+      <PolygonSymbolizer fill="&color_common_leisure;"/>
+    </Rule>
+    <Rule>
       <Filter>[leisure] = 'golf_course'</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer fill="#b5e3b5"/>
