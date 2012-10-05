@@ -162,18 +162,6 @@
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="5" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[tram_stop]=true</Filter>
-      &maxscale_zoom14;
-      &minscale_zoom14;
-      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[tram_stop]=true</Filter>
-      &maxscale_zoom15;
-      &minscale_zoom15;
-      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
-    </Rule>
-    <Rule>
       <Filter>[bus_stop] is null and [tram_stop]=true</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
@@ -184,6 +172,18 @@
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
+    </Rule>
+</Style>
+<Style name="tram_sites">
+    <Rule>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="bus_sites_lines">
@@ -298,6 +298,23 @@
          join &prefix;_station_points_rels as p2
          on p1.osm_id = p2.osm_id
          where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+         group by p2.rel_id, p2.name        
+
+      ) as points</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<Layer name="tram_sites" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>tram_sites</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select ST_ConvexHull(ST_Collect(p1.way)) as way,
+         p2.name
+         from &prefix;_point as p1
+         join &prefix;_station_points_rels as p2
+         on p1.osm_id = p2.osm_id
+         where (p1.railway='tram_stop')
          group by p2.rel_id, p2.name        
 
       ) as points</Parameter>
