@@ -1,6 +1,6 @@
 <!ENTITY color_background "#EAE3D8">
 
-<!ENTITY color_building '#FCCCD2'>
+<!ENTITY color_building '#FCBCC5'>
 
 <!ENTITY color_industrial '#D0D0D0'>
 <!ENTITY color_parking '#D0D0D0'>
