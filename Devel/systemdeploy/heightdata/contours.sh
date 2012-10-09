@@ -2,7 +2,6 @@
 # http://www.cgiar-csi.org/data/elevation/item/45-srtm-90m-digital-elevation-database-v41
 # and unpack the zip files in the HGTFILES folder, each into its own name folder
 
-HGTUTILS="../../../sw/gdal-1.7.1/apps"
 HGTFILES="../../../Data/shadingdata"
 
 # you can use already generated srtm.tif, then skip gdal_merge.py
