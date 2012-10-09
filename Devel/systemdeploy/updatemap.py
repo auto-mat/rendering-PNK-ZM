@@ -98,11 +98,3 @@ if __name__ == "__main__":
     except UpdateError, ue:
         print ue.msg
         print 'Map data was not uploaded. '
-
-    finally:
-        #if (os.path.exists(homepath + '/Data/' + filename1)):
-        #    os.remove(homepath + '/Data/' + filename1)
-        #if (os.path.exists(homepath + '/Data/' + filename2)):
-        #    os.remove(homepath + '/Data/' + filename2)
-
-
