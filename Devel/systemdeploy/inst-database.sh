@@ -18,7 +18,7 @@ cd $MTBMAP_DIRECTORY
 mkdir sw Data
 
 # install this packages with all dependencies
-sudo apt-get install postgresql postgresql-server-dev-8.4 postgresql-contrib-8.4
+sudo apt-get install postgresql postgresql-server-dev-9.1 postgresql-contrib-9.1
 # GUI for PostgreSQL, not needed
 #sudo apt-get install pgadmin3
 sudo apt-get install proj libgeos-dev libxml2-dev python-psycopg2 subversion
@@ -35,25 +35,16 @@ sudo passwd postgres
 sudo -u postgres createuser $DBUSER
 createdb -E UTF8 -O $DBUSER $DATABASE
 createlang plpgsql $DATABASE
-psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
+psql -d $DATABASE -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
 echo "ALTER TABLE geometry_columns OWNER TO $DBUSER; \
       ALTER TABLE spatial_ref_sys OWNER TO $DBUSER;" \
       | psql -d $DATABASE
-psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/_int.sql
+#psql -d $DATABASE -f /usr/share/postgresql/8.4/contrib/_int.sql
 
 # spatial database is now created, but must be prepared OSM data input
 
-sudo apt-get install libxml2-dev libgeos-dev libpq-dev libbz2-dev proj autoconf automake libtool make g++ libprotobuf-c0-dev
-#sudo apt-get install osm2pgsql
-cd $MTBMAP_DIRECTORY/sw
-svn co http://svn.openstreetmap.org/applications/utils/export/osm2pgsql
-cd osm2pgsql
-./autogen.sh
-./configure
-make
-
 # include "Google Mercator" projection
-psql -d $DATABASE -f 900913.sql
+psql -d $DATABASE -f /usr/share/osm2pgsql/900913.sql
 
 # now you can upload OSM data using Osm2pgsql or updatemap.py script,
 
