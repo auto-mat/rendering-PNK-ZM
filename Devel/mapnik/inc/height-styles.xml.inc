@@ -3,7 +3,11 @@
     <Rule name="!stínování reliéfu">
       &maxscale_zoom7;
       &minscale_zoom12;
+<!--
+      Toto způsobuje chybu Mapniku #:w
       <RasterSymbolizer opacity="0.5" scaling="bilinear8" comp-op="multiply"/>
+-->
+      <RasterSymbolizer opacity="0.5" scaling="bilinear" comp-op="multiply"/>
     </Rule>
     <Rule name="!stínování reliéfu">
       &maxscale_zoom13;
