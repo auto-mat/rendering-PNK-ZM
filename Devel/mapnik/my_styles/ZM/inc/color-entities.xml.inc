@@ -13,12 +13,21 @@
 <!ENTITY opacity_construction '1'>
 
 <!ENTITY stroke_width_railway "2">
+<!ENTITY stroke_width_railway_z13 "1.2">
+<!ENTITY stroke_width_railway_z10_12 "1">
+<!ENTITY stroke_width_railway_z19 "0.8">
+<!ENTITY stroke_width_railway_z16_8 "0.6">
 <!ENTITY stroke_width_tram "1">
 
+<!ENTITY stroke_width_footway_z13 "1">
 <!ENTITY stroke_width_footway "2">
+<!ENTITY stroke_width_cycleway_z13 "1">
 <!ENTITY stroke_width_cycleway "2">
-<!ENTITY stroke_width_track "3.5">
+<!ENTITY stroke_width_track_z13 "1.5">
+<!ENTITY stroke_width_track "3">
+<!ENTITY stroke_width_bridleway_z13 "1">
 <!ENTITY stroke_width_bridleway "2">
+<!ENTITY stroke_width_path_z13 "0.5">
 <!ENTITY stroke_width_path "1">
 
 <!ENTITY color_track "white">

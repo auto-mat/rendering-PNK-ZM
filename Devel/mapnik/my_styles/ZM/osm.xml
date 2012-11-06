@@ -1655,6 +1655,12 @@
     <Rule>
       <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not [tunnel]='yes'</Filter>
       &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="&stroke_width_footway_z13;" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not [tunnel]='yes'</Filter>
+      &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer stroke-linejoin="round" stroke="&color_footway;" stroke-width="&stroke_width_footway;" stroke-linecap="round"/>
     </Rule>   
@@ -1684,7 +1690,7 @@
       &maxscale_zoom13;
       &minscale_zoom13;
       <Filter>[railway] = 'rail' and not [tunnel] = 'yes'</Filter>
-      <LineSymbolizer stroke="&color_railway;" stroke-width="&stroke_width_railway;"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="&stroke_width_railway_z13;"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
@@ -1937,8 +1943,7 @@
       <Filter>[highway] = 'track'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
-      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
-      <LineSymbolizer stroke-linejoin="round" stroke="#996600" stroke-width="1.2" stroke-dasharray="3,4" stroke-linecap="round"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_track;" stroke-width="&stroke_width_track_z13;"/>
      </Rule>    
     <Rule>
       <Filter>[highway] = 'unsurfaced'</Filter>
@@ -2018,6 +2023,12 @@
     <Rule>
       <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not [tunnel]='yes'</Filter>
       &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway_z13;"/>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not [tunnel]='yes'</Filter>
+      &maxscale_zoom14;
       <LineSymbolizer stroke-linejoin="round" stroke="&color_bridleway;" stroke-linecap="round" stroke-width="&stroke_width_bridleway;"/>
     </Rule>  
     <Rule>
@@ -2028,6 +2039,12 @@
     <Rule>
       <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
       &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path_z13;"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter>
+      &maxscale_zoom14;
       <LineSymbolizer stroke-linejoin="round" stroke="&color_path;" stroke-linecap="round" stroke-width="&stroke_width_path;"/>
     </Rule>
     <Rule>
@@ -2055,6 +2072,12 @@
     <Rule>
       <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway_z13;" stroke-linecap="round"/>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
+      &maxscale_zoom14;
       <LineSymbolizer stroke-linejoin="round" stroke="&color_cycleway;" stroke-width="&stroke_width_cycleway;" stroke-linecap="round"/>
     </Rule>
    <Rule>
@@ -2889,7 +2912,7 @@
       &maxscale_zoom13;
       &minscale_zoom13;
       <Filter>[railway] = 'rail'</Filter>
-      <LineSymbolizer stroke="&color_railway;" stroke-width="&stroke_width_railway;"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="&stroke_width_railway_z13;"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
