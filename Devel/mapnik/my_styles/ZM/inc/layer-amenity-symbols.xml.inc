@@ -49,11 +49,13 @@
       <Filter>[man_made]='lighthouse'</Filter>
       <PointSymbolizer file="&symbols;/lighthouse.p.20.png" placement="interior"/>
     </Rule>
+<!--
     <Rule>
       &maxscale_zoom11;
       <Filter>[natural]='peak'</Filter>
       <PointSymbolizer file="&symbols;/peak.png" placement="interior"/>
     </Rule>
+-->
     <Rule>
       &maxscale_zoom11;
       <Filter>[natural]='volcano'</Filter>
