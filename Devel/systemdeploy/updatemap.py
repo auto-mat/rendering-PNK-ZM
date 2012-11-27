@@ -77,7 +77,7 @@ if __name__ == "__main__":
         connection.close()
 
         filename1 = 'czech_republic.osm'
-        url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.20,49.96,14.65,50.17'
+        url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318'
         #url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
         url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
