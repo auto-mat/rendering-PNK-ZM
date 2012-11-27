@@ -18,7 +18,7 @@ cd $MTBMAP_DIRECTORY
 mkdir sw Data
 
 # install this packages with all dependencies
-sudo apt-get install postgresql postgresql-server-dev-9.1 postgresql-contrib-9.1
+sudo apt-get install postgresql postgresql-9.1 postgresql-9.1-postgis
 # GUI for PostgreSQL, not needed
 #sudo apt-get install pgadmin3
 sudo apt-get install proj libgeos-dev libxml2-dev python-psycopg2 subversion
