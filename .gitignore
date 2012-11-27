@@ -1,3 +1,8 @@
 BP/
 sw/
 Data/shadingdata/
+Devel/export/*.ps
+Devel/export/*.svg
+Devel/export/*.pdf
+Devel/generate_tiles/tiles*
+
