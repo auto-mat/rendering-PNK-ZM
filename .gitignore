@@ -5,4 +5,7 @@ Devel/export/*.ps
 Devel/export/*.svg
 Devel/export/*.pdf
 Devel/generate_tiles/tiles*
-
+Data/*.osm
+Data/*.osm.bz2
+*.swp
+*~
