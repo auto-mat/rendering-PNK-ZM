@@ -10,8 +10,6 @@
 from psycopg2 import *
 import re
 
-sys.stdout.encoding = "utf8"
-
 # Create connection to DB server.
 
 name_key="name"
@@ -24,7 +22,7 @@ for table in ("polygon", "line", "point"):
       auxilary_cursor.close()
       connection.commit()
    except ProgrammingError:
-      print "table column \"short_" + name_key + "\"does not exist"
+      print u"table column \"short_" + name_key + "\"does not exist".encode('utf8')
 
 connection = connect("dbname='gisczech' user='mtbmap' password=''");
 relation_cursor = connection.cursor()
@@ -111,7 +109,7 @@ for shortcut in shortcuts:
    for table in tables:
       q = "SELECT osm_id, %s, short_%s FROM planet_osm_%s WHERE (%s) AND %s ~%s '%s'" % (name_key, name_key, table, query, name_key, ignorecase, sqlpattern)
       relation_cursor.execute(q)
-      print q
+      print q.encode('utf8')
       while True:
           # Fetch some of the result.
           rows = relation_cursor.fetchmany(100)
