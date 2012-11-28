@@ -10,6 +10,8 @@
 from psycopg2 import *
 import re
 
+sys.stdout.encoding = "utf8"
+
 # Create connection to DB server.
 
 name_key="name"
@@ -22,7 +24,7 @@ for table in ("polygon", "line", "point"):
       auxilary_cursor.close()
       connection.commit()
    except ProgrammingError:
-      print "table column does not exist"
+      print "table column \"short_" + name_key + "\"does not exist"
 
 connection = connect("dbname='gisczech' user='mtbmap' password=''");
 relation_cursor = connection.cursor()

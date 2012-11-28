@@ -93,11 +93,11 @@ while True:
 
         # For each line in relation.
         if len(tags) and len(row[1]):
-            # Update points of the relation with relation ids.
+            # Update lines of the relation with relation ids.
             auxilary_cursor.execute("UPDATE planet_osm_station_lines_rels SET rel_id = %s WHERE"
               " osm_id IN (%s)" % (row[0], where_statement))
 
-        # For each line in relation.
+        # For each point in relation.
         if len(tags) and len(row[1]):
             # Update points of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
@@ -107,7 +107,7 @@ while True:
             auxilary_cursor.execute("UPDATE planet_osm_station_points_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
-        # For each line in relation.
+        # For each point in relation.
         if len(tags) and len(row[1]):
             # Update points of the relation with relation ids.
             auxilary_cursor.execute("UPDATE planet_osm_station_points_rels SET rel_id = %s WHERE"
