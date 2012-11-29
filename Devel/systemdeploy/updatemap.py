@@ -64,36 +64,11 @@ if __name__ == "__main__":
     date = datetime.date.today()
     try:
         try:
-            connection = httplib.HTTPConnection('osm.kyblsoft.cz')
-            connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.bz2')
-            response = connection.getresponse()
-            # if today's dataset doesn't exist, use yesterday's
-            if (response.status != 200):
-                date = date - datetime.timedelta(days=1)
-        except socket.error, msg:
-            print 'no connection to kyblsoft'
-            connection.close()
-
-        connection.close()
-
-        filename1 = 'czech_republic.osm'
-        url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318'
-        #url1 = 'http://download.geofabrik.de/osm/europe/czech_republic.osm.pbf'
-        filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
-        url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
-
-        try:
             os.chdir(homepath + '/Data')
         except OSError, msg:
             raise UpdateError(homepath + '/Data directory is not present')
 
-    
-        if (os.system('wget -t 3 ' + url1 + ' -O ' + filename1)==0):
-            updateFromFile(filename1)
-        elif (os.system('wget -t 3 ' + url2 + ' -O ' + filename2)==0):
-            updateFromFile(filename2)
-        else:
-            raise UpdateError('An error occured while downloading from given URLs ')
+        updateFromFile('czech_republic.osm')
 
     except UpdateError, ue:
         print ue.msg
