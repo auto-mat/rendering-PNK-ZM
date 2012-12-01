@@ -305,7 +305,11 @@
 <StyleName>tunnels-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,service from planet_osm_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','service') and tunnel in ('yes','true','1') order by z_order) as roads
+         (select way,highway,service from planet_osm_line 
+         where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','service') 
+         and tunnel in ('yes','true','1') 
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+         order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -405,6 +409,7 @@
       <Parameter name="table">
       (select way,highway from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','track')
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -420,6 +425,7 @@
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -443,6 +449,7 @@
       (select way,highway, surface
        from planet_osm_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -513,9 +520,10 @@
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_line
-       where highway is not null
+       where (highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction'))
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -565,6 +573,7 @@
        from planet_osm_roads
        where highway in ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link', 'primary_link', 'secondary_link')
           or railway is not null
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order
       ) as roads
       </Parameter>
@@ -580,6 +589,7 @@
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from planet_osm_line
        where highway is not null or bicycle='designated'
+       and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -1236,7 +1246,7 @@
         case when access in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural')
         or vehicle in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
         from planet_osm_line
-        where (((((access in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural') 
+        where (((((access in ('no', 'destination', 'permissive', 'forestry', 'delivery', 'agricultural') 
         or (vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
         and (not highway in ('footway'))) 
