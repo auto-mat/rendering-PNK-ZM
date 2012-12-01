@@ -4,7 +4,7 @@
       &maxscale_zoom7;
       &minscale_zoom12;
 <!--
-      Toto způsobuje chybu Mapniku #:w
+      Toto způsobuje chybu Mapniku #1529
       <RasterSymbolizer opacity="0.5" scaling="bilinear8" comp-op="multiply"/>
 -->
       <RasterSymbolizer opacity="0.5" scaling="bilinear" comp-op="multiply"/>
