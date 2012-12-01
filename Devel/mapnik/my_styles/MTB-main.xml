@@ -1471,23 +1471,6 @@ admin 8 - uzemi samostatnych obci
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- zajimave body - zastavky autobusu, hrady, zamky, kostely, skoly, obchody, letiste, vrcholy, rozcesti, parkoviste -->
-<Layer name="amenity" status="on" srs="&srs900913;" clear-label-cache="yes">
-    <StyleName>symbols</StyleName>
-    <StyleName>points</StyleName>
-    <Datasource>
-      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL or historic is NOT NULL or ruins='yes') as amenity</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="amenity-poly" status="on" srs="&srs900913;">
-    <StyleName>symbols-poly</StyleName>
-    <StyleName>points</StyleName>
-    <Datasource>
-      <Parameter name="table">(select * from &prefix;_polygon where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or man_made is NOT NULL or shop is NOT NULL or historic is NOT NULL or ruins='yes') as amenity</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 
 <Layer name="turning_symbols" status="on" srs="&srs900913;">
     <StyleName>turning_symbols</StyleName>
@@ -1526,6 +1509,24 @@ admin 8 - uzemi samostatnych obci
        order by p.way,v.prio
      ) as crossing
       </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<!-- zajimave body - zastavky autobusu, hrady, zamky, kostely, skoly, obchody, letiste, vrcholy, rozcesti, parkoviste -->
+<Layer name="amenity" status="on" srs="&srs900913;" clear-label-cache="yes">
+    <StyleName>symbols</StyleName>
+    <StyleName>points</StyleName>
+    <Datasource>
+      <Parameter name="table">(select * from &prefix;_point where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL or shop is NOT NULL or historic is NOT NULL or ruins='yes') as amenity</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="amenity-poly" status="on" srs="&srs900913;">
+    <StyleName>symbols-poly</StyleName>
+    <StyleName>points</StyleName>
+    <Datasource>
+      <Parameter name="table">(select * from &prefix;_polygon where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or information is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or man_made is NOT NULL or shop is NOT NULL or historic is NOT NULL or ruins='yes') as amenity</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
