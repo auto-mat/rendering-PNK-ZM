@@ -469,11 +469,6 @@
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;gate2.png"></PointSymbolizer>
     </Rule>
-    <Rule name="závora">
-            <Filter>(([highway]='lift_gate') or ([barrier]='lift_gate'))</Filter>
-            &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;liftgate.png"></PointSymbolizer>
-    </Rule>
     <Rule name="sloupek proti vjezdu">
             <Filter>([barrier]='bollard' or [barrier]='block')</Filter>
             &maxscale_zoom16;
@@ -608,11 +603,6 @@
             <Filter>(([highway]='gate') or ([barrier]='gate'))</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;gate2.png"></PointSymbolizer>
-    </Rule>
-    <Rule name="závora">
-            <Filter>(([highway]='lift_gate') or ([barrier]='lift_gate'))</Filter>
-            &maxscale_zoom15;
-            <PointSymbolizer file="&symbols-path;liftgate.png"></PointSymbolizer>
     </Rule>
     <Rule name="!sloupek proti vjezdu">
             <Filter>([barrier]='bollard' or [barrier]='block')</Filter>
