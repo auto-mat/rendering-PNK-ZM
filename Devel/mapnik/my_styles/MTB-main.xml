@@ -306,7 +306,7 @@
     <Datasource>
       <Parameter name="table">
          (select way,highway,service from planet_osm_line 
-         where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','service') 
+         where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','service') 
          and tunnel in ('yes','true','1') 
          and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
          order by z_order) as roads
@@ -424,7 +424,7 @@
       (select way,highway,service,bicycle,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
       </Parameter>
@@ -1493,8 +1493,11 @@ admin 8 - uzemi samostatnych obci
         ('motorway',1),
         ('trunk',2),
         ('primary',3),
+        ('primary_link',3),
         ('secondary',4),
+        ('secondary_link',4),
         ('tertiary',5),
+        ('tertiary_link',5),
         ('unclassified',6),
         ('residential',7),
         ('living_street',8),
