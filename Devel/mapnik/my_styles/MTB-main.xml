@@ -1447,31 +1447,6 @@ admin 8 - uzemi samostatnych obci
 </Layer>
  -->
 
-<!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
-<Layer name="planet roads text osm" srs="&srs900913;">
-<StyleName>roads-text</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
-       case when short_name is not null then short_name else name end as name,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
-       case when (NOT EXISTS (SELECT
-               * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
-               planet_osm_line.osm_id))
-               then 'no'::text else 'yes'::text end as cycleway
-       from planet_osm_line
-       where waterway IS NULL
-         and leisure IS NULL
-         and landuse IS NULL
-         and admin_level IS NULL
-         and (name is not null or ref is not null)
-         and not highway='construction'
-      ) as roads
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-
 <Layer name="turning_symbols" status="on" srs="&srs900913;">
     <StyleName>turning_symbols</StyleName>
     <Datasource>
@@ -1511,6 +1486,32 @@ admin 8 - uzemi samostatnych obci
        or p.barrier is not null
        order by p.way,v.prio
      ) as crossing
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
+<Layer name="planet roads text osm" srs="&srs900913;">
+<StyleName>roads-text</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
+       case when short_name is not null then short_name else name end as name,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when (NOT EXISTS (SELECT
+               * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
+               planet_osm_line.osm_id))
+               then 'no'::text else 'yes'::text end as cycleway
+       from planet_osm_line
+       where waterway IS NULL
+         and leisure IS NULL
+         and landuse IS NULL
+         and admin_level IS NULL
+         and (name is not null or ref is not null)
+         and not highway='construction'
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+      ) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
