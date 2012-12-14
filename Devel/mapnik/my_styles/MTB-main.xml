@@ -306,7 +306,7 @@
     <Datasource>
       <Parameter name="table">
          (select way,highway,service from planet_osm_line 
-         where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','service') 
+         where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','service') 
          and tunnel in ('yes','true','1') 
          and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
          order by z_order) as roads
@@ -424,7 +424,7 @@
       (select way,highway,service,bicycle,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order) as roads
       </Parameter>
@@ -1246,13 +1246,14 @@
         case when access in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural')
         or vehicle in ('destination', 'permissive', 'forestry', 'delivery', 'agricultural') then 'destination' else 'no_access' end as access_mode
         from planet_osm_line
-        where (((((access in ('no', 'destination', 'permissive', 'forestry', 'delivery', 'agricultural') 
+        where ((((((access in ('no', 'destination', 'permissive', 'forestry', 'delivery', 'agricultural') 
         or (vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
         and (bicycle is null or not (bicycle = 'yes'))) or bicycle in ('no', '-1', 'false')) 
-        and (not highway in ('footway'))) 
+        and (not highway in ('footway', 'path', 'steps'))) 
         or ((highway in ('motorway','motorway_link') 
         or (motorroad='yes'))
         and (bicycle is null or bicycle not in ('yes','designated', '1', 'true'))))
+        and not highway in ('construction', 'proposed'))
         ) as nobicycle
         </Parameter>
         &datasource-settings;
@@ -1447,31 +1448,6 @@ admin 8 - uzemi samostatnych obci
 </Layer>
  -->
 
-<!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
-<Layer name="planet roads text osm" srs="&srs900913;">
-<StyleName>roads-text</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
-       case when short_name is not null then short_name else name end as name,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
-       case when (NOT EXISTS (SELECT
-               * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
-               planet_osm_line.osm_id))
-               then 'no'::text else 'yes'::text end as cycleway
-       from planet_osm_line
-       where waterway IS NULL
-         and leisure IS NULL
-         and landuse IS NULL
-         and admin_level IS NULL
-         and (name is not null or ref is not null)
-         and not highway='construction'
-      ) as roads
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-
 <Layer name="turning_symbols" status="on" srs="&srs900913;">
     <StyleName>turning_symbols</StyleName>
     <Datasource>
@@ -1493,8 +1469,11 @@ admin 8 - uzemi samostatnych obci
         ('motorway',1),
         ('trunk',2),
         ('primary',3),
+        ('primary_link',3),
         ('secondary',4),
+        ('secondary_link',4),
         ('tertiary',5),
+        ('tertiary_link',5),
         ('unclassified',6),
         ('residential',7),
         ('living_street',8),
@@ -1508,6 +1487,32 @@ admin 8 - uzemi samostatnych obci
        or p.barrier is not null
        order by p.way,v.prio
      ) as crossing
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
+<Layer name="planet roads text osm" srs="&srs900913;">
+<StyleName>roads-text</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
+       case when short_name is not null then short_name else name end as name,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when (NOT EXISTS (SELECT
+               * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
+               planet_osm_line.osm_id))
+               then 'no'::text else 'yes'::text end as cycleway
+       from planet_osm_line
+       where waterway IS NULL
+         and leisure IS NULL
+         and landuse IS NULL
+         and admin_level IS NULL
+         and (name is not null or ref is not null)
+         and not highway='construction'
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+      ) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
