@@ -1,7 +1,14 @@
-#!/bin/sh
-for png in `find tiles/ -name "*.png"`;
+#!/bin/bash
+for png in `find tiles_PNK/ -name "*.png"`;
 do
-  pngBW=`echo $png | sed s/tiles/tilesBW/`
-  echo "converting $png to $pngBW"
-  convert "$png" -modulate 100,50 "$pngBW"
+  re="^([^/]+)/(.*)/([^/]+)$"
+  [[ $png =~ $re ]] && dir="${BASH_REMATCH[2]}" && file="${BASH_REMATCH[3]}"
+  pngBW="tiles_PNK_BW/$dir/$file"
+  if [ -f $pngBW ]; then
+    echo "file $pngBW already exists"
+  else
+    dirBW="tiles_PNK_BW/$dir"
+    mkdir -p $dirBW
+    convert "$png" -verbose -colorspace HSL -modulate 100,50 "$pngBW"
+  fi
 done;
