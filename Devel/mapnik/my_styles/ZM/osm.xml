@@ -369,7 +369,6 @@
       &maxscale_zoom14;
       <TextSymbolizer size="9" fill="brown" dy="18" fontset-name="oblique-fonts" halo-radius="1" placement="interior">[ele]</TextSymbolizer>
     </Rule>
--->
     <Rule>
       <Filter>[natural] = 'volcano'</Filter>
       &maxscale_zoom13;
@@ -390,7 +389,6 @@
       &maxscale_zoom15;
       <TextSymbolizer size="10" fill="brown" dy="9" fontset-name="book-fonts" halo-radius="1" wrap-width="20" placement="interior">[name]</TextSymbolizer>
     </Rule>
-    <!--
     <Rule>
       <Filter>[historic] = 'memorial' or [historic]='archaeological_site'</Filter>
       &maxscale_zoom17;
