@@ -12,11 +12,9 @@
 
 <!ENTITY opacity_construction '1'>
 
-<!ENTITY stroke_width_railway "2">
-<!ENTITY stroke_width_railway_z13 "1.2">
-<!ENTITY stroke_width_railway_z10_12 "1">
-<!ENTITY stroke_width_railway_z19 "0.8">
-<!ENTITY stroke_width_railway_z16_8 "0.6">
+<!ENTITY stroke_width_railway "1.25">
+<!ENTITY stroke_width_railway_z13 "1">
+<!ENTITY stroke_width_railway_z10_12 "0.75">
 <!ENTITY stroke_width_tram "1">
 
 <!ENTITY stroke_width_footway_z13 "1">

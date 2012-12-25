@@ -3114,7 +3114,7 @@
       &maxscale_zoom10;
       &minscale_zoom12;
       <Filter>[railway] = 'rail' and not [tunnel]='yes'</Filter>
-      <LineSymbolizer stroke="&color_railway;" stroke-width="2"/>
+      <LineSymbolizer stroke="&color_railway;" stroke-width="&stroke_width_railway_z10_12;"/>
     </Rule>
 <!--
     <Rule>
