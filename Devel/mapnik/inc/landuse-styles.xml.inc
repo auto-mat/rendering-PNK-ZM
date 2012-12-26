@@ -341,14 +341,13 @@
 <Style name="power">
     <Rule name="elektrické vedení">
             &maxscale_zoom14;
-            <LinePatternSymbolizer file="&symbols-path;power_line_cz.png">
-            </LinePatternSymbolizer>
+            <LineSymbolizer stroke-width="0.3"/>
     </Rule>
 </Style>
 <Style name="power_towers">
     <Rule name="sloup elektrického vedení">
             &maxscale_zoom14;
-            <PointSymbolizer file="&symbols-path;power_tower_cz.png"></PointSymbolizer>
+            <PointSymbolizer file="&symbols-path;/SVG/power_tower.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
 
