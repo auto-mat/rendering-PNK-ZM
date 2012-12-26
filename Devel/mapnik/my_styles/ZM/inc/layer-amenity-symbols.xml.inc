@@ -44,18 +44,17 @@
       <Filter>[railway]='level_crossing'</Filter>
       <PointSymbolizer file="&symbols;/level_crossing2.png" placement="interior"/>
     </Rule>
+<!--
     <Rule>
       &maxscale_zoom15;
       <Filter>[man_made]='lighthouse'</Filter>
       <PointSymbolizer file="&symbols;/lighthouse.p.20.png" placement="interior"/>
     </Rule>
-<!--
     <Rule>
       &maxscale_zoom11;
       <Filter>[natural]='peak'</Filter>
       <PointSymbolizer file="&symbols;/peak.png" placement="interior"/>
     </Rule>
--->
     <Rule>
       &maxscale_zoom11;
       <Filter>[natural]='volcano'</Filter>
@@ -66,6 +65,7 @@
       <Filter>[natural]='cave_entrance'</Filter>
       <PointSymbolizer file="&symbols;/poi_cave.p.16.png" placement="interior"/>
     </Rule>
+-->
     <Rule>
       &maxscale_zoom14;
       <Filter>[natural]='spring'</Filter>

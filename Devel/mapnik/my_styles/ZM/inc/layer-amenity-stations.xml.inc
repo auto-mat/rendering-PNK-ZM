@@ -155,20 +155,6 @@
 
 <Style name="bus_sites">
     <Rule>
-      <Filter>[bus_stop]=true and [tram_stop]=true</Filter>
-      &maxscale_zoom16;
-      &minscale_zoom18;
-      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-5" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
-      <TextSymbolizer size="8" fill="&color_bus_stop_text;" dy="5" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[bus_stop] is null and [tram_stop]=true</Filter>
-      &maxscale_zoom16;
-      &minscale_zoom18;
-      <TextSymbolizer size="10" fill="&color_tram_stop_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[bus_stop]=true and [tram_stop] is null</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <TextSymbolizer size="8" fill="&color_bus_stop_text;" fontset-name="bold-fonts" halo-radius="1" wrap-width="0" placement="interior" allow-overlap="true">[name]</TextSymbolizer>
@@ -176,28 +162,28 @@
 </Style>
 <Style name="tram_sites">
     <Rule>
-      &maxscale_zoom14;
-      &minscale_zoom14;
-      <TextSymbolizer size="8" fill="&color_tram_stop_text;" dy="-8" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <TextSymbolizer size="10" fill="&color_tram_stop_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      &maxscale_zoom15;
+      &maxscale_zoom14;
       &minscale_zoom15;
-      <TextSymbolizer size="10" fill="&color_tram_stop_text;" dy="-10" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
+      <TextSymbolizer size="8" fill="&color_tram_stop_text;" fontset-name="book-fonts" halo-radius="1" wrap-width="0" allow-overlap="true" placement="interior">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="bus_sites_lines">
     <Rule>
-      <Filter>[railway]='tram_stop'</Filter>
-      &maxscale_zoom16;
-      &minscale_zoom18;
-      <LineSymbolizer stroke="&color_tram_site;" stroke-width="3" stroke-opacity="&opacity_site;"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway]='bus_stop' or [amenity]='bus_stop'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer stroke="&color_bus_site;" stroke-width="3" stroke-opacity="&opacity_site;"/>
+    </Rule>
+</Style>
+<Style name="tram_sites_lines">
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <LineSymbolizer stroke="&color_tram_site;" stroke-width="3" stroke-opacity="&opacity_site;"/>
     </Rule>
 </Style>
 <Style name="bus_stops">
@@ -224,7 +210,7 @@
       <Parameter name="table">
       (select way,railway,aerialway,disused,transport, wheelchair,
       case when short_name is not null then short_name else name end as name,
-      exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id) as in_relation
+      (select count(*) from &prefix;_station_points_rels where rel_id = (select max(rel_id) from &prefix;_station_points_rels where osm_id = p1.osm_id) and railway='tram_stop') &gt; 1 as in_relation
       from &prefix;_point as p1
       where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
@@ -238,7 +224,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,name,railway,aerialway,disused,transport, wheelchair,
-      exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id) as in_relation
+      (select count(*) from &prefix;_station_points_rels where rel_id = (select max(rel_id) from &prefix;_station_points_rels where osm_id = p1.osm_id) and railway='tram_stop') &gt; 1 as in_relation
       from &prefix;_polygon as p1
       where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
@@ -255,7 +241,7 @@
       (select way, name
          from &prefix;_point as p1
          where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
-         and not exists(select * from &prefix;_station_points_rels where osm_id = p1.osm_id)
+         and (select count(*) from &prefix;_station_points_rels where rel_id = (select max(rel_id) from &prefix;_station_points_rels where osm_id = p1.osm_id) and (highway='bus_stop' or amenity = 'bus_stop')) &lt;= 1
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
@@ -271,7 +257,7 @@
        from &prefix;_point as p3
        join &prefix;_station_points_rels as p4
        on p3.osm_id = p4.osm_id
-       where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+       where ((p1.highway='bus_stop' or p1.amenity = 'bus_stop') and (p4.highway='bus_stop' or p4.amenity = 'bus_stop'))
        and p4.rel_id = p2.rel_id
        group by p4.rel_id, p4.name)
     
@@ -280,7 +266,32 @@
          from &prefix;_station_points_rels as p1
          join &prefix;_station_points_rels as p2
          on p1.osm_id = p2.osm_id
-         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
+      ) as points</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+<Layer name="tram_sites_lines" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>tram_sites_lines</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select ST_MakeLine(p1.way, 
+
+       (select ST_Centroid(ST_ConvexHull(ST_Collect(p3.way))) as way
+       from &prefix;_point as p3
+       join &prefix;_station_points_rels as p4
+       on p3.osm_id = p4.osm_id
+       where ((p1.railway='tram_stop') and (p4.railway='tram_stop'))
+       and p4.rel_id = p2.rel_id
+       group by p4.rel_id, p4.name)
+    
+    ) as way,
+         p1.highway, p1.railway, p1.amenity
+         from &prefix;_station_points_rels as p1
+         join &prefix;_station_points_rels as p2
+         on p1.osm_id = p2.osm_id
+         where (p1.railway='tram_stop')
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
@@ -297,7 +308,8 @@
          from &prefix;_point as p1
          join &prefix;_station_points_rels as p2
          on p1.osm_id = p2.osm_id
-         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop' or p1.railway='tram_stop')
+         where (p1.highway='bus_stop' or p1.amenity = 'bus_stop')
+         and (select count(*) from &prefix;_station_points_rels where rel_id = (select max(rel_id) from &prefix;_station_points_rels where osm_id = p1.osm_id) and (highway='bus_stop' or amenity = 'bus_stop')) &gt; 1
          group by p2.rel_id, p2.name        
 
       ) as points</Parameter>
@@ -315,6 +327,7 @@
          join &prefix;_station_points_rels as p2
          on p1.osm_id = p2.osm_id
          where (p1.railway='tram_stop')
+         and (select count(*) from &prefix;_station_points_rels where rel_id = (select max(rel_id) from &prefix;_station_points_rels where osm_id = p1.osm_id) and railway='tram_stop') &gt; 1
          group by p2.rel_id, p2.name        
 
       ) as points</Parameter>
