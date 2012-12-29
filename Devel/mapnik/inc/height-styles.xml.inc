@@ -36,6 +36,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
+        smooth="0.5"
       />
     </Rule>
 </Style>
@@ -46,6 +47,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
+        smooth="0.5"
       />
     </Rule>
 </Style>
@@ -56,6 +58,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
+        smooth="0.5"
       />
     </Rule>
 </Style>
@@ -66,6 +69,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
+        smooth="0.5"
       />
     </Rule>
 </Style>
@@ -76,6 +80,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
+        smooth="0.5"
       />
     </Rule>
     <Rule>
@@ -84,6 +89,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
+        smooth="0.5"
       />
     </Rule>
 </Style>
@@ -94,6 +100,7 @@
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
+        smooth="0.5"
       />
     </Rule>
 </Style>
