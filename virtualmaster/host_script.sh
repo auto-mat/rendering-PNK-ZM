@@ -4,8 +4,9 @@ export minzoom=8
 export maxzoom=18
 export render_ZM=true
 export render_PNK=true
-export osm_url="http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf"
-export osm_filename='czech_republic.osm'
+
+#export osm_url="http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf"
+#export osm_filename='czech_republic.pbf'
 
 #CR
 #export render_bbox="51.1 12 48.5 19"
@@ -28,7 +29,7 @@ export render_bbox="50.17 14.20 49.96 14.65"
 #export render_bbox="49.3 16.45 49.1 16.8"
 
 export osm_url="http://www.overpass-api.de/api/xapi?map?bbox=$download_bbox"
-#export osm_filename='czech_republic.osm'
+export osm_filename='czech_republic.osm'
 
 
 cd ~/rendering-PNK-ZM/
@@ -37,7 +38,9 @@ git pull
 export PYTHONIOENCODING=utf-8
 
 cd 
-wget --progress=dot "$osm_url" -O $osm_filename
+wget -nv "$osm_url" -O $osm_filename
+
+grep \<remark\> czech_republic.osm && echo "Downloaded file is not complete" && exit
 
 #osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
 osm2pgsql -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
