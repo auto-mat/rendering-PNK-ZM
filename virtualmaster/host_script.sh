@@ -1,36 +1,17 @@
 #!/bin/bash
+apt-get install imagemagick
+
 echo '
-export minzoom=8
-export maxzoom=18
-export render_ZM=true
-export render_PNK=true
-
-#export osm_url="http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf"
-#export osm_filename='czech_republic.pbf'
-
-#CR
-#export render_bbox="51.1 12 48.5 19"
-#export maxzoom=16
-
-#Mensi Praha:
-export download_bbox="14.018,49.762,14.897,50.318"
-export render_bbox="50.17 14.20 49.96 14.65"
-
-#Vetsi Praha:
-#export download_bbox="14.018,49.762,14.897,50.318"
-#export render_bbox="50.318 14.018 49.762 14.897"
-
-#Thessaloniki:
-#export download_bbox="22.8,40.6,23,40.7"
-#export render_bbox="40.7 22.8 40.6 23"
-
-#Brno:
-#export download_bbox="16.45,49.1,16.8,49.3"
-#export render_bbox="49.3 16.45 49.1 16.8"
-
-export osm_url="http://www.overpass-api.de/api/xapi?map?bbox=$download_bbox"
-export osm_filename='czech_republic.osm'
-
+function render {
+   folder=$1
+   render_bbox=$2
+   minzoom=$3
+   maxzoom=$4
+   style=$5
+   cd ~/rendering-PNK-ZM/Devel/generate_tiles/
+   ./generate_tiles_agregated.py $style $folder/ $render_bbox $minzoom $maxzoom 1
+   rsync -avW -e ssh $folder tiles@auto-mat.cz:/
+}
 
 cd ~/rendering-PNK-ZM/
 git pull
@@ -38,24 +19,54 @@ git pull
 export PYTHONIOENCODING=utf-8
 
 cd 
+#export download_bbox="14.018,49.762,14.897,50.318"
+#export osm_url="http://www.overpass-api.de/api/xapi?map?bbox=$download_bbox"
+#export osm_filename='czech_republic.osm'
+#osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
+
+#Brno:
+#export download_bbox="16.45,49.1,16.8,49.3"
+#Thessaloniki:
+#export download_bbox="22.8,40.6,23,40.7"
+#export render_bbox="40.7 22.8 40.6 23"
+
+
+export osm_url="http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf"
+export osm_filename='czech_republic.pbf'
+osm2pgsql -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
+
 wget -nv "$osm_url" -O $osm_filename
 
 grep \<remark\> czech_republic.osm && echo "Downloaded file is not complete" && exit
 
-#osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
-osm2pgsql -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
-
 cd ~/rendering-PNK-ZM/Devel/systemdeploy/db_scripts/
 ./db_scripts.sh
 
-cd ~/rendering-PNK-ZM/Devel/generate_tiles/
-if $render_ZM; then
-   ./generate_tiles_agregated.py "../../Devel/mapnik/my_styles/ZM/osm.xml" tiles_ZM/ $render_bbox $minzoom $maxzoom 1
-   rsync -avW -e ssh tiles_ZM tiles@auto-mat.cz:/
-fi
-if $render_PNK; then
-   ./generate_tiles_agregated.py "../../Devel/mapnik/my_styles/MTB-main.xml" tiles_PNK/ $render_bbox $minzoom $maxzoom 1
-   rsync -avW -e ssh tiles_PNK tiles@auto-mat.cz:/
+#CR
+render tiles_PNK "51.1 12 48.5 19" 8 13 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+
+#Středočeský kraj
+render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+
+#Vetsi Praha:
+render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+#render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml"
+
+#Mensi Praha:
+#render tiles_PNK "50.17 14.20 49.96 14.65" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+#render tiles_ZM "50.17 14.20 49.96 14.65" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml"
+
+#Brno:
+render tiles_PNK "49.3 16.45 49.1 16.8" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+#render tiles_ZM "49.3 16.45 49.1 16.8" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml"
+
+#Děčín
+render tiles_PNK "50.7962 14.1549 50.7254 14.2647" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+
+export render_BW=false
+if $render_BW; then
+   ./BW.sh
+   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/
 fi
 ' | su mtbmap 2>&1 | tee /home/mtbmap/render.log
 
