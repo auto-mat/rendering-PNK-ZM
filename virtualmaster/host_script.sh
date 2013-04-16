@@ -31,13 +31,16 @@ cd
 #export render_bbox="40.7 22.8 40.6 23"
 
 
-export osm_url="http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf"
-export osm_filename='czech_republic.pbf'
+export osm_url="http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf"
+export osm_filename='czech_republic.osm.pbf'
 
 wget -nv "$osm_url" -O $osm_filename
-osm2pgsql -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 2000 -U mtbmap
 
-grep \<remark\> $osm_filename && echo "Downloaded file is not complete" && exit
+[ `stat -c %s czech_republic.osm.pbf` -lt 300000000 ] && echo "Downloaded file too small" && exit
+
+osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 1500 -U mtbmap
+
+#grep \<remark\> $osm_filename && echo "Downloaded file is not complete" && exit
 
 cd ~/rendering-PNK-ZM/Devel/systemdeploy/db_scripts/
 ./db_scripts.sh
