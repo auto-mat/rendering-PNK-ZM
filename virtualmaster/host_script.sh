@@ -63,6 +63,9 @@ render tiles_ZM "50.17 14.20 49.96 14.65" 8 18 "../../Devel/mapnik/my_styles/ZM/
 #Ostrava
 render tiles_PNK "49.8776 18.1364 49.7615 18.3427" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
 
+#Olomouc
+render tiles_PNK "49.6204 17.2013 49.5658 17.3098" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+
 #Brno:
 render tiles_PNK "49.3 16.45 49.1 16.8" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
 #render tiles_ZM "49.3 16.45 49.1 16.8" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml"
