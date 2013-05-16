@@ -10,7 +10,7 @@ function render {
    style=$5
    cd ~/rendering-PNK-ZM/Devel/generate_tiles/
    ./generate_tiles_agregated.py $style $folder/ $render_bbox $minzoom $maxzoom 1
-   rsync -avW -e ssh $folder tiles@auto-mat.cz:/
+   rsync -avW -e ssh $folder tiles@auto-mat.cz:/upload/
 }
 
 cd ~/rendering-PNK-ZM/
@@ -97,7 +97,7 @@ render tiles_PNK "49.0933 17.4101 49.0536 17.4976" 8 18 "../../Devel/mapnik/my_s
 export render_BW=false
 if $render_BW; then
    ./BW.sh
-   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/
+   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/upload/
 fi
 ' | su mtbmap 2>&1 | tee /home/mtbmap/render.log
 
