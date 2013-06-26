@@ -17,11 +17,11 @@ cd
 
 
 export osm_url="http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf"
-export osm_filename='czech_republic.osm.pbf'
+export osm_filename='map.osm.pbf'
 
 wget -nv "$osm_url" -O $osm_filename
 
-[ `stat -c %s czech_republic.osm.pbf` -lt 300000000 ] && echo "Downloaded file too small" && exit
+test "`md5sum $osm_filename | cut -d ' ' -f 1`" = "`wget ${osm_url}.md5 -O - | cut -d ' ' -f 1`" || exit
 
 osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 1500 -U mtbmap
 
