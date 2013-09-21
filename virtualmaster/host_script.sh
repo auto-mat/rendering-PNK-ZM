@@ -1,7 +1,4 @@
 #!/bin/bash
-apt-get -y install imagemagick
-
-echo '
 cd ~/rendering-PNK-ZM/
 git pull
 
@@ -21,6 +18,7 @@ cd
 
 
 export osm_url="http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf"
+#export osm_url="http://download.geofabrik.de/europe/slovakia-latest.osm.pbf"
 export osm_filename='map.osm.pbf'
 
 wget -nv "$osm_url" -O $osm_filename
@@ -44,8 +42,11 @@ function render {
    style=$5
    cd ~/rendering-PNK-ZM/Devel/generate_tiles/
    ./generate_tiles_agregated.py $style $folder/ $render_bbox $minzoom $maxzoom 1
-   rsync -avW -e ssh $folder tiles@auto-mat.cz:/upload/
+   rsync -avW -e ssh $folder tiles@auto-mat.cz:/
 }
+
+#Oravska lesna
+#render tiles_PNK "49.432 19.019 49.243 19.311" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
 
 #CR
 render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" 
@@ -85,6 +86,7 @@ render tiles_PNK "50.7964 15.0097 50.7323 15.1074" 8 18 "../../Devel/mapnik/my_s
 
 #Plzen
 render tiles_PNK "49.7857 13.3106 49.7167 13.4198" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
+render tiles_ZM "49.7857 13.3106 49.7167 13.4198" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml"
 
 #Usti nad Labem
 render tiles_PNK "50.6904 13.9839 50.6463 14.0891" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" 
@@ -103,8 +105,9 @@ if $render_BW; then
    ./BW.sh
    rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/upload/
 fi
-' | su mtbmap 2>&1 | tee /home/mtbmap/render.log
 
-chmod a+rw /home/mtbmap/render.log
+chmod a+rw /home/mtbmap/screenlog.0
 
-echo "rsync -avW -e ssh /home/mtbmap/render.log tiles@auto-mat.cz:/log/render-`date +%y%m%d-%H:%M:%S`.log" | su mtbmap
+rsync -avW -e ssh /home/mtbmap/screenlog.0 tiles@auto-mat.cz:/log/render-`date +%y%m%d-%H:%M:%S`.log
+
+virtualmaster destroy rendernow

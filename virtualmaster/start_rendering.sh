@@ -1,3 +1,6 @@
 #!/bin/bash
-time virtualmaster create rendernow --image 3006 --profile small --level testing --script ./host_script.sh
-virtualmaster destroy rendernow
+virtualmaster create rendernow --image 3290 --profile small --level testing
+export SERVER_IP=`virtualmaster list | grep rendernow | cut -f4 -d"|" | tr -d " "`
+scp host_script.sh mtbmap@$SERVER_IP:/home/mtbmap
+ssh mtbmap@$SERVER_IP screen -L -d -m ./host_script.sh
+ssh mtbmap@$SERVER_IP "tail -f screenlog.0"
