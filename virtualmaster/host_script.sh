@@ -59,6 +59,7 @@ function render {
 #render tiles_PNK "49.432 19.019 49.243 19.311" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Oravska lesna"
 
 render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" "CR"
+render tiles_ZM "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/ZM/osm.xml" "CR"
 
 #render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
 
