@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="10.5"
+   height="7"
+   id="svg3089"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="crossing_lights_small.svg">
+  <sodipodi:namedview
+     pagecolor="#fffcff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     id="namedview3182"
+     showgrid="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="113.625"
+     inkscape:cx="6.7934556"
+     inkscape:cy="4.0070638"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3089">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4470"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="0.5px"
+       spacingy="0.5px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3095">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3093" />
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none"
+     id="rect3257"
+     width="10.5"
+     height="7"
+     x="0"
+     y="0" />
+  <rect
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none"
+     id="rect3224"
+     width="7"
+     height="1.5"
+     x="0"
+     y="-3"
+     transform="matrix(0,1,-1,0,0,0)" />
+  <rect
+     y="-6"
+     x="0"
+     height="1.5"
+     width="7"
+     id="rect3226"
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none"
+     transform="matrix(0,1,-1,0,0,0)" />
+  <rect
+     style="fill:#d3d3d3;fill-opacity:1;stroke:none"
+     id="rect3228"
+     width="7"
+     height="1.5"
+     x="0"
+     y="-9"
+     transform="matrix(0,1,-1,0,0,0)" />
+  <rect
+     style="fill:#ff0000;fill-opacity:1;stroke:none"
+     id="rect4062"
+     width="2.5"
+     height="2.5"
+     x="0"
+     y="1" />
+  <rect
+     y="3.5"
+     x="0"
+     height="2.5"
+     width="2.5"
+     id="rect4064"
+     style="fill:#00ff00;fill-opacity:1;stroke:none" />
+  <rect
+     y="1"
+     x="8"
+     height="2.5"
+     width="2.5"
+     id="rect4066"
+     style="fill:#ff0000;fill-opacity:1;stroke:none" />
+  <rect
+     style="fill:#00ff00;fill-opacity:1;stroke:none"
+     id="rect4068"
+     width="2.5"
+     height="2.5"
+     x="8"
+     y="3.5" />
+</svg>
