@@ -351,12 +351,14 @@
      <Rule>
       &maxscale_zoom14;
       <PolygonSymbolizer fill="&color_no_access;" fill-opacity="&opacity_no_access;"/>
+      <PolygonPatternSymbolizer file="&symbols;/no_access.png" />
     </Rule>
 </Style>
 <Style name="paid_access">
      <Rule>
       &maxscale_zoom14;
       <PolygonSymbolizer fill="&color_paid_access;" fill-opacity="&opacity_paid_access;"/>
+      <PolygonPatternSymbolizer file="&symbols;/no_access.png" />
     </Rule>
 </Style>
 
