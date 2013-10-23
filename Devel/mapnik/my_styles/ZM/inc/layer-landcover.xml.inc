@@ -126,7 +126,8 @@
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>
       &maxscale_zoom10;
-      <PolygonPatternSymbolizer file="&symbols;/zoo.png" />
+      <PolygonSymbolizer fill="&color_zoo;"/>
+      <PolygonPatternSymbolizer file="&symbols;/zoo.png" opacity="&opacity_zoo;"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'common'</Filter>

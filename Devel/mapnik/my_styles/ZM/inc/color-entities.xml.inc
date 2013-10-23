@@ -78,9 +78,10 @@
 <!ENTITY opacity_symbol_scrub '0.3'>
 <!ENTITY opacity_symbol_orchard '0.3'>
 <!ENTITY opacity_symbol_vineyard '0.3'>
+<!ENTITY opacity_zoo '0.3'>
 
 <!-- greenery colors -->
-<!ENTITY color_forest '#8DC56C'>
+<!ENTITY color_forest '#73C82C'>
 <!ENTITY color_grave_yard '#AACBAF'>
 <!ENTITY color_cemetery '#AACBAF'>
 <!ENTITY color_park '#73C82C'>
@@ -90,6 +91,7 @@
 <!ENTITY color_vineyard '#73C82C'>
 <!ENTITY color_village_green '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
+<!ENTITY color_zoo "#73C82C">
 <!ENTITY color_allotments '#73C82C'>
 <!ENTITY color_garden "#73C82C">
 <!ENTITY color_common_leisure "#73C82C">
