@@ -74,14 +74,14 @@
 <!ENTITY color_motorway '#BFBFBF'>
 
 <!-- greenery colors -->
-<!ENTITY color_forest '#CDDE87'>
-<!ENTITY color_grave_yard '#B3E3B7'>
+<!ENTITY color_forest '#8DC56C'>
+<!ENTITY color_grave_yard '#AACBAF'>
 <!ENTITY color_cemetery '#AACBAF'>
 <!ENTITY color_park '#73C82C'>
 <!ENTITY color_meadow '#73C82C'>
-<!ENTITY color_scrub '#B3E3B7'>
-<!ENTITY color_orchard '#B3E3B7'>
-<!ENTITY color_vineyard '#B3E3B7'>
+<!ENTITY color_scrub '#73C82C'>
+<!ENTITY color_orchard '#73C82C'>
+<!ENTITY color_vineyard '#73C82C'>
 <!ENTITY color_village_green '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
 <!ENTITY color_allotments '#73C82C'>
