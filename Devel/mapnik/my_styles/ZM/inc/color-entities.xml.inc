@@ -73,6 +73,16 @@
 <!ENTITY color_trunk '#BFBFBF'>
 <!ENTITY color_motorway '#BFBFBF'>
 
+<!-- leisure colors -->
+<!ENTITY color_leisure_sport_centre '#33CC99'>
+<!ENTITY opacity_leisure_sport_centre '0.3'>
+<!ENTITY color_leisure_track '#74DCBA'>
+<!ENTITY opacity_leisure_track '0.3'>
+<!ENTITY color_leisure_pitch '#8AD3AF'>
+<!ENTITY opacity_leisure_pitch '0.3'>
+<!ENTITY color_leisure_playground '#CCFFF1'>
+<!ENTITY opacity_leisure_playground '0.3'>
+
 <!ENTITY opacity_symbol_graveyard '0.3'>
 <!ENTITY opacity_symbol_forest '0.3'>
 <!ENTITY opacity_symbol_scrub '0.3'>

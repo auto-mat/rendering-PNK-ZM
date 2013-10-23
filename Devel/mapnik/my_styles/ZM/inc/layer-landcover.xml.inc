@@ -8,7 +8,7 @@
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
-      <PolygonSymbolizer fill="#ccfff1"/>
+      <PolygonSymbolizer fill="&color_leisure_playground;" fill-opacity="&opacity_leisure_playground;"/>
       <LineSymbolizer stroke="#666" stroke-width="0.3"/>
     </Rule>
     <Rule>
@@ -333,18 +333,18 @@
     <Rule>
       <Filter>[leisure] = 'sports_centre' or [leisure] = 'stadium'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#33cc99"/>
+      <PolygonSymbolizer fill="&color_leisure_sport_centre;" fill-opacity="&opacity_leisure_sport_centre;"/>
     </Rule>
     <Rule>
       <Filter>[leisure]='track'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#74dcba"/>
+      <PolygonSymbolizer fill="&color_leisure_track;" fill-opacity="&opacity_leisure_track;"/>
       <LineSymbolizer stroke="#888" stroke-width="0.5"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'pitch'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer fill="#8ad3af"/>
+      <PolygonSymbolizer fill="&color_leisure_pitch;" fill-opacity="&opacity_leisure_pitch;"/>
       <LineSymbolizer stroke="#888" stroke-width="0.5"/>
     </Rule>
 </Style>
