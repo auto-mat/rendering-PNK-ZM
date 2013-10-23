@@ -73,6 +73,12 @@
 <!ENTITY color_trunk '#BFBFBF'>
 <!ENTITY color_motorway '#BFBFBF'>
 
+<!ENTITY opacity_symbol_graveyard '0.3'>
+<!ENTITY opacity_symbol_forest '0.3'>
+<!ENTITY opacity_symbol_scrub '0.3'>
+<!ENTITY opacity_symbol_orchard '0.3'>
+<!ENTITY opacity_symbol_vineyard '0.3'>
+
 <!-- greenery colors -->
 <!ENTITY color_forest '#8DC56C'>
 <!ENTITY color_grave_yard '#AACBAF'>
