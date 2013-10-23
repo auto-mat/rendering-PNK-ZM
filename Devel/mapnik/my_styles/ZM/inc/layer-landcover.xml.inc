@@ -242,7 +242,7 @@
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
       &maxscale_zoom8;
       <PolygonSymbolizer fill="&color_forest;"/>
-      <PolygonPatternSymbolizer file="&symbols;/forest.png" />
+      <PolygonPatternSymbolizer file="&symbols;/forest.png" opacity="&opacity_symbol_forest;"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'desert'</Filter>
