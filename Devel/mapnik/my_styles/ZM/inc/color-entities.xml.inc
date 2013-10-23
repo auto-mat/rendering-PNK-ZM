@@ -73,8 +73,21 @@
 <!ENTITY color_trunk '#BFBFBF'>
 <!ENTITY color_motorway '#BFBFBF'>
 
+<!ENTITY opacity_symbol_graveyard '0.3'>
+<!ENTITY opacity_symbol_forest '0.3'>
+<!ENTITY opacity_symbol_scrub '0.3'>
+<!ENTITY opacity_symbol_orchard '0.3'>
+<!ENTITY opacity_symbol_vineyard '0.3'>
+
+<!-- greenery colors -->
+<!ENTITY color_forest '#8DC56C'>
+<!ENTITY color_grave_yard '#AACBAF'>
+<!ENTITY color_cemetery '#AACBAF'>
 <!ENTITY color_park '#73C82C'>
 <!ENTITY color_meadow '#73C82C'>
+<!ENTITY color_scrub '#73C82C'>
+<!ENTITY color_orchard '#73C82C'>
+<!ENTITY color_vineyard '#73C82C'>
 <!ENTITY color_village_green '#73C82C'>
 <!ENTITY color_landuse_residential "#B3E3B7">
 <!ENTITY color_allotments '#73C82C'>
