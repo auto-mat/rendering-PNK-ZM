@@ -32,23 +32,25 @@
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <PolygonSymbolizer fill="#abdf96"/>
+      <PolygonSymbolizer fill="&color_vineyard;"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'orchard'</Filter>
       &maxscale_zoom10;
+      <PolygonSymbolizer fill="&color_orchard;"/>
       <PolygonPatternSymbolizer file="&symbols;/orchard.png" />
     </Rule>
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom13;
+      <PolygonSymbolizer fill="&color_vineyard;"/>
       <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
     </Rule>
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom14;
       <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard'</Filter>
-      <PolygonSymbolizer fill="#aacbaf"/>
+      <PolygonSymbolizer fill="&color_cemetery;"/>
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -96,16 +98,19 @@
     <Rule>
       &maxscale_zoom14;
       <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'jewish'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" />
       <PolygonPatternSymbolizer file="&symbols;/cemetery_jewish.18.png" />
     </Rule>
     <Rule>
       &maxscale_zoom14;
       <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'christian'</Filter>
+      <PolygonSymbolizer fill="&color_grave_yard;"/>
       <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" />
     </Rule>
     <Rule>
       &maxscale_zoom14;
       <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'INT-generic'</Filter>
+      <PolygonSymbolizer fill="&color_grave_yard;"/>
       <PolygonPatternSymbolizer file="&symbols;/grave_yard_generic.png" />
     </Rule>
     <Rule>
@@ -161,11 +166,12 @@
       <Filter>[landuse] = 'forest'</Filter>
       &maxscale_zoom8;
       &minscale_zoom13;
-      <PolygonSymbolizer fill="#8dc56c"/>
+      <PolygonSymbolizer fill="&color_forest;"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
       &maxscale_zoom14;
+      <PolygonSymbolizer fill="&color_forest;"/>
       <PolygonPatternSymbolizer file="&symbols;/forest.png" />
     </Rule>
     <Rule>
@@ -234,6 +240,7 @@
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
       &maxscale_zoom8;
+      <PolygonSymbolizer fill="&color_forest;"/>
       <PolygonPatternSymbolizer file="&symbols;/forest.png" />
     </Rule>
     <Rule>
@@ -260,11 +267,12 @@
       <Filter>[natural] = 'scrub'</Filter>
       &maxscale_zoom10;
       &minscale_zoom13;
-      <PolygonSymbolizer fill="#b5e3b5"/>
+      <PolygonSymbolizer fill="&color_scrub;"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
       <Filter>[natural] = 'scrub'</Filter>
+      <PolygonSymbolizer fill="&color_scrub;"/>
       <PolygonPatternSymbolizer file="&symbols;/scrub.png" />
     </Rule>
     <Rule>
@@ -343,12 +351,14 @@
      <Rule>
       &maxscale_zoom14;
       <PolygonSymbolizer fill="&color_no_access;" fill-opacity="&opacity_no_access;"/>
+      <PolygonPatternSymbolizer file="&symbols;/no_access.png" />
     </Rule>
 </Style>
 <Style name="paid_access">
      <Rule>
       &maxscale_zoom14;
       <PolygonSymbolizer fill="&color_paid_access;" fill-opacity="&opacity_paid_access;"/>
+      <PolygonPatternSymbolizer file="&symbols;/no_access.png" />
     </Rule>
 </Style>
 
