@@ -1339,22 +1339,6 @@
                 stroke-linejoin="round"
             />
     </Rule>
-    <Rule name="vedlejší kolej">
-            <Filter>([railway]='spur-siding-yard')</Filter>
-            &minscale_zoom18;
-            &maxscale_zoom14;
-            <LineSymbolizer
-                stroke="&color_railway;"
-                stroke-width="2"
-                stroke-linejoin="round"
-            />
-            <LineSymbolizer
-                stroke="&color_white;"
-                stroke-width="0.7"
-                stroke-linejoin="round"
-                stroke-dasharray="0, 11, 8, 1"
-            />
-    </Rule>
     <Rule name="úzkorozchodná železnice">
             <Filter>((([railway]='narrow_gauge') or ([railway]='funicular')) and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;
