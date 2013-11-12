@@ -350,13 +350,3 @@
             <PointSymbolizer file="&symbols-path;/SVG/power_tower.svg" allow-overlap="true" ignore-placement="true" transform="rotate([angle])" placement="interior"/>
     </Rule>
 </Style>
-
-<Style name="sports_grounds">
-    <Rule name="sportoviště">
-            &maxscale_zoom10;
-            <PolygonSymbolizer
-                fill="rgb(51,204,153)"
-            />
-    </Rule>
-</Style>
-

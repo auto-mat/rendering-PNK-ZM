@@ -92,14 +92,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- stadiony -->
-<Layer name="sports_grounds" srs="&srs900913;">
-<StyleName>sports_grounds</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way,leisure from planet_osm_polygon where leisure in ('sports_centre','stadium', 'pitch') order by z_order,way_area desc) as sports_grounds</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- Hillshading layer. -->
 <Layer name="hillshade" status="on" srs="&srs900913;">
 <StyleName>shading</StyleName>
