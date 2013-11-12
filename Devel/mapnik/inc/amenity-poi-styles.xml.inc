@@ -136,6 +136,7 @@
     </Rule>
 </Style>
 <Style name="points">
+<!--
     <Rule name="horská chata">
             <Filter>([tourism]='alpine_hut')</Filter>
             &maxscale_zoom13;
@@ -146,7 +147,6 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shelter2.p.16.png"></PointSymbolizer>
     </Rule>
-<!--
     <Rule name="bankomat">
             <Filter>([amenity]='atm')</Filter>
             &maxscale_zoom17;
@@ -173,6 +173,7 @@
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
+<!--
     <Rule name="zastávka autobusů">
             <Filter>(([amenity]='bus_stop') or ([highway]='bus_stop'))</Filter>
             &minscale_zoom16;
@@ -184,6 +185,7 @@
             &maxscale_zoom17;
             <PointSymbolizer file="&symbols-path;bus_stop.p.12.png"></PointSymbolizer>
     </Rule>
+-->
     <Rule name="autobusové nádraží">
             <Filter>([amenity]='bus_station')</Filter>
             &maxscale_zoom15;
