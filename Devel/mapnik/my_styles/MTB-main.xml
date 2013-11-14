@@ -682,8 +682,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -729,8 +729,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -778,8 +778,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -839,7 +839,7 @@
         (select osm_id, way, role_forward, role_backward, role_bidirectional,
         case 
           when bicycle in ('no', '-1', 'false') then 'yes'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'yes'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'yes'::text
           else 'no'::text end as nobicycle
         from planet_osm_cycleway_rels
         ) as cycledirection
