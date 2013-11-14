@@ -67,7 +67,7 @@ render tiles_PNK "50.17 14.20 49.96 14.65" 8 18 "../../Devel/mapnik/my_styles/MT
 
 if $render_BW; then
    ./BW.sh
-   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/upload/
+   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/
    echo "Black&white script finished at `date`"
 fi
 rm tiles_PNK_BW -R
