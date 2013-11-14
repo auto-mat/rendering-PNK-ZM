@@ -185,12 +185,12 @@
             &maxscale_zoom17;
             <PointSymbolizer file="&symbols-path;bus_stop.p.12.png"></PointSymbolizer>
     </Rule>
--->
     <Rule name="autobusové nádraží">
             <Filter>([amenity]='bus_station')</Filter>
             &maxscale_zoom15;
             <PointSymbolizer file="&symbols-path;bus_station.n.16.png"></PointSymbolizer>
     </Rule>
+-->
     <Rule name="semafor">
             <Filter>([highway]='traffic_signals')</Filter>
             &maxscale_zoom15;
