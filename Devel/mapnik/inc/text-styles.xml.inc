@@ -360,7 +360,7 @@
     <Rule>
             <Filter>([amenity]='university')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="rgb(0,0,51)" halo-radius="1" wrap-width="16"></TextSymbolizer>
+            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,51)" halo-radius="1" wrap-width="16"></TextSymbolizer>
     </Rule>
     <Rule>
             <Filter>(([amenity]='school') or ([amenity]='college'))</Filter>
@@ -370,7 +370,7 @@
     <Rule>
             <Filter>([amenity]='kindergarten')</Filter>
             &maxscale_zoom17;
-            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="rgb(0,0,51)" halo-radius="1" wrap-width="14"></TextSymbolizer>
+            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="rgb(0,0,51)" halo-radius="1" wrap-width="14"></TextSymbolizer>
     </Rule>
     <!--
     <Rule>
@@ -480,7 +480,6 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="&color_parking;" dy="14" vertical-alignment="bottom" halo-radius="1" wrap-width="34"></TextSymbolizer>
     </Rule>
--->
     <Rule>
             <Filter>([amenity]='police')</Filter>
             &maxscale_zoom17;
@@ -491,7 +490,6 @@
             &maxscale_zoom17;
             <TextSymbolizer name="[name]" fontset-name="book-fonts" size="10" fill="&color_fire_station;" dy="20" vertical-alignment="bottom" halo-radius="1" wrap-width="30"></TextSymbolizer>
     </Rule>
-    <!--
     <Rule>
             <Filter>([amenity]='place_of_worship')</Filter>
             &maxscale_zoom15;

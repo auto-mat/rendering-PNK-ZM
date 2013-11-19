@@ -32,7 +32,7 @@ auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'plan
 auxilary_cursor.execute("CREATE TABLE planet_osm_station_points_rels AS SELECT * FROM planet_osm_point WHERE osm_id = 0")
 auxilary_cursor.execute("DELETE FROM geometry_columns WHERE f_table_name = 'planet_osm_station_points_rels'")
 auxilary_cursor.execute("INSERT INTO geometry_columns VALUES ('', 'public', 'planet_osm_station_points_rels', 'way', 2, 900913, 'LINESTRING')")
-auxilary_cursor.execute("ALTER TABLE planet_osm_station_points_rels add public_transport text, ADD train text, ADD bus text, ADD subway text, ADD rel_id text")
+auxilary_cursor.execute("ALTER TABLE planet_osm_station_points_rels add public_transport text, ADD train text, ADD tram text, ADD bus text, ADD subway text, ADD rel_id text")
 
 # Select all route relations.
 relation_cursor.execute("SELECT id, parts, tags FROM planet_osm_rels WHERE"

@@ -92,14 +92,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<!-- stadiony -->
-<Layer name="sports_grounds" srs="&srs900913;">
-<StyleName>sports_grounds</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way,leisure from planet_osm_polygon where leisure in ('sports_centre','stadium', 'pitch') order by z_order,way_area desc) as sports_grounds</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <!-- Hillshading layer. -->
 <Layer name="hillshade" status="on" srs="&srs900913;">
 <StyleName>shading</StyleName>
@@ -607,7 +599,6 @@
 <Layer name="bridges" srs="&srs900913;">
 <StyleName>road-bridges-casing</StyleName>
 <StyleName>road-bridges-fill</StyleName>
-<StyleName>noncased-ways-bridges_casing</StyleName>
 <StyleName>primarybridge_layer0_casing</StyleName>
 <StyleName>mwaybridge_layer0_casing</StyleName>
 <StyleName>primarybridge_layer0_fill</StyleName>
@@ -616,7 +607,6 @@
 <StyleName>mwaybridge_layer1_casing</StyleName>
 <StyleName>primarybridge_layer1_fill</StyleName>
 <StyleName>mwaybridge_layer1_fill</StyleName>
-<StyleName>noncased-ways-bridges_fill</StyleName>
 <StyleName>primarybridge_layer2_casing</StyleName>
 <StyleName>mwaybridge_layer2_casing</StyleName>
 <StyleName>primarybridge_layer2_fill</StyleName>
@@ -627,6 +617,7 @@
 <StyleName>mwaybridge_layer4_fill</StyleName>
 <StyleName>mwaybridge_layer5_casing</StyleName>
 <StyleName>mwaybridge_layer5_fill</StyleName>
+<StyleName>noncased-ways-bridges</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,railway,layer,bicycle,foot,bridge,tunnel
@@ -676,7 +667,7 @@
     <StyleName>surface-cobblestone</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, highway, surface from planet_osm_line where surface in ('cobblestone', 'setts')) as surface
+        (select way, highway, surface from planet_osm_line where surface in ('cobblestone', 'cobblestone:flattened', 'setts')) as surface
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -691,8 +682,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -738,8 +729,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -787,8 +778,8 @@
         <Parameter name="table">
         (select bicycle, osm_id, route, state, way, tunnel, lcn, rcn, ncn,
         case 
-          when bicycle in ('no', '-1', 'false') then 'nobicycle'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'nobicycle'::text
+          when bicycle in ('no', '-1', 'false', 'dismount') then 'nobicycle'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'nobicycle'::text
 
           when motorcar in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
@@ -848,7 +839,7 @@
         (select osm_id, way, role_forward, role_backward, role_bidirectional,
         case 
           when bicycle in ('no', '-1', 'false') then 'yes'::text
-          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false')) then 'yes'::text
+          when highway='footway' and (bicycle is null or bicycle in ('no', '-1', 'false', 'dismount')) then 'yes'::text
           else 'no'::text end as nobicycle
         from planet_osm_cycleway_rels
         ) as cycledirection
@@ -1652,8 +1643,8 @@ admin 8 - uzemi samostatnych obci
         (select way, ref, name, state,
         case when ref in ('A1','A2') then 'yes'::text
         when ref in ('PAN') then ''::text else ncn end as ncn,
-        case when ref in ('A1','A2', 'PAN') then ''::text else rcn end as rcn,
-        case when ref in ('PAN') then ''::text else lcn end as lcn
+        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
+        case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn
         from planet_osm_line
         where (ref is not null and (lcn is not null or ncn is not null or rcn is not null))
         and (operator is null or operator not in ('CZ:binko'))

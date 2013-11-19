@@ -94,7 +94,7 @@
             />
     </Rule>
     <Rule name="tunel na stezce pro pěší a cyklisty">
-            <Filter>(([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')))</Filter>
+            <Filter>[highway]='cycleway' and ([foot]='yes' or [foot]='designated')</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer
@@ -109,6 +109,26 @@
             <LineSymbolizer
                 stroke="&color_bicycle_footway_tunnel;"
                 stroke-width="3"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+            />
+    </Rule>
+    <Rule name="tunel na cyklochodníku">
+            <Filter>([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer
+                stroke="rgb(128,128,128)"
+                stroke-width="6.5"
+                stroke-dasharray="4, 4"
+            />
+            <LineSymbolizer
+                stroke="rgb(255,255,255)"
+                stroke-width="4"
+            />
+            <LineSymbolizer
+                stroke="&color_footway_bicycle_tunnel;"
+                stroke-width="2.5"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
@@ -133,7 +153,7 @@
             />
     </Rule>
     <Rule name="tunel na stezce pro pěší a cyklisty">
-            <Filter>(([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')))</Filter>
+            <Filter>[highway]='cycleway' and ([foot]='yes' or [foot]='designated')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer
                 stroke="rgb(128,128,128)"
@@ -147,6 +167,25 @@
             <LineSymbolizer
                 stroke="&color_bicycle_footway_tunnel;"
                 stroke-width="5"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+            />
+    </Rule>
+    <Rule name="tunel na cyklochodníku">
+            <Filter>([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer
+                stroke="rgb(128,128,128)"
+                stroke-width="6.5"
+                stroke-dasharray="4, 2"
+            />
+            <LineSymbolizer
+                stroke="rgb(255,255,255)"
+                stroke-width="4"
+            />
+            <LineSymbolizer
+                stroke="&color_footway_bicycle_tunnel;"
+                stroke-width="2.5"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
@@ -536,7 +575,7 @@
             />
     </Rule>
     <Rule name="podklad stezky pro cyklisty">
-            <Filter>(([highway]='cycleway' or ([highway]='footway' and ([bicycle]='yes' or [bicycle]='designated'))) and not ((([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            <Filter>(([highway]='cycleway') and not ((([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer
@@ -547,7 +586,7 @@
             />
     </Rule>
     <Rule name="podklad stezky pro cyklisty">
-            <Filter>(([highway]='cycleway' or ([highway]='footway' and ([bicycle]='yes' or [bicycle]='designated'))) and not ((([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
+            <Filter>(([highway]='cycleway') and not ((([service]='parking_aisle') or ([tunnel]='yes'))))</Filter>
             &maxscale_zoom15;
             <LineSymbolizer
                 stroke="&color_bicycle_casing;"
@@ -557,7 +596,7 @@
             />
     </Rule>
     <Rule name="stezka pro pěší / chodnik">
-            <Filter>(([highway]='footway') and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
+            <Filter>([highway]='footway') and not [tunnel]='yes'</Filter>
             &maxscale_zoom13;
             &minscale_zoom14;
             <LineSymbolizer
@@ -566,7 +605,7 @@
             />
     </Rule>
     <Rule name="stezka pro pěší / chodnik">
-            <Filter>(([highway]='footway') and not ([bicycle]='yes' or [bicycle]='designated') and not [tunnel]='yes')</Filter>
+            <Filter>([highway]='footway') and not [tunnel]='yes'</Filter>
             &maxscale_zoom15;
             <LineSymbolizer
                 stroke="&color_footway_casing;"
@@ -1339,22 +1378,6 @@
                 stroke-linejoin="round"
             />
     </Rule>
-    <Rule name="vedlejší kolej">
-            <Filter>([railway]='spur-siding-yard')</Filter>
-            &minscale_zoom18;
-            &maxscale_zoom14;
-            <LineSymbolizer
-                stroke="&color_railway;"
-                stroke-width="2"
-                stroke-linejoin="round"
-            />
-            <LineSymbolizer
-                stroke="&color_white;"
-                stroke-width="0.7"
-                stroke-linejoin="round"
-                stroke-dasharray="0, 11, 8, 1"
-            />
-    </Rule>
     <Rule name="úzkorozchodná železnice">
             <Filter>((([railway]='narrow_gauge') or ([railway]='funicular')) and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;
@@ -1947,7 +1970,7 @@
             />
     </Rule>
     <Rule name="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            <Filter>([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) and not ([tunnel]='yes')</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer
@@ -1956,11 +1979,30 @@
             />
     </Rule>
     <Rule name="stezka pro  pěší a cyklisty">
-            <Filter>((([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated'))) and not (([tunnel]='yes')))</Filter>
+            <Filter>([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) and not ([tunnel]='yes')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer
                 stroke="&color_bicycle_footway;"
                 stroke-width="4"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+            />
+    </Rule>
+    <Rule name="cyklochodník">
+            <Filter>(([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')) and not ([tunnel]='yes')</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer
+                stroke="&color_footway_bicycle;"
+                stroke-width="1.5"
+            />
+    </Rule>
+    <Rule name="cyklochodník">
+            <Filter>(([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')) and not ([tunnel]='yes')</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer
+                stroke="&color_footway_bicycle;"
+                stroke-width="2.5"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
@@ -2453,14 +2495,13 @@
             />
             <LineSymbolizer
                 stroke="&color_footway;"
-                stroke-width="2"
+                stroke-width="3"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                stroke-dasharray="1, 3"
             />
     </Rule>
     <Rule name="most na stezce pro pěší a cyklisty">
-            <Filter>(([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')))</Filter>
+            <Filter>([highway]='cycleway' and ([foot]='yes' or [foot]='designated'))</Filter>
             &maxscale_zoom10;
             &minscale_zoom14;
             <LineSymbolizer
@@ -2473,6 +2514,24 @@
             <LineSymbolizer
                 stroke="&color_bicycle_footway;"
                 stroke-width="3"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+            />
+    </Rule>
+    <Rule name="most na cyklochodníku">
+            <Filter>([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')</Filter>
+            &maxscale_zoom10;
+            &minscale_zoom14;
+            <LineSymbolizer
+                stroke-width="6"
+            />
+            <LineSymbolizer
+                stroke="rgb(255,255,255)"
+                stroke-width="4.5"
+            />
+            <LineSymbolizer
+                stroke="&color_footway_bicycle;"
+                stroke-width="2"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
@@ -2494,7 +2553,7 @@
             />
     </Rule>
     <Rule name="most na stezce pro pěší a cyklisty">
-            <Filter>(([highway]='cycleway' and ([foot]='yes' or [foot]='designated')) or (([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')))</Filter>
+            <Filter>[highway]='cycleway' and ([foot]='yes' or [foot]='designated')</Filter>
             &maxscale_zoom15;
             <LineSymbolizer
                 stroke-width="9"
@@ -2506,6 +2565,23 @@
             <LineSymbolizer
                 stroke="&color_bicycle_footway;"
                 stroke-width="5"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+            />
+    </Rule>
+    <Rule name="most na cyklochodníku">
+            <Filter>([highway]='footway') and ([bicycle]='yes' or [bicycle]='designated')</Filter>
+            &maxscale_zoom15;
+            <LineSymbolizer
+                stroke-width="6"
+            />
+            <LineSymbolizer
+                stroke="rgb(255,255,255)"
+                stroke-width="4.5"
+            />
+            <LineSymbolizer
+                stroke="&color_footway_bicycle;"
+                stroke-width="2"
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />

@@ -51,10 +51,12 @@
 
 <!ENTITY color_bicycle '#c07dc0'>
 <!ENTITY color_bicycle_footway '&color_bicycle;'>
+<!ENTITY color_footway_bicycle '&color_bicycle;'>
 <!ENTITY color_bicycle_casing "#333333">
 
 <!ENTITY color_bicycle_tunnel "&color_bicycle;">
 <!ENTITY color_bicycle_footway_tunnel "&color_bicycle;">
+<!ENTITY color_footway_bicycle_tunnel "&color_bicycle;">
 
 <!-- highway-roads -->
 
