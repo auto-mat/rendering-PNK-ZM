@@ -65,6 +65,8 @@ rm tiles_ZM -R
 
 render tiles_PNK "50.17 14.20 49.96 14.65" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
 
+rsync -avW -e ssh tiles_PNK tiles@auto-mat.cz:/tiles_PNK_Praha
+
 if $render_BW; then
    ./BW.sh
    rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/upload/
