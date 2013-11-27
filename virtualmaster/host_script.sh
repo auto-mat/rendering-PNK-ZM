@@ -36,10 +36,12 @@ fi;
 
 osm2pgsql -r pbf -s -d gisczech "/home/mtbmap/$osm_filename" -S "/home/mtbmap/rendering-PNK-ZM/Data/mtbmap.style" -C 1500 -U mtbmap
 
-#grep \<remark\> $osm_filename && echo "Downloaded file is not complete" && exit
+rm "/home/mtbmap/$osm_filename"
 
 cd ~/rendering-PNK-ZM/Devel/systemdeploy/db_scripts/
 ./db_scripts.sh
+
+psql gisczech -c "vacuum full;"
 
 echo "starting rendering job"
 
