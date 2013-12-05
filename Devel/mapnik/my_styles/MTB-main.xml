@@ -667,7 +667,7 @@
     <StyleName>surface-cobblestone</StyleName>
     <Datasource>
         <Parameter name="table">
-        (select way, highway, surface from planet_osm_line where surface in ('cobblestone', 'cobblestone:flattened', 'setts')) as surface
+        (select way, highway, surface from planet_osm_line where surface in ('cobblestone', 'cobblestone:flattened', 'sett', 'setts')) as surface
         </Parameter>
         &datasource-settings;
     </Datasource>
@@ -703,7 +703,7 @@
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
 
           when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
-          when surface in ('unpaved', 'compacted', 'cobblestone', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'sett', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
           when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
 
           when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
@@ -750,7 +750,7 @@
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
 
           when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
-          when surface in ('unpaved', 'compacted', 'cobblestone', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'sett', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
           when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
 
           when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
@@ -799,7 +799,7 @@
           when smoothness in ('bad', 'very_bad', 'horrible', 'very_horrible', 'impassable') then 'bad'::text
 
           when surface in ('paved', 'asphalt', 'concrete', 'concrete:lanes', 'cobblestone:flattened') then 'good'::text 
-          when surface in ('unpaved', 'compacted', 'cobblestone', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
+          when surface in ('unpaved', 'compacted', 'cobblestone', 'sett', 'setts', 'concrete:plates', 'grass_paver', 'gravel', 'pebblestone', 'sand') then 'unpaved'::text 
           when surface in ('dirt', 'grass', 'mud') then 'bad'::text 
 
           when highway in ('cycleway', 'pedestrian', 'living_street', 'footway', 'service', 'road', 'residential', 'primary', 'secondary', 'tertiary', 'unclassified', 'motorway', 'trunk', 'primary_link', 'secondary_link', 'tertiary_link', 'motorway_link', 'trunk_link') then 'good'::text 
