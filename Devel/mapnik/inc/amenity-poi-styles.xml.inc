@@ -416,11 +416,13 @@
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;peak.png"></PointSymbolizer>
     </Rule>
+    <!--
     <Rule name="pramen">
             <Filter>([natural]='spring')</Filter>
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;spring09.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="památný strom">
             <Filter>([natural]='tree')</Filter>
             &minscale_zoom16;
@@ -558,11 +560,13 @@
       <Filter>[amenity]='signpost'</Filter>
       <PointSymbolizer file= "&symbols-path;signpost2.png"/>
     </Rule>
+    <!--
     <Rule name="!pramen">
             <Filter>([natural]='spring')</Filter>
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;spring09.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="!památný strom">
             <Filter>([natural]='tree')</Filter>
             &minscale_zoom16;
