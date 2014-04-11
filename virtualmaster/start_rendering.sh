@@ -1,5 +1,5 @@
 #!/bin/bash
-virtualmaster create rendernow --image 3290 --profile small --level testing | tee virtualmaster_output
+virtualmaster create rendernow --image 3290 --profile small --level personal | tee virtualmaster_output
 export ROOT_PASSWORD=`cat virtualmaster_output | grep "Default password" | sed "s/^[^']*'\(.*\)'/\1/g"`
 export SERVER_IP=`virtualmaster list | grep rendernow | cut -f4 -d"|" | tr -d " "`
 sleep 30
