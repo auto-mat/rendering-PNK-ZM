@@ -83,7 +83,7 @@ render tiles_ZM "49.7857 13.3106 49.7167 13.4198" 13 18 "../../Devel/mapnik/my_s
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.318619,48.902192,14.628983,49.063519" false
 render tiles_PNK "48.99349 14.43839 48.94335 14.53418" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ceske Budejovice"
 
-import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.836252,49.744629,18.615067,49.99212" false
+import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.836252,49.744629,18.615067,49.946802" false
 render tiles_PNK "49.8776 18.1364 49.7615 18.3427" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ostrava"
 render tiles_PNK "49.982839 17.827669 49.892611 17.974083" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Opava"
 render tiles_PNK "49.899683 18.471399 49.809455 18.617813" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Karviná"

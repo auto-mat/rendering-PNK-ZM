@@ -83,8 +83,10 @@ render tiles_ZM "49.7857 13.3106 49.7167 13.4198" 13 18 "../../Devel/mapnik/my_s
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.318619,48.902192,14.628983,49.063519" false
 render tiles_PNK "48.99349 14.43839 48.94335 14.53418" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ceske Budejovice"
 
-import_data "http://www.overpass-api.de/api/xapi?map?bbox=18.043671,49.704944,18.48999,49.946802" false
+import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.836252,49.744629,18.615067,49.946802" false
 render tiles_PNK "49.8776 18.1364 49.7615 18.3427" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ostrava"
+render tiles_PNK "49.982839 17.827669 49.892611 17.974083" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Opava"
+render tiles_PNK "49.899683 18.471399 49.809455 18.617813" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Karviná"
 
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.023087,49.400612,17.557279,49.676623" false
 render tiles_PNK "49.6204 17.2013 49.5658 17.3098" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Olomouc"
@@ -113,6 +115,13 @@ render tiles_PNK "49.4239 15.5491 49.3792 15.6227" 14 18 "../../Devel/mapnik/my_
 
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.346039,49.004547,17.585335,49.131633" false
 render tiles_PNK "49.0933 17.4101 49.0536 17.4976" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Uherske Hradiste"
+
+import_data "http://www.overpass-api.de/api/xapi?map?bbox=17.433191,49.138142,17.780106,49.287525" false
+render tiles_PNK "49.25665 17.565713 49.191534 17.737534" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Zlin"
+render tiles_PNK "49.23197 17.468896 49.154748 17.600891" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Otrokovice"
+
+import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.812952,49.034361,15.196945,49.248445" false
+render tiles_PNK "49.160514 14.974313 49.124763 15.035583" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Jindrichuv hradec"
 
 df -h
 date
