@@ -70,8 +70,8 @@ fi
 
 #render Plzen
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=12.936401,49.45295,13.914185,49.967123" false
-render tiles_PNK "49.7857 13.3106 49.7167 13.4198" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Plzen"
-render tiles_ZM "49.7857 13.3106 49.7167 13.4198" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Plzen"
+render tiles_PNK "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Plzen"
+render tiles_ZM "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Plzen"
 
 #
 #render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" "CR"
