@@ -73,13 +73,13 @@ import_data "http://www.overpass-api.de/api/xapi?map?bbox=12.936401,49.45295,13.
 render tiles_PNK "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Plzen"
 render tiles_ZM "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Plzen"
 
-#
+
+#import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" true "-r pbf"
 #render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" "CR"
-#
-##render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
-#
-##render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
-#
+#render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
+#render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
+
+
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.318619,48.902192,14.628983,49.063519" false
 render tiles_PNK "48.99349 14.43839 48.94335 14.53418" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ceske Budejovice"
 
