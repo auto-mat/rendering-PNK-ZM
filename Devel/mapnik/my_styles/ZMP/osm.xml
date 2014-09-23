@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">2</Parameter>
   <Parameter name="id"><![CDATA[petr]]></Parameter>
-  <Parameter name="_updated">1405773104000</Parameter>
+  <Parameter name="_updated">1406042905000</Parameter>
   <Parameter name="name"><![CDATA[Greenmap]]></Parameter>
   <Parameter name="description"><![CDATA[Greenmap style]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -371,7 +371,7 @@
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'natural_scrub')</Filter>
     <PolygonSymbolizer fill="#abc491" />
-    <PolygonPatternSymbolizer file="symbols/scrub.png" opacity="0.3" />
+    <PolygonPatternSymbolizer file="symbols/scrub.png" opacity="0" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
@@ -438,12 +438,12 @@
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <Filter>([feature] = 'landuse_railway')</Filter>
-    <PolygonSymbolizer fill="#d0d0d0" />
+    <PolygonSymbolizer fill="#d3d3d3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <Filter>([feature] = 'landuse_industrial')</Filter>
-    <PolygonSymbolizer fill="#d0d0d0" />
+    <PolygonSymbolizer fill="#d3d3d3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
@@ -510,7 +510,7 @@
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <Filter>([feature] = 'tourism_zoo')</Filter>
-    <PolygonPatternSymbolizer file="symbols/zoo.png" opacity="0.3" />
+    <PolygonPatternSymbolizer file="symbols/zoo.png" opacity="0" />
     <PolygonSymbolizer fill="#abc491" />
   </Rule>
   <Rule>
@@ -567,13 +567,13 @@
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <Filter>([feature] = 'landuse_orchard')</Filter>
     <PolygonSymbolizer fill="#abc491" />
-    <PolygonPatternSymbolizer opacity="0.3" file="symbols/orchard.png" />
+    <PolygonPatternSymbolizer opacity="0" file="symbols/orchard.png" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <Filter>([feature] = 'landuse_vineyard')</Filter>
     <PolygonSymbolizer fill="#abc491" />
-    <PolygonPatternSymbolizer file="symbols/vineyard.png" opacity="0.3" />
+    <PolygonPatternSymbolizer file="symbols/vineyard.png" opacity="0" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
@@ -2503,7 +2503,7 @@ case when leisure='pitch' then 2
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([building] != '') and ([amenity] = 'public_building')</Filter>
     <PolygonSymbolizer fill="#7c7c7c" fill-opacity="0.9" clip="false" />
-    <LineSymbolizer stroke="#330066" stroke-width="0.2" />
+    <LineSymbolizer stroke-width="0.5" stroke="#330066" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -2690,24 +2690,24 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_miniature')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail') and ([tunnel] != 'yes')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail') and ([tunnel] != 'yes')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail') and ([tunnel] != 'yes')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
@@ -2839,70 +2839,70 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_monorail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_monorail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_monorail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_funicular')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_funicular')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_funicular')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3793,53 +3793,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -4754,53 +4754,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -5715,53 +5715,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -6676,53 +6676,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -7637,53 +7637,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -8598,53 +8598,53 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_narrow_gauge')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_light_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1.25" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.25" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([feature] = 'railway_rail')</Filter>
-    <LineSymbolizer stroke-width="0.75" stroke="#d3d3d3" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="0.75" stroke="#7c7c7c" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -9765,7 +9765,7 @@ case when leisure='pitch' then 2
 <Style name="paid_access" filter-mode="first">
   <Rule>
     <PolygonSymbolizer fill="#ffffff" fill-opacity="0.3" />
-    <PolygonPatternSymbolizer file="symbols/no_access.png" />
+    <PolygonPatternSymbolizer opacity="0" file="symbols/no_access.png" />
   </Rule>
 </Style>
 <Layer name="paid_access"
@@ -9787,7 +9787,7 @@ case when leisure='pitch' then 2
 <Style name="no_access" filter-mode="first">
   <Rule>
     <PolygonSymbolizer fill="#ffffff" fill-opacity="0.6" />
-    <PolygonPatternSymbolizer file="symbols/no_access.png" />
+    <PolygonPatternSymbolizer opacity="0" file="symbols/no_access.png" />
   </Rule>
 </Style>
 <Layer name="no_access"
@@ -10040,23 +10040,17 @@ case when leisure='pitch' then 2
 <Style name="crossings" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <Filter>([crossing] = 'traffic_signals')</Filter>
-    <PointSymbolizer file="symbols/SVG/crossing_lights.svg" placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" />
+    <PointSymbolizer file="symbols/SVG/crossing_plzen.svg" placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([crossing] = 'traffic_signals')</Filter>
-    <PointSymbolizer file="symbols/SVG/crossing_lights_small.svg" placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <PointSymbolizer file="symbols/SVG/crossing.svg" placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" />
+    <PointSymbolizer placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" file="symbols/SVG/crossing_small_plzen.svg" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <MinScaleDenominator>5000</MinScaleDenominator>
-    <PointSymbolizer placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" file="symbols/SVG/crossing_small.svg" />
+    <Filter>([crossing] = 'traffic_signals')</Filter>
+    <PointSymbolizer placement="interior" transform="rotate([angle])" allow-overlap="true" ignore-placement="true" file="symbols/SVG/crossing_small_plzen.svg" />
   </Rule>
 </Style>
 <Layer name="crossings"
@@ -11568,19 +11562,19 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <Filter>([waterway] = 'canal') and ([lock] = 'yes')</Filter>
-    <TextSymbolizer placement="point" wrap-width="20" size="9" fill="#6699cc" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer placement="point" wrap-width="20" size="9" fill="#62767f" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([waterway] = 'canal') and ([lock] = 'yes')</Filter>
-    <TextSymbolizer fontset-name="fontset-0" halo-radius="1" size="8" placement="line" fill="#6699cc" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer fontset-name="fontset-0" halo-radius="1" size="8" placement="line" fill="#62767f" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <Filter>([waterway] = 'canal') and ([lock] = 'yes')</Filter>
-    <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="9" fill="#62767f" placement="line" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -11597,34 +11591,34 @@ case when leisure='pitch' then 2
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([waterway] = 'canal')</Filter>
-    <TextSymbolizer fontset-name="fontset-0" halo-radius="1" size="8" placement="line" fill="#6699cc" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer fontset-name="fontset-0" halo-radius="1" size="8" placement="line" fill="#62767f" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([waterway] = 'canal')</Filter>
-    <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="9" fill="#62767f" placement="line" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([waterway] = 'river') and ([tunnel] = 'yes')</Filter>
-    <TextSymbolizer minimum-distance="200" size="10" fontset-name="fontset-0" placement="line" fill="#6699cc" spacing="400" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer minimum-distance="200" size="10" fontset-name="fontset-0" placement="line" fill="#62767f" spacing="400" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([waterway] = 'river') and ([tunnel] = 'yes')</Filter>
-    <TextSymbolizer minimum-distance="200" fontset-name="fontset-0" placement="line" fill="#6699cc" spacing="400" size="9" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer minimum-distance="200" fontset-name="fontset-0" placement="line" fill="#62767f" spacing="400" size="9" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([waterway] = 'river')</Filter>
-    <TextSymbolizer size="10" fontset-name="fontset-0" placement="line" fill="#6699cc" spacing="400" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="10" fontset-name="fontset-0" placement="line" fill="#62767f" spacing="400" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([waterway] = 'river')</Filter>
-    <TextSymbolizer fontset-name="fontset-0" placement="line" fill="#6699cc" spacing="400" size="9" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer fontset-name="fontset-0" placement="line" fill="#62767f" spacing="400" size="9" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -11640,17 +11634,17 @@ case when leisure='pitch' then 2
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([waterway] = 'ditch')</Filter>
-    <TextSymbolizer fontset-name="fontset-0" size="8" fill="#6699cc" spacing="600" placement="line" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer fontset-name="fontset-0" size="8" fill="#62767f" spacing="600" placement="line" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([waterway] = 'drain')</Filter>
-    <TextSymbolizer fontset-name="fontset-0" size="8" fill="#6699cc" spacing="600" placement="line" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer fontset-name="fontset-0" size="8" fill="#62767f" spacing="600" placement="line" halo-radius="1" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([waterway] = 'stream')</Filter>
-    <TextSymbolizer size="8" fontset-name="fontset-0" fill="#6699cc" halo-radius="1" spacing="600" placement="line" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="8" fontset-name="fontset-0" fill="#62767f" halo-radius="1" spacing="600" placement="line" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Layer name="water-lines-text"
