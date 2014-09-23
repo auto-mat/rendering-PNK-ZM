@@ -27,6 +27,7 @@
 <FontSet name="fontset-2">
   <Font face-name="DejaVu Sans Bold"/>
 </FontSet>
+<!--
 <Style name="world" filter-mode="first">
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
@@ -88,6 +89,7 @@
        <Parameter name="type"><![CDATA[shape]]></Parameter>
     </Datasource>
   </Layer>
+-->
 
 <Style name="landcover" filter-mode="first">
   <Rule>
@@ -657,7 +659,7 @@ case when religion in ('christian','jewish') then religion else 'INT-generic'::t
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -684,7 +686,7 @@ where man_made='cutline'
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -728,7 +730,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -768,7 +770,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -804,7 +806,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -898,7 +900,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -927,7 +929,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -961,7 +963,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1252,7 +1254,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1277,7 +1279,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1301,7 +1303,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1320,7 +1322,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1386,7 +1388,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1406,7 +1408,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1419,7 +1421,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1448,7 +1450,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1504,7 +1506,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1533,7 +1535,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1557,7 +1559,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1581,7 +1583,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1621,7 +1623,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1656,7 +1658,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1690,7 +1692,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1732,7 +1734,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1756,7 +1758,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1858,7 +1860,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -1932,7 +1934,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -2392,7 +2394,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -2477,7 +2479,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -2494,7 +2496,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -2545,7 +2547,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3253,7 +3255,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3279,7 +3281,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="id"><![CDATA[tree-rows]]></Parameter>
        <Parameter name="project"><![CDATA[openstreetmap-carto]]></Parameter>
@@ -3385,7 +3387,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3403,7 +3405,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3422,7 +3424,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3482,7 +3484,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3683,7 +3685,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -3709,7 +3711,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -4631,7 +4633,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -4650,7 +4652,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -4670,7 +4672,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -5592,7 +5594,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -5611,7 +5613,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -5631,7 +5633,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -6553,7 +6555,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -6572,7 +6574,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -6592,7 +6594,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -7514,7 +7516,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -7533,7 +7535,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -7553,7 +7555,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -8475,7 +8477,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -8494,7 +8496,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -8514,7 +8516,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9436,7 +9438,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9455,7 +9457,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9475,7 +9477,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9523,7 +9525,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1300051.8,6136675.03,2119615.13,6644833.49]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9556,7 +9558,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9592,7 +9594,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1430172.81630736,6212990.26609151,2061196.48911139,6582749.4260283]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
        <Parameter name="id"><![CDATA[bus_sites_lines]]></Parameter>
        <Parameter name="project"><![CDATA[openstreetmap-carto]]></Parameter>
        <Parameter name="srs"><![CDATA[+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over]]></Parameter>
@@ -9631,7 +9633,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1430172.81630736,6212990.26609151,2061196.48911139,6582749.4260283]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9657,7 +9659,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9674,7 +9676,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9691,7 +9693,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9708,7 +9710,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9721,7 +9723,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9734,7 +9736,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9752,6 +9754,7 @@ case when leisure='pitch' then 2
     <TextSymbolizer size="8" fill="#808080" fontset-name="fontset-0" halo-radius="1" ><![CDATA[[NAME]]]></TextSymbolizer>
   </Rule>
 </Style>
+<!--
 <Layer name="nepopulated"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>nepopulated</StyleName>
@@ -9761,6 +9764,7 @@ case when leisure='pitch' then 2
        <Parameter name="encoding"><![CDATA[windows-1252]]></Parameter>
     </Datasource>
   </Layer>
+-->
 
 <Style name="paid_access" filter-mode="first">
   <Rule>
@@ -9780,7 +9784,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9805,7 +9809,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9853,7 +9857,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9886,7 +9890,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -9943,7 +9947,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10033,7 +10037,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10087,7 +10091,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1345076.53514558,6160528.1876544,2299900.26467981,7252806.71510139]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10322,7 +10326,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10346,7 +10350,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1430172.81630736,6212990.26609151,2061196.48911139,6582749.4260283]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10377,7 +10381,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1430172.81630736,6212990.26609151,2061196.48911139,6582749.4260283]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10411,7 +10415,7 @@ case when leisure='pitch' then 2
        <Parameter name="geometry_field"><![CDATA[]]></Parameter>
        <Parameter name="extent_cache"><![CDATA[auto]]></Parameter>
        <Parameter name="extent"><![CDATA[1430172.81630736,6212990.26609151,2061196.48911139,6582749.4260283]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10626,7 +10630,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10782,7 +10786,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -10938,7 +10942,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11014,7 +11018,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11088,7 +11092,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11101,7 +11105,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11114,7 +11118,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11132,7 +11136,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11148,7 +11152,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11167,7 +11171,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11306,7 +11310,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11376,7 +11380,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11444,7 +11448,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11474,7 +11478,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11493,7 +11497,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11515,7 +11519,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11537,7 +11541,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11661,7 +11665,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11713,7 +11717,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
@@ -11739,7 +11743,7 @@ case when leisure='pitch' then 2
        <Parameter name="extent"><![CDATA[-20037508,-19929239,20037508,19929239]]></Parameter>
        <Parameter name="key_field"><![CDATA[]]></Parameter>
        <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
-       <Parameter name="dbname"><![CDATA[gis]]></Parameter>
+       <Parameter name="dbname"><![CDATA[gisczech]]></Parameter>
     </Datasource>
   </Layer>
 
