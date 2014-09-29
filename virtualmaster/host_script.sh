@@ -97,9 +97,6 @@ import_data "http://www.overpass-api.de/api/xapi?map?bbox=16.383362,49.062169,16
 render tiles_PNK "49.3 16.45 49.1 16.8" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Brno"
 render tiles_ZM "49.3 16.45 49.1 16.8" 14 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Brno"
 
-import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.103699,50.7182,14.315186,50.825024" false
-render tiles_PNK "50.7962 14.1549 50.7254 14.2647" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Decin"
-
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=15.345154,49.865432,16.254272,50.385757" false
 render tiles_PNK "50.2349 15.7841 50.1709 15.8818 " 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Hradec Kralove"
 render tiles_PNK "50.068 15.726 50.004 15.824" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Pardubice"
@@ -108,8 +105,9 @@ import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.906387,50.649896,15
 render tiles_PNK "50.7964 15.0097 50.7323 15.1074" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Liberec"
 render tiles_PNK "50.7506 15.1435 50.713 15.1991" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Jablonec nad Nisou"
 
-import_data "http://www.overpass-api.de/api/xapi?map?bbox=13.929634,50.596968,14.177856,50.724503" false
+import_data "http://www.overpass-api.de/api/xapi?map?bbox=13.857828,50.545204,14.417946,50.87902" false
 render tiles_PNK "50.6904 13.9839 50.6463 14.0891" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Usti nad Labem"
+render tiles_PNK "50.7962 14.1549 50.7254 14.2647" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Decin"
 
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=15.457764,49.335862,15.696716,49.461876" false
 render tiles_PNK "49.4239 15.5491 49.3792 15.6227" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Jihlava"
