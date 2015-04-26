@@ -53,11 +53,18 @@ function render {
    echo "parameters were $1 $2 $3 $4 $5 $6"
 }
 
+function pack {
+   folder=$1
+   tar -cjf $folder.tar.bz2 $folder
+   rsync -avW -e ssh $folder.tar.bz2 tiles@auto-mat.cz:/packages
+}
+
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318" false
 #render tiles_ZM "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/ZM/osm.xml" "CR"
-#render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
 render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
 render tiles_PNK "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
+pack tiles_PNK
+render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
 
 rsync -avW -e ssh tiles_PNK tiles@auto-mat.cz:/tiles_PNK_Praha
 
@@ -72,7 +79,9 @@ fi
 import_data "http://www.overpass-api.de/api/xapi?map?bbox=12.936401,49.45295,13.914185,49.967123" false
 render tiles_PNK "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Plzen"
 render tiles_ZM "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Plzen"
-render tiles_ZMP "49.7902 13.2784 49.6792 13.4684" 13 18 "../../Devel/mapnik/my_styles/ZMP/osm.xml" "Plzen"
+render tiles_ZMP "49.78547591002171 13.304100036621094 49.70139134233472 13.4417724609375" 12 18 "../../Devel/mapnik/my_styles/ZMP/osm.xml" "Plzen"
+pack tiles_ZMP
+render tiles_ZMP "49.89 13.00 49.59 13.71" 12 18 "../../Devel/mapnik/my_styles/ZMP/osm.xml" "Plzen"
 
 
 #import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" true "-r pbf"
