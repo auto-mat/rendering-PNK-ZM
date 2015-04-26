@@ -259,7 +259,8 @@
        on p3.osm_id = p4.osm_id
        where ((p1.highway='bus_stop' or p1.amenity = 'bus_stop') and (p4.highway='bus_stop' or p4.amenity = 'bus_stop'))
        and p4.rel_id = p2.rel_id
-       group by p4.rel_id, p4.name)
+       group by p4.rel_id, p4.name
+       limit 1)
     
     ) as way,
          p1.highway, p1.railway, p1.amenity
@@ -284,7 +285,8 @@
        on p3.osm_id = p4.osm_id
        where ((p1.railway='tram_stop') and (p4.railway='tram_stop'))
        and p4.rel_id = p2.rel_id
-       group by p4.rel_id, p4.name)
+       group by p4.rel_id, p4.name
+       limit 1)
     
     ) as way,
          p1.highway, p1.railway, p1.amenity
