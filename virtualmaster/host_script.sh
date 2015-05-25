@@ -66,8 +66,9 @@ import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" 
 render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
 render tiles_PNK "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
 pack tiles_PNK
-render tiles_PNK "50.17 14.20 49.96 14.65" 13 19 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
+render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
 render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
+
 render tiles_PNK "50.019223 14.613269 49.967256 14.707519" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ricany"
 
 if $render_BW; then
@@ -88,9 +89,8 @@ render tiles_ZMP "49.89 13.00 49.59 13.71" 12 19 "../../Devel/mapnik/my_styles/Z
 rm tiles_ZMP -r
 
 #import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" true "-r pbf"
-#render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" "CR"
-#render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
-#render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
+render tiles_PNK "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/MTB-main.xml" "CR"
+render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
 
 
 #import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.318619,48.902192,14.628983,49.063519" false
