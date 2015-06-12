@@ -146,6 +146,9 @@ render tiles_PNK "50.379511 16.103021 50.323605 16.190663" 14 18 "../../Devel/ma
 render tiles_PNK "49.621247 17.963927 49.572271 18.051998" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Novy Jicin"
 render tiles_PNK "48.913013 15.968297 48.800388 16.158374" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Znojmo"
 
+render tiles_PNK "50.464303,14.856777,50.376668,14.964409" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mladá boleslav"
+render tiles_PNK "50.554897,14.033146,50.500993,14.184036" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Litomerice, Lovosice, Terezin"
+
 df -h
 date
 
