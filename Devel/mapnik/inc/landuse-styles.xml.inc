@@ -2,13 +2,7 @@
 <Style name="cliffs">
     <Rule name="útes, skála">
             <Filter>([natural]='cliff')</Filter>
-            &minscale_zoom14;
-            &maxscale_zoom13;
-            <LinePatternSymbolizer file="&symbols-path;cliff.png"></LinePatternSymbolizer>
-    </Rule>
-    <Rule name="útes, skála">
-            <Filter>([natural]='cliff')</Filter>
-            &maxscale_zoom15;
+            &maxscale_zoom17;
             <LinePatternSymbolizer file="&symbols-path;cliff2.png"></LinePatternSymbolizer>
     </Rule>
     <Rule name="násep">
@@ -29,7 +23,7 @@
             <Filter>([leisure]='playground')</Filter>
             &maxscale_zoom13;
             <PolygonSymbolizer
-                fill="rgb(204,255,241)"
+                fill="&color_playground;"
             />
             <LineSymbolizer
                 stroke="rgb(102,102,102)"
@@ -69,42 +63,52 @@
             &minscale_zoom12;
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(171,223,150)"
+                fill="&color_natural_reserve;"
             />
     </Rule>
     <Rule name="vinice">
             <Filter>([landuse]='vineyard')</Filter>
             &minscale_zoom14;
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_vineyard;"
+            />
     </Rule>
     <Rule name="vinice">
             <Filter>([landuse]='vineyard')</Filter>
             &maxscale_zoom15;
-            <PolygonPatternSymbolizer file="&symbols-path;vineyard.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_vineyard;"
+            />
     </Rule>
     <Rule name="ovocný sad">
             <Filter>([landuse]='orchard')</Filter>
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;orchard.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_orchard;"
+            />
     </Rule>
     <Rule name="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_natural_reserve;"
+            />
     </Rule>
     <Rule name="přírodní rezervace">
             <Filter>([leisure]='nature_reserve')</Filter>
             &maxscale_zoom14;
-            <PolygonPatternSymbolizer file="&symbols-path;nature_reserve2.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_natural_reserve;"
+            />
     </Rule>
     <Rule name="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
             &minscale_zoom14;
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(170,203,175)"
+                fill="&color_cemetery;"
             />
     </Rule>
     <Rule name="zastavěná plocha">
@@ -115,6 +119,7 @@
                 fill="rgb(221,221,221)"
             />
     </Rule>
+    <!--
     <Rule name="vojenský objekt">
             <Filter>([military]='barracks')</Filter>
             &minscale_zoom18;
@@ -134,10 +139,13 @@
               stroke-opacity="0.329"
             />
     </Rule>
+    -->
     <Rule name="hřbitov">
             <Filter>(([landuse]='cemetery') or ([amenity]='grave_yard'))</Filter>
             &maxscale_zoom14;
-            <PolygonPatternSymbolizer file="&symbols-path;grave_yard.png"></PolygonPatternSymbolizer>
+            <PolygonSymbolizer
+                fill="&color_cemetery;"
+            />
     </Rule>
     <Rule name="louka">
             <Filter>(([landuse]='meadow') or ([landuse]='grass') or ([natural]='fell'))</Filter>
@@ -177,7 +185,7 @@
             <Filter>([landuse]='allotments')</Filter>
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(200,176,132)"
+                fill="&color_allotments;"
             />
     </Rule>
     <Rule name="les">
@@ -219,7 +227,7 @@
             <Filter>(([landuse]='industrial') or ([landuse]='railway'))</Filter>
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(223,209,214)"
+                fill="&color_industrial;"
             />
     </Rule>
     <Rule name="transformační stanice">
@@ -248,7 +256,7 @@
             <Filter>(((([landuse]='brownfield') or ([landuse]='landfill')) or ([landuse]='greenfield')) or ([landuse]='construction'))</Filter>
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(157,157,108)"
+                fill="&color_construction;"
             />
     </Rule>
     <Rule name="škola">
