@@ -64,8 +64,8 @@ import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" 
 render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
 render tiles_PNK "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
 pack tiles_PNK
-render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
-render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
+#render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
+#render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
 
 render tiles_PNK "50.019223 14.613269 49.967256 14.707519" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ricany"
 
