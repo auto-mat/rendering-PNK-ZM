@@ -410,7 +410,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom12;
             &maxscale_zoom12;
             <LineSymbolizer
@@ -421,7 +421,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer
@@ -454,7 +454,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -487,7 +487,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -542,7 +542,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not ([tunnel]='yes'))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not ([tunnel]='yes'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer
@@ -1468,7 +1468,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom9;
             &maxscale_zoom9;
             <LineSymbolizer
@@ -1479,7 +1479,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom12;
             &maxscale_zoom10;
             <LineSymbolizer
@@ -1490,7 +1490,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer
@@ -1501,7 +1501,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -1512,7 +1512,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -1523,7 +1523,7 @@
             />
     </Rule>
     <Rule name="silnice 3. třídy">
-            <Filter>(([highway]='tertiary') and not (([tunnel]='yes')))</Filter>
+            <Filter>(([highway]='tertiary') or ([highway]='tertiary_link') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer
@@ -2885,7 +2885,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -2893,7 +2893,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -2901,7 +2901,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer
@@ -3029,7 +3029,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -3040,7 +3040,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -3051,7 +3051,7 @@
             />
     </Rule>
     <Rule name="most na silnici 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer
@@ -3626,7 +3626,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer
@@ -3636,7 +3636,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -3686,7 +3686,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -3736,7 +3736,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3. třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -3900,7 +3900,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom9;
             &maxscale_zoom9;
             <LineSymbolizer
@@ -3911,7 +3911,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom12;
             &maxscale_zoom10;
             <LineSymbolizer
@@ -3922,7 +3922,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
             <LineSymbolizer
@@ -3933,7 +3933,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
             <LineSymbolizer
@@ -3988,7 +3988,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
             <LineSymbolizer
@@ -3999,7 +3999,7 @@
             />
     </Rule>
     <Rule name="tunel silnice 3.třídy">
-            <Filter>([highway]='tertiary')</Filter>
+            <Filter>([highway]='tertiary') or ([highway]='tertiary_link')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <LineSymbolizer

@@ -14,10 +14,10 @@
 <!ENTITY halo_radius_cycleway_proposed '1'>
 <!ENTITY min_distance_cycleway_text '5'>
 <!ENTITY spacing_cycleway_text '200'>
-<!ENTITY color_cycleway '#760076'>
+<!ENTITY color_cycleway '#761D76'>
 <!ENTITY color_cycleway_nobicycle '&color_cycleway;'>
-<!ENTITY color_cycleway_traffic '#c300c3'>
-<!ENTITY color_cycleway_heavy_traffic '#ff7db9'>
+<!ENTITY color_cycleway_traffic '#C353A7'>
+<!ENTITY color_cycleway_heavy_traffic '#FFB1B1'>
 <!ENTITY color_mtb_track 'rgb(0, 100, 0)'>
 
 <!ENTITY text_max_angle '10'>
@@ -29,8 +29,8 @@
 <!ENTITY color_kct_green 'rgb(0,221,0)'>
 <!ENTITY color_kct_international 'rgb(238,0,0)'>
 
-<!ENTITY color_footway "#ffffc0">
-<!ENTITY color_footway_tunnel "#ffffc0">
+<!ENTITY color_footway "#ECECB2">
+<!ENTITY color_footway_tunnel "#ECECB2">
 <!ENTITY color_footway_casing "rgb(128,128,128)">
 <!ENTITY color_steps "&color_footway;">
 <!ENTITY color_steps_background "rgb(128,128,128)">
@@ -71,9 +71,9 @@
 <!ENTITY color_road_tunnel '#ffffff'>
 <!ENTITY color_residential_tunnel 'rgb(255,255,255)'>
 <!ENTITY color_tertiary_tunnel '#ffeddd'>
-<!ENTITY color_secondary_tunnel '#ffeddd'>
-<!ENTITY color_primary_tunnel '#ffeddd'>
-<!ENTITY color_motorway_tunnel '#ffeddd'>
+<!ENTITY color_secondary_tunnel '#E7E2D9'>
+<!ENTITY color_primary_tunnel '#E2DBCC'>
+<!ENTITY color_motorway_tunnel '#CBCBCC'>
 
 
 <!ENTITY color_pedestrian_background 'rgb(128,128,128)'>
@@ -128,23 +128,33 @@
 
 <!ENTITY color_attraction 'rgb(102,0,51)'>
 
-<!ENTITY color_forest '#cdf0b5'>
-<!ENTITY color_wood '#d0dec8'>
-<!ENTITY color_grass 'rgb(207,236,168)'>
-<!ENTITY color_park 'rgb(182,253,182)'>
+<!ENTITY color_industrial '#E5E5E5'>
+<!ENTITY color_construction '&color_industrial;'>
 
-<!--
-<!ENTITY color_building 'rgb(188,169,169)'>
--->
-<!ENTITY color_building '#704141'>
+
+<!ENTITY color_green '#BEFFBE'>
+<!ENTITY color_forest '#CBFFCB'>
+<!ENTITY color_allotments '&color_green;'>
+<!ENTITY color_playground '&color_green;'>
+<!ENTITY color_wood '&color_green;'>
+<!ENTITY color_grass '&color_green;'>
+<!ENTITY color_park '&color_green;'>
+<!ENTITY color_cemetery '&color_green;'>
+<!ENTITY color_natural_reserve '&color_green;'>
+<!ENTITY color_orchard '&color_green;'>
+<!ENTITY color_vineyard '&color_green;'>
+
+<!ENTITY color_landuse_residential 'rgb(220,220,220)'>
+<!ENTITY color_building '#909090'>
+<!ENTITY color_leisure_track '#B6B6B6'>
 <!ENTITY opacity_building '0.5'>
 
 <!ENTITY color_placenames_text 'rgb(0,0,0)'>
 <!ENTITY color_countries_text 'rgb(157,108,157)'>
 
 <!ENTITY color_glacier 'rgb(153,204,255)'>
-<!ENTITY color_water_fill 'rgb(114,155,249)'>
-<!ENTITY color_water_stroke 'rgb(80,109,177)'>
+<!ENTITY color_water_fill '#ABC2F9'>
+<!ENTITY color_water_stroke '#729BF9'>
 <!ENTITY color_island 'rgb(242,239,233)'>
 <!ENTITY color_water_weir 'rgb(170,170,170)'>
 <!ENTITY color_water_fill_tunnel 'rgb(255,255,255)'>

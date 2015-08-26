@@ -12,12 +12,12 @@
     <Rule name="!stínování reliéfu">
       &maxscale_zoom13;
       &minscale_zoom14;
-      <RasterSymbolizer opacity="0.4" scaling="bilinear8" comp-op="multiply"/>
+      <RasterSymbolizer opacity="0.4" scaling="bilinear" comp-op="multiply"/>
     </Rule>
     <Rule name="!stínování reliéfu">
       &maxscale_zoom15;
       &minscale_zoom18;
-      <RasterSymbolizer opacity="0.35" scaling="bilinear8" comp-op="multiply"/>
+      <RasterSymbolizer opacity="0.35" scaling="bilinear" comp-op="multiply"/>
     </Rule>
 </Style>
 <!-- Style for hypsometry. -->

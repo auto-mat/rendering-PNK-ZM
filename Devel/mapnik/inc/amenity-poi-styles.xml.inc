@@ -59,10 +59,10 @@
             <Filter>([leisure]='track')</Filter>
             &maxscale_zoom10;
             <PolygonSymbolizer
-                fill="rgb(116,220,186)"
+                fill="&color_leisure_track;"
             />
             <LineSymbolizer
-                stroke="rgb(136,136,136)"
+                stroke="&color_leisure_track;"
                 stroke-width="0.5"
             />
     </Rule>
@@ -478,12 +478,12 @@
             &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bollard.png"></PointSymbolizer>
     </Rule>
-<!--
     <Rule name="cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
+<!--
     <Rule name="zřícenina">
             <Filter>(([historic]='ruins') or ([historic]='castle' and [ruins]='yes'))</Filter>
             &maxscale_zoom13;
