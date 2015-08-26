@@ -144,7 +144,9 @@
 <!ENTITY color_orchard '&color_green;'>
 <!ENTITY color_vineyard '&color_green;'>
 
-<!ENTITY color_building '#B2B2B2'>
+<!ENTITY color_landuse_residential 'rgb(220,220,220)'>
+<!ENTITY color_building '#909090'>
+<!ENTITY color_leisure_track '#B6B6B6'>
 <!ENTITY opacity_building '0.5'>
 
 <!ENTITY color_placenames_text 'rgb(0,0,0)'>

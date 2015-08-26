@@ -116,7 +116,7 @@
             &minscale_zoom18;
             &maxscale_zoom11;
             <PolygonSymbolizer
-                fill="rgb(221,221,221)"
+                fill="&color_landuse_residential;"
             />
     </Rule>
     <!--
@@ -209,6 +209,7 @@
                 fill="rgb(221,191,146)"
             />
     </Rule>
+    <!--
     <Rule name="zemědělská plocha">
             <Filter>(([landuse]='farm') or ([landuse]='farmland'))</Filter>
             &maxscale_zoom11;
@@ -216,6 +217,7 @@
                 fill="rgb(234,216,189)"
             />
     </Rule>
+    -->
     <Rule name="">
             <Filter>([landuse]='retail')</Filter>
             &maxscale_zoom11;
@@ -259,6 +261,7 @@
                 fill="&color_construction;"
             />
     </Rule>
+    <!--
     <Rule name="škola">
             <Filter>((((([amenity]='university') or ([amenity]='college')) or ([amenity]='school')) or ([amenity]='hospital')) or ([amenity]='kindergarten'))</Filter>
             &maxscale_zoom11;
@@ -274,6 +277,7 @@
                 stroke-width="0.3"
             />
     </Rule>
+    -->
     <Rule name="parkoviště">
             <Filter>([amenity]='parking')</Filter>
             &maxscale_zoom11;
