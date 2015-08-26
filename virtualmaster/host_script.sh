@@ -6,8 +6,6 @@ git pull
 
 export PYTHONIOENCODING=utf-8
 
-export render_BW=false
-
 function import_data {
    osm_url=$1
    check_md5=$2
@@ -70,13 +68,6 @@ render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_style
 render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
 
 render tiles_PNK "50.019223 14.613269 49.967256 14.707519" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ricany"
-
-if $render_BW; then
-   ./BW.sh
-   rsync -avW -e ssh tiles_PNK_BW tiles@auto-mat.cz:/
-   echo "Black&white script finished at `date`"
-   rm tiles_PNK_BW -R
-fi
 
 #render Plzen
 #import_data "http://www.overpass-api.de/api/xapi?map?bbox=12.936401,49.45295,13.914185,49.967123" false
