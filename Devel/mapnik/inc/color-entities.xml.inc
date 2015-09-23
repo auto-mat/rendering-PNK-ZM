@@ -132,8 +132,8 @@
 <!ENTITY color_construction '&color_industrial;'>
 
 
-<!ENTITY color_green '#BEFFBE'>
-<!ENTITY color_forest '#CBFFCB'>
+<!ENTITY color_green '#DEFFDE'>
+<!ENTITY color_forest '#BEFFBE'>
 <!ENTITY color_allotments '&color_green;'>
 <!ENTITY color_playground '&color_green;'>
 <!ENTITY color_wood '&color_green;'>
