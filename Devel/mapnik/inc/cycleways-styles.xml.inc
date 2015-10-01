@@ -1293,12 +1293,12 @@
     <Filter>([access_mode]='destination')</Filter>
     &maxscale_zoom13;
     &minscale_zoom18;
-    <LinePatternSymbolizer file="../symbols/SVG/nobicycle-destination.svg"/>
+    <LinePatternSymbolizer file="../symbols/nobicycle-destination.png"/>
   </Rule>
   <Rule name="zákaz vjezdu cyklistů">
     <Filter>([access_mode]='no_access')</Filter>
     &maxscale_zoom13;
     &minscale_zoom18;
-    <LinePatternSymbolizer file="../symbols/SVG/nobicycle.svg"/>
+    <LinePatternSymbolizer file="../symbols/nobicycle.png"/>
   </Rule>
 </Style>
