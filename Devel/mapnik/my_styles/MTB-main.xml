@@ -1496,10 +1496,15 @@ admin 8 - uzemi samostatnych obci
 
 <!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
 <Layer name="planet roads text osm" srs="&srs900913;">
-<StyleName>roads-text</StyleName>
+    <StyleName>roads-text</StyleName>
+    <StyleName>cycleway-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
+      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,
+       case when ref in ('A1','A2') then 'yes'::text
+       when ref in ('PAN') then ''::text else ncn end as ncn,
+       case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
+       case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn,
        case when short_name is not null then short_name else name end as name,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
        case when (NOT EXISTS (SELECT
@@ -1507,13 +1512,17 @@ admin 8 - uzemi samostatnych obci
                planet_osm_line.osm_id))
                then 'no'::text else 'yes'::text end as cycleway
        from planet_osm_line
-       where waterway IS NULL
-         and leisure IS NULL
-         and landuse IS NULL
-         and admin_level IS NULL
-         and (name is not null or ref is not null)
-         and not highway='construction'
-         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+       where
+            (waterway IS NULL
+            and leisure IS NULL
+            and landuse IS NULL
+            and admin_level IS NULL
+            and (name is not null or ref is not null)
+            and not highway='construction'
+            and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true')))
+         or
+            ((ref is not null and (lcn is not null or ncn is not null or rcn is not null))
+            and (operator is null or operator not in ('CZ:binko')))
       ) as roads
       </Parameter>
       &datasource-settings;
@@ -1636,24 +1645,6 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 
-<Layer name="cycleway-text" srs="&srs900913;">
-    <StyleName>cycleway-text</StyleName>
-    <Datasource>
-        <Parameter name="table">
-        (select way, ref, name, state,
-        case when ref in ('A1','A2') then 'yes'::text
-        when ref in ('PAN') then ''::text else ncn end as ncn,
-        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
-        case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn
-        from planet_osm_line
-        where (ref is not null and (lcn is not null or ncn is not null or rcn is not null))
-        and (operator is null or operator not in ('CZ:binko'))
-        ) as cycleway_text
-        </Parameter>
-        &datasource-settings;
-    </Datasource>
-</Layer>
-
 <Style name="main_stations">
     <Rule>
       &maxscale_zoom15;
@@ -1664,17 +1655,17 @@ admin 8 - uzemi samostatnych obci
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
