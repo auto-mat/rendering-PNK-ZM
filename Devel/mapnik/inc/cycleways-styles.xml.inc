@@ -327,7 +327,7 @@
   </Rule>
   <Rule>
     <Filter>([rcn]!='' and not [state]!='')</Filter>
-    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset-name="bold-fonts" size="9" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text;" placement="line" halo-radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" placements="N,S,15,10,8">' ' + [ref]+ ' '</TextSymbolizer>
+    <TextSymbolizer name="'  ' + [ref]+ '  '" fontset-name="bold-fonts" size="9" fill="&color_ncn_text;" halo-fill="&color_cycleway_background_text;" placement="line" halo-radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" >' ' + [ref]+ ' '</TextSymbolizer>
   </Rule>
   <Rule>
     <Filter>([lcn]!='' and not [state]!='')</Filter>
