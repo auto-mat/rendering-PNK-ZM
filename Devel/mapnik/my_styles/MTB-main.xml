@@ -1496,8 +1496,8 @@ admin 8 - uzemi samostatnych obci
 
 <!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
 <Layer name="planet roads text osm" srs="&srs900913;">
-    <StyleName>roads-text</StyleName>
     <StyleName>cycleway-text</StyleName>
+    <StyleName>roads-text</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,
