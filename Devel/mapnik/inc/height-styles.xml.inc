@@ -29,54 +29,55 @@
     </Rule>
 </Style>
 <!-- Contour lines styles. -->
-<Style name="contours5">
+<Style name="contours">
+    <Rule name="vrstevnice po 1 metrech">
+      <Filter>[interval]='1'</Filter>
+      &maxscale_zoom18;
+      <LineSymbolizer
+        stroke="rgb(170,71,30)"
+        stroke-width="0.15"
+        smooth="0.5"
+      />
+    </Rule>
     <Rule name="vrstevnice po 5 metrech">
+      <Filter>[interval]='5'</Filter>
       &maxscale_zoom15;
-      &minscale_zoom18;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
         smooth="0.5"
       />
     </Rule>
-</Style>
-<Style name="contours10">
     <Rule name="vrstevnice po 10 metrech">
+      <Filter>[interval]='10'</Filter>
       &maxscale_zoom13;
-      &minscale_zoom18;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
         smooth="0.5"
       />
     </Rule>
-</Style>
-<Style name="contours20">
     <Rule name="vrstevnice po 20 metrech">
+      <Filter>[interval]='20'</Filter>
       &maxscale_zoom12;
-      &minscale_zoom12;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
         smooth="0.5"
       />
     </Rule>
-</Style>
-<Style name="contours25">
     <Rule name="vrstevnice po 25 metrech">
+      <Filter>[interval]='25'</Filter>
       &maxscale_zoom15;
-      &minscale_zoom18;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
         smooth="0.5"
       />
     </Rule>
-</Style>
-<Style name="contours50">
     <Rule name="vrstevnice po 50 metrech">
+      <Filter>[interval]='50'</Filter>
       &maxscale_zoom11;
-      &minscale_zoom11;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.3"
@@ -84,48 +85,36 @@
       />
     </Rule>
     <Rule>
+      <Filter>[interval]='50'</Filter>
       &maxscale_zoom13;
-      &minscale_zoom14;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
         smooth="0.5"
       />
     </Rule>
-</Style>
-<Style name="contours100">
     <Rule name="vrstevnice po 100 metrech">
+      <Filter>[interval]='100'</Filter>
       &maxscale_zoom11;
-      &minscale_zoom14;
       <LineSymbolizer
         stroke="rgb(170,71,30)"
         stroke-width="0.6"
         smooth="0.5"
       />
     </Rule>
-</Style>
-
-<!-- Style for contour lines heights. -->
-<Style name="contours-text25">
     <Rule name="!popis vrstevnic po 25 metrech">
+      <Filter>[interval]='25'</Filter>
       &maxscale_zoom15;
-      &minscale_zoom18;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
     </Rule>
-</Style>
-
-<Style name="contours-text50">
     <Rule name="!popis vrstevnic po 50 metrech">
+      <Filter>[interval]='50'</Filter>
       &maxscale_zoom13;
-      &minscale_zoom14;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
     </Rule>
-</Style>
-<Style name="contours-text100">
     <Rule name="!popis vrstevnic po 100 metrech">
+      <Filter>[interval]='100'</Filter>
       &maxscale_zoom11;
-      &minscale_zoom14;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" />
+      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5" >[height]</TextSymbolizer>
     </Rule>
 </Style>
-

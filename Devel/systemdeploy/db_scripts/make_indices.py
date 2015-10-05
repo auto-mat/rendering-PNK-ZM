@@ -23,22 +23,27 @@ auxilary_cursor = connection.cursor()
 base = ['highway', 'amenity', 'waterway', 'landuse', 'leisure', 'aeroway', 'military', 'natural', 'power', 'tourism', 'railway', 'layer', 'bridge', 'barrier', 'historic', 'access', 'foot', 'bicycle', 'building', 'man_made']
 
 indices = { 
-    'contours': ['height'],
+    'contours': ['height', 'way'],
+    'contours-ipr': ['height', 'way'],
+    'contours_cropped': ['height', 'interval', 'way'],
     'planet_osm_station_points_rels': ['osm_id', 'rel_id', 'highway', 'amenity'],
     'planet_osm_station_lines_rels': ['osm_id', 'rel_id', 'highway', 'amenity'],
-    'planet_osm_point': base + ['z_order'],
-    'planet_osm_line': base + ['z_order', 'oneway', 'tunnel'],
-    'planet_osm_roads': base + ['oneway', 'tunnel'],
-    'planet_osm_polygon': base + ['z_order', 'way_area'],
+    'planet_osm_point': base + ['z_order', 'way'],
+    'planet_osm_line': base + ['z_order', 'oneway', 'tunnel', 'way'],
+    'planet_osm_roads': base + ['oneway', 'tunnel', 'way'],
+    'planet_osm_polygon': base + ['z_order', 'way_area', 'way'],
 }
 
 for index in indices:
     for amenity in indices[index]:
         table = index
+        drop_string = "drop index if exists \"%(table)s_%(amenity)s_idx\"" % {'amenity':amenity, 'table': table}
         print("drop index if exists %(table)s_%(amenity)s_idx" % {'amenity':amenity, 'table': table})
-        auxilary_cursor.execute("drop index if exists %(table)s_%(amenity)s_idx" % {'amenity':amenity, 'table': table})
-        print("create index %(table)s_%(amenity)s_idx on %(table)s (\"%(amenity)s\")" % {'amenity':amenity, 'table': table})
-        auxilary_cursor.execute("create index %(table)s_%(amenity)s_idx on %(table)s (\"%(amenity)s\")" % {'amenity':amenity, 'table': table})
+        auxilary_cursor.execute(drop_string)
+        gist = "USING gist" if amenity in ['way', 'geom'] else ""
+        create_string = "create index \"%(table)s_%(amenity)s_idx\" on \"%(table)s\" %(gist)s(\"%(amenity)s\")" % {'amenity':amenity, 'table': table, 'gist': gist}
+        print(create_string)
+        auxilary_cursor.execute(create_string)
 
 auxilary_cursor.close()
 relation_cursor.close()
