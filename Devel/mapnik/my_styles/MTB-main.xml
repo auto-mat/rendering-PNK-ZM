@@ -97,18 +97,20 @@
 <StyleName>shading</StyleName>
     <Datasource>
       <Parameter name="type">gdal</Parameter>
-      <Parameter name="file">&hgtdata;/hillshade30-masked.tif</Parameter>
+      <Parameter name="file">&hgtdata;/hillshade30.tif</Parameter>
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
+<!--
 <Layer name="hillshade-prague" status="on" srs="&srskrovak;">
-<StyleName>shading</StyleName>
+<StyleName>shading-prague</StyleName>
     <Datasource>
       <Parameter name="type">gdal</Parameter>
       <Parameter name="file">&hgtdata;/DTM1M-hillshade-krovak.tif</Parameter>
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
+-->
 <!-- vrstevnice -->
 <Layer name="contours-praha" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     <StyleName>contours</StyleName>
