@@ -134,7 +134,7 @@
     <Datasource>
        <Parameter name="table">(select way,height,interval from contours_cropped where ST_Intersects("way", !bbox!)) as "contours"</Parameter>
        <!-- use this query and store it as separate table
-       <Parameter name="table">(select ST_Difference(way, ST_GeomFromText('POLYGON((14.7168 50.2131, 14.7685 49.9636, 14.2508 49.918, 14.1965 50.1673, 14.7168 50.2131))')) as way, height, interval from
+           select ST_Difference(way, ST_GeomFromText('POLYGON((14.7168 50.2131, 14.7685 49.9636, 14.2508 49.918, 14.1965 50.1673, 14.7168 50.2131))')) as way, height, interval into contours_cropped from
              (SELECT way,height,
              case
                 when height::integer % 100 = 0  then '100'::text
@@ -144,7 +144,7 @@
                 when height::integer % 5 = 0  then '5'::text
              end as interval
           FROM "contours" WHERE
-             height::integer % 5 = 0 AND ST_Intersects("way", !bbox!)) as "cont") as "contours"</Parameter>
+             height::integer % 5 = 0) as "cont";
        -->
       &latlon-datasource-settings;
     </Datasource>
