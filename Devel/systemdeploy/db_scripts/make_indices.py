@@ -24,7 +24,7 @@ base = ['highway', 'amenity', 'waterway', 'landuse', 'leisure', 'aeroway', 'mili
 
 indices = { 
     'contours': ['height', 'way'],
-    'contours-ipr': ['height', 'way'],
+    'contours-ipr': ['elevation', 'way'],
     'contours_cropped': ['height', 'interval', 'way'],
     'planet_osm_station_points_rels': ['osm_id', 'rel_id', 'highway', 'amenity'],
     'planet_osm_station_lines_rels': ['osm_id', 'rel_id', 'highway', 'amenity'],
