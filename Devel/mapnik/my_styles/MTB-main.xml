@@ -101,56 +101,51 @@
       <Parameter name="format">tiff</Parameter>
     </Datasource>
 </Layer>
-<!-- vrstevnice po 5 metrech -->
-<Layer name="contours5" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours5</StyleName>
+<!--
+<Layer name="hillshade-prague" status="on" srs="&srskrovak;">
+<StyleName>shading-prague</StyleName>
     <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 5 = 0 AND height::integer % 10 != 0 AND height::integer % 25 != 0) as "contours5"</Parameter>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&hgtdata;/DTM1M-hillshade-krovak.tif</Parameter>
+      <Parameter name="format">tiff</Parameter>
+    </Datasource>
+</Layer>
+-->
+<!-- vrstevnice -->
+<Layer name="contours-praha" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>contours</StyleName>
+    <Datasource>
+      <Parameter name="table">(SELECT way,elevation as height,
+             case
+                when elevation::integer % 100 = 0  then '100'::text
+                when elevation::integer % 50 = 0  then '50'::text
+                when elevation::integer % 25 = 0  then '25'::text
+                when elevation::integer % 10 = 0  then '10'::text
+                when elevation::integer % 5 = 0  then '5'::text
+                when elevation::integer % 1 = 0  then '1'::text
+             end as interval
+          FROM "contours-ipr" WHERE
+             elevation::integer % 1 = 0 AND ST_Intersects("way", !bbox!)) as "contours-praha"</Parameter>
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
-<!-- vrstevnice po 10 metrech -->
-<Layer name="contours10" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours10</StyleName>
-    <StyleName>contours-text10</StyleName>
+<Layer name="contours" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>contours</StyleName>
     <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 10 = 0 AND height::integer % 50 != 0) as "contours10"</Parameter>
-      &latlon-datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vrstevnice po 20 metrech -->
-<Layer name="contours20" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours20</StyleName>
-    <StyleName>contours-text20</StyleName>
-    <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 20 = 0 AND height::integer % 100 != 0) as "contours20"</Parameter>
-      &latlon-datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vrstevnice po 25 metrech -->
-<Layer name="contours25" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours25</StyleName>
-    <StyleName>contours-text25</StyleName>
-    <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 25 = 0) as "contours25"</Parameter>
-      &latlon-datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vrstevnice po 50 metrech -->
-<Layer name="contours50" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours50</StyleName>
-    <StyleName>contours-text50</StyleName>
-    <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 50 = 0 AND height::integer % 100 != 0) as "contours50"</Parameter>
-      &latlon-datasource-settings;
-    </Datasource>
-</Layer>
-<!-- vrstevnice po 100 metrech -->
-<Layer name="contours100" status="on" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    <StyleName>contours100</StyleName>
-    <StyleName>contours-text100</StyleName>
-    <Datasource>
-      <Parameter name="table">(SELECT way,height FROM contours WHERE height::integer % 100 = 0) as "contours100"</Parameter>
+       <Parameter name="table">(select way,height,interval from contours_cropped where ST_Intersects("way", !bbox!)) as "contours"</Parameter>
+       <!-- use this query and store it as separate table
+           select ST_Difference(way, ST_GeomFromText('POLYGON((14.7168 50.2131, 14.7685 49.9636, 14.2508 49.918, 14.1965 50.1673, 14.7168 50.2131))')) as way, height, interval into contours_cropped from
+             (SELECT way,height,
+             case
+                when height::integer % 100 = 0  then '100'::text
+                when height::integer % 50 = 0  then '50'::text
+                when height::integer % 25 = 0  then '25'::text
+                when height::integer % 10 = 0  then '10'::text
+                when height::integer % 5 = 0  then '5'::text
+             end as interval
+          FROM "contours" WHERE
+             height::integer % 5 = 0) as "cont";
+       -->
       &latlon-datasource-settings;
     </Datasource>
 </Layer>
@@ -1496,10 +1491,15 @@ admin 8 - uzemi samostatnych obci
 
 <!-- popisy cest pro zoom 13 a vic, cisla a nazvy -->
 <Layer name="planet roads text osm" srs="&srs900913;">
-<StyleName>roads-text</StyleName>
+    <StyleName>cycleway-text</StyleName>
+    <StyleName>roads-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,aeroway,ref,admin_level,char_length(ref) as length,
+      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,
+       case when ref in ('A1','A2') then 'yes'::text
+       when ref in ('PAN') then ''::text else ncn end as ncn,
+       case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
+       case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn,
        case when short_name is not null then short_name else name end as name,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
        case when (NOT EXISTS (SELECT
@@ -1507,13 +1507,17 @@ admin 8 - uzemi samostatnych obci
                planet_osm_line.osm_id))
                then 'no'::text else 'yes'::text end as cycleway
        from planet_osm_line
-       where waterway IS NULL
-         and leisure IS NULL
-         and landuse IS NULL
-         and admin_level IS NULL
-         and (name is not null or ref is not null)
-         and not highway='construction'
-         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+       where
+            (waterway IS NULL
+            and leisure IS NULL
+            and landuse IS NULL
+            and admin_level IS NULL
+            and (name is not null or ref is not null)
+            and not highway='construction'
+            and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true')))
+         or
+            ((ref is not null and (lcn is not null or ncn is not null or rcn is not null))
+            and (operator is null or operator not in ('CZ:binko')))
       ) as roads
       </Parameter>
       &datasource-settings;
@@ -1636,24 +1640,6 @@ admin 8 - uzemi samostatnych obci
     </Datasource>
 </Layer>
 
-<Layer name="cycleway-text" srs="&srs900913;">
-    <StyleName>cycleway-text</StyleName>
-    <Datasource>
-        <Parameter name="table">
-        (select way, ref, name, state,
-        case when ref in ('A1','A2') then 'yes'::text
-        when ref in ('PAN') then ''::text else ncn end as ncn,
-        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
-        case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn
-        from planet_osm_line
-        where (ref is not null and (lcn is not null or ncn is not null or rcn is not null))
-        and (operator is null or operator not in ('CZ:binko'))
-        ) as cycleway_text
-        </Parameter>
-        &datasource-settings;
-    </Datasource>
-</Layer>
-
 <Style name="main_stations">
     <Rule>
       &maxscale_zoom15;
@@ -1664,17 +1650,17 @@ admin 8 - uzemi samostatnych obci
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0"/>
+      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
