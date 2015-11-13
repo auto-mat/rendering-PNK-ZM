@@ -62,7 +62,7 @@ import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" 
 #import_data "http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318" false
 #render tiles_ZM "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/ZM/osm.xml" "CR"
 render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
-render tiles_PNK "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
+render tiles_PNK "50.2131 14.1965 49.918 14.7685" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
 pack tiles_PNK
 #render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
 #render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
