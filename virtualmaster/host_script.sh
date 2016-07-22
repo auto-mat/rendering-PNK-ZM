@@ -46,7 +46,7 @@ function render {
    style=$5
    cd ~/rendering-PNK-ZM/Devel/generate_tiles/
    ./generate_tiles_agregated.py $style $folder/ $render_bbox $minzoom $maxzoom 1
-   rsync -avW -e ssh $folder tiles@auto-mat.cz:/
+   rsync -avW -e ssh $folder tiles@se.auto-mat.cz:/
    echo "rendering $6 finished at `date`"
    echo "parameters were $1 $2 $3 $4 $5 $6"
 }
@@ -54,7 +54,7 @@ function render {
 function pack {
    folder=$1
    tar -cjf $folder.tar.bz2 $folder
-   rsync -avW -e ssh $folder.tar.bz2 tiles@auto-mat.cz:/packages
+   rsync -avW -e ssh $folder.tar.bz2 tiles@se.auto-mat.cz:/packages
    rm $folder.tar.bz2
 }
 
@@ -159,6 +159,6 @@ chmod a+rw /home/mtbmap/screenlog.0
 #wait for screen to flush logfile
 sleep 20
 
-rsync -avW -e ssh /home/mtbmap/screenlog.0 tiles@auto-mat.cz:/log/render-`date +%y%m%d-%H:%M:%S`.log
+rsync -avW -e ssh /home/mtbmap/screenlog.0 tiles@se.auto-mat.cz:/log/render-`date +%y%m%d-%H:%M:%S`.log
 
 virtualmaster destroy rendernow

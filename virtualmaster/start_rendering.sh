@@ -1,6 +1,6 @@
 #!/bin/bash
 server_name="rendernow"
-/usr/local/bin/virtualmaster create $server_name --image 4191 --profile small --level personal | tee virtualmaster_output
+/usr/local/bin/virtualmaster create $server_name --image 4299 --profile small --level personal | tee virtualmaster_output
 export ROOT_PASSWORD=`cat virtualmaster_output | grep "Default password" | sed "s/^[^']*'\(.*\)'/\1/g"`
 export SERVER_IP=`/usr/local/bin/virtualmaster list | grep " $server_name " | cut -f4 -d"|" | tr -d " "`
 sleep 30
