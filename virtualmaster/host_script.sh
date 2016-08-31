@@ -58,7 +58,7 @@ function pack {
    rm $folder.tar.bz2
 }
 
-export OVERPASS_URL=http://api.openstreetmap.fr/xapi
+export OVERPASS_URL=http://www.overpass-api.de/api/xapi_meta
 
 #import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" true "-r pbf"
 import_data "$OVERPASS_URL?map?bbox=14.018,49.762,15.5,50.318" false
