@@ -18,7 +18,8 @@ for table in ("polygon", "line", "point"):
    try:
       connection = connect("dbname='gisczech' user='mtbmap' password=''");
       auxilary_cursor = connection.cursor()
-      auxilary_cursor.execute("ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key))
+      query = "ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key)
+      auxilary_cursor.execute(query)
       auxilary_cursor.close()
       connection.commit()
    except ProgrammingError:
@@ -29,7 +30,10 @@ relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
 for table in ("polygon", "line", "point"): 
-   auxilary_cursor.execute("ALTER TABLE planet_osm_%s ADD short_%s text;" % (table, name_key))
+   query = "ALTER TABLE planet_osm_%s ADD short_%s text;" % (table, name_key)
+   auxilary_cursor.execute(query)
+   query = "UPDATE planet_osm_%(table)s SET short_%(name_key)s = %(name_key)s" % {"table": table, "name_key": name_key}
+   auxilary_cursor.execute(query)
 
 shortcuts = (
       {"sqlpattern": ur"(Č|č)eskoslovensk", "pattern": ur"\b(Č|č)eskoslovensk(o|ého|é|á|ý|ých)\b", "query": ur"highway is not null", "substitution": ur"\1s."},
@@ -108,8 +112,8 @@ for shortcut in shortcuts:
 
    for table in tables:
       q = "SELECT osm_id, %s, short_%s FROM planet_osm_%s WHERE (%s) AND %s ~%s '%s'" % (name_key, name_key, table, query, name_key, ignorecase, sqlpattern)
-      relation_cursor.execute(q)
       print q.encode('utf8')
+      relation_cursor.execute(q)
       while True:
           # Fetch some of the result.
           rows = relation_cursor.fetchmany(100)
@@ -129,10 +133,10 @@ for shortcut in shortcuts:
              else:
                 p = re.compile(pattern, re.UNICODE)
 
-             short_name = p.sub(substitution, name.decode('utf8')).encode('utf8')
-             print name, " -> ", short_name
-             auxilary_cursor.execute("UPDATE planet_osm_%s SET short_%s = '%s' WHERE"
-               " osm_id = %s" % (table, name_key, short_name, row[0]))
+             short_name = p.sub(substitution, name.decode('utf8'))
+             update_query = u"UPDATE planet_osm_%s SET short_%s = '%s' WHERE osm_id = %s" % (table, name_key, short_name, row[0])
+             print update_query
+             auxilary_cursor.execute(update_query)
 
 relation_cursor.close()
 connection.commit()
