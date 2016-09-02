@@ -60,18 +60,23 @@ function pack {
 
 export OVERPASS_URL=http://www.overpass-api.de/api/xapi_meta
 
+# Render something small first, so we could se it works quickly
+import_data "$OVERPASS_URL?map?bbox=13.72311,50.27862,14.41694,50.73726" false
+render tiles_PNK "50.554897 14.033146 50.500993 14.184036" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Litomerice, Lovosice, Terezin"
+
 #import_data "http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf" true "-r pbf"
 import_data "$OVERPASS_URL?map?bbox=14.018,49.762,15.5,50.318" false
-#render tiles_ZM "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/ZM/osm.xml" "CR"
-render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
+render tiles_PNK "50.019223 14.613269 49.967256 14.707519" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ricany"
 render tiles_PNK "50.2131 14.1965 49.918 14.7685" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mensi Praha"
 pack tiles_PNK
+
+#render tiles_ZM "51.1 12 48.5 19" 8 14 "../../Devel/mapnik/my_styles/ZM/osm.xml" "CR"
+render tiles_ZM "50.17 14.20 49.96 14.65" 13 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Mensi Praha"
 #render tiles_PNK "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Vetsi Praha"
 #render tiles_ZM "50.318 14.018 49.762 14.897" 8 18 "../../Devel/mapnik/my_styles/ZM/osm.xml" "Vetsi Praha"
 
 #render tiles_PNK "50.6228 13.384 49.498 15.55" 8 15 "../../Devel/mapnik/my_styles/MTB-main.xml" "Stredocesky kraj"
 
-render tiles_PNK "50.019223 14.613269 49.967256 14.707519" 13 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Ricany"
 
 #render Plzen
 import_data "$OVERPASS_URL?map?bbox=12.936401,49.45295,13.914185,49.967123" false
@@ -148,10 +153,7 @@ import_data "$OVERPASS_URL?map?bbox=15.904427,48.761847,16.204491,48.95069" fals
 render tiles_PNK "48.913013 15.968297 48.800388 16.158374" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Znojmo"
 
 import_data "$OVERPASS_URL?map?bbox=14.730949,50.318285,15.074959,50.506877" false
-render tiles_PNK "50.464303,14.856777,50.376668,14.964409" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mladá boleslav"
-
-import_data "$OVERPASS_URL?map?bbox=13.956413,50.443622,14.257507,50.608844" false
-render tiles_PNK "50.554897,14.033146,50.500993,14.184036" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Litomerice, Lovosice, Terezin"
+render tiles_PNK "50.464303 14.856777 50.376668 14.964409" 14 18 "../../Devel/mapnik/my_styles/MTB-main.xml" "Mladá boleslav"
 
 df -h
 date
