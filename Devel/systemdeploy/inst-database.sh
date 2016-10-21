@@ -6,13 +6,13 @@
 # vector data import. It's necessary to run with superuser privilegies.
 
 # change this for the root directory of your future OSM system
-DBUSER="mtbmap"
+DBUSER="gis"
 if [ -z "$inner_variable" ]
 then
   export MTBMAP_DIRECTORY=../..
 fi
 
-DATABASE="gisczech"
+DATABASE="gis"
 
 cd $MTBMAP_DIRECTORY
 mkdir sw Data

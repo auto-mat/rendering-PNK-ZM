@@ -16,7 +16,7 @@ name_key="name"
 
 for table in ("polygon", "line", "point"): 
    try:
-      connection = connect("dbname='gisczech' user='mtbmap' password=''");
+      connection = connect("dbname='gis' user='gis' password=''");
       auxilary_cursor = connection.cursor()
       query = "ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key)
       auxilary_cursor.execute(query)
@@ -25,7 +25,7 @@ for table in ("polygon", "line", "point"):
    except ProgrammingError:
       print u"table column \"short_" + name_key + "\"does not exist".encode('utf8')
 
-connection = connect("dbname='gisczech' user='mtbmap' password=''");
+connection = connect("dbname='gis' user='gis' password=''");
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
