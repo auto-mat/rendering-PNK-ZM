@@ -105,16 +105,16 @@
     <Rule name="!popis vrstevnic po 25 metrech">
       <Filter>[interval]='25'</Filter>
       &maxscale_zoom15;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
+      <TextSymbolizer face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
     </Rule>
     <Rule name="!popis vrstevnic po 50 metrech">
       <Filter>[interval]='50'</Filter>
       &maxscale_zoom13;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
+      <TextSymbolizer face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5">[height]</TextSymbolizer>
     </Rule>
     <Rule name="!popis vrstevnic po 100 metrech">
       <Filter>[interval]='100'</Filter>
       &maxscale_zoom11;
-      <TextSymbolizer name="[height]" face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5" >[height]</TextSymbolizer>
+      <TextSymbolizer face-name="DejaVu Sans Book" size="8" fill="rgb(170,71,30)" halo-radius="1" placement="line" spacing="1000" smooth="0.5" >[height]</TextSymbolizer>
     </Rule>
 </Style>

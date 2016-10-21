@@ -609,7 +609,7 @@
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
-            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!akvadukt">
             &minscale_zoom18;
@@ -624,6 +624,6 @@
                 stroke-linejoin="round"
                 stroke-linecap="round"
             />
-            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1">[name] </TextSymbolizer>
     </Rule>
 </Style>

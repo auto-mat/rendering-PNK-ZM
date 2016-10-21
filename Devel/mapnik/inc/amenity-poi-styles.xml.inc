@@ -132,7 +132,7 @@
     </Rule>
     <Rule name="hráz">
             &maxscale_zoom15;
-            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="rgb(34,34,34)" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="8" fill="rgb(34,34,34)" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="points">
@@ -387,13 +387,13 @@
             <Filter>([aeroway]='airport')</Filter>
             &minscale_zoom18;
             &maxscale_zoom13;
-            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="rgb(0,0,0)" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="bold-fonts" size="9" fill="rgb(0,0,0)" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="letiště">
             <Filter>([aeroway]='aerodrome')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
@@ -526,13 +526,13 @@
             <Filter>([aeroway]='airport')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="bold-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!letiště">
             <Filter>([aeroway]='aerodrome')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
