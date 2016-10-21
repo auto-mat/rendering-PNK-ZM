@@ -65,7 +65,7 @@ if __name__ == "__main__":
     try:
         try:
             connection = httplib.HTTPConnection('osm.kyblsoft.cz')
-            connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.bz2')
+            connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.pbf')
             response = connection.getresponse()
             # if today's dataset doesn't exist, use yesterday's
             if (response.status != 200):
@@ -77,10 +77,9 @@ if __name__ == "__main__":
         connection.close()
 
         filename1 = 'czech_republic.osm.pbf'
-        #url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318'
-        url1 = 'http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf'
+        url1 = 'http://download.geofabrik.de/openstreetmap/europe/czech-republic-latest.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
-        url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
+        url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.pbf'
 
         try:
             os.chdir(homepath + '/Data')
