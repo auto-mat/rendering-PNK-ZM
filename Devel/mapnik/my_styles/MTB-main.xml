@@ -1650,17 +1650,17 @@ admin 8 - uzemi samostatnych obci
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->
