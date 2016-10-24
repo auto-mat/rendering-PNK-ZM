@@ -167,9 +167,9 @@
 <!ENTITY width_track_fill_lozoom '0.6'>
 <!ENTITY width_track_casing_lozoom '1'>
 
-<!ENTITY cyclelane_offset_highest_zoom '5'>
-<!ENTITY cyclelane_offset_high_zoom '4'>
-<!ENTITY cyclelane_offset_medium_zoom '3'>
+<!ENTITY cyclelane_offset_highest_zoom '-5'>
+<!ENTITY cyclelane_offset_high_zoom '-4'>
+<!ENTITY cyclelane_offset_medium_zoom '-3'>
 
 <!ENTITY color_oneway_arrow '#888cdd'>
 <!ENTITY color_bicycle_directions '#a200ff'>
