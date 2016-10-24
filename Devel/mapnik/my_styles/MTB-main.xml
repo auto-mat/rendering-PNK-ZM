@@ -1362,8 +1362,8 @@
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
-                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
+        degrees( ST_azimuth(coalesce(ST_LineInterpolatePoint(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
+                            coalesce(ST_LineInterpolatePoint(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.power
        from &prefix;_point p
        join &prefix;_line l
@@ -1451,8 +1451,8 @@ admin 8 - uzemi samostatnych obci
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
-                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
+        degrees( ST_azimuth(coalesce(ST_LineInterpolatePoint(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
+                            coalesce(ST_LineInterpolatePoint(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.highway,
         p.bicycle,
         p.barrier,
