@@ -590,61 +590,61 @@
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom12;
             &maxscale_zoom12;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="7">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-7">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!řeka">
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1" dy="8">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1" dy="-8">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!řeka">
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom14;
             &maxscale_zoom14;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="9">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-9">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!řeka">
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom16;
             &maxscale_zoom15;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="11">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-11">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!řeka">
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom17;
             &maxscale_zoom17;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="13">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-13">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!řeka">
             <Filter>([waterway]='river')</Filter>
             &minscale_zoom18;
             &maxscale_zoom18;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="16">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-16">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!plavební kanál">
             <Filter>([waterway]='canal')</Filter>
             &minscale_zoom13;
             &maxscale_zoom13;
-            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1" dy="8">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1" dy="-8">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!plavební kanál">
             <Filter>([waterway]='canal')</Filter>
             &minscale_zoom16;
             &maxscale_zoom14;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="11">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-11">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!plavební kanál">
             <Filter>([waterway]='canal')</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="14">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" dy="-14">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!potok">
             <Filter>(([waterway]='stream') or ([waterway]='drain'))</Filter>
             &minscale_zoom18;
             &maxscale_zoom15;
-            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" spacing="600" dy="7">[name]</TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="10" fill="&color_water_text;" placement="line" halo-radius="1" spacing="600" dy="-7">[name]</TextSymbolizer>
     </Rule>
 </Style>
 
