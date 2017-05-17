@@ -16,7 +16,7 @@ import os, sys, shutil
 import datetime, re, httplib
 
 def updateFromFile(filename):
-    ret = os.system('osm2pgsql -r pbf -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
+    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     #ret = os.system('osm2pgsql -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
@@ -29,12 +29,12 @@ def updateFromFile(filename):
     # refreshDate('index.html', str(date))
     # refreshDate('en.html', str(date))
     # restart renderd:
-    try:
-        os.chdir(homepath + 'sw/mod_tile/')
-        os.system('killall renderd')
-        os.system('./renderd')
-    except OSError, msg:
-        raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
+    # try:
+    #     os.chdir(homepath + 'sw/mod_tile/')
+    #     os.system('killall renderd')
+    #     os.system('./renderd')
+    # except OSError, msg:
+    #     raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
 
 def refreshDate(file,date):
     try:

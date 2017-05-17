@@ -4,7 +4,7 @@
 from psycopg2 import *
 
 # Create connection to DB server.
-connection = connect("dbname='gis' user='gis' password=''");
+connection = connect("dbname='gis_loading' user='gis' password=''");
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
