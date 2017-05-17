@@ -684,7 +684,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
@@ -731,7 +731,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
@@ -780,7 +780,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
