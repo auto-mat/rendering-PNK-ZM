@@ -504,7 +504,7 @@
        case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
        case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
-              or (railway='rail' and service in ('spur','siding','yard'))
+              or (railway in ('rail', 'preserved') and service in ('spur','siding','yard', 'crossover'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_line
        where (highway is not null
@@ -555,7 +555,7 @@
       (select way,highway,service,electrified,
        case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
        case when railway in ('spur','siding')
-              or (railway='rail' and service in ('spur','siding','yard'))
+              or (railway in ('rail', 'preserved') and service in ('spur','siding','yard', 'crossover'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_roads
        where highway in ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link', 'primary_link', 'secondary_link')
