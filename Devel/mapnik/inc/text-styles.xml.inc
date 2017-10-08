@@ -167,38 +167,38 @@
     </Rule>
 -->
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='yes'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='yes'</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
             <TextSymbolizer fontset-name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='yes'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='yes'</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <TextSymbolizer fontset-name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo-radius="0" spacing="300" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='yes'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='yes'</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <TextSymbolizer fontset-name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo-radius="0" spacing="400" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
     </Rule>
 
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='no'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='no'</Filter>
             &minscale_zoom15;
             &maxscale_zoom15;
             <TextSymbolizer fontset-name="book-fonts" size="8" fill="rgb(0,0,0)" placement="line" halo-radius="1" spacing="300" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='no'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='no'</Filter>
             &minscale_zoom16;
             &maxscale_zoom16;
             <TextSymbolizer fontset-name="book-fonts" size="9" fill="rgb(0,0,0)" placement="line" halo-radius="1" spacing="300" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street')) and [cycleway]='no'</Filter>
+            <Filter>(([highway]='unclassified') or ([highway]='residential') or ([highway]='living_street') or ([highway]='pedestrian')) and [cycleway]='no'</Filter>
             &minscale_zoom18;
             &maxscale_zoom17;
             <TextSymbolizer fontset-name="book-fonts" size="11" fill="rgb(0,0,0)" placement="line" halo-radius="1" spacing="400" halo-fill="&color_residential;" max-char-angle-delta="&text_max_angle;">[name]</TextSymbolizer>
