@@ -650,8 +650,20 @@
     <StyleName>cyclelane</StyleName>
     <Datasource>
         <Parameter name="table">
-           (select way, cycleway, "cycleway:left", "cycleway:right",
-          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           (select way, lane,
+           case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
+           case
+              when lane in ('soft_lane', 'advisory_lane') and cycleway in ('shared_lane', 'lane') then 'soft_lane'
+              else cycleway end
+           as cycleway,
+           case
+              when lane in ('soft_lane', 'advisory_lane') and "cycleway:right" in ('shared_lane', 'lane') then 'soft_lane'
+              else "cycleway:right" end
+           as "cycleway:right",
+           case
+              when lane in ('soft_lane', 'advisory_lane') and "cycleway:left" in ('shared_lane', 'lane') then 'soft_lane'
+              else "cycleway:left" end
+           as "cycleway:left"
            from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
         </Parameter>
         &datasource-settings;

@@ -179,6 +179,64 @@
     <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" file="../symbols/cyclebuslane_share_opposite_narrow.png"/>
   </Rule>
 
+  <!--   SOFT LANE -->
+  <Rule>
+    &maxscale_zoom17;
+    <Filter>([cycleway]='soft_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" file="../symbols/cyclelane_soft_opposite.png"/>
+    <LinePatternSymbolizer offset="-&cyclelane_offset_highest_zoom;" file="../symbols/cyclelane_soft.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:right]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='yes'))</Filter>
+    &maxscale_zoom17;
+    <LinePatternSymbolizer offset="-&cyclelane_offset_highest_zoom;" file="../symbols/cyclelane_soft.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:left]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
+    &maxscale_zoom17;
+    <LinePatternSymbolizer offset="&cyclelane_offset_highest_zoom;" file="../symbols/cyclelane_soft_opposite.png"/>
+  </Rule>
+
+  <Rule>
+    &maxscale_zoom15;
+    &minscale_zoom16;
+    <Filter>([cycleway]='soft_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" file="../symbols/cyclelane_soft_opposite_narrow.png"/>
+    <LinePatternSymbolizer offset="-&cyclelane_offset_high_zoom;" file="../symbols/cyclelane_soft_narrow.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:right]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='yes'))</Filter>
+    &maxscale_zoom15;
+    &minscale_zoom16;
+    <LinePatternSymbolizer offset="-&cyclelane_offset_high_zoom;" file="../symbols/cyclelane_soft_narrow.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:left]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
+    &maxscale_zoom15;
+    &minscale_zoom16;
+    <LinePatternSymbolizer offset="&cyclelane_offset_high_zoom;" file="../symbols/cyclelane_soft_opposite_narrow.png"/>
+  </Rule>
+
+  <Rule>
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <Filter>([cycleway]='soft_lane' and not ([oneway]='yes' or [oneway]='-1'))</Filter>
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" file="../symbols/cyclelane_soft_opposite_narrow.png"/>
+    <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" file="../symbols/cyclelane_soft_narrow.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:right]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='yes'))</Filter>
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <LinePatternSymbolizer offset="-&cyclelane_offset_medium_zoom;" file="../symbols/cyclelane_soft_narrow.png"/>
+  </Rule>
+  <Rule>
+    <Filter>([cycleway:left]='soft_lane' or ([cycleway]='soft_lane' and [oneway]='-1') or ([cycleway]='opposite_lane'))</Filter>
+    &maxscale_zoom12;
+    &minscale_zoom14;
+    <LinePatternSymbolizer offset="&cyclelane_offset_medium_zoom;" file="../symbols/cyclelane_soft_opposite_narrow.png"/>
+  </Rule>
+
   <!--   SHARED LANE -->
   <Rule>
     &maxscale_zoom17;

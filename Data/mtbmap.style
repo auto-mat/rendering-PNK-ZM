@@ -138,6 +138,7 @@ way       smoothness      text     linear
 
 way       operator            text     linear
 way       state            text     linear
+way       lane    text     linear
 node,way  cycleway         text     linear
 way       cycleway:left    text     linear
 way       cycleway:right   text     linear
