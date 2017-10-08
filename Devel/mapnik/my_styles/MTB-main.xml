@@ -1270,7 +1270,9 @@
         case 
            when (to_number(substring(incline from E'[-+]*([0-9.]*)\\%'), 'S9999.9') > 7) then 'yes'
            else 'no' end as incline_steep
-        from planet_osm_line)
+        from planet_osm_line where (
+           highway is not null
+        ))
          as mtb_incline
         </Parameter>
         &datasource-settings;
