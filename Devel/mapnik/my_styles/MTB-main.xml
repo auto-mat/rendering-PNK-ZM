@@ -169,7 +169,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,waterway,disused,name,
-      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
@@ -199,7 +199,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,waterway,disused,name,
-      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
@@ -294,7 +294,7 @@
       <Parameter name="table">
          (select way,highway,service from planet_osm_line 
          where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','service') 
-         and tunnel in ('yes','true','1') 
+         and tunnel not in ('no','false','0')
          and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
          order by z_order) as roads
       </Parameter>
@@ -322,7 +322,7 @@
 <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,foot,bicycle from planet_osm_line where highway in ('bridleway','footway','cycleway','path') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway,foot,bicycle from planet_osm_line where highway in ('bridleway','footway','cycleway','path') and tunnel not in ('no','false','0') order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -352,7 +352,7 @@
 <StyleName>tracks-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      (select way,tracktype from planet_osm_line where highway='track' and tunnel not in ('no','false','0') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -361,7 +361,7 @@
 <StyleName>tracks-tunnels-bicycle</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype,bicycle from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and tunnel not in ('no','false','0') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -409,7 +409,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,service,bicycle,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
@@ -501,8 +501,8 @@
       <Parameter name="table">
       (select way,highway,foot,construction,aeroway,service,electrified,
        case when bicycle in ('yes','designated','1') then 'yes'::text else bicycle end as bicycle,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway
@@ -553,7 +553,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,service,electrified,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
        case when railway in ('spur','siding')
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway
@@ -572,8 +572,8 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,bicycle,foot,construction,aeroway,service,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge
        from planet_osm_line
        where highway is not null or bicycle='designated'
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
@@ -621,6 +621,7 @@
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway'))
          and bridge not in ('no','false','0')
+         and (access is null or access not in ('private') or vehicle not in ('private'))
        order by z_order
       ) as roads
       </Parameter>
@@ -632,7 +633,7 @@
 <StyleName>tracks-bridges-bicycle</StyleName>
     <Datasource>
       <Parameter name="table">
-         (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
+         (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge not in ('no','false','0') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -641,7 +642,7 @@
 <StyleName>tracks-bridges</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge not in ('no','false','0') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -1513,7 +1514,7 @@ admin 8 - uzemi samostatnych obci
        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
        case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn,
        case when short_name is not null then short_name else name end as name,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge,
        case when (NOT EXISTS (SELECT
                * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
                planet_osm_line.osm_id))
