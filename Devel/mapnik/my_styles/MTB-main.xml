@@ -621,7 +621,7 @@
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway'))
          and bridge not in ('no','false','0')
-         and (access is null or access not in ('private') or vehicle not in ('private'))
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
        order by z_order
       ) as roads
       </Parameter>
