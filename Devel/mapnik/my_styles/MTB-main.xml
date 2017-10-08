@@ -1400,6 +1400,7 @@
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
          and not highway in ('construction', 'proposed')
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
       ) as directions
       </Parameter>
       &datasource-settings;
