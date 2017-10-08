@@ -833,7 +833,12 @@
 <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and osm_id > 0) as trams
+      (select way from planet_osm_line where
+       railway='tram'
+       and (tunnel is null or tunnel not in ('yes','true','1'))
+       and osm_id > 0
+       and (service is null or not service in ('spur','siding','yard', 'crossover'))
+      ) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>
