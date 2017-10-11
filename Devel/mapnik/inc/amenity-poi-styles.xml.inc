@@ -165,12 +165,12 @@
 -->
     <Rule name="stojany pro jízdní kola">
             <Filter>([amenity]='bicycle_parking')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bicycle_parking.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
     <Rule name="půjčovna jízdních kol">
             <Filter>([amenity]='bicycle_rental')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -361,7 +361,7 @@
 -->
     <Rule name="pitná voda">
             <Filter>([amenity]='drinking_water')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -480,7 +480,7 @@
     </Rule>
     <Rule name="cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -617,7 +617,7 @@
     </Rule>
     <Rule name="!cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
     <!--
