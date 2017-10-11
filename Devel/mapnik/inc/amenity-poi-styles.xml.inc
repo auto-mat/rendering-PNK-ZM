@@ -395,12 +395,14 @@
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
             <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
+    <!--
     <Rule name="železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;level_crossing.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &maxscale_zoom16;
@@ -534,12 +536,14 @@
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
             <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
+    <!--
     <Rule name="!železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;level_crossing.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="!železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &maxscale_zoom16;
