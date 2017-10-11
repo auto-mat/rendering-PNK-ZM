@@ -260,6 +260,13 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="ferry-routes" srs="&srs900913;">
+    <StyleName>ferry-routes</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_line where route='ferry' ) as routes</Parameter>
+      &datasource-settings;
+    </Datasource>
+  </Layer>
 <!-- molo jako linie -->
 <Layer name="piers" srs="&srs900913;">
 <StyleName>piers</StyleName>

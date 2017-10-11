@@ -627,3 +627,14 @@
             <TextSymbolizer fontset-name="book-fonts" size="9" fill="&color_water_text;" placement="line" halo-radius="1">[name] </TextSymbolizer>
     </Rule>
 </Style>
+<Style name="ferry-routes" filter-mode="first">
+  <Rule>
+    &minscale_zoom18;
+    &maxscale_zoom15;
+    <LineSymbolizer stroke-width="0.8" stroke="#0000ff" stroke-dasharray="4, 2"/>
+  </Rule>
+  <Rule>
+    &minscale_zoom16;
+    <LineSymbolizer stroke="#0000ff" stroke-width="0.4" stroke-dasharray="4, 2"/>
+  </Rule>
+</Style>
