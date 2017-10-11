@@ -3085,7 +3085,7 @@
             &minscale_zoom16;
             &maxscale_zoom16;
             <LineSymbolizer
-                stroke-width="11"
+                stroke-width="5.5"
             />
     </Rule>
     <Rule name="most na ostatní silnici">
