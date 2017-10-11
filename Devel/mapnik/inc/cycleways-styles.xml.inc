@@ -363,6 +363,13 @@
 -->
 
 <Style name="cycleway-text">
+  <!-- ICN refs -->
+  <Rule>
+    &maxscale_zoom13;
+    <TextSymbolizer fontset-name="bold-fonts" size="10" fill="&color_icn_text;" halo-fill="&color_icn_background;" placement="line" halo-radius="&halo_radius_cycleway;"  spacing="&spacing_cycleway_text;" minimum-distance="&min_distance_cycleway_text;" allow-overlap="false" max-char-angle-delta="&text_max_angle;" >' ' + [icn_ref]+ ' '</TextSymbolizer>
+  </Rule>
+
+  <!-- recommended -->
   <Rule>
     <Filter>([ncn]!='' and [state]='recommended')</Filter>
     &maxscale_zoom13;

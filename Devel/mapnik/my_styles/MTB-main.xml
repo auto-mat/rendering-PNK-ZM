@@ -1518,7 +1518,7 @@ admin 8 - uzemi samostatnych obci
     <StyleName>roads-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,
+      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,icn_ref,
        case when ref in ('A1','A2') then 'yes'::text
        when ref in ('PAN') then ''::text else ncn end as ncn,
        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
@@ -1539,7 +1539,7 @@ admin 8 - uzemi samostatnych obci
             and not highway='construction'
             and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true')))
          or
-            ((ref is not null and (lcn is not null or ncn is not null or rcn is not null))
+            (((ref is not null and (lcn is not null or ncn is not null or rcn is not null)) or icn_ref is not null)
             and (operator is null or operator not in ('CZ:binko')))
       ) as roads
       </Parameter>

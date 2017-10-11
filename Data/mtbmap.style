@@ -110,6 +110,7 @@ way        way_area     real                # This is calculated during import
 way       lcn_ref      text     linear
 way       rcn_ref      text     linear
 way       ncn_ref      text     linear
+way       icn_ref      text     linear
 way       lcn          text     linear
 way       rcn          text     linear
 way       ncn          text     linear

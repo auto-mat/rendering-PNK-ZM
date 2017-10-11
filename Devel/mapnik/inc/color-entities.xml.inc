@@ -8,6 +8,8 @@
 <!ENTITY color_ncn_text 'black'>
 <!ENTITY color_rcn_text 'black'>
 <!ENTITY color_lcn_text 'black'>
+<!ENTITY color_icn_text 'black'>
+<!ENTITY color_icn_background 'rgb(161, 255, 117)'>
 <!ENTITY color_cycleway_background_text '#ffff00'>
 <!ENTITY color_cycleway_background_text_proposed '#ffffff'>
 <!ENTITY halo_radius_cycleway '2'>
