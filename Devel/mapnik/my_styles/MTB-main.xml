@@ -511,6 +511,7 @@
           or aeroway in ('runway','taxiway')
           or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction'))
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+       and (service is null or not service in ('spur','siding','yard', 'crossover'))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -622,6 +623,7 @@
               or railway in ('light_rail','subway'))
          and bridge not in ('no','false','0')
          and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+         and (service is null or not service in ('spur','siding','yard', 'crossover'))
        order by z_order
       ) as roads
       </Parameter>
