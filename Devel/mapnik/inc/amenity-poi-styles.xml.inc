@@ -641,7 +641,6 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;castle14.png"></PointSymbolizer>
     </Rule>
-    -->
     <Rule name="informační tabule">
             <Filter>([information]='board')</Filter>
             &maxscale_zoom14;
@@ -657,5 +656,6 @@
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;infoOffice14.png"></PointSymbolizer>
     </Rule>
+    -->
 </Style>
 
