@@ -535,7 +535,7 @@
       or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural'))
       or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
       and (bicycle is null or bicycle not in ('no', '-1'))
-      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link')))
+      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link', 'service', 'unclassified')))
 
       or
       (bicycle = 'yes' and highway='pedestrian')
