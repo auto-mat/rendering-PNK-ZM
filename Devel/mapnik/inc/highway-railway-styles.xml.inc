@@ -1332,8 +1332,9 @@
                 stroke-dasharray="2, 4"
             />
     </Rule>
+-->
     <Rule name="">
-            <Filter>((((([railway]='disused') or ([railway]='abandoned')) or ([railway]='construction')) and not (([highway]&lt;&gt;''))) and ([bridge]='yes'))</Filter>
+            <Filter>((([railway]='disused' or [railway]='abandoned') or [railway]='construction') and not [highway]&lt;&gt;'') and [bridge]='yes'</Filter>
             &minscale_zoom18;
             &maxscale_zoom13;
             <LineSymbolizer
@@ -1351,7 +1352,7 @@
                 stroke-linejoin="round"
                 stroke-dasharray="2, 4"
             />
-    </Rule>-->
+    </Rule>
     <Rule name="železnice">
             <Filter>(([railway]='rail') and not (([tunnel]='yes')))</Filter>
             &minscale_zoom13;
