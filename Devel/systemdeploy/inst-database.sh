@@ -6,19 +6,19 @@
 # vector data import. It's necessary to run with superuser privilegies.
 
 # change this for the root directory of your future OSM system
-DBUSER="mtbmap"
+DBUSER="gis"
 if [ -z "$inner_variable" ]
 then
   export MTBMAP_DIRECTORY=../..
 fi
 
-DATABASE="gisczech"
+DATABASE="gis"
 
 cd $MTBMAP_DIRECTORY
 mkdir sw Data
 
 # install this packages with all dependencies
-sudo apt-get install postgresql postgresql-9.1 postgresql-9.1-postgis osm2pgsql
+sudo apt-get install postgresql postgresql-9.6 postgresql-9.6-postgis osm2pgsql
 # GUI for PostgreSQL, not needed
 #sudo apt-get install pgadmin3
 sudo apt-get install proj libgeos-dev libxml2-dev python-psycopg2 subversion
@@ -35,7 +35,7 @@ sudo passwd postgres
 sudo -u postgres createuser $DBUSER
 createdb -E UTF8 -O $DBUSER $DATABASE
 createlang plpgsql $DATABASE
-psql -d $DATABASE -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+psql -d $DATABASE -f /usr/share/postgresql/9.6/contrib/postgis-2.3/postgis.sql
 echo "ALTER TABLE geometry_columns OWNER TO $DBUSER; \
       ALTER TABLE spatial_ref_sys OWNER TO $DBUSER;" \
       | psql -d $DATABASE

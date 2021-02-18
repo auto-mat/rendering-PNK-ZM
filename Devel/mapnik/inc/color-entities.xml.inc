@@ -8,6 +8,8 @@
 <!ENTITY color_ncn_text 'black'>
 <!ENTITY color_rcn_text 'black'>
 <!ENTITY color_lcn_text 'black'>
+<!ENTITY color_icn_text 'black'>
+<!ENTITY color_icn_background 'rgb(161, 255, 117)'>
 <!ENTITY color_cycleway_background_text '#ffff00'>
 <!ENTITY color_cycleway_background_text_proposed '#ffffff'>
 <!ENTITY halo_radius_cycleway '2'>
@@ -128,7 +130,7 @@
 
 <!ENTITY color_attraction 'rgb(102,0,51)'>
 
-<!ENTITY color_industrial '#E5E5E5'>
+<!ENTITY color_industrial 'rgb(240,240,240)'>
 <!ENTITY color_construction '&color_industrial;'>
 
 
@@ -144,10 +146,10 @@
 <!ENTITY color_orchard '&color_green;'>
 <!ENTITY color_vineyard '&color_green;'>
 
-<!ENTITY color_landuse_residential 'rgb(220,220,220)'>
+<!ENTITY color_landuse_residential 'rgb(245,245,245)'>
 <!ENTITY color_building '#909090'>
 <!ENTITY color_leisure_track '#B6B6B6'>
-<!ENTITY opacity_building '0.5'>
+<!ENTITY opacity_building '0.3'>
 
 <!ENTITY color_placenames_text 'rgb(0,0,0)'>
 <!ENTITY color_countries_text 'rgb(157,108,157)'>
@@ -167,9 +169,9 @@
 <!ENTITY width_track_fill_lozoom '0.6'>
 <!ENTITY width_track_casing_lozoom '1'>
 
-<!ENTITY cyclelane_offset_highest_zoom '5'>
-<!ENTITY cyclelane_offset_high_zoom '4'>
-<!ENTITY cyclelane_offset_medium_zoom '3'>
+<!ENTITY cyclelane_offset_highest_zoom '-5'>
+<!ENTITY cyclelane_offset_high_zoom '-4'>
+<!ENTITY cyclelane_offset_medium_zoom '-3'>
 
 <!ENTITY color_oneway_arrow '#888cdd'>
 <!ENTITY color_bicycle_directions '#a200ff'>

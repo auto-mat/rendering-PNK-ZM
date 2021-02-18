@@ -16,8 +16,8 @@ import os, sys, shutil
 import datetime, re, httplib
 
 def updateFromFile(filename):
-    ret = os.system('osm2pgsql -r pbf -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U mtbmap')
-    #ret = os.system('osm2pgsql -s -d gisczech ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U mtbmap')
+    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
+    #ret = os.system('osm2pgsql -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
     try:
@@ -29,12 +29,12 @@ def updateFromFile(filename):
     # refreshDate('index.html', str(date))
     # refreshDate('en.html', str(date))
     # restart renderd:
-    try:
-        os.chdir(homepath + 'sw/mod_tile/')
-        os.system('killall renderd')
-        os.system('./renderd')
-    except OSError, msg:
-        raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
+    # try:
+    #     os.chdir(homepath + 'sw/mod_tile/')
+    #     os.system('killall renderd')
+    #     os.system('./renderd')
+    # except OSError, msg:
+    #     raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
 
 def refreshDate(file,date):
     try:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     try:
         try:
             connection = httplib.HTTPConnection('osm.kyblsoft.cz')
-            connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.bz2')
+            connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.pbf')
             response = connection.getresponse()
             # if today's dataset doesn't exist, use yesterday's
             if (response.status != 200):
@@ -77,10 +77,9 @@ if __name__ == "__main__":
         connection.close()
 
         filename1 = 'czech_republic.osm.pbf'
-        #url1 = 'http://www.overpass-api.de/api/xapi?map?bbox=14.018,49.762,14.897,50.318'
-        url1 = 'http://download.geofabrik.de/openstreetmap/europe/czech_republic.osm.pbf'
+        url1 = 'http://download.geofabrik.de/openstreetmap/europe/czech-republic-latest.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
-        url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.bz2'
+        url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.pbf'
 
         try:
             os.chdir(homepath + '/Data')

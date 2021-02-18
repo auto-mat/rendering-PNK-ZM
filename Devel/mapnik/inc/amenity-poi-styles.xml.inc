@@ -132,7 +132,7 @@
     </Rule>
     <Rule name="hráz">
             &maxscale_zoom15;
-            <TextSymbolizer name="[name]" fontset-name="book-fonts" size="8" fill="rgb(34,34,34)" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="book-fonts" size="8" fill="rgb(34,34,34)" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="points">
@@ -165,12 +165,12 @@
 -->
     <Rule name="stojany pro jízdní kola">
             <Filter>([amenity]='bicycle_parking')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;bicycle_parking.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
     <Rule name="půjčovna jízdních kol">
             <Filter>([amenity]='bicycle_rental')</Filter>
-            &maxscale_zoom14;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;rental_bicycle.p.20.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -361,7 +361,7 @@
 -->
     <Rule name="pitná voda">
             <Filter>([amenity]='drinking_water')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;food_drinkingtap.p.20.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -387,20 +387,22 @@
             <Filter>([aeroway]='airport')</Filter>
             &minscale_zoom18;
             &maxscale_zoom13;
-            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="rgb(0,0,0)" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="bold-fonts" size="9" fill="rgb(0,0,0)" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="letiště">
             <Filter>([aeroway]='aerodrome')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
+    <!--
     <Rule name="železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;level_crossing.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &maxscale_zoom16;
@@ -480,7 +482,7 @@
     </Rule>
     <Rule name="cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
 <!--
@@ -526,20 +528,22 @@
             <Filter>([aeroway]='airport')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="bold-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule name="!letiště">
             <Filter>([aeroway]='aerodrome')</Filter>
             &maxscale_zoom11;
             <PointSymbolizer file="&symbols-path;airport.p.16.png"></PointSymbolizer>
-            <TextSymbolizer name="[name]" fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1"></TextSymbolizer>
+            <TextSymbolizer fontset-name="oblique-fonts" size="8" fill="rgb(0,0,0)" dy="-12" vertical-alignment="top" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
+    <!--
     <Rule name="!železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &minscale_zoom15;
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;level_crossing.png"></PointSymbolizer>
     </Rule>
+    -->
     <Rule name="!železniční přejezd">
             <Filter>([railway]='level_crossing')</Filter>
             &maxscale_zoom16;
@@ -617,7 +621,7 @@
     </Rule>
     <Rule name="!cyklistická prodejna">
             <Filter>([shop]='bicycle')</Filter>
-            &maxscale_zoom13;
+            &maxscale_zoom16;
             <PointSymbolizer file="&symbols-path;shop_bicycle.png" allow-overlap="true"></PointSymbolizer>
     </Rule>
     <!--
@@ -641,7 +645,6 @@
             &maxscale_zoom13;
             <PointSymbolizer file="&symbols-path;castle14.png"></PointSymbolizer>
     </Rule>
-    -->
     <Rule name="informační tabule">
             <Filter>([information]='board')</Filter>
             &maxscale_zoom14;
@@ -657,5 +660,6 @@
             &maxscale_zoom14;
             <PointSymbolizer file="&symbols-path;infoOffice14.png"></PointSymbolizer>
     </Rule>
+    -->
 </Style>
 

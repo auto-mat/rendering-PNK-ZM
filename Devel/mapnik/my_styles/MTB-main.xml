@@ -169,7 +169,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,waterway,disused,name,
-      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
@@ -199,7 +199,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,waterway,disused,name,
-      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
       from planet_osm_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
@@ -260,6 +260,13 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="ferry-routes" srs="&srs900913;">
+    <StyleName>ferry-routes</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from planet_osm_line where route='ferry' ) as routes</Parameter>
+      &datasource-settings;
+    </Datasource>
+  </Layer>
 <!-- molo jako linie -->
 <Layer name="piers" srs="&srs900913;">
 <StyleName>piers</StyleName>
@@ -294,7 +301,7 @@
       <Parameter name="table">
          (select way,highway,service from planet_osm_line 
          where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','service') 
-         and tunnel in ('yes','true','1') 
+         and tunnel not in ('no','false','0')
          and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
          order by z_order) as roads
       </Parameter>
@@ -322,7 +329,7 @@
 <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,foot,bicycle from planet_osm_line where highway in ('bridleway','footway','cycleway','path') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway,foot,bicycle from planet_osm_line where highway in ('bridleway','footway','cycleway','path') and tunnel not in ('no','false','0') order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -352,7 +359,7 @@
 <StyleName>tracks-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      (select way,tracktype from planet_osm_line where highway='track' and tunnel not in ('no','false','0') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -361,7 +368,7 @@
 <StyleName>tracks-tunnels-bicycle</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype,bicycle from planet_osm_line where highway='track' and tunnel in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
+      (select way,tracktype,bicycle from planet_osm_line where highway='track' and tunnel not in ('no','false','0') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -409,7 +416,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,service,bicycle,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel
        from planet_osm_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street','cycleway', 'footway')
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
@@ -501,16 +508,17 @@
       <Parameter name="table">
       (select way,highway,foot,construction,aeroway,service,electrified,
        case when bicycle in ('yes','designated','1') then 'yes'::text else bicycle end as bicycle,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
-              or (railway='rail' and service in ('spur','siding','yard'))
+              or (railway in ('rail', 'preserved') and service in ('spur','siding','yard', 'crossover'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_line
        where (highway is not null
           or aeroway in ('runway','taxiway')
           or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction'))
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+       and (service is null or not service in ('spur','siding','yard', 'crossover'))
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -527,7 +535,7 @@
       or (motorcar in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural'))
       or (motor_vehicle in ('no', 'destination', 'permissive', 'private', 'forestry', 'delivery', 'agricultural')))
       and (bicycle is null or bicycle not in ('no', '-1'))
-      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link')))
+      and (highway in ('residential', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link', 'service', 'unclassified')))
 
       or
       (bicycle = 'yes' and highway='pedestrian')
@@ -553,9 +561,9 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,service,electrified,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
        case when railway in ('spur','siding')
-              or (railway='rail' and service in ('spur','siding','yard'))
+              or (railway in ('rail', 'preserved') and service in ('spur','siding','yard', 'crossover'))
             then 'spur-siding-yard'::text else railway end as railway
        from planet_osm_roads
        where highway in ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link', 'primary_link', 'secondary_link')
@@ -572,8 +580,8 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,bicycle,foot,construction,aeroway,service,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       case when tunnel not in ('no','false','0') then 'yes'::text else tunnel end as tunnel,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge
        from planet_osm_line
        where highway is not null or bicycle='designated'
        and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
@@ -621,6 +629,8 @@
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway'))
          and bridge not in ('no','false','0')
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
+         and (service is null or not service in ('spur','siding','yard', 'crossover'))
        order by z_order
       ) as roads
       </Parameter>
@@ -632,7 +642,7 @@
 <StyleName>tracks-bridges-bicycle</StyleName>
     <Datasource>
       <Parameter name="table">
-         (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle in ('yes', 'designated'))) as tracks
+         (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge not in ('no','false','0') and (bicycle in ('yes', 'designated'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -641,7 +651,7 @@
 <StyleName>tracks-bridges</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge in ('yes','true','1') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
+      (select way,tracktype, bicycle from planet_osm_line where highway='track' and bridge not in ('no','false','0') and (bicycle is null or not (bicycle in ('yes', 'designated')))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -650,8 +660,20 @@
     <StyleName>cyclelane</StyleName>
     <Datasource>
         <Parameter name="table">
-           (select way, cycleway, "cycleway:left", "cycleway:right",
-          case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+           (select way, lane,
+           case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway,
+           case
+              when lane in ('soft_lane', 'advisory_lane') and cycleway in ('shared_lane', 'lane') then 'soft_lane'
+              else cycleway end
+           as cycleway,
+           case
+              when lane in ('soft_lane', 'advisory_lane') and "cycleway:right" in ('shared_lane', 'lane') then 'soft_lane'
+              else "cycleway:right" end
+           as "cycleway:right",
+           case
+              when lane in ('soft_lane', 'advisory_lane') and "cycleway:left" in ('shared_lane', 'lane') then 'soft_lane'
+              else "cycleway:left" end
+           as "cycleway:left"
            from planet_osm_line where (cycleway not in ('', 'no', 'opposite') or "cycleway:left" not in ('', 'no', 'opposite') or "cycleway:right" not in ('', 'no', 'opposite'))) as cyclelane
         </Parameter>
         &datasource-settings;
@@ -684,7 +706,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
@@ -731,7 +753,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
@@ -780,7 +802,7 @@
           when motor_vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when vehicle in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
           when access in ('no', 'permissive', 'destination', 'private', 'delivery') then 'low'::text 
-          when maxspeed not in ('CZ:urban') and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text 
+          when maxspeed not in ('CZ:urban') and maxspeed ~ '^[0-9]*$' and to_number(maxspeed, 'S9999') &lt; 30 then 'low'::text
 
           when highway in ('tertiary', 'primary', 'secondary', 'trunk', 'motorway', 'primary_link', 'secondary_link', 'trunk_link', 'motorway_link', 'tertiary_link') then 'heavy'::text 
           when highway in ( 'unclassified', 'residential', 'road') then 'medium'::text
@@ -820,7 +842,12 @@
 <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from planet_osm_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1')) and osm_id > 0) as trams
+      (select way from planet_osm_line where
+       railway='tram'
+       and (tunnel is null or tunnel not in ('yes','true','1'))
+       and osm_id > 0
+       and (service is null or not service in ('spur','siding','yard', 'crossover'))
+      ) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -1257,7 +1284,9 @@
         case 
            when (to_number(substring(incline from E'[-+]*([0-9.]*)\\%'), 'S9999.9') > 7) then 'yes'
            else 'no' end as incline_steep
-        from planet_osm_line)
+        from planet_osm_line where (
+           highway is not null
+        ))
          as mtb_incline
         </Parameter>
         &datasource-settings;
@@ -1362,8 +1391,8 @@
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way),
-                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
+        degrees( ST_azimuth(coalesce(ST_LineInterpolatePoint(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
+                            coalesce(ST_LineInterpolatePoint(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.power
        from &prefix;_point p
        join &prefix;_line l
@@ -1385,6 +1414,7 @@
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
          and not highway in ('construction', 'proposed')
+         and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true'))
       ) as directions
       </Parameter>
       &datasource-settings;
@@ -1451,8 +1481,8 @@ admin 8 - uzemi samostatnych obci
       <Parameter name="table">
       (
       select distinct on (p.way) p.way as way,
-        degrees( ST_azimuth(coalesce(ST_Line_Interpolate_Point(l.way, ST_line_locate_point(l.way,p.way) * 0.99), p.way),
-                            coalesce(ST_Line_Interpolate_Point(l.way, (1 - (1 - ST_line_locate_point(l.way,p.way)) * 0.99)), p.way))) as angle,
+        degrees( ST_azimuth(coalesce(ST_LineInterpolatePoint(l.way, ST_LineLocatePoint(l.way,p.way) * 0.99), p.way),
+                            coalesce(ST_LineInterpolatePoint(l.way, (1 - (1 - ST_LineLocatePoint(l.way,p.way)) * 0.99)), p.way))) as angle,
         p.highway,
         p.bicycle,
         p.barrier,
@@ -1495,13 +1525,13 @@ admin 8 - uzemi samostatnych obci
     <StyleName>roads-text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,
+      (select way,state,highway,aeroway,ref,admin_level,char_length(ref) as length,icn_ref,
        case when ref in ('A1','A2') then 'yes'::text
        when ref in ('PAN') then ''::text else ncn end as ncn,
        case when ref in ('A1', 'A2', 'PAN') then ''::text else rcn end as rcn,
        case when ref in ('A1', 'A2', 'PAN') then ''::text else lcn end as lcn,
        case when short_name is not null then short_name else name end as name,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when bridge not in ('no','false','0') then 'yes'::text else bridge end as bridge,
        case when (NOT EXISTS (SELECT
                * FROM planet_osm_cycleway_rels WHERE planet_osm_cycleway_rels.osm_id =
                planet_osm_line.osm_id))
@@ -1516,7 +1546,7 @@ admin 8 - uzemi samostatnych obci
             and not highway='construction'
             and (access is null or access not in ('private') or vehicle not in ('private') or bicycle in ('yes', 'designated', '1', 'true')))
          or
-            ((ref is not null and (lcn is not null or ncn is not null or rcn is not null))
+            (((ref is not null and (lcn is not null or ncn is not null or rcn is not null)) or icn_ref is not null)
             and (operator is null or operator not in ('CZ:binko')))
       ) as roads
       </Parameter>
@@ -1650,17 +1680,17 @@ admin 8 - uzemi samostatnych obci
       &maxscale_zoom14;
       &minscale_zoom14;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-8" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="11" fill="&color_stations;" dy="-10" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and [disused]='yes'</Filter>
-      <TextSymbolizer name="[name]" fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
+      <TextSymbolizer fontset-name="bold-fonts" size="9" fill="&color_stations;" dy="-9" halo-radius="1" wrap-width="0">[name]</TextSymbolizer>
     </Rule>
 </Style>
 <!-- jmena mestskych casti, malych obci, samot, pojmenovanych lokalit -->

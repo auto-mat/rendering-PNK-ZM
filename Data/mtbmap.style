@@ -110,6 +110,7 @@ way        way_area     real                # This is calculated during import
 way       lcn_ref      text     linear
 way       rcn_ref      text     linear
 way       ncn_ref      text     linear
+way       icn_ref      text     linear
 way       lcn          text     linear
 way       rcn          text     linear
 way       ncn          text     linear
@@ -138,6 +139,7 @@ way       smoothness      text     linear
 
 way       operator            text     linear
 way       state            text     linear
+way       lane    text     linear
 node,way  cycleway         text     linear
 way       cycleway:left    text     linear
 way       cycleway:right   text     linear
