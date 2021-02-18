@@ -11,4 +11,5 @@ docker run --name mtbmap \
     -v /home/mtbmap/rendering-PNK-ZM/:/home/rendering \
     -p 82:80 \
     -d mtbmap
-docker exec -it mtbmap "/home/rendering/docker/render_map.sh"
+sleep 30
+docker exec -t mtbmap "/home/rendering/docker/render_map.sh"
