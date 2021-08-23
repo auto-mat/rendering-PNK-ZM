@@ -86,36 +86,35 @@
 <Style name="surface-cobblestone">
   <Rule>
     &maxscale_zoom14;
-    <Filter>([highway]='track' or [highway]='footway' or [highway]='path')</Filter>
+    <Filter>([highway]='track')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone7.png"/>
   </Rule>
   <Rule>
     &maxscale_zoom15;
-    <Filter>([highway]='pedestrian' or [highway]='service')</Filter>
+    <Filter>([highway]='service')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone7.png"/>
   </Rule>
   <Rule>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <Filter>([highway]='pedestrian' or [highway]='service')</Filter>
+    <Filter>([highway]='service')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone3.png"/>
   </Rule>
-
   <Rule>
     <ElseFilter/>
-    &maxscale_zoom17;
+    &maxscale_zoom18;
     <LinePatternSymbolizer file="../symbols/cobblestone13.png"/>
   </Rule>
   <Rule>
-    <ElseFilter/>
     &maxscale_zoom15;
     &minscale_zoom16;
+    <Filter>([highway]='residential')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone10.png"/>
   </Rule>
   <Rule>
-    <ElseFilter/>
     &maxscale_zoom14;
     &minscale_zoom14;
+    <Filter>([highway]='residential')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone7.png"/>
   </Rule>
 </Style>
