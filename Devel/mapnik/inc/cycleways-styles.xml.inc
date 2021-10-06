@@ -101,8 +101,13 @@
     <LinePatternSymbolizer file="../symbols/cobblestone3.png"/>
   </Rule>
   <Rule>
-    <ElseFilter/>
+    &maxscale_zoom17;
+    <Filter>([highway]='residential')</Filter>
+    <LinePatternSymbolizer file="../symbols/cobblestone13.png"/>
+  </Rule>
+   <Rule>
     &maxscale_zoom18;
+    <ElseFilter/>
     <LinePatternSymbolizer file="../symbols/cobblestone13.png"/>
   </Rule>
   <Rule>
