@@ -16,7 +16,7 @@ import os, sys, shutil
 import datetime, re, httplib
 
 def updateFromFile(filename):
-    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis -W ' + os.getenv('POSTGISDB_GIS_USER_PASSWORD') + ' -H ' + os.getenv('POSTGISDB_HOST'))
+    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis -W' + os.getenv('POSTGISDB_GIS_USER_PASSWORD') + ' -H ' + os.getenv('POSTGISDB_HOST'))
     #ret = os.system('osm2pgsql -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
