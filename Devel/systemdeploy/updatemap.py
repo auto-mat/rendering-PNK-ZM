@@ -16,7 +16,7 @@ import os, sys, shutil
 import datetime, re, httplib
 
 def updateFromFile(filename):
-    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
+    ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis -H ' + os.getenv('POSTGISDB_HOST'))
     #ret = os.system('osm2pgsql -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     if (ret != 0):
         raise UpdateError('An error occured, osm2pgsql returned ' + str(ret/256) + ' exit status')
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         except OSError, msg:
             raise UpdateError(homepath + '/Data directory is not present')
 
-    
+
         if (os.system('wget -t 3 ' + url1 + ' -O ' + filename1)==0):
             updateFromFile(filename1)
         elif (os.system('wget -t 3 ' + url2 + ' -O ' + filename2)==0):
