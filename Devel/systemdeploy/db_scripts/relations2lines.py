@@ -14,6 +14,7 @@ from psycopg2 import *
 connection = connect(
     "dbname='gis_loading' user='gis' host='{host}'".format(
         host=os.getenv("POSTGISDB_HOST"),
+    ),
 )
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()

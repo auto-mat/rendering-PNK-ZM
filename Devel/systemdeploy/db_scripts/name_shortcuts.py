@@ -21,7 +21,8 @@ for table in ("polygon", "line", "point"):
       connection = connect(
           "dbname='gis_loading' user='gis' host='{host}'".format(
               host=os.getenv("POSTGISDB_HOST"),
-          )
+          ),
+      )
       auxilary_cursor = connection.cursor()
       query = "ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key)
       print(query)
@@ -34,7 +35,8 @@ for table in ("polygon", "line", "point"):
 connection = connect(
     "dbname='gis_loading' user='gis' host='{host}'".format(
         host=os.getenv("POSTGISDB_HOST"),
-    )
+    ),
+)
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
