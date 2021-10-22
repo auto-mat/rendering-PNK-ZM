@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
+
 from psycopg2 import *
 
 # Create connection to DB server.
-connection = connect("dbname='gis_loading' user='gis' password=''");
+connection = connect(
+    "dbname='gis_loading' user='gis' host='{host}'".format(
+        host=os.getenv("POSTGISDB_HOST"),
+    )
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
@@ -22,7 +27,7 @@ auxilary_cursor = connection.cursor()
 
 base = ['highway', 'amenity', 'waterway', 'landuse', 'leisure', 'aeroway', 'military', 'natural', 'power', 'tourism', 'railway', 'layer', 'bridge', 'barrier', 'historic', 'access', 'foot', 'bicycle', 'building', 'man_made']
 
-indices = { 
+indices = {
     'contours': ['height', 'way'],
     'contours-ipr': ['elevation', 'way'],
     'contours_cropped': ['height', 'interval', 'way'],

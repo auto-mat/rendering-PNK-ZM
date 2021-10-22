@@ -7,6 +7,8 @@
 # change connection settings for your local environment
 #
 
+import os
+
 from psycopg2 import *
 import re
 
@@ -14,9 +16,12 @@ import re
 
 name_key="name"
 
-for table in ("polygon", "line", "point"): 
+for table in ("polygon", "line", "point"):
    try:
-      connection = connect("dbname='gis_loading' user='gis' password=''");
+      connection = connect(
+          "dbname='gis_loading' user='gis' host='{host}'".format(
+              host=os.getenv("POSTGISDB_HOST"),
+          )
       auxilary_cursor = connection.cursor()
       query = "ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key)
       print(query)
@@ -26,11 +31,14 @@ for table in ("polygon", "line", "point"):
    except ProgrammingError:
       print u"table column \"short_" + name_key + "\" does not exist".encode('utf8')
 
-connection = connect("dbname='gis_loading' user='gis' password=''");
+connection = connect(
+    "dbname='gis_loading' user='gis' host='{host}'".format(
+        host=os.getenv("POSTGISDB_HOST"),
+    )
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()
 
-for table in ("polygon", "line", "point"): 
+for table in ("polygon", "line", "point"):
    query = "ALTER TABLE planet_osm_%s ADD short_%s text;" % (table, name_key)
    print(query)
    auxilary_cursor.execute(query)
