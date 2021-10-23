@@ -1,7 +1,7 @@
 #!/bin/sh
 #perl render_list_geo.pl -n 2 -m default -z 16 -Z 18 -Y 50.2131 -x 14.1965 -y 49.918 -X 14.7685 #Praha
 #perl render_list_geo.pl -n 2 -m default -z 6 -Z 18 -x 12.0 -X 19.0 -Y 51.1 -y 48.5 #CR
-LOG=$RENDERING_DIR/logs/$LOG
+LOG=$RENDERING_DIR/logs/$RENDERING_QUADRANTS_LOG
 cd $RENDERING_DIR/docker/
 echo "Start 'render_list': $(date)" > $LOG
 echo "Start render quadrant no. 1: $(date)" >> $LOG
