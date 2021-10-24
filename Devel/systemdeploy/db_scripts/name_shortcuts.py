@@ -109,3 +109,4 @@ for shortcut in shortcuts:
 
 relation_cursor.close()
 connection.commit()
+connection.close()

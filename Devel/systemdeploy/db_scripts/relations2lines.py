@@ -85,3 +85,4 @@ while True:
 auxilary_cursor.close()
 relation_cursor.close()
 connection.commit()
+connection.close()
