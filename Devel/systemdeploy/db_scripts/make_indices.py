@@ -7,8 +7,9 @@ from psycopg2 import *
 
 # Create connection to DB server.
 connection = connect(
-    "dbname='gis_loading' user='gis' host='{host}'".format(
+    "dbname='gis_loading' user='gis' host='{host}' port='{port}'".format(
         host=os.getenv("POSTGISDB_HOST"),
+        port=os.getenv("POSTGISDB_PORT", "5432"),
     ),
 )
 relation_cursor = connection.cursor()
