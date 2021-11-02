@@ -102,7 +102,7 @@
   </Rule>
   <Rule>
     &maxscale_zoom17;
-    <Filter>([highway]='residential')</Filter>
+    <Filter>([highway]='residential' or [highway]='tertiary')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone13.png"/>
   </Rule>
    <Rule>
@@ -113,13 +113,13 @@
   <Rule>
     &maxscale_zoom15;
     &minscale_zoom16;
-    <Filter>([highway]='residential')</Filter>
+    <Filter>([highway]='residential' or [highway]='tertiary')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone10.png"/>
   </Rule>
   <Rule>
     &maxscale_zoom14;
     &minscale_zoom14;
-    <Filter>([highway]='residential')</Filter>
+    <Filter>([highway]='residential' or [highway]='tertiary')</Filter>
     <LinePatternSymbolizer file="../symbols/cobblestone7.png"/>
   </Rule>
 </Style>
