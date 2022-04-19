@@ -19,10 +19,12 @@ name_key="name"
 for table in ("polygon", "line", "point"):
    try:
       connection = connect(
-          "dbname='gis_loading' user='gis' host='{host}' port='{port}'".format(
-             host=os.getenv("POSTGISDB_HOST"),
-             port=os.getenv("POSTGISDB_PORT", "5432"),
-          ),
+         "dbname='{db_name}' user='{user}' host='{host}' port='{port}'".format(
+            db_name=os.getenv("POSTGISDB_NAME", "gis_loading"),
+            user=os.getenv("POSTGISDB_USER", "gis"),
+            host=os.getenv("POSTGISDB_HOST", "localhost"),
+            port=os.getenv("POSTGISDB_PORT", "5432"),
+         ),
       )
       auxilary_cursor = connection.cursor()
       query = "ALTER TABLE planet_osm_%s DROP short_%s;" % (table, name_key)
@@ -34,10 +36,12 @@ for table in ("polygon", "line", "point"):
       print u"table column \"short_" + name_key + "\" does not exist".encode('utf8')
 
 connection = connect(
-    "dbname='gis_loading' user='gis' host='{host}' port='{port}'".format(
-       host=os.getenv("POSTGISDB_HOST"),
-       port=os.getenv("POSTGISDB_PORT", "5432"),
-    ),
+   "dbname='{db_name}' user='{user}' host='{host}' port='{port}'".format(
+      db_name=os.getenv("POSTGISDB_NAME", "gis_loading"),
+      user=os.getenv("POSTGISDB_USER", "gis"),
+      host=os.getenv("POSTGISDB_HOST", "localhost"),
+      port=os.getenv("POSTGISDB_PORT", "5432"),
+   ),
 )
 relation_cursor = connection.cursor()
 auxilary_cursor = connection.cursor()

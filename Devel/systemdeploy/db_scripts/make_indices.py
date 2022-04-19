@@ -7,8 +7,10 @@ from psycopg2 import *
 
 # Create connection to DB server.
 connection = connect(
-    "dbname='gis_loading' user='gis' host='{host}' port='{port}'".format(
-        host=os.getenv("POSTGISDB_HOST"),
+    "dbname='{db_name}' user='{user}' host='{host}' port='{port}'".format(
+        db_name=os.getenv("POSTGISDB_NAME", "gis_loading"),
+        user=os.getenv("POSTGISDB_USER", "gis"),
+        host=os.getenv("POSTGISDB_HOST", "localhost"),
         port=os.getenv("POSTGISDB_PORT", "5432"),
     ),
 )
