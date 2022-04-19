@@ -15,13 +15,13 @@ def main():
 #    strGeom="['geometry=LINESTRING%2814.449063110355+48.20762555376%2C14.449063110355+48.20762555376%29']"
 #    strGeom="['geometry=LINESTRING%2815.15420+50.09320%2C15.15459+50.09350%2C15.15472+50.09326%2C15.15420+50.09326%29']"
 
-    print "Content-type: text/html\r\n\r\n"
+    print("Content-type: text/html\r\n\r\n")
     if not (checkInput(strGeom)):
-        print "<h1>wrong input(1)</h1>"
+        print("<h1>wrong input(1)</h1>")
     else:
         nodes = parseInput(strGeom)
         if (nodes == "wrong input"):
-            print "<h1>wrong input(2)</h1>"
+            print("<h1>wrong input(2)</h1>")
         else: drawAltitude(nodes)
 
 def checkInput(input):
@@ -68,13 +68,13 @@ def drawAltitude(nodes):
         # print its height
         if not appendHeights(nodes):
         # print html output
-            print "You have passed just one node: ", nodes[0], "<br>"
-            print "Its height is "
-            print nodes[0][2]
-            print " meters above sea level."
+            print("You have passed just one node: ", nodes[0], "<br>")
+            print("Its height is ")
+            print(nodes[0][2])
+            print(" meters above sea level.")
         else:
-        	   print "You have passed just one node: ", nodes[0], "<br>"
-        	   print "Sorry, we are missing height data for its coordinates."
+            print("You have passed just one node: ", nodes[0], "<br>")
+            print("Sorry, we are missing height data for its coordinates.")
     else:
         sumdist = 0
         i=0
@@ -91,12 +91,12 @@ def drawAltitude(nodes):
             # convert vector svg file into raster png file
             os.system("rsvg-convert -o ../img/altitude.png ../img/altitude.svg")
             # print html output
-            print '<html><body>'
-            print '<img src="../img/altitude.png"><br>'
+            print('<html><body>')
+            print('<img src="../img/altitude.png"><br>')
 #            print "number of nodes: ", len(nodes)
-            print '</body></html>'
+            print('</body></html>')
         else:
-        	   print "Sorry, missing SRTM height data, try longer track."
+            print("Sorry, missing SRTM height data, try longer track.")
 
 def dist(index, nodes):
     """
@@ -129,7 +129,7 @@ def appendHeights(nodes):
     zip_path = '../../Data/shadingdata/'
     for i in range(len(nodes)):
         key = 'N' + str(int(math.floor(nodes[i][0]))) + 'E0' + str(int(math.floor(nodes[i][1])))
-        if not (hgtArrays.has_key(key)):
+        if not (key in hgtArrays):
             zip_file = zipfile.ZipFile(zip_path + key + '.hgt.zip', 'r')
             zip_file_name = zip_file.namelist()[0]
             hgt_string = zip_file.read(zip_file_name)
@@ -138,14 +138,14 @@ def appendHeights(nodes):
         nodes[i].append(getHeight(hgtArrays, nodes[i][0], nodes[i][1]))
     # Parsing missing height data
         if ((nodes[i][-1] == -32768) and (i>0)) : nodes[i][-1]=nodes[i-1][-1]
-    if (nodes[0][-1] == -32768) : 
+    if (nodes[0][-1] == -32768) :
         j=1
         while (nodes[j][-1]==-32768) and j<len(nodes)-1:
-        	   j=j+1
+                   j=j+1
         if (j==len(nodes)-1): return 1
         while j>0:
-        	   nodes[j-1][-1] = nodes[j][-1]
-        	   j=j-1
+                   nodes[j-1][-1] = nodes[j][-1]
+                   j=j-1
     return 0
 
 def getHeight(hgtArrays, lat, lon):

@@ -5,7 +5,7 @@
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
-from Queue import Queue
+from queue import Queue
 import mapnik
 import threading
 import argparse
@@ -40,14 +40,14 @@ class GoogleProjection:
             self.zc.append((e,e))
             self.Ac.append(c)
             c *= 2
-                
+
     def fromLLtoPixel(self,ll,zoom):
          d = self.zc[zoom]
          e = round(d[0] + ll[0] * self.Bc[zoom])
          f = minmax(sin(DEG_TO_RAD * ll[1]),-0.9999,0.9999)
          g = round(d[1] + 0.5*log((1+f)/(1-f))*-self.Cc[zoom])
          return (e,g)
-     
+
     def fromPixelToLL(self,px,zoom):
          e = self.zc[zoom]
          f = (px[0] - e[0])/self.Bc[zoom]
@@ -133,14 +133,14 @@ class RenderThread:
             if bytes == 103:
                 empty = " Empty Tile "
             self.printLock.acquire()
-            print name, ":", z, x*aggregate, y*aggregate, exists, empty
+            print(name, ":", z, x*aggregate, y*aggregate, exists, empty)
             self.printLock.release()
             self.q.task_done()
 
 
 
 def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", num_threads=NUM_THREADS):
-    print "render_tiles(",bbox, mapfile, tile_dir, minZoom, maxZoom, name, num_threads, ")"
+    print("render_tiles(\",bbox, mapfile, tile_dir, minZoom, maxZoom, name, num_threads, \")")
 
     # Launch rendering threads
     queue = Queue(32)
@@ -156,7 +156,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
     if not os.path.isdir(tile_dir):
          os.mkdir(tile_dir)
 
-    gprj = GoogleProjection(maxZoom+1) 
+    gprj = GoogleProjection(maxZoom+1)
 
     ll0 = (bbox[0],bbox[3])
     ll1 = (bbox[2],bbox[1])
@@ -164,7 +164,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
     for z in range(minZoom,maxZoom + 1):
         px0 = gprj.fromLLtoPixel(ll0,z)
         px1 = gprj.fromLLtoPixel(ll1,z)
-        
+
         # check if we have directories in place
         zoom = "%s" % z
         if not os.path.isdir(tile_dir + zoom):
@@ -194,7 +194,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
 
 
 if __name__ == "__main__":
-    
+
     #python render_tiles.py tilemill/wards.xml mayor-2011/.tiles/wards/ -89.03 41.07 -87.51 42.50 9 16 2
     parser = argparse.ArgumentParser(description='Render your tiles.')
     parser.add_argument('style_file', help="File containing Mapnik styles")
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument('max_zoom', help="Maximum zoom level to render", type=int, default="12")
     parser.add_argument('cores', help="Number of rendering threads to spawn, should be roughly equal to number of CPU cores available", type=int, default="2")
     args = parser.parse_args()
-    
+
     bbox = (args.lon_1, args.lat_2, args.lon_2, args.lat_1)
-    
+
     render_tiles(bbox, args.style_file, args.tile_dir, args.min_zoom, args.max_zoom, "tiles", args.cores)

@@ -33,7 +33,7 @@ auxilary_cursor.execute("ALTER TABLE planet_osm_cycleway_rels ADD role text, ADD
 # Select all route relations.
 relation_cursor.execute("SELECT id, parts, tags, members FROM planet_osm_rels WHERE"
   " 'route' = ANY(tags) AND (%s)" % (" OR ".join(["'%s' = ANY(tags)" % (key,)
-  for key in copy_tags.keys()])))
+  for key in list(copy_tags.keys())])))
 while True:
     # Fetch some of the result.
     rows = relation_cursor.fetchmany(100)
@@ -61,7 +61,7 @@ while True:
            # if copy_tags1.has_key(key):
            #    tags[key] = value
 
-        if not tags.has_key('route'):
+        if 'route' not in tags:
               continue
 
         # if tags.has_key('ref'):
@@ -91,10 +91,10 @@ while True:
         for I in range(0, l/2):
            role = str(row[3][I*2+1])
            id = str(row[3][I*2])
-           if role <> 'forward' and role <> 'backward':
+           if role != 'forward' and role != 'backward':
               bidirectionals.append(id[1:])
            if id[0] == 'w':
-              if not roles.has_key(role):
+              if role not in roles:
                  roles[role] = []
               roles[role].append(id[1:])
 
@@ -114,17 +114,17 @@ while True:
         #        auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role = '%s' WHERE"
         #          " osm_id IN (%s)" % (r, role_statement))
         # Add forward roles
-        if roles.has_key("forward"):
+        if "forward" in roles:
             role_statement = ", ".join([str(way_id) for way_id in roles['forward']])
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_forward = role_forward + 1 WHERE"
               " osm_id IN (%s)" % (role_statement))
         # Add backward roles
-        if roles.has_key("backward"):
+        if "backward" in roles:
             role_statement = ", ".join([str(way_id) for way_id in roles['backward']])
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_backward = role_backward + 1 WHERE"
               " osm_id IN (%s)" % (role_statement))
         # Add no roles
-        if roles.has_key("bidirectional"):
+        if "bidirectional" in roles:
             role_statement = ", ".join([str(way_id) for way_id in bidirectionals])
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET role_bidirectional = role_bidirectional + 1 WHERE"
               " osm_id IN (%s)" % (role_statement))
@@ -133,8 +133,8 @@ while True:
         if len(tags) and len(row[1]):
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
-              .replace('\'', '\\\'')) for key in tags.keys()])
-            print "Updating lines:", where_statement
+              .replace('\'', '\\\'')) for key in list(tags.keys())])
+            print("Updating lines:", where_statement)
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 

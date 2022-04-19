@@ -33,7 +33,7 @@ for table in ("polygon", "line", "point"):
       auxilary_cursor.close()
       connection.commit()
    except ProgrammingError:
-      print u"table column \"short_" + name_key + "\" does not exist".encode('utf8')
+      print(("table column \"short_" + name_key + "\" does not exist".encode('utf8')))
 
 connection = connect(
    "dbname='{db_name}' user='{user}' host='{host}' port='{port}'".format(
@@ -61,7 +61,7 @@ shortcuts = (
 
 # Select all route relations.
 for shortcut in shortcuts:
-   if shortcut.has_key("sqlpattern"):
+   if "sqlpattern" in shortcut:
       sqlpattern=shortcut["sqlpattern"]
    else:
       sqlpattern=shortcut["pattern"]
@@ -70,24 +70,24 @@ for shortcut in shortcuts:
    pattern=shortcut["pattern"]
    substitution=shortcut["substitution"]
 
-   if shortcut.has_key("ignorecase") and shortcut["ignorecase"] == "true":
+   if "ignorecase" in shortcut and shortcut["ignorecase"] == "true":
       ignorecase="*"
    else:
       ignorecase=""
 
-   if shortcut.has_key("query"):
+   if "query" in shortcut:
       query=shortcut["query"]
    else:
       query="true"
 
-   if shortcut.has_key("tables"):
+   if "tables" in shortcut:
       tables=shortcut["tables"]
    else:
       tables={"point", "polygon", "line"}
 
    for table in tables:
       q = "SELECT osm_id, %s, short_%s FROM planet_osm_%s WHERE (%s) AND %s ~%s '%s'" % (name_key, name_key, table, query, name_key, ignorecase, sqlpattern)
-      print q.encode('utf8')
+      print((q.encode('utf8')))
       relation_cursor.execute(q)
       while True:
           # Fetch some of the result.
@@ -109,8 +109,8 @@ for shortcut in shortcuts:
                 p = re.compile(pattern, re.UNICODE)
 
              short_name = p.sub(substitution, name.decode('utf8'))
-             update_query = u"UPDATE planet_osm_%s SET short_%s = '%s' WHERE osm_id = %s" % (table, name_key, short_name, row[0])
-             print update_query
+             update_query = "UPDATE planet_osm_%s SET short_%s = '%s' WHERE osm_id = %s" % (table, name_key, short_name, row[0])
+             print(update_query)
              auxilary_cursor.execute(update_query)
 
 relation_cursor.close()

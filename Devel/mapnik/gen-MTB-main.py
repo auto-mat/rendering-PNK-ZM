@@ -22,7 +22,7 @@ def centerToBbox(lat, lon, zoom, imgx, imgy):
     east = lon + (imgx*base*(2**(18-zoom-1)))
     north = lat + base
     south = lat - base
-    print "range: ", (west, lat - (imgy*base*(2**(18-zoom-1))), east, lat + (imgy*base*(2**(18-zoom-1))))
+    print("range: ", (west, lat - (imgy*base*(2**(18-zoom-1))), east, lat + (imgy*base*(2**(18-zoom-1)))))
     return (west, south, east, north)
 
 if __name__ == "__main__":

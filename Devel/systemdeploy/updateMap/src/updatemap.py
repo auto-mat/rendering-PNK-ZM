@@ -13,7 +13,7 @@
 # to download different dataset, more changes will be needed
 
 import os, sys, shutil
-import datetime, re, httplib
+import datetime, re, http.client
 
 def refreshDate(file,date):
     try:
@@ -24,12 +24,12 @@ def refreshDate(file,date):
         fo.write(re.sub("20[1-9][0-9]-[0-1][0-9]-[0-3][0-9]",date,s))
         fo.close()
     except IOError:
-        print 'Cannot refresh date for ' + file
+        print('Cannot refresh date for ' + file)
     else:
         try:
             shutil.copyfile(homepath + '/Devel/ruzne/' + file, homepath + '/Web/mtbmap/' + file)
         except IOError:
-            print 'Problem with copying ' + file + ', check access privileges.'
+            print('Problem with copying ' + file + ', check access privileges.')
 
 class UpdateError(Exception):
     def __init__(self, value, msg):
@@ -42,13 +42,13 @@ if __name__ == "__main__":
     date = datetime.date.today()
     try:
         try:
-            connection = httplib.HTTPConnection('osm.kyblsoft.cz')
+            connection = http.client.HTTPConnection('osm.kyblsoft.cz')
             connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.bz2')
             response = connection.getresponse()
             # if today's dataset doesn't exist, use yesterday's
             if (response.status != 200):
                 date = date - datetime.timedelta(days=1)
-        except socket.error, msg:
+        except socket.error as msg:
             connection.close()
             raise UpdateError(1, msg)
 
@@ -59,26 +59,26 @@ if __name__ == "__main__":
 
         try:
             os.chdir(homepath + '/Data')
-        except OSError, msg:
+        except OSError as msg:
             raise UpdateError(1, msg)
 
     
         if (os.system('wget ' + url)==0):
             try:
                 os.chdir(homepath + '/sw/osm2pgsql')
-            except OSError, msg:
+            except OSError as msg:
                 raise UpdateError(1, msg)
             ret = os.system('./osm2pgsql -s -d gisczech ../../Data/' + filename + ' -S ./default.style -C 2000')
             if (ret != 0):
                 try:
                     os.remove('../../Data/' + filename)
-                except OSError, msg:
+                except OSError as msg:
                     raise UpdateError(1, 'An error occured, osm2pgsql returned ' + str(ret/256) + 'exit status and: ' + msg)
                 raise UpdateError(1, 'An error occured, osm2pgsql returned ' + str(ret/256) + 'exit status')
             try:
                 os.remove('../../Data/' + filename)
-            except OSError, msg:
-                print 'Someone must have been really fast: ' + msg
+            except OSError as msg:
+                print('Someone must have been really fast: ' + msg)
             os.system(homepath + '/Devel/relations2lines.py')
             refreshDate('index.html', str(date))
             refreshDate('en.html', str(date))
@@ -89,4 +89,4 @@ if __name__ == "__main__":
         else:
             raise UpdateError(1, 'An error occured while downloading ' + url)
     except UpdateError:
-        print 'Map data was not uploaded'
+        print('Map data was not uploaded')

@@ -23,13 +23,13 @@ def main():
         imgx = int(properties[4])
         imgy = int(properties[5])
     except ValueError:
-        print "Content-Type: text/html \n"
-        print "Wrong input"
+        print("Content-Type: text/html \n")
+        print("Wrong input")
         return
     # don't render image larger than 4 Mpx
     if (imgx*imgy > 4000000):
-        print "Content-Type: text/html \n"
-        print "<h3>Sorry, requested image is too large.</h3>"
+        print("Content-Type: text/html \n")
+        print("<h3>Sorry, requested image is too large.</h3>")
         return
 
     m = Map(imgx,imgy)
@@ -43,8 +43,8 @@ def main():
     render(m, im)
     png = im.tostring("png")
     # output headers and PNG file to standard output
-    print "Content-Type: image/png"
-    print "Content-Disposition: attachment; filename=\"render.png\"\n"
+    print("Content-Type: image/png")
+    print("Content-Disposition: attachment; filename=\"render.png\"\n")
     sys.stdout.write(png)
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
 import cairo
-from Queue import Queue
+from queue import Queue
 
 import threading
 
