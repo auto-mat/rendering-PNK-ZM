@@ -24,7 +24,6 @@ def updateFromFile(filename):
         + ' -U ' + os.getenv('POSTGISDB_USER', 'gis')
         + ' -H ' + os.getenv('POSTGISDB_HOST', 'localhost')
         + ' -P ' + os.getenv('POSTGISDB_PORT', '5432')
-        + ' -W' + os.getenv('POSTGISDB_PASSWORD')
     )
     #ret = os.system('osm2pgsql -s -d gis ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
     if (ret != 0):
