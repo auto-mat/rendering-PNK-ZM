@@ -8,4 +8,4 @@ echo -e "<Parameter name=\"type\">postgis</Parameter>\n\
 <Parameter name=\"dbname\">$POSTGISDB_NAME</Parameter>\n\
 <Parameter name=\"estimate_extent\">false</Parameter>\n\
 <Parameter name=\"extent\">-20037508,-19929239,20037508,19929239</Parameter>\n\
-" > inc/datasource-settings.xml.inc
+" | tee inc/datasource-settings.xml.inc inc/latlon-datasource-settings.xml.inc > /dev/null
