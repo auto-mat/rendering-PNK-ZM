@@ -1,7 +1,9 @@
 #!/run/current-system/sw/bin/bash -e
 
 umount_aws_s3 () {
-    fusermount -uq /home/$RENDER_USER/data/mod_tile/
+    if [ "$(findmnt -t fuse -n | grep -c mnk-rendering)" -gt 0 ]; then
+        fusermount -uq /home/$RENDER_USER/data/mod_tile/
+    fi
 }
 
 create_pgpass_file () {
@@ -10,20 +12,27 @@ create_pgpass_file () {
 
 create_aws_credentials () {
     mkdir -p $HOME/.aws
-    echo "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY" > $HOME/.aws/credentials
-    echo "[default]\nregion = eu-west-1\noutput = json" > $HOME/.aws/config
+    echo -e "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY" > $HOME/.aws/credentials
+    echo -e "[default]\nregion = eu-west-1\noutput = json" > $HOME/.aws/config
+}
+
+remove_docker_container () {
+    if [ "$( docker ps -a | grep -c $RENDER_USER)" -gt 0 ]; then
+        docker rm $RENDER_USER -f
+    fi
 }
 
 mkdir -p ../../logs
 source .env
+remove_docker_container
 create_pgpass_file
 python updatemap.py
-docker rm $RENDER_USER -f
+psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '$POSTGISDB_NAME'"
 psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE $POSTGISDB_NAME RENAME TO gis_loading1;"
-psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO $POSTGISDB_NAME;"
+psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
 psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
 umount_aws_s3
-goofys $AWS_S3_BUCKET_NAME /home/$RENDER_USER/data/mod_tile/
+goofys $AWS_S3_BUCKET_NAME /home/$RENDER_USER/data/
 docker run --name $RENDER_USER \
        -e RENDERING_DIR=$RENDERING_DIR \
        -e UPDATE_DB_AND_RENDERING_LOG=$UPDATE_DB_AND_RENDERING_LOG \
