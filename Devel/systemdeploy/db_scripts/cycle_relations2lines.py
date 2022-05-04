@@ -154,7 +154,7 @@ while True:
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
               .replace('\'', '\\\'')) for key in list(tags.keys())])
-            print(("Updating lines:", where_statement))
+            print("Updating lines:", where_statement)
             auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
@@ -165,8 +165,7 @@ while True:
 # for way_id in proposed_refs.keys():
 #    auxilary_cursor.execute("UPDATE planet_osm_cycleway_rels SET proposed_refs = '%s' WHERE"
 #      " osm_id = %s" % (proposed_refs[way_id].replace('\'', '\\\''), way_id))
-
+connection.commit()
 auxilary_cursor.close()
 relation_cursor.close()
-connection.commit()
 connection.close()

@@ -49,14 +49,14 @@ for index in indices:
     for amenity in indices[index]:
         table = index
         drop_string = "drop index if exists \"%(table)s_%(amenity)s_idx\"" % {'amenity':amenity, 'table': table}
-        print(("drop index if exists %(table)s_%(amenity)s_idx" % {'amenity':amenity, 'table': table}))
+        print("drop index if exists %(table)s_%(amenity)s_idx" % {'amenity':amenity, 'table': table})
         auxilary_cursor.execute(drop_string)
         gist = "USING gist" if amenity in ['way', 'geom'] else ""
         create_string = "create index \"%(table)s_%(amenity)s_idx\" on \"%(table)s\" %(gist)s(\"%(amenity)s\")" % {'amenity':amenity, 'table': table, 'gist': gist}
         print(create_string)
         auxilary_cursor.execute(create_string)
 
+connection.commit()
 auxilary_cursor.close()
 relation_cursor.close()
-connection.commit()
 connection.close()

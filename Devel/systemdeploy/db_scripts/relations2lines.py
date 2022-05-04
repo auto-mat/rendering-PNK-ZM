@@ -83,11 +83,11 @@ while True:
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
               .replace('\'', '\\\'')) for key in list(tags.keys())])
-            print(("Updating lines:", where_statement))
+            print("Updating lines:", where_statement)
             auxilary_cursor.execute("UPDATE planet_osm_track_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
+connection.commit()
 auxilary_cursor.close()
 relation_cursor.close()
-connection.commit()
 connection.close()

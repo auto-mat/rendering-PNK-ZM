@@ -88,7 +88,7 @@ while True:
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
               .replace('\'', '\\\'')) for key in list(tags.keys())])
-            print(("Updating lines:", where_statement))
+            print("Updating lines:", where_statement)
             auxilary_cursor.execute("UPDATE planet_osm_station_lines_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
@@ -112,8 +112,8 @@ while True:
             # Update points of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
               .replace('\'', '\\\'')) for key in list(tags.keys())])
-            print(("Updating points:", where_statement))
-            print(("Set: ", set_statement))
+            print("Updating points:", where_statement)
+            print("Set: ", set_statement)
             auxilary_cursor.execute("UPDATE planet_osm_station_points_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
@@ -123,7 +123,7 @@ while True:
             auxilary_cursor.execute("UPDATE planet_osm_station_points_rels SET rel_id = %s WHERE"
               " osm_id IN (%s)" % (row[0], where_statement))
 
+connection.commit()
 auxilary_cursor.close()
 relation_cursor.close()
-connection.commit()
 connection.close()

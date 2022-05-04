@@ -35,7 +35,7 @@ for table in ("polygon", "line", "point"):
       auxilary_cursor.close()
       connection.commit()
    except ProgrammingError:
-      print(("table column \"short_" + name_key + "\" does not exist".encode('utf8')))
+      print("table column \"short_" + name_key + "\" does not exist")
 
 connection = connect(
    "dbname='{db_name}' user='{user}' host='{host}' port='{port}'"
@@ -91,7 +91,7 @@ for shortcut in shortcuts:
 
    for table in tables:
       q = "SELECT osm_id, %s, short_%s FROM planet_osm_%s WHERE (%s) AND %s ~%s '%s'" % (name_key, name_key, table, query, name_key, ignorecase, sqlpattern)
-      print((q.encode('utf8')))
+      print(q.encode('utf8'))
       relation_cursor.execute(q)
       while True:
           # Fetch some of the result.
@@ -117,6 +117,7 @@ for shortcut in shortcuts:
              print(update_query)
              auxilary_cursor.execute(update_query)
 
-relation_cursor.close()
 connection.commit()
+relation_cursor.close()
+auxilary_cursor.close()
 connection.close()
