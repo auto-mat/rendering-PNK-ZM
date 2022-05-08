@@ -108,7 +108,7 @@ while True:
         roles = {}
         bidirectionals = []
         l = len(row[3])
-        for I in range(0, l/2):
+        for I in range(0, l//2):
            role = str(row[3][I*2+1])
            id = str(row[3][I*2])
            if role != 'forward' and role != 'backward':
