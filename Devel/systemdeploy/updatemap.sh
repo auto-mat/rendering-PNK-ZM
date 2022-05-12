@@ -1,10 +1,7 @@
 #!/run/current-system/sw/bin/bash -e
 
-umount_aws_s3 () {
-    if [ "$(findmnt -t fuse -n | grep -c mnk-rendering)" -gt 0 ]; then
-        fusermount -uq /home/$RENDER_USER/data/mod_tile/
-    fi
-}
+TILES_WATCHDOG_PY_FILE="../../k8/watchdog.py"
+WATCHDOG_PY_FILE_PID=$(pgrep -f  "python $TILES_WATCHDOG_PY_FILE")
 
 create_pgpass_file () {
     echo $POSTGISDB_HOST:$POSTGISDB_PORT:*:$POSTGISDB_USER:$POSTGISDB_PASSWORD > $HOME/.pgpass
@@ -22,6 +19,12 @@ remove_docker_container () {
     fi
 }
 
+start_watchdog () {
+    if [ "$(echo $WATCHDOG_PY_FILE_PID | wc -l)" -eq 0 ]; then
+        python $TILES_WATCHDOG_PY_FILE
+    fi
+}
+
 mkdir -p ../../logs
 source .env
 remove_docker_container
@@ -31,8 +34,7 @@ psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "SELECT pg_term
 psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE $POSTGISDB_NAME RENAME TO gis_loading1;"
 psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
 psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
-umount_aws_s3
-goofys $AWS_S3_BUCKET_NAME /home/$RENDER_USER/data/
+start_watchdog
 docker run --name $RENDER_USER \
        -e RENDERING_DIR=$RENDERING_DIR \
        -e UPDATE_DB_AND_RENDERING_LOG=$UPDATE_DB_AND_RENDERING_LOG \
