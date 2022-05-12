@@ -109,7 +109,7 @@ class EventHandler(pyinotify.ProcessEvent):
     def process_IN_MODIFY(self, event):
         if "mod_tile" in event.pathname:
             tile_path = event.pathname.split(
-                f"/home/{os.getenv('RENDER_USER')}/mod_tile",
+                f"/home/{os.getenv('RENDER_USER')}/data/mod_tile",
             )[1]
             self.create_k8_pod_tile_dir(
                 tile_dir=os.path.dirname(tile_path),
@@ -127,7 +127,7 @@ def main():
     # Watch manager
     wm = pyinotify.WatchManager()
     wm.add_watch(
-        "/home/mtbmap/mod_tile/default",
+        f"/home/{os.getenv('RENDER_USER')}/data/mod_tile/default",
         pyinotify.IN_MODIFY,
         rec=True,
     )
