@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/bash -e
 
 TILES_WATCHDOG_PY_FILE="../../k8/watchdog.py"
-WATCHDOG_PY_FILE_PID=$(pgrep -f  "python $TILES_WATCHDOG_PY_FILE")
+WATCHDOG_PY_FILE_PID=$(pgrep -f  "python $TILES_WATCHDOG_PY_FILE" || exit 0)
 
 create_pgpass_file () {
     echo $POSTGISDB_HOST:$POSTGISDB_PORT:*:$POSTGISDB_USER:$POSTGISDB_PASSWORD > $HOME/.pgpass
