@@ -20,7 +20,7 @@ remove_docker_container () {
 }
 
 start_watchdog () {
-    if [ "$(echo $WATCHDOG_PY_FILE_PID | wc -l)" -eq 0 ]; then
+    if [ -z "$WATCHDOG_PY_FILE_PID" ]; then
         python $TILES_WATCHDOG_PY_FILE
     fi
 }
