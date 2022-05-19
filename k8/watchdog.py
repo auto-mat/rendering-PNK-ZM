@@ -27,6 +27,7 @@ logging.basicConfig(
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, pod_name="mnk-rendering"):
         self.k8_pod = self.get_k8_pod(pod_name)
+        self.pod_name = pod_name
         self.tiles_dir = "/var/lib/mod_tile"
         super().__init__()
 
@@ -79,31 +80,31 @@ class EventHandler(pyinotify.ProcessEvent):
         )
         if p.returncode == 1:
             if "Error from server (NotFound)" in p.stderr.decode():
-                self.k8_pod = self.get_k8_pod(pod_name="nfs-server")
+                self.k8_pod = self.get_k8_pod(pod_name=self.pod_name)
                 self.create_k8_pod_tile_dir(tile_dir)
             else:
                 message = f"tile file: '{self.tiles_dir}{tile_dir}' Error: {p.stderr.decode()}"
                 logging.error(message)
 
-    def copy_k8_pod_tile_file(self, tile_file, tile_dir):
+    def copy_k8_pod_tile_file(self, tile_file_src, tile_file_dest):
         """Copy tile file into k8 pod tile dir
 
-        :param str tile_dir: tile dir
-        :param str tile_file: source tile file path
+        :param str tile_file_src: tile file source path
+        :param str tile_file_dest: tile file destination path
 
         :return None
         """
         p = subprocess.run(
-            f"kubectl cp {tile_file} {self.k8_pod}:{self.tiles_dir}{tile_dir}",
+            f"kubectl cp {tile_file_src} {self.k8_pod}:{self.tiles_dir}{tile_file_dest}",
             shell=True,
             capture_output=True,
         )
         if p.returncode == 1:
             if "Error from server (NotFound)" in p.stderr.decode():
-                self.k8_pod = self.get_k8_pod(pod_name="nfs-server")
-                self.copy_k8_pod_tile_file(tile_file)
+                self.k8_pod = self.get_k8_pod(pod_name=self.pod_name)
+                self.copy_k8_pod_tile_file(tile_file_src, tile_file_dest)
             else:
-                message = f"tile file: '{self.tiles_dir}{tile_file}' Error: {p.stderr.decode()}"
+                message = f"tile file: '{self.tiles_dir}{tile_file_dest}' Error: {p.stderr.decode()}"
                 logging.error(message)
 
     def process_IN_MODIFY(self, event):
@@ -111,13 +112,18 @@ class EventHandler(pyinotify.ProcessEvent):
             tile_path = event.pathname.split(
                 f"/home/{os.getenv('RENDER_USER')}/data/mod_tile",
             )[1]
-            self.create_k8_pod_tile_dir(
-                tile_dir=os.path.dirname(tile_path),
-            )
-            self.copy_k8_pod_tile_file(
-                tile_dir=os.path.dirname(tile_path),
-                tile_file=event.pathname,
-            )
+            if os.path.isdir(event.pathname):
+                self.create_k8_pod_tile_dir(
+                    tile_dir=os.path.dirname(tile_path),
+                )
+            else:
+                self.create_k8_pod_tile_dir(
+                    tile_dir=os.path.dirname(tile_path),
+                )
+                self.copy_k8_pod_tile_file(
+                    tile_file_src=event.pathname,
+                    tile_file_dest=tile_path
+                )
 
     # def process_IN_OPEN(self, event):
     #     print("OPEN event:", event.pathname)
