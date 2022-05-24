@@ -21,7 +21,7 @@ remove_docker_container () {
 
 start_watchdog () {
     if [ -z "$WATCHDOG_PY_FILE_PID" ]; then
-        python $TILES_WATCHDOG_PY_FILE
+        python $TILES_WATCHDOG_PY_FILE &
     fi
 }
 
