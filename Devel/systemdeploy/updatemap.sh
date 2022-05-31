@@ -1,8 +1,5 @@
 #!/run/current-system/sw/bin/bash -e
 
-TILES_WATCHDOG_PY_FILE="../../k8/watchdog.py"
-WATCHDOG_PY_FILE_PID=$(pgrep -f  "python $TILES_WATCHDOG_PY_FILE" || exit 0)
-
 create_pgpass_file () {
     echo $POSTGISDB_HOST:$POSTGISDB_PORT:*:$POSTGISDB_USER:$POSTGISDB_PASSWORD > $HOME/.pgpass
 }
@@ -19,9 +16,9 @@ remove_docker_container () {
     fi
 }
 
-start_watchdog () {
-    if [ -z "$WATCHDOG_PY_FILE_PID" ]; then
-        python $TILES_WATCHDOG_PY_FILE &
+mount_mnk_rendering_nfs_partitions () {
+    if [ ! -d "/home/$RENDER_USER/data/mnk-rendering-data" ]; then
+        mount -o port=$NFS_SERVER_PORT -t nfs4 $NFS_SERVER_IP_ADDRESS:/ /home/$RENDER_USER/data/
     fi
 }
 
@@ -34,7 +31,7 @@ psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "SELECT pg_term
 psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE $POSTGISDB_NAME RENAME TO gis_loading1;"
 psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
 psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
-start_watchdog
+mount_mnk_rendering_nfs_partitions
 docker run --name $RENDER_USER \
        -e RENDERING_DIR=$RENDERING_DIR \
        -e UPDATE_DB_AND_RENDERING_LOG=$UPDATE_DB_AND_RENDERING_LOG \
@@ -45,8 +42,7 @@ docker run --name $RENDER_USER \
        -e POSTGISDB_PORT=$POSTGISDB_PORT \
        -e POSTGISDB_PASSWORD=$POSTGISDB_PASSWORD \
        -e MAPNIK_RENDER_LIST_NTHREADS=$MAPNIK_RENDER_LIST_NTHREADS \
-       -v /home/$RENDER_USER/data/mod_tile:/var/lib/mod_tile \
-       -v /home/$RENDER_USER/data/cache_data:/usr/local/mapproxy/cache_data \
+       -v /home/$RENDER_USER/data/mnk-rendering-data/:/var/lib/mod_tile \
        -v /home/$RENDER_USER/rendering-PNK-ZM/:/home/rendering \
        -p 82:80 \
        -d $RENDER_USER /usr/bin/supervisord
