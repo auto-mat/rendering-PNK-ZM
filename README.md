@@ -19,3 +19,9 @@ pod tiles serving app.
 7. Updating geospatial OSM PostgreSQL DB geodata are logged into `tail /home/mtbmap/rendering-PNK-ZM/logs/update_db_and_rendering.log`
 8. Rendering geospatial OSM PostgreSQL DB geodata into tile files are logged into `tail /home/mtbmap/rendering-PNK-ZM/logs/rendering_quadrants.log`, executed by quadrants `cat /home/mtbmap/rendering-PNK-ZM/docker/render_map.sh`
 9. Rendered OSM tiles are backup via [cron job](https://github.com/auto-mat/mnk-server-init/blob/main/nixos/configuration.nix#L113) into AWS S3 bucket, mounted inside `/root/mnt/mnk-rendering-aws-s3/` directory, logged into `tail /home/mtbmap/rendering-PNK-ZM/logs/backup_tiles.log`
+
+## Available at URLs
+
+MNK OSM rendered tiles 512 x 512 (192 DPI) for GIS: https://mnk-osm-tiles.dopracenakole.net/{z}/{x}/{y}.png
+
+Web app with MNK OSM rendered tiles 512 x 512 (192 DPI): https://embedded-map-test.dopracenakole.net/
