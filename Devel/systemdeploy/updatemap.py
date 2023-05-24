@@ -13,7 +13,7 @@
 # to download different dataset, more changes will be needed
 
 import os, sys, shutil
-import datetime, re, httplib
+import datetime, re, http.client
 
 def updateFromFile(filename):
     ret = os.system('osm2pgsql -r pbf -s -d gis_loading ' + homepath + '/Data/' + filename + ' -S ' + homepath + '/Data/mtbmap.style -C 2000 -U gis')
@@ -23,8 +23,8 @@ def updateFromFile(filename):
     try:
         os.chdir(homepath + 'Devel/systemdeploy/db_scripts/')
         os.system('./db_scripts.sh')
-    except OSError, msg:
-        print msg
+    except OSError as msg:
+        print(msg)
         raise UpdateError('relations2lines.py failed, osm data uploaded')
     # refreshDate('index.html', str(date))
     # refreshDate('en.html', str(date))
@@ -33,7 +33,7 @@ def updateFromFile(filename):
     #     os.chdir(homepath + 'sw/mod_tile/')
     #     os.system('killall renderd')
     #     os.system('./renderd')
-    # except OSError, msg:
+    # except OSError as msg:
     #     raise UpdateError(msg + '\n problem with mod_tile/renderd only, data uploaded, ignore next line')
 
 def refreshDate(file,date):
@@ -45,12 +45,12 @@ def refreshDate(file,date):
         fo.write(re.sub("20[1-9][0-9]-[0-1][0-9]-[0-3][0-9]",date,s))
         fo.close()
     except IOError:
-        print 'Cannot refresh date for ' + file
+        print('Cannot refresh date for ' + file)
     else:
         try:
             shutil.copyfile(homepath + '/Devel/ruzne/' + file, homepath + '/Web/' + file)
         except IOError:
-            print 'Problem with copying ' + file + ', check access privileges.'
+            print('Problem with copying ' + file + ', check access privileges.')
 
 class UpdateError(Exception):
     def __init__(self, msg):
@@ -64,14 +64,14 @@ if __name__ == "__main__":
     date = datetime.date.today()
     try:
         try:
-            connection = httplib.HTTPConnection('osm.kyblsoft.cz')
+            connection = http.client.HTTPConnection('osm.kyblsoft.cz')
             connection.request('HEAD', '/archiv/czech_republic-' + str(date) + '.osm.pbf')
             response = connection.getresponse()
             # if today's dataset doesn't exist, use yesterday's
             if (response.status != 200):
                 date = date - datetime.timedelta(days=1)
-        except socket.error, msg:
-            print 'no connection to kyblsoft'
+        except socket.error as msg:
+            print('no connection to kyblsoft')
             connection.close()
 
         connection.close()
@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
         try:
             os.chdir(homepath + '/Data')
-        except OSError, msg:
+        except OSError as msg:
             raise UpdateError(homepath + '/Data directory is not present')
 
     
@@ -94,6 +94,6 @@ if __name__ == "__main__":
         else:
             raise UpdateError('An error occured while downloading from given URLs ')
 
-    except UpdateError, ue:
-        print ue.msg
-        print 'Map data was not uploaded. '
+    except UpdateError as ue:
+        print(ue.msg)
+        print('Map data was not uploaded. ')
