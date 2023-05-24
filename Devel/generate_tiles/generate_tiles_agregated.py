@@ -5,7 +5,7 @@
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
-from Queue import Queue
+from queue import Queue
 import mapnik
 import threading
 import argparse
@@ -133,14 +133,14 @@ class RenderThread:
             if bytes == 103:
                 empty = " Empty Tile "
             self.printLock.acquire()
-            print name, ":", z, x*aggregate, y*aggregate, exists, empty
+            print(name, ":", z, x*aggregate, y*aggregate, exists, empty)
             self.printLock.release()
             self.q.task_done()
 
 
 
 def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", num_threads=NUM_THREADS):
-    print "render_tiles(",bbox, mapfile, tile_dir, minZoom, maxZoom, name, num_threads, ")"
+    print("render_tiles(",bbox, mapfile, tile_dir, minZoom, maxZoom, name, num_threads, ")")
 
     # Launch rendering threads
     queue = Queue(32)
@@ -150,7 +150,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
         renderer = RenderThread(tile_dir, mapfile, queue, printLock, maxZoom)
         render_thread = threading.Thread(target=renderer.loop)
         render_thread.start()
-        #print "Started render thread %s" % render_thread.getName()
+        #print("Started render thread %s" % render_thread.getName())
         renderers[i] = render_thread
 
     if not os.path.isdir(tile_dir):

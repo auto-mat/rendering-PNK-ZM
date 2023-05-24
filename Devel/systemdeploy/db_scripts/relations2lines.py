@@ -50,9 +50,9 @@ while True:
         for I in range(0, len(row[2]), 2):
            key = row[2][I]
            value = row[2][I + 1]
-           if copy_tags.has_key(key):
+           if key in copy_tags:
               tags[key] = value
-           if reject_tags.has_key(key) and reject_tags[key] == value:
+           if key in reject_tags and reject_tags[key] == value:
               continue_all = True
               break
 
@@ -73,7 +73,7 @@ while True:
             # Update lines of the relation with its tags.
             set_statement = ", ".join(["%s = '%s'" % (key, tags[key]
               .replace('\'', '\\\'')) for key in tags.keys()])
-            print "Updating lines:", where_statement
+            print("Updating lines:", where_statement)
             auxilary_cursor.execute("UPDATE planet_osm_track_rels SET %s WHERE"
               " osm_id IN (%s)" % (set_statement, where_statement))
 
