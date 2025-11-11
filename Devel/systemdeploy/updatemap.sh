@@ -32,7 +32,7 @@ psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE
 psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
 psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
 mount_mnk_rendering_nfs_partitions
-docker run --name $RENDER_USER \
+docker run -d --name $RENDER_USER \
        -e RENDERING_DIR=$RENDERING_DIR \
        -e UPDATE_DB_AND_RENDERING_LOG=$UPDATE_DB_AND_RENDERING_LOG \
        -e RENDERING_QUADRANTS_LOG=$RENDERING_QUADRANTS_LOG \
@@ -47,12 +47,17 @@ docker run --name $RENDER_USER \
        -p 82:80 \
        -d $RENDER_USER /usr/bin/supervisord
 sleep 30
-docker exec -t $RENDER_USER bash -c "chmod +x $UPDATE_POSTGIS_CONN_PARAMS \
+docker exec -d -t $RENDER_USER bash -c "chmod +x $UPDATE_POSTGIS_CONN_PARAMS \
+&& cd $RENDERING_DIR \
+&& git checkout ./Devel/mapnik/inc/* \
 && cd $(dirname ${UPDATE_POSTGIS_CONN_PARAMS}) && ./$(basename ${UPDATE_POSTGIS_CONN_PARAMS}) \
 && cd /usr/local/etc/ && sed -i -e \"0,/num_threads=.*/s//num_threads=$MAPNIK_RENDER_LIST_NTHREADS/\" renderd.conf \
 && sed --file ${RENDERING_DIR}/docker/renderd.conf.sed --in-place renderd.conf \
 && echo -e \"${LOG_DIR}${UPDATE_DB_AND_RENDERING_LOG} {\n    missingok\n    notifempty\n    rotate 3\n    size 24M\n}\" > $LOGROTATE_MNK_RENDERING_CONFIG \
 && echo -e \"${LOG_DIR}${RENDERING_QUADRANTS_LOG} {\n    missingok\n    notifempty\n    rotate 3\n    size 12k\n}\" >> $LOGROTATE_MNK_RENDERING_CONFIG \
-&& chown -R www-data:www-data /var/lib/mod_tile \
-&& supervisorctl restart renderd"
+&& chmod -R 777 /var/run/renderd \
+&& chown -R www-data:www-data /var/lib/mod_tile /var/run/renderd"
+sleep 30
+docker exec -d -t $RENDER_USER bash -c "supervisorctl start renderd"
+sleep 30
 docker exec -t $RENDER_USER "/home/rendering/docker/render_map.sh"
