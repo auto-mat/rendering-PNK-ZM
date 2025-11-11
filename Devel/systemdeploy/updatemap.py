@@ -85,7 +85,7 @@ if __name__ == "__main__":
         connection.close()
 
         filename1 = 'czech_republic.osm.pbf'
-        url1 = 'http://download.geofabrik.de/openstreetmap/europe/czech-republic-latest.osm.pbf'
+        url1 = 'http://download.geofabrik.de/europe/czech-republic-latest.osm.pbf'
         filename2 = 'czech_republic-' + str(date) + '.osm.bz2'
         url2 = 'http://osm.kyblsoft.cz/archiv/czech_republic-' + str(date) + '.osm.pbf'
 
