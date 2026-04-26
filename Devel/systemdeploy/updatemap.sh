@@ -22,15 +22,38 @@ mount_mnk_rendering_nfs_partitions () {
     fi
 }
 
+render_all_quadrants_config_script () {
+    cp /home/$RENDER_USER/rendering-PNK-ZM/docker/render_map_all_quadrants.sh /home/$RENDER_USER/rendering-PNK-ZM/docker/render_map.sh
+}
+
 mkdir -p ../../logs
 source .env
 remove_docker_container
 create_pgpass_file
-python updatemap.py
-psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '$POSTGISDB_NAME'"
-psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE $POSTGISDB_NAME RENAME TO gis_loading1;"
-psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
-psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
+rendering_finish=$(tail -n 2 /home/mtbmap/rendering-PNK-ZM/logs/rendering_quadrants.log |
+    grep "End render" |
+    python -c """
+import sys, re
+last_quadrant_number = re.search(r'\d+|$', sys.stdin.read())
+if last_quadrant_number:
+   print(last_quadrant_number.group(0))
+else:
+   print(-1)
+""")
+rendering_finish=${rendering_finish:--1}
+# 93 indicating last rendering quadrant number
+if [ "$rendering_finish" -eq 93 ]; then
+    python updatemap.py
+    psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '$POSTGISDB_NAME'"
+    psql -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE $POSTGISDB_NAME RENAME TO gis_loading1;"
+    psql gis_loading1 -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis RENAME TO gis_loading;"
+    psql gis_loading -h $POSTGISDB_HOST -U $POSTGISDB_USER -p $POSTGISDB_PORT -c "ALTER DATABASE gis_loading1 RENAME TO gis;"
+    render_all_quadrants_config_script
+elif [ "$rendering_finish" -gt -1 ]; then
+    python /home/$RENDER_USER/rendering-PNK-ZM/docker/generate_render_map_file.py $rendering_finish
+elif [ "$rendering_finish" -eq -1 ]; then
+    render_all_quadrants_config_script
+fi
 mount_mnk_rendering_nfs_partitions
 docker run -d --name $RENDER_USER \
        -e RENDERING_DIR=$RENDERING_DIR \
