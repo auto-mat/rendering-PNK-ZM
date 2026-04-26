@@ -6,5 +6,5 @@ if [ "$1" == "remove" ]; then
 else
     echo "Add limit"
     ${WONDERSHAPER} -c -a eno1
-    ${WONDERSHAPER} -a eno1 -u 8192 -d 8192
+    ${WONDERSHAPER} -a eno1 -u 20480 -d 32768
 fi
